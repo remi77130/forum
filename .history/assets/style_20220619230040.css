@@ -1,0 +1,26 @@
+.header_connect{
+    height: 10%;
+}
+
+
+
+.section_connect{
+
+    height: 85%;
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(206, 158, 251);
+
+    
+}
+
+.container_connect{
+
+    background-color: beige;
+}
+
+header{
+
+    background-color: rgb(47, 47, 47);
+}

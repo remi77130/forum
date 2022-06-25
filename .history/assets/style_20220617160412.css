@@ -1,0 +1,19 @@
+.header_connect{
+    height: 10%;
+}
+
+
+
+.section_connect{
+
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+div{
+
+    border: 5px solid red;
+}

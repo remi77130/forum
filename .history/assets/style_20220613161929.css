@@ -1,0 +1,25 @@
+.header_connect{
+    height: 10%;
+}
+
+
+
+.section_connect{
+
+    height: 85%;
+    text-align: center;
+    
+}
+
+.container_connect{
+
+    border: 3px solid violet;
+    width: auto;
+    height: auto;
+    text-align: center;
+
+}
+.container_connect input{
+
+    margin: 5px;
+}

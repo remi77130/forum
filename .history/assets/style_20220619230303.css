@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+
+    background-color: rgb(47, 47, 47);
+}
+
+.mb-3{
+
+    border: none;
+}
