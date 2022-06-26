@@ -22,6 +22,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     }
 
 
+    ///////////////////////////////////////
 
 
     if(isset($_POST['description_profil'])) {
@@ -31,6 +32,11 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
       
       header('Location: profil.php?id='.$_SESSION['id']);
    }
+
+////////////////////////////////////
+
+
+
 
 
 
@@ -42,6 +48,7 @@ if(isset($_POST['astrologie'])) {
    header('Location: profil.php?id='.$_SESSION['id']);
 }
 
+////////////////////////////////////
 
 
     if(isset($_POST['newage']) AND !empty($_POST['newage']) AND $_POST['newage'] != $user['age']) {
@@ -75,47 +82,6 @@ if(isset($_POST['astrologie'])) {
           $msg = "Vos deux mdp ne correspondent pas !";
        }
     }
-
-
-
-/////////// PHOTO
-
-
-    if(isset($_FILES['image_membre']) AND !empty($_FILES['image_membre']['name'])) {
-      $tailleMaxPhotoMembre = 2097152; //2M0
-      $extensionsValidesPhoto = array('jpg', 'jpeg', 'gif', 'png');
-      if($_FILES['image_membre']['size'] <= $tailleMaxPhotoMembre) {
-         $extensionUploadPhoto = strtolower(substr(strrchr($_FILES['image_membre']['name'], '.'), 1));
-         if(in_array($extensionUploadPhoto, $extensionsValidesPhoto)) {
-            $cheminPhotoMembre = "membres\img_membres/".$_SESSION['id'].".".$extensionUploadPhoto;
-            $resultatPhotoMembre = move_uploaded_file($_FILES['image_membre']['tmp_name'], $cheminPhotoMembre);
-            if($resultatPhotoMembre) {
-               $updatePhoto = $bdd->prepare('UPDATE membres SET image_membre = :image_membre WHERE id = :id');
-               $updatePhoto->execute(array(
-                  'image_membre' => $_SESSION['id'].".".$extensionUploadPhoto,
-                  'id' => $_SESSION['id']
-                  ));
-               header('Location: profil.php?id='.$_SESSION['id']);
-            } else {
-               $msg = "Erreur durant l'importation de votre photo de profil";
-            }
-         } else {
-            $msg = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
-         }
-      } else 
-      {
-         $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
-      }
-
-
-
-}
-   
-//////////////PHOTO
-
-
-
-
     //Avatar UPLOAD VOIR PAR LA SUITE POUR ENREGISTRER LE NAME DE LA PHOTO DANS LA BDD...
 
     if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
@@ -139,14 +105,45 @@ if(isset($_POST['astrologie'])) {
          } else {
             $msg = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
          }
-      } else 
-      {
+      } else {
          $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
       }
 
 
 
+
+
+
+
+////////////////////////////////////     ARTICLES ****************
+
+
+
+
+if(isset($_POST['article_titre'], $_POST['article_contenu'])) {
+   if(!empty($_POST['article_titre']) AND !empty($_POST['article_contenu'])) {
+      
+      $article_titre = htmlspecialchars($_POST['article_titre']);
+      $article_contenu = htmlspecialchars($_POST['article_contenu']);
+      $ins = $bdd->prepare('INSERT INTO articles (titre, contenu, date_time_publication) VALUES (?, ?, NOW())');
+      $ins->execute(array($article_titre, $article_contenu));
+      $message = 'Votre article a bien été posté';
+   } 
+   
+   else 
+   
+   {
+      $message = 'Veuillez remplir tous les champs';
+   }
 }
+
+
+
+
+
+
+   }
+  
  ?>
  <html>
     <head>
@@ -155,13 +152,38 @@ if(isset($_POST['astrologie'])) {
     </head>
     <body>
 
+
     <section class="container_editprofil">
        <div class="edit_profil_container">
           <h2>Edition de mon profil</h2>
           <div>
 
+
+
+
+          <br> <br><br>
+      <form method="POST">
+      <input type="text" name="article_titre" placeholder="Titre" /><br />
+      <textarea name="article_contenu" placeholder="Contenu de l'article"></textarea><br />
+      <input type="submit" value="Envoyer l'article" />
    </form> 
    <br>
+
+   <?php if(isset($message)) { echo $message; } ?>
+          
+          
+          
+          
+          
+          
+          <br><br> <br>
+
+
+
+
+
+
+
 
 
              <form method="POST" action="" enctype="multipart/form-data">
@@ -205,8 +227,6 @@ if(isset($_POST['astrologie'])) {
        
 
                <label>Ajouter des photo</label> <br>
-
-               <input type="text" name="titre_photo_membre">
                <input type="file" name="image_membre"> <br> <br>
 
 

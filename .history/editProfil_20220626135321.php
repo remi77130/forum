@@ -85,14 +85,14 @@ if(isset($_POST['astrologie'])) {
       $tailleMaxPhotoMembre = 2097152; //2M0
       $extensionsValidesPhoto = array('jpg', 'jpeg', 'gif', 'png');
       if($_FILES['image_membre']['size'] <= $tailleMaxPhotoMembre) {
-         $extensionUploadPhoto = strtolower(substr(strrchr($_FILES['image_membre']['name'], '.'), 1));
-         if(in_array($extensionUploadPhoto, $extensionsValidesPhoto)) {
-            $cheminPhotoMembre = "membres\img_membres/".$_SESSION['id'].".".$extensionUploadPhoto;
+         $extensionUpload = strtolower(substr(strrchr($_FILES['image_membre']['name'], '.'), 1));
+         if(in_array($extensionUpload, $extensionsValides)) {
+            $cheminPhotoMembre = "membres\img_membres/".$_SESSION['id'].".".$extensionUpload;
             $resultatPhotoMembre = move_uploaded_file($_FILES['image_membre']['tmp_name'], $cheminPhotoMembre);
             if($resultatPhotoMembre) {
                $updatePhoto = $bdd->prepare('UPDATE membres SET image_membre = :image_membre WHERE id = :id');
                $updatePhoto->execute(array(
-                  'image_membre' => $_SESSION['id'].".".$extensionUploadPhoto,
+                  'image_membre' => $_SESSION['id'].".".$extensionUpload,
                   'id' => $_SESSION['id']
                   ));
                header('Location: profil.php?id='.$_SESSION['id']);

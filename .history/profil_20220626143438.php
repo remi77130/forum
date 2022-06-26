@@ -1,7 +1,4 @@
 
-
-<!--   Page du profil -->
-
 <?php 
 	session_start();
    include_once('cookieconnect.php');

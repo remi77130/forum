@@ -1,7 +1,4 @@
 
-
-<!--   Page du profil -->
-
 <?php 
 	session_start();
    include_once('cookieconnect.php');
@@ -20,7 +17,7 @@
 
 <html>
    <head>
-      <title>Profil</title>
+      <title>Profil de <?php echo $userinfo['id']; ?></title>
    </head>
    <body>
 

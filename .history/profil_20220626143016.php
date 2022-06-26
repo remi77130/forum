@@ -1,7 +1,4 @@
 
-
-<!--   Page du profil -->
-
 <?php 
 	session_start();
    include_once('cookieconnect.php');
@@ -37,9 +34,6 @@
 <div class="container_profil">
 
 
-<a href="album.php">
-
-
          <?php                           // AFFICHAGE DE LA PHOTO
 
          if (!empty($userinfo['avatar']))
@@ -60,7 +54,18 @@
   
          <?php echo $userinfo['description_profil']; ?> <br> <br>
         
- 
+<a href="album.php">
+   
+<?php 
+
+if (empty($userinfo['img/membres']))
+{
+?>
+<img src="membres\img_membres/<?php echo $userinfo['image_membre']; ?>" alt="img/users" width="50">
+<?php
+
+}
+?> 
 
 </a>
         

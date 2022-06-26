@@ -1,7 +1,4 @@
 
-
-<!--   Page du profil -->
-
 <?php 
 	session_start();
    include_once('cookieconnect.php');
@@ -37,9 +34,6 @@
 <div class="container_profil">
 
 
-<a href="album.php">
-
-
          <?php                           // AFFICHAGE DE LA PHOTO
 
          if (!empty($userinfo['avatar']))
@@ -58,11 +52,20 @@
 
         <p> je suis <?php echo $userinfo['astrologie']; ?> </p> <br>
   
-         <?php echo $userinfo['description_profil']; ?> <br> <br>
+         <?php echo $userinfo['description_profil']; ?>
         
- 
+<a href="album.php">Album</a>
+   
+<?php 
 
-</a>
+if (empty($userinfo['img/membres']))
+{
+?>
+<img src="membres\img_membres/<?php echo $userinfo['image_membre']; ?>" alt="img/users" width="150">
+<?php
+
+}
+?> 
         
 </div> <!-- Fermeture div container_profil !-->
 

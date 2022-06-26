@@ -82,17 +82,17 @@ if(isset($_POST['astrologie'])) {
 
 
     if(isset($_FILES['image_membre']) AND !empty($_FILES['image_membre']['name'])) {
-      $tailleMaxPhotoMembre = 2097152; //2M0
-      $extensionsValidesPhoto = array('jpg', 'jpeg', 'gif', 'png');
-      if($_FILES['image_membre']['size'] <= $tailleMaxPhotoMembre) {
-         $extensionUploadPhoto = strtolower(substr(strrchr($_FILES['image_membre']['name'], '.'), 1));
-         if(in_array($extensionUploadPhoto, $extensionsValidesPhoto)) {
-            $cheminPhotoMembre = "membres\img_membres/".$_SESSION['id'].".".$extensionUploadPhoto;
-            $resultatPhotoMembre = move_uploaded_file($_FILES['image_membre']['tmp_name'], $cheminPhotoMembre);
-            if($resultatPhotoMembre) {
-               $updatePhoto = $bdd->prepare('UPDATE membres SET image_membre = :image_membre WHERE id = :id');
-               $updatePhoto->execute(array(
-                  'image_membre' => $_SESSION['id'].".".$extensionUploadPhoto,
+      $tailleMax = 2097152; //2M0
+      $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+      if($_FILES['image_membre']['size'] <= $tailleMax) {
+         $extensionUpload = strtolower(substr(strrchr($_FILES['image_membre']['name'], '.'), 1));
+         if(in_array($extensionUpload, $extensionsValides)) {
+            $chemin = "membres\img_membres/".$_SESSION['id'].".".$extensionUpload;
+            $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
+            if($resultat) {
+               $updateavatar = $bdd->prepare('UPDATE membres SET image_membre = :image_membre WHERE id = :id');
+               $updateavatar->execute(array(
+                  'image_membre' => $_SESSION['id'].".".$extensionUpload,
                   'id' => $_SESSION['id']
                   ));
                header('Location: profil.php?id='.$_SESSION['id']);

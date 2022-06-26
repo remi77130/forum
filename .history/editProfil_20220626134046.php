@@ -78,40 +78,15 @@ if(isset($_POST['astrologie'])) {
 
 
 
-/////////// PHOTO
 
-
-    if(isset($_FILES['image_membre']) AND !empty($_FILES['image_membre']['name'])) {
-      $tailleMaxPhotoMembre = 2097152; //2M0
-      $extensionsValidesPhoto = array('jpg', 'jpeg', 'gif', 'png');
-      if($_FILES['image_membre']['size'] <= $tailleMaxPhotoMembre) {
-         $extensionUploadPhoto = strtolower(substr(strrchr($_FILES['image_membre']['name'], '.'), 1));
-         if(in_array($extensionUploadPhoto, $extensionsValidesPhoto)) {
-            $cheminPhotoMembre = "membres\img_membres/".$_SESSION['id'].".".$extensionUploadPhoto;
-            $resultatPhotoMembre = move_uploaded_file($_FILES['image_membre']['tmp_name'], $cheminPhotoMembre);
-            if($resultatPhotoMembre) {
-               $updatePhoto = $bdd->prepare('UPDATE membres SET image_membre = :image_membre WHERE id = :id');
-               $updatePhoto->execute(array(
-                  'image_membre' => $_SESSION['id'].".".$extensionUploadPhoto,
-                  'id' => $_SESSION['id']
-                  ));
-               header('Location: profil.php?id='.$_SESSION['id']);
-            } else {
-               $msg = "Erreur durant l'importation de votre photo de profil";
-            }
-         } else {
-            $msg = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
-         }
-      } else 
-      {
-         $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
-      }
-
-
-
-}
+    if(isset($_FILES['image_membre'])) {
+      $newimage_membre = htmlspecialchars($_FILES['image_membre']);
+      $insertimage_membre = $bdd->prepare("UPDATE membres SET image_membre = ? WHERE id = ?");
+      $insertimage_membre->execute(array($newimage_membre, $_SESSION['id']));
+      
+      header('Location: profil.php?id='.$_SESSION['id']);
+   }
    
-//////////////PHOTO
 
 
 
@@ -139,8 +114,7 @@ if(isset($_POST['astrologie'])) {
          } else {
             $msg = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
          }
-      } else 
-      {
+      } else {
          $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
       }
 
