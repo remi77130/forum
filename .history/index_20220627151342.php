@@ -2,17 +2,16 @@
 
 
 <?php 
+session_start(); //pour recup dans la bdd   
 
 require('database.php');
-include('profil.php');
-
 
 
 ?>
 
 <?php 
 
-$requser = "SELECT * FROM membres ORDER BY id DESC";
+$requser = "SELECT * FROM membres ";
 
 $requete = $bdd->query($requser);
 
@@ -23,24 +22,10 @@ $articles = $requete->fetchAll();
 
 ?>
 
-
-<header> 
-
-<a href="profil.php?id=<?= $_SESSION['id']?>">Profil</a>
-
-
-</header>
-
-
-
-
-
-<section class="hero_index">
+<section>
 <?php foreach($articles as $articles) :?>
 
-  
-
-    <img src="membres\avatars/<?php echo $articles['avatar']; ?>" alt="photo_profil" width="150"><br>
+    <img src="membres\avatars/<?php echo $articles['avatar']; ?>" alt="photo_profil" width="150">
 
 
     <span><a href="profil.php?id=<?= $articles['id']?>"><?php echo $articles['pseudo'] ?></span><br><br>
@@ -49,7 +34,6 @@ $articles = $requete->fetchAll();
 
     
 </a>
-
     <?php endforeach; ?>
 </section>
  

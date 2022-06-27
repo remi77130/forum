@@ -12,7 +12,7 @@ include('profil.php');
 
 <?php 
 
-$requser = "SELECT * FROM membres ORDER BY id DESC";
+$requser = "SELECT * FROM membres ";
 
 $requete = $bdd->query($requser);
 
@@ -24,18 +24,11 @@ $articles = $requete->fetchAll();
 ?>
 
 
-<header> 
+
 
 <a href="profil.php?id=<?= $_SESSION['id']?>">Profil</a>
 
-
-</header>
-
-
-
-
-
-<section class="hero_index">
+<section>
 <?php foreach($articles as $articles) :?>
 
   

@@ -37,7 +37,7 @@
 
          <?php                           // AFFICHAGE DE LA PHOTO
 
-         if (!empty($userinfo['avatar']))
+echo $userinfo['pseudo'];
          {
          ?>
          <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil" width="150">

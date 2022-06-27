@@ -12,7 +12,7 @@ include('profil.php');
 
 <?php 
 
-$requser = "SELECT * FROM membres ORDER BY id DESC";
+$requser = "SELECT * FROM membres ";
 
 $requete = $bdd->query($requser);
 

@@ -43,7 +43,7 @@
          <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil" width="150">
          <?php
 
-         } 
+         } 0
          ?> 
          
 </div><br>

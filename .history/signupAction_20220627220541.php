@@ -41,8 +41,8 @@ if(isset($_POST['validate'])){
                        
                 if($password == $password2)
                 {
-                    $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, religion) VALUES(?,?,?,?,?,? )");
-                    $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe, $religion,));
+                    $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, religion, avatar) VALUES(?,?,?,?,?,?,? )");
+                    $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe, $religion, "default.jpg"));
 
                  
                     $_SESSION['comptecree'] = header("Location: index.php");
