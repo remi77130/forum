@@ -5,6 +5,7 @@
 
 require('database.php');
 include('profil.php');
+include('signupAction.php');
 
 
 ?>

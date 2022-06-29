@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require('database.php');
 
 
@@ -13,12 +13,12 @@ if(isset($_POST['validate'])){
     $password2 = sha1($_POST['password2']);
     $age = htmlspecialchars($_POST['age']);
     $sexe = htmlspecialchars($_POST['sexe']);
-
+    $religion = htmlspecialchars($_POST['religion']);
     
     //Vérifier si l'user a bien complété tous les champs
     if(!empty($_POST['pseudo'])  AND !empty($_POST['mail'])
     AND !empty($_POST['password']) AND !empty($_POST['password2']) AND !empty($_POST['age']) 
-    AND !empty($_POST['sexe']))
+    AND !empty($_POST['sexe']) AND !empty($_POST['religion']))
         
     {
 
@@ -41,13 +41,12 @@ if(isset($_POST['validate'])){
                        
                 if($password == $password2)
                 {
-                    $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe) VALUES(?,?,?,?,? )");
-                    $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe));
+                    $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, religion) VALUES(?,?,?,?,?,? )");
+                    $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe, $religion));
 
                  
-                    $_SESSION['comptecree'] = header("Location: index.php");
-
-                    
+                    $_SESSION['comptecree'] =   //        
+                    header("Location: profil.php?id=".$_SESSION['id']);
                    
                 }
                 else{

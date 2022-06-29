@@ -2,8 +2,7 @@
 
 
 <?php 
-
-require('database.php');
+session_start()
 include('profil.php');
 
 

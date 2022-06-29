@@ -7,6 +7,7 @@ require('database.php');
 include('profil.php');
 
 
+
 ?>
 
 <?php 
@@ -27,7 +28,7 @@ $articles = $requete->fetchAll();
 
 
 
-<a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>
+<a href="profil.php?id=?">Mon Profil</a>
 
 
 </header>
