@@ -7,9 +7,6 @@ require('database.php');
 include('includes/head.php');
 
 
-
-
-
 if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
 {
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
@@ -18,7 +15,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     
     if(isset($_POST['newpseudo']) AND !empty($_POST['newpseudo']) AND $_POST['newpseudo'] != $user['pseudo']) {
        $newpseudo = htmlspecialchars($_POST['newpseudo']);
-       $insertpseudo = $bdd->prepare("UPDATE membres SET pseudo = ? WHERE id = ?");
+       $insertpseudo = $bdd->prepare("UPDATE membres SET pseudo = ?");
        $insertpseudo->execute(array($newpseudo, $_SESSION['id']));
        
        header('Location: profil.php?id='.$_SESSION['id']);
@@ -186,11 +183,6 @@ if(isset($_POST['astrologie'])) {
     </section>
     </body>
  </html>
-
-
-
-
- 
  <?php   
  }
  else {

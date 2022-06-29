@@ -3,6 +3,7 @@
 
 <?php 
 
+session_start()
 require('database.php');
 include('profil.php');
 
@@ -28,9 +29,7 @@ $articles = $requete->fetchAll();
 
 
 
-<a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>
-
-
+<a href="">Mon Profil</a>
 </header>
 
 
@@ -49,7 +48,6 @@ $articles = $requete->fetchAll();
 
     <span><?php echo $articles['age'] ?></span><br> <br>
 
- 
     
 </a>
 

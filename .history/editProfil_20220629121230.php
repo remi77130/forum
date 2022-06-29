@@ -191,6 +191,15 @@ if(isset($_POST['astrologie'])) {
 
 
  
+ <?php
+         if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
+         ?>
+         <br />
+         <a href="editProfil.php">Editer mon profil</a>
+         <a href="deconnexion.php">Se déconnecter</a>
+         <?php
+         }
+         ?>
  <?php   
  }
  else {

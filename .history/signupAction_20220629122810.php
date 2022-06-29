@@ -46,7 +46,8 @@ if(isset($_POST['validate'])){
 
                  
                     $_SESSION['comptecree'] =          
-                    header("Location: index.php");
+                    header("Location: profil.php?id=".$_SESSION['id']);
+                    
                    
                 }
                 else{

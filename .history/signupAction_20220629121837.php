@@ -1,6 +1,7 @@
 <?php
-
+session_start();
 require('database.php');
+require('signup.php');
 
 
 //Validation du formulaire
@@ -46,7 +47,9 @@ if(isset($_POST['validate'])){
 
                  
                     $_SESSION['comptecree'] =          
-                    header("Location: index.php");
+                    header('Location: profil.php?id='.$_SESSION['id']);
+
+                    
                    
                 }
                 else{

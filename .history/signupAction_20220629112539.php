@@ -1,5 +1,4 @@
 <?php
-
 require('database.php');
 
 
@@ -47,6 +46,8 @@ if(isset($_POST['validate'])){
                  
                     $_SESSION['comptecree'] =          
                     header("Location: index.php");
+
+                    
                    
                 }
                 else{

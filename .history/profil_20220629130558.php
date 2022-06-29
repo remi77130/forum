@@ -17,7 +17,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
       <meta charset="utf-8">
    </head>
    <body>
-      <div align="center"> <!-- Profil visible-->
+      <div align="center">
          <h2>Profil de <?php echo $userinfo['pseudo']; ?></h2>
          <br /><br />
          <?php echo $userinfo['pseudo']; ?><br><br>
@@ -30,14 +30,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          
 
       
-         <?php  // FICHE PROFIL USERS CONNECT
+         <?php
          if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
          ?>
          <br />
          <a href="editProfil.php">Editer mon profil</a>
-         <a href="reception.php">Mes messages</a>
          <a href="deconnexion.php">Se déconnecter</a>
-
+         <a href="reception.php">Mes messages</a>
 
          <?php
          }

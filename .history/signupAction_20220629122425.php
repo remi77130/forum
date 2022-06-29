@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require('database.php');
 
 
@@ -45,8 +45,10 @@ if(isset($_POST['validate'])){
                     $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe, $religion));
 
                  
-                    $_SESSION['comptecree'] =          
-                    header("Location: index.php");
+                       
+                    header('Location: profil.php?id='.$_SESSION['id']);
+
+                    
                    
                 }
                 else{

@@ -7,9 +7,6 @@ require('database.php');
 include('includes/head.php');
 
 
-
-
-
 if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
 {
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
@@ -186,11 +183,6 @@ if(isset($_POST['astrologie'])) {
     </section>
     </body>
  </html>
-
-
-
-
- 
  <?php   
  }
  else {

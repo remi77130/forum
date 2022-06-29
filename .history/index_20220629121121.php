@@ -28,8 +28,6 @@ $articles = $requete->fetchAll();
 
 
 
-<a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>
-
 
 </header>
 
@@ -49,13 +47,20 @@ $articles = $requete->fetchAll();
 
     <span><?php echo $articles['age'] ?></span><br> <br>
 
- 
     
 </a>
 
 
 
-
+<?php
+         if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
+         ?>
+         <br />
+         <a href="editProfil.php">Editer mon profil</a>
+         <a href="deconnexion.php">Se déconnecter</a>
+         <?php
+         }
+         ?>
 
     <?php endforeach; ?>
 </section>

@@ -30,6 +30,7 @@ $articles = $requete->fetchAll();
 
 <a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>
 
+<a href="reception.php">Mes messages</a>
 
 </header>
 
