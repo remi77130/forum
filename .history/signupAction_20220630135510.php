@@ -44,8 +44,8 @@ if(isset($_POST['validate'])){
                    
               
                         try {
-                            $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, avatar) VALUES(?,?,?,?,?,? )");
-                            $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe, "default.jpg"));
+                            $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe) VALUES(?,?,?,?,? )");
+                            $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe));
                             
                         }
                         catch(Exception $e) {

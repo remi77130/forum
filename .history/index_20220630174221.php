@@ -37,10 +37,10 @@ $articles = $requete->fetchAll(); ?>
 
   
 
-  <a href="profil.php?id=<?= $articles['id']?>"> <div class="user_container">
+  <a href="">  <div class="user_container">
 
     <img src="membres\avatars/<?php echo $articles['avatar']; ?>" alt="photo_profil" width="150"><br>
-
+</a>
 <div class="user_info">
     <span><a href="profil.php?id=<?= $articles['id']?>"><?php echo $articles['pseudo'] ?></span><br><br>
 

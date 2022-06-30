@@ -29,14 +29,12 @@ margin: 0;
 
   border: 2px solid black;
   width: 100%;
-  height:350px   ;
+  height: 100%;
 }
 
 .user_info{
 
   border: 5px solid green;
-  color: black;
-  text-align: center;
 }
 
 

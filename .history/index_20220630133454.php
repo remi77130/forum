@@ -1,29 +1,37 @@
 <!-- Page affichage des membres -->
-<!DOCTYPE html>
-<html lang="en">
 
-<body>
-    
-</html>
+
 <?php 
 
 require 'require/database.php';
 include 'profil.php';
-include 'includes/head.php'
 
 
 ?>
 <?php
-
 $requser = "SELECT * FROM membres ORDER BY id DESC";
+$requser->execute(array());
+$userexist = $requser->rowCount();
+if($userexist == 1) {
+   $userinfo = $requser->fetch();
+   $_SESSION['id'] = $userinfo['id'];
+   $_SESSION['pseudo'] = $userinfo['pseudo'];
+   $_SESSION['mail'] = $userinfo['mail'];
+   header("Location: profil.php?id=".$_SESSION['id']);
+
 $requete = $bdd->query($requser);
+
 // RECUPERE LES DONEES 
-$articles = $requete->fetchAll(); ?>
+
+$articles = $requete->fetchAll();
+
+
+?>
 
 
 <header> 
 
-<a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
+<a href="profil.php?id=?<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- erreur ?????????-->
 
 
 </header>
@@ -37,24 +45,21 @@ $articles = $requete->fetchAll(); ?>
 
   
 
-  <a href="profil.php?id=<?= $articles['id']?>"> <div class="user_container">
-
     <img src="membres\avatars/<?php echo $articles['avatar']; ?>" alt="photo_profil" width="150"><br>
 
-<div class="user_info">
+
     <span><a href="profil.php?id=<?= $articles['id']?>"><?php echo $articles['pseudo'] ?></span><br><br>
 
     <span><?php echo $articles['age'] ?></span><br> <br>
 
-</div>
+ 
     
 </a>
 
-    </div>
+
 
 
 
     <?php endforeach; ?>
 </section>
  
-</body>

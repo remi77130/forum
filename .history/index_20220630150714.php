@@ -37,7 +37,7 @@ $articles = $requete->fetchAll(); ?>
 
   
 
-  <a href="profil.php?id=<?= $articles['id']?>"> <div class="user_container">
+    <div class="user_container">
 
     <img src="membres\avatars/<?php echo $articles['avatar']; ?>" alt="photo_profil" width="150"><br>
 

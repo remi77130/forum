@@ -28,7 +28,7 @@ margin: 0;
 .user_container img{
 
   border: 2px solid black;
-  width: 100%;
+  width: %;
   height:350px   ;
 }
 
@@ -36,7 +36,6 @@ margin: 0;
 
   border: 5px solid green;
   color: black;
-  text-align: center;
 }
 
 

@@ -24,7 +24,7 @@ if(isset($_POST['validate'])){
 
 
         $pseudolength = strlen($pseudo);
-        if($pseudolength <= 255)
+        if($pseudolength <= 10)
         {
 
             if($password == $password2)  // verif password
@@ -41,30 +41,32 @@ if(isset($_POST['validate'])){
                        
                 if($password == $password2)
                 {
-                   
-              
-                        try {
-                            $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, avatar) VALUES(?,?,?,?,?,? )");
-                            $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe, "default.jpg"));
-                            
+                    try {
+                        $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe) VALUES(?,?,?,?,? )");
+                        $insertmbr->execute(array($pseudo, $mail, $password, $age, $sexe));
+                        
                         }
                         catch(Exception $e) {
-                            echo 'Exception -> ';
-                            var_dump($e->getMessage());
+                        echo 'Exception -> ';
+                        var_dump($e->getMessage());
                         }
                         
                         $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
                         $requser->execute(array($pseudo));
                         $userexist = $requser->rowCount();
                         if($userexist == 1) {
-                           $userinfo = $requser->fetch();
-                           $_SESSION['id'] = $userinfo['id'];
-                           $_SESSION['pseudo'] = $userinfo['pseudo'];
-                           $_SESSION['mail'] = $userinfo['mail'];
-                           header("Location: index.php"); 
-                           
-                        } 
-                                             
+                        $userinfo = $requser->fetch();
+                        $_SESSION['id'] = $userinfo['id'];
+                        $_SESSION['pseudo'] = $userinfo['pseudo'];
+                        $_SESSION['mail'] = $userinfo['mail'];
+                        header("Location: index.php");
+                        
+                        }
+
+                 
+                  
+
+                    
                    
                 }
                 else{
@@ -93,7 +95,7 @@ if(isset($_POST['validate'])){
         else
         {
 
-            $erreur = "Votre pseudo ne doit pas dépasssser 255 caractrere ";
+            $erreur = "Votre pseudo ne doit pas dépasssser 10 caractrere ";
 
         }
 
@@ -109,3 +111,4 @@ if(isset($_POST['validate'])){
 
 
 ?>
+

@@ -1,4 +1,27 @@
 
+La pièce jointe 20220630_192123.mp4 a été ajoutée.Conversation ouverte. 2 messages. Tous les messages ont été lus.
+
+Aller au contenu
+Utiliser Gmail avec un lecteur d'écran
+
+Meet
+Hangouts
+
+Conversations
+
+Importants
+ 
+1–25 sur 456
+ 
+
+Autres messages
+ 
+1–50 sur 5 868
+ 
+5,53 Go utilisés sur 15 Go
+Conditions d'utilisation · Confidentialité · Règlement du programme
+Dernière activité sur le compte : il y a 0 minute
+Détails
 
 <?php
 session_start();
@@ -98,3 +121,5 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 <?php   
 } 
 ?>
+profil.php
+Affichage de profil.php en cours...

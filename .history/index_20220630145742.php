@@ -9,7 +9,6 @@
 
 require 'require/database.php';
 include 'profil.php';
-include 'includes/head.php'
 
 
 ?>
@@ -17,13 +16,19 @@ include 'includes/head.php'
 
 $requser = "SELECT * FROM membres ORDER BY id DESC";
 $requete = $bdd->query($requser);
+
+
 // RECUPERE LES DONEES 
-$articles = $requete->fetchAll(); ?>
+
+$articles = $requete->fetchAll();
+
+
+?>
 
 
 <header> 
 
-<a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
+<a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- erreur ?????????-->
 
 
 </header>
@@ -37,16 +42,16 @@ $articles = $requete->fetchAll(); ?>
 
   
 
-  <a href="profil.php?id=<?= $articles['id']?>"> <div class="user_container">
+    <div style="border: 5px solid black;">
 
     <img src="membres\avatars/<?php echo $articles['avatar']; ?>" alt="photo_profil" width="150"><br>
 
-<div class="user_info">
+
     <span><a href="profil.php?id=<?= $articles['id']?>"><?php echo $articles['pseudo'] ?></span><br><br>
 
     <span><?php echo $articles['age'] ?></span><br> <br>
 
-</div>
+ 
     
 </a>
 
