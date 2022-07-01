@@ -1,5 +1,4 @@
-<?php                 ////// FEUILLE ENVOI DU MESSAGE *********->RECEPTION.PHP
-                     
+<?php
 session_start(); //pour recup dans la bdd
 require 'require/database.php';
 
@@ -15,17 +14,15 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
 
          // Recuperation fichier 
          $img_msg = $_FILES['img_msg']['name'];
-
-         echo $img_msg;
          // Source
-         $target_dir = "images/";
+         $target_dir = "upload/";
 
          // Target fichier
          $target_file = $target_dir . basename($_FILES["img_msg"]["name"]);
 
          // Type fichier
          $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-         echo $imageFileType;
+
          // Extension valide
          $extensions_arr = array("jpg", "jpeg", "png", "gif");
 
@@ -34,11 +31,10 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
          $imageBase = "";
          // Verification de l'extension de l'image
          if( in_array($imageFileType,$extensions_arr) ){
-            echo 'ok';
-            if(move_uploaded_file($_FILES["img_msg"]["name"],$target_dir)){
+            if(move_uploaded_file($_FILES["img_msg"]["name"],$target_dir.$img_msg)){
                echo 'ok';
                $isSaved = true;
-               $imageBase = base64_encode(file_get_contents('images/'.$img_msg));
+               $imageBase = base64_encode(file_get_contents('upload/'.$img_msg));
             }
          }
          echo $isSaved;

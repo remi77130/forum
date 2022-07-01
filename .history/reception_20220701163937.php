@@ -1,4 +1,4 @@
-<?php                          ////// FEUILLE RECEPTION DU MESSAGE *********->LECTURE.PHP
+<?php
 session_start();
 require 'require/database.php';
 

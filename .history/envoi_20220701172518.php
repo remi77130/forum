@@ -1,5 +1,4 @@
-<?php                 ////// FEUILLE ENVOI DU MESSAGE *********->RECEPTION.PHP
-                     
+<?php
 session_start(); //pour recup dans la bdd
 require 'require/database.php';
 
@@ -35,7 +34,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
          // Verification de l'extension de l'image
          if( in_array($imageFileType,$extensions_arr) ){
             echo 'ok';
-            if(move_uploaded_file($_FILES["img_msg"]["name"],$target_dir)){
+            if(move_uploaded_file($_FILES["img_msg"]["name"],$target_dir.$img_msg)){
                echo 'ok';
                $isSaved = true;
                $imageBase = base64_encode(file_get_contents('images/'.$img_msg));

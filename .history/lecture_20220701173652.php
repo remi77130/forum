@@ -1,4 +1,4 @@
-<?php               ////// FEUILLE LECTURE DU MESSAGE *********
+<?php               ////// FEUILLE LECTURE DU MESSAGE *********->
 session_start();
 require 'require/database.php';
 

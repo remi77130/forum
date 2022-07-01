@@ -1,4 +1,4 @@
-<?php                          ////// FEUILLE RECEPTION DU MESSAGE *********->LECTURE.PHP
+<?php
 session_start();
 require 'require/database.php';
 
@@ -36,7 +36,7 @@ $msg_nbr = $msg->rowCount();
       <b>Objet:</b> <?= $m['objet'] ?> <br>
 
       <p> Image test</p>
-      <img src="data:image/jpg;base64,'.base64_encode(<?php $m['img_msg'] ?>).'"/> 
+      <img src="data:image/jpeg;base64,'.base64_encode(<?php $m['img_msg'] ?>).'"/> 
     
       <?php if($m['lu'] == 1) { ?></span>
          <?php } ?></a><br />

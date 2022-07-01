@@ -1,4 +1,4 @@
-<?php               ////// FEUILLE LECTURE DU MESSAGE *********
+<?php
 session_start();
 require 'require/database.php';
 
@@ -38,6 +38,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       <b><?= $p_exp ?></b> vous a envoyé: <br /><br />
       <b>Objet:</b> <?= $m['objet'] ?>
       <br /><br />
+      <?= nl2br($m['message']) ?><br />
       <?= nl2br($m['message']) ?><br />
       
      

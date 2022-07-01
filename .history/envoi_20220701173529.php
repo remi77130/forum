@@ -1,4 +1,4 @@
-<?php                 ////// FEUILLE ENVOI DU MESSAGE *********->RECEPTION.PHP
+<?php                 ////// FEUILLE ENVOI DU MESSAGE ****************
                      
 session_start(); //pour recup dans la bdd
 require 'require/database.php';
