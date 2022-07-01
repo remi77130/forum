@@ -41,13 +41,12 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
 ////////////////////////////////////
 
 
+if(!empty($FILES)){
 
+   $img = $_FILES['img']; // ACCESS PHOTO ALBUM
+   move_uploaded_file($img,['tmp_name'],"images/".$img,['name']);
 
-
-
-
-
-
+}
 
 ////////////////////////////////////
 

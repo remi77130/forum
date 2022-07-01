@@ -12,15 +12,12 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
          $message = htmlspecialchars($_POST['message']);
          $objet = htmlspecialchars($_POST['objet']);
          $img_msg = htmlspecialchars($_POST['img_msg']);
-
          $id_destinataire = $bdd->prepare('SELECT id FROM membres WHERE pseudo = ?');
          $id_destinataire->execute(array($destinataire));
-
          $dest_exist = $id_destinataire->rowCount();
          if($dest_exist == 1) {
             $id_destinataire = $id_destinataire->fetch();
             $id_destinataire = $id_destinataire['id'];
-
             $ins = $bdd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message,objet,img_msg) VALUES (?,?,?,?,?)');
             $ins->execute(array($_SESSION['id'],$id_destinataire,$message,$objet,$img_msg));
 
@@ -63,6 +60,8 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
          <label>Objet:</label>
          <input type="text" name="objet" <?php if(isset($o)) { echo 'value="'.$o.'"'; } ?> />
          <br /><br />
+
+
 
 
          <input type="file" name="img_msg"> <br><br> <!--  envoi image message -->

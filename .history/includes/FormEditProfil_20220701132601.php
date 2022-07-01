@@ -43,6 +43,7 @@
                <?php echo $user['description_profil']; ?>  </textarea> <br> <br>
 
 
+
                 <input type="submit" value="Mettre à jour mon profil !" />
    
              </form>
@@ -50,29 +51,6 @@
              <?php if(isset($msg)) { echo $msg; } ?>
           </div>
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </section>

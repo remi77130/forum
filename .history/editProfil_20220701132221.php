@@ -41,13 +41,16 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
 ////////////////////////////////////
 
 
+if(!empty($FILES)){
 
 
+   
+   $img = $_FILES['img']; // ACCESS PHOTO ALBUM
+   echo substr($img['name'],-3);
+   move_uploaded_file($img['tmp_name'],"membres/img_membres".$img['name']); /// INFO FICHIER FILES
 
 
-
-
-
+}
 
 ////////////////////////////////////
 
@@ -107,7 +110,7 @@ if(isset($_FILES['astrologie'])) {
       if($_FILES['avatar']['size'] <= $tailleMax) {
          $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
          if(in_array($extensionUpload, $extensionsValides)) {
-            $chemin = "membres\avatars/".$_SESSION['id'].".".$extensionUpload;
+            $chemin = "membres\img_membres/".$_SESSION['id'].".".$extensionUpload;
             $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
             if($resultat) {
                $updateavatar = $bdd->prepare('UPDATE membres SET avatar = :avatar WHERE id = :id');

@@ -13,7 +13,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       $msg_nbr = $msg->rowCount();
       $m = $msg->fetch();
 
-      echo $m['img_msg'];  //// AFFICHER IMG
+      echo $msg['img_msg'];  //// AFFICHER IMG
 
        
       $p_exp = $bdd->prepare('SELECT pseudo FROM membres WHERE id = ?');

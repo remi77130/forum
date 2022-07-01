@@ -36,28 +36,26 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
       header('Location: profil.php?id='.$_SESSION['id']);
    }
 
-
-
 ////////////////////////////////////
 
+///////
+
+
+if(isset($_POST['post_profil'])) {
+   $newpost_profil = htmlspecialchars($_POST['post_profil']);
+   $insertpost_profil = $bdd->prepare("UPDATE membres SET post_profil = ? WHERE id = ?");
+   $insertpost_profil->execute(array($newpost_profil, $_SESSION['id']));
+   
+   header('Location: profil.php?id='.$_SESSION['id']);
+}
+
+////
 
 
 
 
 
-
-
-
-
-////////////////////////////////////
-
-
-
-
-
-
-
-if(isset($_FILES['astrologie'])) {
+if(isset($_POST['astrologie'])) {
    $newastrologie = htmlspecialchars($_POST['astrologie']);
    $insertastrologie = $bdd->prepare("UPDATE membres SET astrologie = ? WHERE id = ?");
    $insertastrologie->execute(array($newastrologie, $_SESSION['id']));

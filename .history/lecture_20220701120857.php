@@ -12,14 +12,12 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       $msg->execute(array($_GET['id'],$_SESSION['id']));
       $msg_nbr = $msg->rowCount();
       $m = $msg->fetch();
-
-      echo $m['img_msg'];  //// AFFICHER IMG
-
-       
+echo $m['img_msg'];
       $p_exp = $bdd->prepare('SELECT pseudo FROM membres WHERE id = ?');
       $p_exp->execute(array($m ['id_expediteur']));
       $p_exp = $p_exp->fetch();
       $p_exp = $p_exp['pseudo'];
+     
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +37,6 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       <b>Objet:</b> <?= $m['objet'] ?>
       <br /><br />
       <?= nl2br($m['message']) ?><br />
-      
      
       
       <div>

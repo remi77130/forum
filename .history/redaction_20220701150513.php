@@ -53,7 +53,7 @@ if(isset($_POST['article_titre'], $_POST['article_contenu'])) {
 <body>
    <form method="POST" enctype="multipart/form-data">
       <input type="text" name="article_titre" placeholder="Titre"<?php if($mode_edition == 1) { ?> value="<?= 
-      $edit_article['titre'] ?>"<?php } ?> /><br />
+      $edit_article['titre'] ?>"<?php } ?> /><br />  
       <textarea name="article_contenu" placeholder="Contenu de l'article"><?php if($mode_edition == 1) { ?><?= 
       $edit_article['contenu'] ?><?php } ?></textarea><br />
       <?php if($mode_edition == 0) { ?>

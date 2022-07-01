@@ -41,13 +41,11 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
 ////////////////////////////////////
 
 
+if(!empty($FILES)){
 
+   
 
-
-
-
-
-
+}
 
 ////////////////////////////////////
 

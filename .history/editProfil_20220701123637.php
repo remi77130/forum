@@ -36,20 +36,31 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
       header('Location: profil.php?id='.$_SESSION['id']);
    }
 
-
-
 ////////////////////////////////////
 
+///////
 
 
+if(isset($_POST['post_profil'])) {
+   $newpost_profil = htmlspecialchars($_POST['post_profil']);
+   $insertpost_profil = $bdd->prepare("UPDATE membres SET post_profil = ? WHERE id = ?");
+   $insertpost_profil->execute(array($newpost_profil, $_SESSION['id']));
+   
+   header('Location: profil.php?id='.$_SESSION['id']);
+}
+
+////
 
 
+if(isset($_POST['photo_album'])){
 
+   $newphoto_album = htmlspecialchars($_POST['photo_album']);
+   $insert_photo_album = $bdd->prepare("UPDATE membres SET photo_album = ? WHERE id = ?");
+   $insert_photo_album->execute(array($newphoto_album, $_SESSION['id']));
+   
+   header('Location: profil.php?id='.$_SESSION['id']);
 
-
-
-
-////////////////////////////////////
+}
 
 
 

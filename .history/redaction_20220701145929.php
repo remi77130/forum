@@ -1,5 +1,11 @@
-<?php
-$bdd = new PDO("mysql:host=127.0.0.1;dbname=articles;charset=utf8", "root", "");
+<?php 
+
+require 'require/database.php';
+include 'includes/head.php';
+
+
+
+
 $mode_edition = 0;
 if(isset($_GET['edit']) AND !empty($_GET['edit'])) {
    $mode_edition = 1;

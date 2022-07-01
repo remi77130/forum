@@ -11,15 +11,13 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       $msg = $bdd->prepare('SELECT * FROM messages WHERE id = ? AND id_destinataire = ?');
       $msg->execute(array($_GET['id'],$_SESSION['id']));
       $msg_nbr = $msg->rowCount();
-      $m = $msg->fetch();
+      $m = $msg->fetchAll();
 
-      echo $m['img_msg'];  //// AFFICHER IMG
-
-       
       $p_exp = $bdd->prepare('SELECT pseudo FROM membres WHERE id = ?');
       $p_exp->execute(array($m ['id_expediteur']));
       $p_exp = $p_exp->fetch();
       $p_exp = $p_exp['pseudo'];
+     
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,13 +37,10 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       <b>Objet:</b> <?= $m['objet'] ?>
       <br /><br />
       <?= nl2br($m['message']) ?><br />
-      
      
       
       <div>
 <!-- Afficha img msg -------------------------------->
-
-
       
       <img src="membres\img_message/<?php echo $m['img_msg']; ?>" alt="message_image" width="150"><br>
       </div>

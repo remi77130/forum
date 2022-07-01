@@ -42,6 +42,7 @@
                cols="30" rows="5" > 
                <?php echo $user['description_profil']; ?>  </textarea> <br> <br>
 
+<input type="files">
 
                 <input type="submit" value="Mettre à jour mon profil !" />
    
@@ -50,29 +51,6 @@
              <?php if(isset($msg)) { echo $msg; } ?>
           </div>
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </section>

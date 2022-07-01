@@ -42,6 +42,16 @@
                cols="30" rows="5" > 
                <?php echo $user['description_profil']; ?>  </textarea> <br> <br>
 
+               
+
+               <label>Ajouter un post </label> <br> <br>
+               <textarea class="" name="post_profil" 
+               cols="30" rows="5" > 
+               <?php echo $user['post_profil']; ?>  </textarea> <br> <br>
+
+               <label>Ajouter des photo</label> <br>
+               <input type="file" name="image_membre"> <br> <br>
+
 
                 <input type="submit" value="Mettre à jour mon profil !" />
    
@@ -50,29 +60,6 @@
              <?php if(isset($msg)) { echo $msg; } ?>
           </div>
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </section>

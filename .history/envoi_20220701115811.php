@@ -22,7 +22,8 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
             $id_destinataire = $id_destinataire['id'];
 
             $ins = $bdd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message,objet,img_msg) VALUES (?,?,?,?,?)');
-            $ins->execute(array($_SESSION['id'],$id_destinataire,$message,$objet,$img_msg));
+            $ins->execute(array($_SESSION['id'],$id_destinataire,$message,$objet,$img_msg,
+            ['SIZE'],file_get_contents($_FILES['img_msg']['tmp_name'])));
 
             $error = "Votre message a bien été envoyé !";
          } else {

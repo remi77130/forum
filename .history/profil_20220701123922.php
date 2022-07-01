@@ -65,7 +65,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
          <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil" width="150"><br>
          
-       
+         <?php echo $userinfo['post_profil']; ?>
      
 
 
@@ -93,7 +93,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          <a href="editProfil.php">Editer mon profil</a>
          <a href="reception.php">Mes messages</a>
          <a href="deconnexion.php">Se déconnecter</a>
-         <a href="redaction.php">Album</a>
          <a href="index.php">Acceuil</a>
 
 

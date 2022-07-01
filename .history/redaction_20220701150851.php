@@ -24,7 +24,7 @@ if(isset($_POST['article_titre'], $_POST['article_contenu'])) {
          $ins->execute(array($article_titre, $article_contenu));
          $lastid = $bdd->lastInsertId();
          
-         if(isset($_FILES['miniature']) AND !empty($_FILES['miniature']['name'])) {
+         if(isset($_FILES['miniatures']) AND !empty($_FILES['miniatures']['name'])) {
             if(exif_imagetype($_FILES['miniature']['tmp_name']) == 2) {
                $chemin = 'miniatures/'.$lastid.'.jpg';
                move_uploaded_file($_FILES['miniature']['tmp_name'], $chemin);
