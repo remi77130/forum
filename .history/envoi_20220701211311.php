@@ -43,7 +43,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
 
             if($isSaved == true)
             {
-               $image_base64 = base64_encode(file_get_contents('images/'.$img_msg) ); // IMG CONVERT EN base64
+               $image_base64 = base64_encode(file_get_contents('images/'.$img_msg) );
                $image = 'data:image/'.$imageFileType.';base64,'.$image_base64; // On enregistre la donnée à mettre dans img src 
                $ins = $bdd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message,objet,file_name,datafile) VALUES (?,?,?,?,?,?)');
                $ins->execute(array($_SESSION['id'],$id_destinataire,$message,$objet,$img_msg,$image));      

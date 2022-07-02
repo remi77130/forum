@@ -38,37 +38,29 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       <b>Objet:</b> <?= $m['objet'] ?>
       <br /><br />
       <?= nl2br($m['message']) ?><br />
+
+
+
+      
+      <?= $m['img_msg'] ?><br />
       
      
-      <!--------------------------ACTUELLEMENT LE IMG SONT STOCKES DANS LA BDD. 
-      IL FAUT METTRE UNE CONDITION POUR STOCKE DANS FICHIER. IF DATAFILE 
-      NEST PAS VIDE ALORS AJT 'PIECE JOINTE ET BALISE IMG-------------------------------------->
-
-
-
+      
       <div>
+<!-- Afficha img msg -------------------------------->
 
-      <p>Pièce jointe : </p>
+<p>Pièce jointe : </p>
+      <img src="<?php echo $m['datafile'] ?>"/>  <!---- src ? dossier membres/img_message /---->
+      <?php if($m['lu'] == 1) { ?></span>
+         <?php } ?></a><br />
+   -------------------------------------<br/>
+   <?php } ?>
       
-<img src="<?php echo $m['datafile'] ?>"/>
-<!-- Affichage img msg -------------------------------->
- 
-      
- <img src="membres\img_message/<?php echo $m['datafile'] ?>"/>
-
-
-      
+      <img src="membres\img_message/<?php echo $m['img_msg']; ?>" alt="message_image" width="150"><br>
       </div>
       
       <?php } ?>
    </div>
-
-
-
-
-
-
-   
 </body>
 </html>
 <?php

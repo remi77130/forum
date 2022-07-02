@@ -50,21 +50,7 @@ margin: 0;
 
 
 
-.container_img img{
 
-  border: 0.5px solid rgb(73, 71, 71);
-  width: 300px;
-  border-radius: 20px;
-  box-shadow: 5px 5px 15px rgba(51, 48, 48, 0.196);
-
-}
-
-.container_img img:hover{
-
- 
-  box-shadow: 2px 2px 5px rgba(51, 48, 48, 0.196);
-
-}
 
 
 
@@ -80,6 +66,11 @@ margin: 0;
 /////////////////////////// FEUILLE signup ////////////////// FEUILLE signup //////////
 
 */
+
+body{
+   
+
+}
 
 header{
 

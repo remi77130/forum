@@ -42,7 +42,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
      
       <!--------------------------ACTUELLEMENT LE IMG SONT STOCKES DANS LA BDD. 
       IL FAUT METTRE UNE CONDITION POUR STOCKE DANS FICHIER. IF DATAFILE 
-      NEST PAS VIDE ALORS AJT 'PIECE JOINTE ET BALISE IMG-------------------------------------->
+      NEST PAS VIDE ALORS AJT 'PIECE JOINTE' ET BALISE IMG-------------------------------------->
 
 
 
@@ -52,9 +52,14 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       
 <img src="<?php echo $m['datafile'] ?>"/>
 <!-- Affichage img msg -------------------------------->
- 
+
+<?php if (isset($m['datafile'])){
+
+
+} ?>
+ <p>Pièce jointe : </p>
       
- <img src="membres\img_message/<?php echo $m['datafile'] ?>"/>
+ <img src="<?php echo $m['datafile'] ?>"/>
 
 
       

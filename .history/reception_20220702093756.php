@@ -33,15 +33,11 @@ $msg_nbr = $msg->rowCount();
       <?= $p_exp ?></b> vous a envoyé un message<br />
 
       <b>Objet:</b> <?= $m['objet'] ?> <br>
-
-      <div class="container_img"> <br>
-      
-      <?= nl2br($m['message']) ?><br /> <br>
-
+<div class="container_img">
+       <!---- src ? dossier membres/img_message /---->
       <?php if($m['lu'] == 1) { ?></span> 
-      <?php } ?></a><br />
-   <br/>
-
+         <?php } ?></a><br />
+   -------------------------------------<br/>
    <?php } ?>
 
       </div>

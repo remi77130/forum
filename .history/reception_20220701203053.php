@@ -1,7 +1,7 @@
 <?php                          ////// FEUILLE RECEPTION DU MESSAGE *********->LECTURE.PHP
 session_start();
 require 'require/database.php';
-include 'includes/head.php';
+
 
 if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
 $msg = $bdd->prepare('SELECT * FROM messages WHERE id_destinataire = ? ORDER BY id DESC');
@@ -34,17 +34,12 @@ $msg_nbr = $msg->rowCount();
 
       <b>Objet:</b> <?= $m['objet'] ?> <br>
 
-      <div class="container_img"> <br>
-      
-      <?= nl2br($m['message']) ?><br /> <br>
-
-      <?php if($m['lu'] == 1) { ?></span> 
-      <?php } ?></a><br />
-   <br/>
-
+      <p> Image test</p>
+      <img src="data:image/jpg;base64,'.base64_encode(<?php $m['img_msg'] ?>).'"/>  <!---- src ? dossier membres/img_message /
+      <?php if($m['lu'] == 1) { ?></span>
+         <?php } ?></a><br />
+   -------------------------------------<br/>
    <?php } ?>
-
-      </div>
 </body>
 </html>
 <?php } ?>

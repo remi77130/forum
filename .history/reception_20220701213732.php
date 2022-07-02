@@ -1,7 +1,7 @@
 <?php                          ////// FEUILLE RECEPTION DU MESSAGE *********->LECTURE.PHP
 session_start();
 require 'require/database.php';
-include 'includes/head.php';
+
 
 if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
 $msg = $bdd->prepare('SELECT * FROM messages WHERE id_destinataire = ? ORDER BY id DESC');
@@ -33,15 +33,12 @@ $msg_nbr = $msg->rowCount();
       <?= $p_exp ?></b> vous a envoyé un message<br />
 
       <b>Objet:</b> <?= $m['objet'] ?> <br>
-
-      <div class="container_img"> <br>
-      
-      <?= nl2br($m['message']) ?><br /> <br>
-
+<div class="container_img">
+      <p>Pièce jointe : </p>
+      <img src="<?php echo $m['datafile'] ?>"/>  <!---- src ? dossier membres/img_message /---->
       <?php if($m['lu'] == 1) { ?></span> 
-      <?php } ?></a><br />
-   <br/>
-
+         <?php } ?></a><br />
+   -------------------------------------<br/>
    <?php } ?>
 
       </div>
