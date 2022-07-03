@@ -38,7 +38,7 @@ if(isset($_POST['formconnexion'])) {
             <input type="email" name="mailconnect" placeholder="Mail" />
             <input type="password" name="mdpconnect" placeholder="Mot de passe" />
             <br /><br />
-            <input type="submit" name="formconnexion" value="Se connecter !" /> <br><br>
+            <input type="submit" name="formconnexion" value="Se connecter !" /> <br>
             <a href="forgot_password.php">Mot de passe oublié !</a>
 
          </form>

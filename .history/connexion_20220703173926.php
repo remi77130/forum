@@ -50,20 +50,3 @@ if(isset($_POST['formconnexion'])) {
       </div>
    </body>
 </html>
-
-
-<?php
-
-if(isset($_POST['mailconnect'], $_POST['mdpconnect']))
-{
-    $stmt = $bdd->prepare('SELECT mdp FROM membres WHERE mail = ?'); // RECUP PASSWORD TABLE MEMBRES OU EMAIL 
-    $stmt->execute([$_POST['mailconnect']]);
-    $password = $stmt->fetchColumn();
-
-    
-
-
-}
-
-
-?>

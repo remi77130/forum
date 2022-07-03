@@ -56,7 +56,6 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
 <!-- Affichage img msg -------------------------------->
  
       
- <img src="membres\img_message/<?php echo $m['datafile'] ?>"/>
 
 
       
