@@ -69,6 +69,11 @@ if(isset($_POST['validate'])){
 
 
 
+
+
+
+
+
                            function smtpmailer($to, $from, $from_name, $subject, $body)
                                {
                                    $mail = new PHPMailer();

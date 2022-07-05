@@ -1,6 +1,6 @@
 <?php
 
-
+require "PHPMailer/PHPMailerAutoload.php";
 
 session_start();
 require 'require/database.php';
@@ -69,6 +69,11 @@ if(isset($_POST['validate'])){
 
 
 
+
+
+
+
+
                            function smtpmailer($to, $from, $from_name, $subject, $body)
                                {
                                    $mail = new PHPMailer();
@@ -78,21 +83,20 @@ if(isset($_POST['validate'])){
                                    $mail->SMTPSecure = 'ssl'; 
                                    $mail->Host = 'smtp.gmail.com';
                                    $mail->Port = 465;  
-                                   $mail->Username = 'refenech@gmail.com';
-                                   $mail->Password = 'Champagne-77';   
+                                   $mail->Username = 'ENTER YOUR MAIL ID';
+                                   $mail->Password = 'ENTER YOUR EMAIL PASSWORD';   
                               
                               //   $path = 'reseller.pdf';
                               //   $mail->AddAttachment($path);
                               
                                    $mail->IsHTML(true);
-                                   $mail->From="refenech@gmail.com";
+                                   $mail->From="ENTER FROM EMAIL ADDRESS HERE";
                                    $mail->FromName=$from_name;
                                    $mail->Sender=$from;
                                    $mail->AddReplyTo($from, $from_name);
                                    $mail->Subject = $subject;
                                    $mail->Body = $body;
                                    $mail->AddAddress($to);
-
                                    if(!$mail->Send())
                                    {
                                        $error ="Please try Later, Error Occured while Processing...";
@@ -103,15 +107,13 @@ if(isset($_POST['validate'])){
                                        $error = "Thanks You !! Your email is sent.";  
                                        return $error;
                                    }
-                                
-                            
                                }
                                
-                               $to   = '$mail'; // EMAIL DESTINATAIRE
-                               $from = 'refenech@gmail.com';
-                               $name = 'rémi';
-                               $subj = 'Email de confirmation de compte';
-                               $msg = 'http://localhost:80/Forum/signup.php?id='.$_SESSION['id']; ///// 
+                               $to   = '';
+                               $from = '';
+                               $name = '';
+                               $subj = 'PHPMailer 5.2 testing from DomainRacer';
+                               $msg = 'This is mail about testing mailing using PHP.';
                                
                                $error=smtpmailer($to,$from, $name ,$subj, $msg);
 

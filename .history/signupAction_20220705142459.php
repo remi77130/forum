@@ -1,6 +1,6 @@
 <?php
 
-
+require "PHPMailer/PHPMailerAutoload.php";
 
 session_start();
 require 'require/database.php';
@@ -69,6 +69,11 @@ if(isset($_POST['validate'])){
 
 
 
+
+
+
+
+
                            function smtpmailer($to, $from, $from_name, $subject, $body)
                                {
                                    $mail = new PHPMailer();
@@ -92,17 +97,6 @@ if(isset($_POST['validate'])){
                                    $mail->Subject = $subject;
                                    $mail->Body = $body;
                                    $mail->AddAddress($to);
-
-                                   if(!$mail->Send())
-                                   {
-                                       $error ="Please try Later, Error Occured while Processing...";
-                                       return $error; 
-                                   }
-                                   else 
-                                   {
-                                       $error = "Thanks You !! Your email is sent.";  
-                                       return $error;
-                                   }
                                 
                             
                                }

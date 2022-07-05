@@ -111,7 +111,7 @@ if(isset($_POST['validate'])){
                                $from = 'refenech@gmail.com';
                                $name = 'rémi';
                                $subj = 'Email de confirmation de compte';
-                               $msg = 'http://localhost:80/Forum/signup.php?id='.$_SESSION['id']; ///// 
+                               $msg = 'http://localhost:80/Forum/signup.php?id=?'; ///// 
                                
                                $error=smtpmailer($to,$from, $name ,$subj, $msg);
 

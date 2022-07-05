@@ -20,20 +20,8 @@ if(isset($_POST['article_titre'], $_POST['article_contenu'])) {
       $article_titre = htmlspecialchars($_POST['article_titre']);
       $article_contenu = htmlspecialchars($_POST['article_contenu']);
       if($mode_edition == 0) {
-         // var_dump($_FILES);
-         // var_dump(exif_imagetype($_FILES['miniature']['tmp_name']));
          $ins = $bdd->prepare('INSERT INTO articles (titre, contenu, date_time_publication) VALUES (?, ?, NOW())');
          $ins->execute(array($article_titre, $article_contenu));
-         $lastid = $bdd->lastInsertId();
-         
-         if(isset($_FILES['miniature']) AND !empty($_FILES['miniature']['name'])) {
-            if(exif_imagetype($_FILES['miniature']['tmp_name']) == 2) {
-               $chemin = 'miniatures/'.$lastid.'.jpg';
-               move_uploaded_file($_FILES['miniature']['tmp_name'], $chemin);
-            } else {
-               $message = 'Votre image doit être au format jpg';
-            }
-         }
          $message = 'Votre article a bien été posté';
       } else {
          $update = $bdd->prepare('UPDATE articles SET titre = ?, contenu = ?, date_time_edition = NOW() WHERE id = ?');
@@ -53,14 +41,12 @@ if(isset($_POST['article_titre'], $_POST['article_contenu'])) {
    <meta charset="utf-8">
 </head>
 <body>
-   <form method="POST" enctype="multipart/form-data">
+   <form method="POST">
       <input type="text" name="article_titre" placeholder="Titre"<?php if($mode_edition == 1) { ?> value="<?= 
       $edit_article['titre'] ?>"<?php } ?> /><br />
+      
       <textarea name="article_contenu" placeholder="Contenu de l'article"><?php if($mode_edition == 1) { ?><?= 
       $edit_article['contenu'] ?><?php } ?></textarea><br />
-      <?php if($mode_edition == 0) { ?>
-      <input type="file" name="miniature" /><br />
-      <?php } ?>
       <input type="submit" value="Envoyer l'article" />
    </form>
    <br />

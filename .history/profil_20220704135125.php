@@ -26,7 +26,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          if($dest_exist == 1) {
             $id_destinataire = $id_destinataire->fetch();
             $id_destinataire = $id_destinataire['id'];
-            
 
             try {
                $ins = $bdd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message,objet,img_msg) VALUES (?,?,?,?,?)');
@@ -45,9 +44,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          $error = "Veuillez compléter tous les champs";
       }
    }
-
-
-
 
 ?>
 <html>
@@ -68,7 +64,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          <?php echo $userinfo['description_profil']; ?>
 
          <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil" width="150"><br>
-       
+         
+          <a href="">like</a> (15) <br>
+          <a href="">dislike</a>(28)
+     
 
 
       <?php

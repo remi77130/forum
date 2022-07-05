@@ -68,7 +68,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          <?php echo $userinfo['description_profil']; ?>
 
          <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil" width="150"><br>
-       
+         
+         <a href="actions/action.php?t=1&id=<?= $id ?>">J'aime</a> <?= $likes ?>
+          <a href="actions/action.php?t=1&id=<?= $id ?>">dislike</a>
+     
 
 
       <?php
