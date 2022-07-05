@@ -29,7 +29,7 @@ $articles = $requete->fetchAll(); ?>
 
 <a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
 
-<?php echo $user_nbr ?><!-- aFFICHAGE PROFIL ONLINE TABLE ONLINE -->
+<?php echo $user_nbr <!-- aFFICHAGE PROFIL ONLINE TABLE ONLINE -->
 
 
 

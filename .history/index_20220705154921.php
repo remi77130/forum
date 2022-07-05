@@ -11,12 +11,15 @@ require 'require/database.php';
 include 'profil.php';
 include 'includes/head.php';
 
-include 'includes/user_nbr_live.php';
+$temps_session = 15; // TPS ACTIF USER
+$temps_actuel = date("U");
+$ip_user = $_SERVER['REMOTE_ADDR']; // AFFICH IP USER
+
+
+$req_ip_existe = $bdd->('SELECT * FROM online WHERE user_ip = ?');
+$req_ip_existe->execute(array($ip_user));
+$ip_existe = $req_ip_existe->rowCount();
 ?>
-
-
-
-
 <?php
 
 $requser = "SELECT * FROM membres ORDER BY id DESC";
@@ -28,10 +31,6 @@ $articles = $requete->fetchAll(); ?>
 <header> 
 
 <a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
-
-<?php echo $user_nbr ?><!-- aFFICHAGE PROFIL ONLINE TABLE ONLINE -->
-
-
 
 
 </header>
