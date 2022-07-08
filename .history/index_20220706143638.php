@@ -11,6 +11,7 @@ require 'require/database.php';
 include 'profil.php';
 include 'includes/head.php';
 
+include 'includes/user_nbr_live.php';
 ?>
 
 
@@ -28,7 +29,6 @@ $articles = $requete->fetchAll(); ?>
 
 <a href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
 
-<?php include 'includes/user_nbr_live.php'; ?>
 
 
 </header>

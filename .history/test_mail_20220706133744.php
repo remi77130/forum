@@ -9,7 +9,7 @@
 $destinataire = "projetpro77@gmail.com";
 $sujet = "test de mail";
 $message = "contenu de mail";
-$headers = "From:remi_user@hguv5320.odns.fr";
+$headers = "From:hguv5320@hguv5320.odns.fr";
 $retval = mail($destinataire,$sujet,$message,$headers);
 
 if($retval == true){

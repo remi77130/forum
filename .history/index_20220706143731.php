@@ -11,6 +11,7 @@ require 'require/database.php';
 include 'profil.php';
 include 'includes/head.php';
 
+include 'includes/user_nbr_live.php';
 ?>
 
 

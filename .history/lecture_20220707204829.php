@@ -40,11 +40,9 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
       <?= nl2br($m['message']) ?><br />
       
      
-      <!--------------------------
-      ACTUELLEMENT LE IMG SONT STOCKES DANS LA BDD. 
+      <!--------------------------ACTUELLEMENT LE IMG SONT STOCKES DANS LA BDD. 
       IL FAUT METTRE UNE CONDITION POUR STOCKE DANS FICHIER. IF DATAFILE 
-      NEST PAS VIDE ALORS AJT 'PIECE JOINTE ET BALISE IMG
-      -------------------------------------->
+      NEST PAS VIDE ALORS AJT 'PIECE JOINTE ET BALISE IMG-------------------------------------->
 
 
 
@@ -56,7 +54,6 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
 <!-- Affichage img msg -------------------------------->
  
       
- <img src="membres\img_message/<?php echo $m['datafile'] ?>"/>  /
 
 
       
