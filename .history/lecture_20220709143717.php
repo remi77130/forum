@@ -52,10 +52,11 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id'])) {
 
       <p>Pièce jointe : </p>
       
-<!-- <img src="<?php echo $m['datafile'] ?>"/> -->
+<img src="<?php echo $m['datafile'] ?>"/>
 <!-- Affichage img msg -------------------------------->
+ 
       
- <img style="max-heigh:400px;max-width:400px;" src="<?php echo $m['datafile'] ?>"/>
+ <img style="max-heigh:400px;max-width:400px;" src="<?php echo $m['datafile'] ?>/>
 
 
       
