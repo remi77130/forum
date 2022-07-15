@@ -76,7 +76,8 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
                <label>Avatar</label>
                <input type="file" name="avatar"> <br><br>
 
-                <input type="submit" value="Mettre à jour mon profil !" />
+                <input type="submit" value="Mettre à jour mon profil !" /> <!-- name ? -->
+                
              </form>
              <?php if(isset($msg)) { echo $msg; } ?>
           </div>
