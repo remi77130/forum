@@ -1,0 +1,7 @@
+<?php
+function ajouter_vue (){
+$fichier = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR .'compteur';
+// VERIF SI LE FICHIER COMPTEUR EXISTE 
+// SI LE FICHIER EXSITE ON INCREMENT 
+// SNON ON CREE LE FICHIER AVEC LA VALEUR 1
+}
