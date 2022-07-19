@@ -105,7 +105,7 @@ if(!empty($_FILES)){
 
 if(isset($_POST['valider'])){
    //$req = $bdd->prepare("INSERT INTO images(nom,taille,type,bin) VALUES (?, ?, ?, ?)");
-   $req = $bdd->prepare("INSERT INTO images(id,nom,taille,type) VALUES (?, ?, ?, ?)");
+   $req = $bdd->prepare("INSERT INTO images(id,nom,taille,type) VALUES (?, ?, ?, ?, ?)");
    $req->execute(array($id1,$_FILES["image"]["name"],$_FILES["image"]["size"], 
    $_FILES["image"]["type"]));
  }
@@ -132,7 +132,7 @@ $tab=$req->fetchAll();
 <?php 
 for ($i=0;$i<count($tab);$i++)
 {
-   echo '<img src="Images_album/'.$tab[$i]["nom"]. '" height="" width="150" alt="photo album" title="image"/>';
+   echo '<img src="Images_abum/'.$tab[$i]["nom"]. '" height="" width="150" alt="photo album" title="image"/>';
     
 }
 ?>

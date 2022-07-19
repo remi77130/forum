@@ -87,32 +87,17 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 
 <?php
-$id1=$_GET['id']; // Id utilisateur
-
-// Preparation image
-if(!empty($_FILES)){
-   $path = "Images_album/";
-   $image_name = $_FILES["image"]["name"];
-   $temp_name = $_FILES['image']['tmp_name'];
-   
-   if(move_uploaded_file($temp_name, $path.$image_name)){ // Si le fichier a été enregistrer 
-      //die("ok");
-   }else{
-      //die("nok");
-   }
-}
-
-
+$id1=$_GET['id'];
 if(isset($_POST['valider'])){
    //$req = $bdd->prepare("INSERT INTO images(nom,taille,type,bin) VALUES (?, ?, ?, ?)");
-   $req = $bdd->prepare("INSERT INTO images(id,nom,taille,type) VALUES (?, ?, ?, ?)");
+   $req = $bdd->prepare("INSERT INTO images(id,nom,taille,type,bin) VALUES (?, ?, ?, ?, ?)");
    $req->execute(array($id1,$_FILES["image"]["name"],$_FILES["image"]["size"], 
-   $_FILES["image"]["type"]));
+   $_FILES["image"]["type"],file_get_contents($_FILES["image"]["tmp_name"])));
  }
  ?>
-<!------------------------ REQUETE AFFICHAGE ALBUM PHOTO-------->
+<!------------------------AFFICHAGE ALBUM PHOTO-------->
 <?php 
-$req = $bdd->prepare("SELECT nom, type from images INNER JOIN membres on membres.id=images.id WHERE membres.id=?");
+$req = $bdd->prepare("SELECT bin, type from images INNER JOIN membres on membres.id=images.id WHERE membres.id=?");
  // REQUETE DE SELECTIONDANS LA BDD JOINTURE DE TABLES
 $req->setFetchMode(PDO::FETCH_ASSOC);
 $req->execute(array($_GET["id"]));
@@ -127,12 +112,19 @@ $tab=$req->fetchAll();
 </form>
 
 <div class="container_album_profil"> <p>Mon album</p> <br>
-
-<!-- LOOP : AFFICHE DES IMAGES -->
 <?php 
 for ($i=0;$i<count($tab);$i++)
 {
-   echo '<img src="Images_album/'.$tab[$i]["nom"]. '" height="" width="150" alt="photo album" title="image"/>';
+    if (($tab[$i]["type"]=="jpg")||($tab[$i]["type"]=="JPG")){
+        echo '<img src="data:image/jpeg;base64,' . base64_encode($tab[$i]["bin"]) . '" height="" width="150" alt="photo album" title="image"/>';
+    }
+    else if (($tab[$i]["type"]=="png")||($tab[$i]["type"]=="PNG")){
+        echo '<img src="data:image/png;base64,' . base64_encode($tab[$i]["bin"]) . '" height="" width="150" alt="photo album" title="image"/>';
+    }
+    else{
+        //autre cas de extension d'image
+        echo '<img src="data:image/jpeg;base64,' . base64_encode($tab[$i]["bin"]) . '" height="" width="150" alt="photo album" title="image"/>';
+    }
     
 }
 ?>

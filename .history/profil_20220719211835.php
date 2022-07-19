@@ -155,6 +155,7 @@ for ($i=0;$i<count($tab);$i++)
 <!-- MESSAGERIE  -->
 
       <?php
+      die($_SESSION['id']);
          if($_SESSION['id'] != $userinfo['id']){
       ?>         
         <form method="POST">
