@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+select
+{
+    max-width: 100px;
+}
+
+select option
+{
+
+    margin: 25px;
+
+}

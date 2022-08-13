@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.title_section_signup{
+border: 2px solid red;
+text-align: center;
+font-family: 'IBM Plex Sans';
+
+}

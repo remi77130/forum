@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.lien_compte_user p
+{
+color: aliceblue;
+text-decoration: none;
+cursor: pointer;
+}
+
+
+.form_signup button{
+
+    margin: 10px 0px 10px 0px;
+}
+
+.form_signup{
+    background-color: blueviolet;
+    width: 50%;
+    height: 400px;
+   
+}
+.form_signup form{
+    margin-top: 100px;
+}
+.parent_form_signup{
+    border: 5px solid red;
+    height: 100%;
+    display: flex  ;
+    justify-content: center;
+}

@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+select
+{
+    max-width: 100px;
+}
+
+::-ms-value
+{
+margin: 25pxs;
+}

@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.lien_compte_user p
+{
+color: aliceblue;
+text-decoration: none;
+cursor: pointer;
+}
+
+
+.box button{
+
+    margin: 10px 0px 10px 0px;
+
+}
+
+.box{
+    width: 50%;
+    height: 400px;
+    background: rgb(31, 31, 31);
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.box button{
+
+    background-color: #3498db;
+    color: azure;
+    text-decoration: none;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border-bottom: 5px solid #2980b9;
+    text-shadow: 0px -2px #2980b9;
+    transition: all .1s;
+    -webkit-transition: all .1s;
+
+}
+.box button:active{
+    transform: translate(0, 5px);
+    -webkit-transform:translate(0, 5px);
+    border-bottom: 1px;
+}
+
+
+
+
+.box::before,
+.box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ff0000, #00f0f0, #00ff00, #0000ff, #ff0000, #00f0f0, #00ff00, #0000ff,#f00f0f);
+    width: 100%;
+    height: 100%;
+    background-size: 500%;
+    z-index: -1;
+    transform: scale(1.02);
+    border-radius: 20px;
+    animation: animate 20s infinite;
+}
+
+.box::after{
+    filter: blur(20px);
+}
+
+@keyframes animate{
+    0% { background-position: 0 0;}
+    50% { background-position:300% 0;}
+    100% { background-position: 0 0;}
+}
+
+
+
+input{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+label{
+    font-size: 1.2em;
+}
+
+.parent_form_signup{
+    height: 100%;
+    display: flex  ;
+    justify-content: center;
+    align-items: center;
+}

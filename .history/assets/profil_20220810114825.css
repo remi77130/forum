@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.section_profil_membre{
+
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.profil_membre H2{
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    size: 22px;
+    font-weight: 700px;
+
+}
+
+.profil_membre p{
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400px;
+    
+}
+
+.profil_membre img{
+    width: 250px;
+    height: 250px;
+    border-radius: 200px;
+    box-shadow: 5px 5px 7px rgba(141, 141, 141, 0.324);
+    margin-top: 5px;
+
+}
+
+.profil_membre img:hover{
+
+    transition: 500ms;
+    box-shadow: 2px 2px 5px rgba(141, 141, 141, 0.324);
+
+}
+
+.info_profil{
+
+    margin: 25px;
+    
+}
+
+.image_album_profil{
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.image_album_profil div{
+
+    width: 200px;
+
+}
+
+.image_album_profil div img{
+
+    width: 100%;
+    box-shadow: 3px 5px 5px rgba(146, 146, 146, 0.397);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(135, 134, 134, 0.651);
+}
+
+.image_album_profil img:hover{
+
+    transition: 400ms;
+    box-shadow: 1px 3px 3px rgba(179, 176, 176, 0.397);
+
+
+}
+
+/*
+MESSAGERIE 
+*/
+
+.parent_message_profil_user{
+    display: flex;
+    justify-content: center;
+}
+.message_profil_user{
+
+    width: 400px;
+    margin: 10px;
+    box-shadow: 5px 3px 10px rgb(110, 110, 110);
+
+    
+}
+
+.comment_profil{
+
+    overflow: scroll;
+    height: 250px;
+    box-shadow: 5px 3px 30px rgba(129, 129, 129, 0.315);
+
+}

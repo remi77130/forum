@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+select
+{
+    max-width: 100px;
+}
+
+option
+{
+
+    break-after: always;
+}
