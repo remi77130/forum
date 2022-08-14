@@ -50,8 +50,7 @@ CONTAINER PROFIL MEMBRES
     border: px solid green;
     margin: 2px;
     width: 300px;
-    height: 350px;
-    margin: 5px;
+    height: 400px;
 }
 .user_container a{
     text-decoration: none;
@@ -82,3 +81,6 @@ color: #333;
 
 }
 
+.user_info h2{
+    margin-left: 25px;
+}

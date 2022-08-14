@@ -58,10 +58,9 @@ $articles = $requete->fetchAll(); ?>
 
 <div class="user_info">
 
-<h2><?php echo $articles['pseudo'] ?> 
-<span><?php echo $articles['age'] ?></span> </h2>
+<h2><a href="profil.php?id=<?= $articles['id']?>"><?php echo $articles['pseudo'] ?></h2>
 
-
+<span><?php echo $articles['age'] ?></span>
 
 </div>
     

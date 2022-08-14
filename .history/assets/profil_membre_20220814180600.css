@@ -50,11 +50,8 @@ CONTAINER PROFIL MEMBRES
     border: px solid green;
     margin: 2px;
     width: 300px;
-    height: 350px;
-    margin: 5px;
-}
-.user_container a{
-    text-decoration: none;
+    height: 400px;
+   
 }
 
 .user_container img
@@ -67,18 +64,10 @@ CONTAINER PROFIL MEMBRES
 .user_info
 {
     border: 5px solid firebrick;
-    height: auto;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size:22px;
-    font-weight: 700;
-    font-family: 'IBM Plex Sans';
+    height: 90px;
 }
 
-.user_info span{
-
-font-size: 17px;
-color: #333;
-
+.user_info h2
+{
+    text-align: start;
 }
-

@@ -1,0 +1,24 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.header_profil_membre
+{
+display: flex;
+justify-content: center;
+}
+
+.profil_link a
+{
+text-decoration: none;
+color: black;
+font-size: 1.2em;
+font-weight: bold;
+
+}
