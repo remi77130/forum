@@ -1,0 +1,19 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.header_profil_membre
+{
+display: flex;
+border-bottom: 0.5px solid black;
+justify-content: center;
+margin: 20px;
+}
+
+

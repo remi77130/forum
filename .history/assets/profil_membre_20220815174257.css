@@ -1,0 +1,52 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.header_profil_membre
+{
+display: flex;
+border-bottom: 0.5px solid black;
+justify-content: center;
+margin: 20px;
+}
+
+.hero_index
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_profil_membre
+{
+    border: 5px solid red;
+    margin: 10px;
+
+    width: 200px;
+    height: 200px;
+}
+
+.container_profil_membre img{
+    width: 90px;
+}
+
+
+.container_profil_avatar
+{
+    text-align: center;
+    border: 3px solid firebrick;
+}
+
+.container_profil_info
+{
+    border: 3px solid gold;
+}
+
+.container_profil_info div{
+    border: 3px solid tomato;
+}

@@ -1,0 +1,80 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.header_profil_membre
+{
+display: flex;
+border-bottom: 0.5px solid black;
+justify-content: center;
+margin: 20px;
+}
+
+.hero_index
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.container_profil_membre
+{
+    border: 5px solid red;
+    margin: 10px;
+    width: 200px;
+    height: auto;
+
+    padding: 10px 16px;
+}
+
+.container_profil_membre a
+{
+    text-decoration: none;
+}
+.container_profil_membre img{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+}
+
+
+.container_profil_avatar
+{
+    text-align: center;
+    border: 3px solid firebrick;
+ }
+
+.container_profil_info
+{
+    margin-top: 25px;
+    border: 3px solid gold;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container_profil_info div 
+{
+    border: 3px solid hotpink;
+}
+.container_profil_info_age_pseudo h2
+{
+    color: rgb(222, 4, 4);
+}
+.container_profil_info_age
+{
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 10px 0px 0px 20px ;
+    
+    
+}
+
+

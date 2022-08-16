@@ -1,0 +1,64 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.header_profil_membre
+{
+display: flex;
+border-bottom: 0.5px solid black;
+justify-content: center;
+margin: 20px;
+}
+
+.hero_index
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_profil_membre
+{
+    border: 5px solid red;
+    margin: 10px;
+
+    width: 200px;
+    height: auto;
+    
+    padding: 24px 16px;
+}
+
+.container_profil_membre img{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+}
+
+
+.container_profil_avatar
+{
+    text-align: center;
+    border: 3px solid firebrick;
+}
+
+.container_profil_info
+{
+   
+    border: 3px solid gold;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container_profil_info_age
+{
+    text-decoration: none;
+}
+
+
+.container_profil_info_pseudo
+{}
