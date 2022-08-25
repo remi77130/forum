@@ -1,0 +1,315 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+body{
+    
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+}
+.section_profil_membre{
+
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.profil_membre H2{
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    size: 22px;
+    font-weight: 700px;
+    color: aliceblue;
+
+
+}
+
+.descr_profil
+{
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400px;
+    font-size: 14px;
+    color: aliceblue;
+
+    
+}
+
+.created_profil
+{
+    color: aliceblue;
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+
+}
+
+.profil_membre img{
+    width: 250px;
+    height: 250px;
+    
+    border-radius: 200px;
+    box-shadow: 3px 3px 3px rgba(85, 85, 85, 0.219);
+    margin-top: 5px;
+
+}
+
+.profil_membre img:hover{
+
+    transition: 500ms;
+    box-shadow: 0px 0px 0px rgba(141, 141, 141, 0.324);
+
+}
+
+.info_profil{
+
+    
+    margin: 25px;
+    
+}
+
+
+
+.image_album_profil{
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+
+}
+
+.image_album_profil div{
+
+    width: 150px;
+    max-width: 150px ;
+
+}
+
+.image_album_profil div img{
+
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.image_album_profil img:hover{
+
+    transition: 400ms;
+    box-shadow: 1px 3px 3px rgba(179, 176, 176, 0.397);
+
+
+}
+
+/*
+MESSAGERIE 
+*/
+
+
+@keyframes anim_message_profil_user
+{
+    from{
+        width: 400px;
+        margin: auto;
+        box-shadow: 3px 3px 10px rgba(40, 40, 40, 0.733), -5px -5px 10px rgba(112, 112, 112, 0.582);
+        border-radius: 20px;
+        
+
+    }
+   
+    to{
+
+        box-shadow: none;
+
+    }
+}
+.message_profil_user{
+
+    width: 400px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(40, 40, 40, 0.733), -5px -5px 10px rgba(112, 112, 112, 0.582);
+    border-radius: 20px;
+    
+}
+
+.message_profil_user:hover
+{
+    animation: anim_message_profil_user 1s infinite alternate;
+    -webkit-animation: anim_message_profil_user 1s infinite alternate;
+    animation-direction: alternate;
+}
+
+.message_profil_user label{
+
+    Font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+}
+
+textarea{
+    color: black !important;
+}
+
+
+.message_profil_user input
+{
+    color: black;
+}
+
+
+.input_submit_form_profil
+{
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 35px;
+    margin: 20px;
+    cursor: pointer;
+   
+}
+
+.input_submit_form_profil:hover
+{
+    animation: animbutton 1s infinite alternate;
+    -webkit-animation: animbutton 1s infinite alternate;
+    animation-direction: alternate;
+}
+
+/* creer animation */
+
+
+
+@keyframes animbutton
+{
+    from{
+
+        background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 35px;
+    margin: 20px;
+    cursor: pointer;
+
+    }
+   
+    to{
+
+background-color: rgb(30, 30, 30);
+color: aliceblue;
+box-shadow: none;
+border: 0.5px solid rgba(245, 222, 179, 0.589);
+border-radius: 30px;
+transition: 300ms;
+transform: scale(1.1);
+        
+    }
+}
+
+/* utiliser animation */
+
+
+
+
+
+
+.comment_profil{
+
+    overflow: scroll;
+    height: 250px;
+    box-shadow: 5px 3px 30px rgba(129, 129, 129, 0.315);
+    margin-top: 25px;
+
+}
+.option_profil_user_connect{
+
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.option_profil_user_connect div{
+    margin-bottom: 35px;
+}
+
+
+
+
+
+/*
+OPTION PROFIL
+*/
+
+
+.option_profil_user_connect a
+{
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 5px;
+
+
+}
+
+
+.option_profil_user_connect a:hover
+{
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+}
+
+.option_profil_user a
+{
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 2px;
+ 
+}
+
+
+.option_profil_user a:hover
+{
+    background-color: rgb(30, 30, 30);
+color: aliceblue;
+box-shadow: none;
+border: 0.5px solid rgba(245, 222, 179, 0.589);
+border-radius: 30px;
+transition: 300ms;
+}
+
+.parent_message_profil_user{
+    display: none;
+    margin-top: 50px;
+   
+}
+
+.active{
+    display: inherit !important;
+    
+}
