@@ -17,8 +17,9 @@ if(isset($_POST['valider'])){ // SI L'UTILISATEUR CHARGE UNE IMAGE
       $image_name = round(microtime(true)) . '.' . end($type);
       // On récupère l'image temporaire enregistré dans php
       $temp_name = $_FILES['image']['tmp_name'];
-      
-      if(move_uploaded_file($temp_name, $path.$image_name)){ // Si le fichier a été enregistrer 
+
+      // Si le fichier a été enregistré
+      if(move_uploaded_file($temp_name, $path.$image_name)){
          //$req = $bdd->prepare("INSERT INTO images(nom,taille,type,bin) VALUES (?, ?, ?, ?)");
          $req = $bdd->prepare("INSERT INTO images(id,nom,taille,type) VALUES (?, ?, ?, ?)");
          $req->execute(array($id1,$image_name,$_FILES["image"]["size"], 
@@ -28,7 +29,7 @@ if(isset($_POST['valider'])){ // SI L'UTILISATEUR CHARGE UNE IMAGE
       }
    }
    
-   header("Refresh:0");
+   header( "Refresh:0");
 }
  ?>
  
