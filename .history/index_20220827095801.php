@@ -127,7 +127,6 @@ while($row=$pdo_stmt2->fetch(PDO::FETCH_ASSOC)):
 
 
 
-
   <div>
     <input type="email"  name="mail" placeholder="Mail" value="<?php if(isset($mail)) { echo $mail; } ?>">
   </div>

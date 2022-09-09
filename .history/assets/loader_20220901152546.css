@@ -1,0 +1,74 @@
+*, ::before, ::after{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+
+}
+
+body{
+    font-family: Arial;
+    height: 100vh;
+}
+
+
+
+.acceuil{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(62, 62, 62);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
+}
+
+
+.acceuil h1{
+
+    font-size: 120px;
+    margin-bottom: 200px;
+}
+
+/* loader */
+
+.loader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lettre{
+    color: aliceblue;
+    font-size: 80px;
+    letter-spacing: 10px;
+    margin-bottom: 150px;
+    animation: flash 1.2s linear infinite;
+}
+@keyframes flash{
+
+    0% {
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900;
+    }
+
+    90%{
+        color: aliceblue;
+        text-shadow: none;
+    }
+
+    100%{
+
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900;
+
+    }
+
+}

@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    height: 100%;
+    width: 100%;
+    border: 5px solid red;
+}
+
+.box{
+    border: 50px solid green;
+    height: 100%;
+}
+.title_section_signup{
+text-align: center;
+font-family: 'IBM Plex Sans';
+color:rgb(251, 209, 255);
+margin-top: 25px;
+
+}
+
+.title_section_signup span{
+    color: rgb(75, 216, 255);
+}
+
+.form_signup{
+
+    margin-top: 20px;
+}
+
