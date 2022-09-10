@@ -1,12 +1,15 @@
 <?php
 include 'verif.php'; // BDD AND SESSION
 
+
 if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     include 'includes/get_message.php';
 
     // On vient gérer si un utilisateur poste une nouvelle photo
     include 'limit_send_album.php';
+
+
     ?>
 
     <html>
