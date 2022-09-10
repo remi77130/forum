@@ -28,7 +28,7 @@
 
             <?php
 
-            require 'require/Config.php';
+            require 'require/Config.class.php';
 
             ?>
               <?php
