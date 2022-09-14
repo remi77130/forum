@@ -34,6 +34,7 @@ font-family: 'IBM Plex Sans', sans-serif;
 {
 
     color: aliceblue;
+    font-size: 22px;
     transition: 300ms;
 
 }
@@ -80,9 +81,7 @@ font-family: 'IBM Plex Sans', sans-serif;
 }
 
 
-.icone_maps_profil{
-    font-size: 3px;
-}
+
 
 
 
@@ -144,7 +143,7 @@ font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
     font-family: 'IBM Plex Sans', sans-serif;
     padding-top: 10px;
-    margin-right: 5px;
+    border: 1px solid red;
 }
 
 .dpt_age{

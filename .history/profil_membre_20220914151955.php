@@ -70,20 +70,12 @@ $articles = $requete->fetchAll(); ?>
 
 </div>
 
-<!-- info profil -->
-
-<div class="info_profil_pseudo&nom_dpt">
-
-<div class="dpt_age">
-
-<div class="container_profil_info_dtp">    
-  <span > Dpt : <?php echo  $articles['departement_nom'] ?> </span>
+<div class="container_profil_info_pseudo">    
+    <span style="font-size: 12px;">Dpt <?php echo  $articles['departement_nom'] ?> </span>
 </div>
 
 <div class="container_profil_info_age">    
     <span><?php echo $articles['age'] ?></span> 
-</div>
-
 </div>
 
 
@@ -91,9 +83,10 @@ $articles = $requete->fetchAll(); ?>
     <?php echo $articles['description_profil'] ?>
 </div>
 
+
+
+
 </div>
-
-
     
 </a>
 </div>

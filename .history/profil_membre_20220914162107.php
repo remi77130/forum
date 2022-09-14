@@ -37,6 +37,7 @@ $articles = $requete->fetchAll(); ?>
 
 <header class="header_profil_membre"> 
     <div class="profil_link">
+    <h2><?php echo $articles['pseudo'] ?> </h2>
 <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
     </div>
 </header>
@@ -77,7 +78,7 @@ $articles = $requete->fetchAll(); ?>
 <div class="dpt_age">
 
 <div class="container_profil_info_dtp">    
-  <span > Dpt : <?php echo  $articles['departement_nom'] ?> </span>
+    <span >vzrgverg gt ddddddd("g'") <?php echo  $articles['departement_nom'] ?> </span>
 </div>
 
 <div class="container_profil_info_age">    

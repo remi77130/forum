@@ -93,7 +93,7 @@ font-family: 'IBM Plex Sans', sans-serif;
 {
     text-decoration: none;
 }
-.container_profil_membre img{
+.container_profil_membre {
     width: 120px;
     height: 120px;
     border-radius: 100px;

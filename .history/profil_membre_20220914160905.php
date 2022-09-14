@@ -76,8 +76,8 @@ $articles = $requete->fetchAll(); ?>
 
 <div class="dpt_age">
 
-<div class="container_profil_info_dtp">    
-  <span > Dpt : <?php echo  $articles['departement_nom'] ?> </span>
+<div class="container_profil_info_pseudo">    
+    <span style="font-size: 12px;">vzrgverg gt ("g'") <?php echo  $articles['departement_nom'] ?> </span>
 </div>
 
 <div class="container_profil_info_age">    

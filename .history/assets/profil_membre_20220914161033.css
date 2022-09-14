@@ -34,6 +34,7 @@ font-family: 'IBM Plex Sans', sans-serif;
 {
 
     color: aliceblue;
+    font-size: 22px;
     transition: 300ms;
 
 }
@@ -80,9 +81,7 @@ font-family: 'IBM Plex Sans', sans-serif;
 }
 
 
-.icone_maps_profil{
-    font-size: 3px;
-}
+
 
 
 
@@ -119,6 +118,7 @@ font-family: 'IBM Plex Sans', sans-serif;
     flex-wrap: wrap;
     padding-top: 5px;
     padding-bottom: 3px;
+    border: 5px solid yellow;
 }
 
 
@@ -132,8 +132,6 @@ font-family: 'IBM Plex Sans', sans-serif;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
-
-
 }
 
 
@@ -143,23 +141,12 @@ font-family: 'IBM Plex Sans', sans-serif;
     font-weight: bold;
     font-size: 12px;
     font-family: 'IBM Plex Sans', sans-serif;
-    padding-top: 10px;
-    margin-right: 5px;
+    text-align: end;
 }
 
 .dpt_age{
+    border: 5px solid fuchsia;
     display: flex;
-}
-
-.container_profil_info_dtp{
-    color: aliceblue;
-    width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: 'IBM Plex Sans', sans-serif;
-    padding: 5px;
-
 }
 
 .container_profil_info_descr 
@@ -170,7 +157,6 @@ font-family: 'IBM Plex Sans', sans-serif;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 14px;
-    padding: 5px;
     font-family: 'IBM Plex Sans', sans-serif;
 
     color: rgb(179, 179, 179);
