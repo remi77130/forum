@@ -1,0 +1,22 @@
+#autotext{
+    border-right: 0.15em solid black;
+    letter-spacing: 0.05em;
+}
+
+/*
+BARRE
+*/
+@keyframes blink{
+    from,
+    to{
+        border-color: transparent;
+    }
+}
+
+body{
+    text-align: center;
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
