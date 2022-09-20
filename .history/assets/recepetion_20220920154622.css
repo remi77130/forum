@@ -1,0 +1,44 @@
+*
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+body{
+    
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav_menu_reception a
+{
+color: aliceblue;
+text-decoration: none;
+font-weight: bold;
+border-bottom: 1px solid wheat;
+margin: 5px;
+}
+
+.nav_menu_reception
+{
+    text-align: center;
+
+}
+
+.icones_reception
+{
+    width: 400px;
+}
+
+.container_img
+{
+    border: 5px solid red;
+}
