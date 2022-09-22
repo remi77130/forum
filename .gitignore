@@ -1,2 +1,4 @@
 /Images_album/*
 /require/config.php
+images/messages_images/*
+!images/messages_images/.keep
