@@ -84,7 +84,7 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
 
               <div id="departement">
                     <select id="select_departement" name="departement" required>
-                        <option value="">Département</option>
+                        <option value="">Sélectionner votre département...</option>
                         <?php
                         // On récupère tous les départements triés par ordre alphabétique
                         $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');

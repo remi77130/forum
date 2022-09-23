@@ -70,21 +70,27 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
 
             <form style="text-align: center;" method="POST" enctype="multipart/form-data">
 
+                <div>
                     <input type="text" name="pseudo" maxlength="10" minlength="3" placeholder="Pseudo"
                            value="<?php if (isset($pseudo)) {
                                echo $pseudo;
                            } ?>"/>
+                </div>
 
+                <div>
                     <input type="number" name="age" placeholder="Age">
+                </div>
 
+                <div>
                     <select name="sexe" class="form-control">
                         <option value="Homme">Homme</option>
                         <option value="Femme">Femme</option>
                     </select>
+                </div>
 
               <div id="departement">
                     <select id="select_departement" name="departement" required>
-                        <option value="">Département</option>
+                        <option value="">Sélectionner votre département...</option>
                         <?php
                         // On récupère tous les départements triés par ordre alphabétique
                         $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
@@ -102,16 +108,21 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
                     <select id="select_ville" name="ville_id" required></select>
                 </div> 
                 
-
+                <div>
                     <input type="email" name="mail" placeholder="Mail" value="<?php if (isset($mail)) {
                         echo $mail;
                     } ?>">
+                </div>
                 
 
+                <div>
                     <input type="password" minlength="5" name="password" placeholder="Mot de passe">
+                </div>
 
 
+                <div>
                     <input type="password" minlength="5" name="password2" placeholder="Confirmation passe">
+                </div>
 
                 <button type="submit" class="btn btn-primary" name="validate" value="Senregistrer">S'inscrire</button>
 
