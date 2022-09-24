@@ -12,9 +12,9 @@
 <nav>
 
 <ul class="liste-items">
-
-  <li class="items">Modifier mon profil</li>
-  <li class="items">Filtrer</li>
+  
+  <li class="items"></li>
+  <li class="items"></li>
 
 </ul>
 

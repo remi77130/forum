@@ -3,7 +3,7 @@
 <html lang="en">
 <link rel="stylesheet" href="assets/profil_membre.css">
 
-<?php include 'includes/head.php';?>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
 </style>
@@ -19,6 +19,7 @@
 
 require 'require/database.php';
 include 'profil.php';
+include 'includes/head.php';
 
 ?>
 
@@ -36,7 +37,20 @@ $articles = $requete->fetchAll(); ?>
 <header class="header_profil_membre">
     <div class="profil_link">
         <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>
-     
+        
+        <div class="test">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
+
         <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
     </div>
 

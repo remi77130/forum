@@ -36,7 +36,20 @@ $articles = $requete->fetchAll(); ?>
 <header class="header_profil_membre">
     <div class="profil_link">
         <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>
-     
+        
+        <div class="test">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
+
         <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
     </div>
 

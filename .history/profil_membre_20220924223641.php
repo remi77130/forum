@@ -35,7 +35,7 @@ $articles = $requete->fetchAll(); ?>
 
 <header class="header_profil_membre">
     <div class="profil_link">
-        <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>
+        <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil &#966;</a>
      
         <!-- aFFICHAGE  PROFIL SI ID EXISTE-->
     </div>

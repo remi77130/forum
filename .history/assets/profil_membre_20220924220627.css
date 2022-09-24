@@ -21,13 +21,13 @@ justify-content: center;
 margin-bottom: 20px;
 padding: 20px;
 background-color: rgb(77, 77, 77);
-box-shadow: 5px 5px 10px rgba(110, 110, 110, 0.256);
 }
 .profil_link a
 {
 
 font-size: 22px;
-text-decoration: underline;
+text-decoration: solid;
+text-decoration: none;
 color: rgb(244, 244, 244);
 font-weight: bold;
 font-family: 'IBM Plex Sans', sans-serif;
