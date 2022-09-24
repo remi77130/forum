@@ -1,1 +1,0 @@
-<?php echo $userinfo['profil.php?id=?']; ?>

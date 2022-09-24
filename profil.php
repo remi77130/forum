@@ -1,9 +1,24 @@
 <?php
+include './includes/init.php';
+
 include 'verif.php'; // BDD AND SESSION
+
+// Si l'utilisateur n'est pas connecté
+if(empty($_SESSION)) {
+    exit;
+}
 
 if (isset($_GET['id']) and $_GET['id'] > 0) {
 
-    include 'includes/get_message.php';
+    $getid = intval($_GET['id']);
+    $requser = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
+    $requser->execute(array($getid));
+    $userinfo = $requser->fetch();
+
+    // Si un message est envoyé sur un profil
+    if (!empty($_POST) && !empty($_FILES)) {
+        $error = send_message($_POST['destinataire_id'], $_POST, $_FILES);
+    }
 
     // On vient gérer si un utilisateur poste une nouvelle photo
     include 'limit_send_album.php';
@@ -12,18 +27,18 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     <html>
 
     <head>
-        
-    <?php 
-    // On doit inclure toutes les notiions de HTML après les traitements
-    include 'includes/head.php';
-    ?>
+
+        <?php
+        // On doit inclure toutes les notiions de HTML après les traitements
+        include 'includes/head.php';
+        ?>
 
         <link rel="stylesheet" href="assets/profil.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,
-wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital, wght@0,400;0,500;0,700;1,400&display=swap"
+              rel="stylesheet">
 
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
                 integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
@@ -48,16 +63,16 @@ wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
         <div class="profil_membre">
             <div>
-            <?php 
+                <?php
                 if (str_contains($userinfo['avatar'], 'https')) { ?>
-                <img src="<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
-            <?php
-                }else{
-            ?>
-                <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
-            <?php
+                    <img src="<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
+                    <?php
+                } else {
+                    ?>
+                    <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
+                    <?php
                 }
-            ?>            
+                ?>
             </div>
 
             <div class="info_profil">
@@ -104,25 +119,18 @@ wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
             echo '<span style="color:red;">' . $error . '</span>';
         }
         ?>
-
         <div class="option_profil_user">
             <a href="profil_membre.php">Acceuil</a>
         </div>
         <?php
         if ($_SESSION['id'] != $userinfo['id']) {
             ?>
-
-<button class="button_write_profil" style="cursor: pointer;">
-<a onClick="messagerie()">Ecrire</a>
-
-</button>
-
-
-
+            <button class="button_write_profil" style="cursor: pointer;">
+                <a onClick="messagerie()">Ecrire</a>
+            </button>
             <?php
         }
         ?>
-
         <?php
         if ($_SESSION['id'] != $userinfo['id']) {
             ?>
@@ -131,7 +139,9 @@ wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
                 <div class="message_profil_user">
 
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="destinataire_id" value="<?= $userinfo['id']; ?>">
+
                         <label style="display:block">Objet</label>
 
                         <input class="input_object_form_profil" type="submittext" name="objet" <?php if (isset($o)) {
@@ -225,17 +235,16 @@ wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Commentaires---->
     <div class="comment_profil">
 
-    
 
-<h2>Commentaires:</h2>
+        <h2>Commentaires:</h2>
 
-<form method="POST" action="">
+        <form method="POST" action="">
 
-<textarea name="commentaire" placeholder="Votre commentaire..."></textarea><br />
+            <textarea name="commentaire" placeholder="Votre commentaire..."></textarea><br/>
 
-<input class="input_comment" type="submit" name="submit_commentaire">
+            <input class="input_comment" type="submit" name="submit_commentaire">
 
-</form>
+        </form>
 
 
         <?php

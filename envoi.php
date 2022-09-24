@@ -4,75 +4,35 @@ include __DIR__ . '/includes/init.php';
 ////// FEUILLE ENVOI DU MESSAGE *********->RECEPTION.PHP
 
 session_start(); //pour recup dans la bdd
+
 require 'require/database.php';
 
 if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     if (isset($_POST['envoi_message'])) {
-        if (isset($_POST['destinataire'], $_POST['message'], $_POST['objet'])
-            and !empty($_POST['destinataire']) and !empty($_POST['message'])
-            and !empty($_POST['objet'])) {
 
-            $destinataire = htmlspecialchars($_POST['destinataire']);
-            $message = htmlspecialchars($_POST['message']);
-            $objet = htmlspecialchars($_POST['objet']);
+        $error = false;
 
-            $file_path = false; // On mets à false par défaut si jamais l'image n'a pas été envoyée
+        // On récupère l'id du destinataire avec son pseudo
+        if (isset($_POST['destinataire']) && !empty($_POST['destinataire'])) {
 
-            // Si on a bien reçu une image
-            if (isset($_FILES) && !empty($_FILES['img_msg'])) {
+            $req_selectDestinataire = $bdd->prepare('SELECT id, pseudo FROM membres WHERE pseudo = :pseudo');
+            $req_selectDestinataire->execute(
+                [
+                    'pseudo' => $_POST['destinataire']
+                ]
+            );
 
-                $file = $_FILES['img_msg'];
+            if ($req_selectDestinataire->rowCount() == 1) {
+                $id_destinataire = $req_selectDestinataire->fetch()['id'];
 
-                // On regarde si on peut récupérer la taille de l'image
-                if (getimagesize($file["tmp_name"]) !== false) {
-
-                    // On récupère l'extension du fichier
-                    $imageFileType = strtolower(pathinfo(basename($file["name"]), PATHINFO_EXTENSION));
-
-                    // On regarde si on valide l'extension du fichier
-                    $extensions_arr = array("jpg", "jpeg", "png", "gif");
-
-                    if (in_array($imageFileType, $extensions_arr)) {
-
-                        // On génère le nom de l'image (clef aléatoire + le temps)
-                        $image_filename = sha1(rand() . '' . microtime()) . '.' . $imageFileType;
-
-                        // On détermine le répertoire où sera envoyée l'image
-                        $image_path = __DIR__ . '/images/messages_images/' . $image_filename;
-
-                        if (move_uploaded_file($file["tmp_name"], $image_path)) {
-                            $file_path = $image_filename;
-                        }
-                    }
-                }
-            }
-
-            $req_selectDestinataire = $bdd->prepare('SELECT id, pseudo FROM membres WHERE pseudo = ?');
-            $req_selectDestinataire->execute(array($destinataire));
-
-            $dest_exist = $req_selectDestinataire->rowCount();
-            if ($dest_exist == 1) {
-                $destinataire = $req_selectDestinataire->fetch();
-                $id_destinataire = $destinataire['id'];
-
-                // On prépare l'enregistrement dans les messages (dans tous les cas on enregistre quand même la valeur de file_path, même si elle est à false)
-                $req_insertMessage = $bdd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message,objet,image_filename) VALUES (?,?,?,?,?)');
-                $req_insertMessage->execute([
-                    $_SESSION['id'],
-                    $id_destinataire,
-                    $message,
-                    $objet,
-                    $file_path
-                ]);
-
-                $error = "Votre message a bien été envoyé à {$destinataire['pseudo'] }.";
+                // On peut utiliser la méthode permettant d'envoyer un message à un utilisateur
+                $error = send_message($id_destinataire, $_POST, $_FILES);
             } else {
-                $error = "Cet utilisateur n'existe pas...";
+                $error = "Le destinataire n'existe pas";
             }
-        } else {
-            $error = "Veuillez compléter tous les champs";
         }
     }
+
     $destinataires = $bdd->query('SELECT pseudo FROM membres ORDER BY pseudo');
     if (isset($_GET['r']) and !empty($_GET['r'])) {
         $r = htmlspecialchars($_GET['r']);
