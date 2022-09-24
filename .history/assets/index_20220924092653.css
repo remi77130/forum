@@ -24,6 +24,7 @@ div{
     height: 90%;
     text-align: center;
 
+
 }
 
 .parent_form_signup{
@@ -78,10 +79,7 @@ Form
 */
 
 
-.div_img_index
-{
-    margin-top: 50px;
-}
+
 
 
 
@@ -154,7 +152,8 @@ font-weight: bold;
     position: relative;
     border-radius: 20px;
     margin: 100px auto;
-    overflow: hidden;
+
+    border: 5px solid red;
     
     
     
@@ -182,12 +181,7 @@ font-weight: bold;
     box-shadow: 2px 2px 8px rgba(106, 106, 106, 0.153);
 
 }
-.box button:hover
-{
-    border-radius: 10px;
-    background-color: aliceblue;
-    color: #353535;
-}
+
 
 .box::before,
 .box::after{

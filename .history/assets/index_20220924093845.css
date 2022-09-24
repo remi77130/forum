@@ -24,6 +24,7 @@ div{
     height: 90%;
     text-align: center;
 
+
 }
 
 .parent_form_signup{
@@ -78,10 +79,7 @@ Form
 */
 
 
-.div_img_index
-{
-    margin-top: 50px;
-}
+
 
 
 
@@ -98,6 +96,7 @@ color: rgb(75, 216, 255);
 cursor: pointer;
 text-decoration: none;
 font-weight: bold;
+font-size: 9em;
 }
 
 .box input {

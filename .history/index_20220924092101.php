@@ -49,7 +49,7 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
 
 <header class="title_section_signup">
 <h1>Chanderland</h1>
-
+    <h3></h3>
 
 </header>
   
@@ -60,10 +60,11 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
 
 
 
-    <div class="div_img_index">
+        <!-- img -->
+       <!-- <div class="div_img_index">
             <img class="img_index" src="icones/alien.png" alt="images_alien" srcset="">
-            <h3></h3>
-    </div>
+            <p>image qui montre un alien</p>
+        </div>-->
 
         <div class="box">
 

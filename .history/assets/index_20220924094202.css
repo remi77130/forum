@@ -24,6 +24,7 @@ div{
     height: 90%;
     text-align: center;
 
+
 }
 
 .parent_form_signup{
@@ -80,10 +81,15 @@ Form
 
 .div_img_index
 {
+    border: 5px solid gold;
     margin-top: 50px;
 }
 
+.img_index
+{
+    border: 3px solid fuchsia;
 
+}
 
 .lien_compte_user p
 {

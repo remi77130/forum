@@ -24,6 +24,7 @@ div{
     height: 90%;
     text-align: center;
 
+
 }
 
 .parent_form_signup{
@@ -78,10 +79,7 @@ Form
 */
 
 
-.div_img_index
-{
-    margin-top: 50px;
-}
+
 
 
 
@@ -154,7 +152,8 @@ font-weight: bold;
     position: relative;
     border-radius: 20px;
     margin: 100px auto;
-    overflow: hidden;
+
+    border: 5px solid red;
     
     
     
