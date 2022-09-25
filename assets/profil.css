@@ -293,7 +293,14 @@ transform: scale(1.1);
     margin-bottom: 35px;
 }
 
+.option_profil_user_connect .notification {
 
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: red;
+
+
+}
 
 
 
