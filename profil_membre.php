@@ -1,7 +1,8 @@
 <!-- Page affichage des membres -->
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="assets/profil_membre.css">
+<link rel="stylesheet" href="./assets/profil_membre.css">
+
 
 <?php include 'includes/head.php';?>
 <style>

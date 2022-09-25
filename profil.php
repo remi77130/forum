@@ -4,7 +4,7 @@ include './includes/init.php';
 include 'verif.php'; // BDD AND SESSION
 
 // Si l'utilisateur n'est pas connecté
-if(empty($_SESSION)) {
+if (empty($_SESSION)) {
     exit;
 }
 
@@ -34,6 +34,8 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         ?>
 
         <link rel="stylesheet" href="assets/profil.css">
+        <link rel="stylesheet" href="./assets/image_viewer.css">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -62,6 +64,8 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <!-- Profil visible-->
 
         <div class="profil_membre">
+
+
             <div>
                 <?php
                 if (str_contains($userinfo['avatar'], 'https')) { ?>
@@ -74,6 +78,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 }
                 ?>
             </div>
+
 
             <div class="info_profil">
 
@@ -173,7 +178,6 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
         <!------------------------ REQUETE AFFICHAGE ALBUM PHOTO -------->
 
-
         <?php
         $req = $bdd->prepare("SELECT nom, type from images INNER JOIN membres on membres.id=images.id WHERE membres.id=?");
         // REQUETE DE SELECTION DANS LA BDD JOINTURE DE TABLES
@@ -182,13 +186,18 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         $tab = $req->fetchAll();
         ?>
 
-        <!-- LOOP : AFFICHE DES IMAGES -->
+        <div class="image_album_profil">
+            <?php
+            foreach ($tab as $image) {
+                echo '<div class="images"><img src="Images_album/' . $image["nom"] . '" alt="photo album" title="image"/></div>';
+            }
+            ?>
+        </div>
 
-        <?php // AFFICHAGE IMAGES ALBUM
-        include 'Images_album.php';
-
-        ?>
-
+        <div id="image-viewer">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="full-image">
+        </div>
 
         <!--//////////////////// FICHE PROFIL PRIVEE USERS CONNECT    ///////////////////---->
 
@@ -206,7 +215,6 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <!-- ON VERIFIE SI LUTILISATEUR N'A PAS DEPASSE LA LIMITE D'ENVOIE D'IMAGE-->
 
         <?php
-
         // ON récupère la limitation d'ajout de l'image
         $reqparam = $bdd->prepare('SELECT * FROM param WHERE id = 1');
         $reqparam->execute();
@@ -266,3 +274,6 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     <?php
 }
 ?>
+
+
+<script type="text/javascript" src="./js/image_viewer.js"></script>
