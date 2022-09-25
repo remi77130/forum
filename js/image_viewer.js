@@ -7,3 +7,11 @@ $(".images img").click(function(){
 $("#image-viewer .close").click(function(){
   $('#image-viewer').hide();
 });
+
+$('#image-viewer img').click(function() {
+  return false;
+});
+
+$('#image-viewer').click(function() {
+  $('#image-viewer').hide();
+});
