@@ -12,7 +12,7 @@
     </div>
     <div>
         <a href="reception.php">Mes messages
-            <span class="notification">0</span>
+            <span class="notification">1</span>
         </a>
     </div>
     <div>
