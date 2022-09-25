@@ -59,7 +59,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 </nav>
 
 
-      <div class="container_info_message"> 
+      <div class="container_info_message> 
 
         <h3>Lecture du message <?= $p_exp ?></h3>
 
@@ -80,16 +80,24 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                 // Ceci est une condition en ternaire (en une ligne)
                 if ($image !== false) {
                     ?>
-
-                    
+                    <div>
 
 
                         <p>Pièce jointe : </p>
 
-                    </div> <!-- container_info_message -->
 
 
-                        <img class="img_message" src="<?= $image; ?>">
+<div class="container_img_message">
+    <img class="img_message" src="images/1242x2688.png" alt="" srcset="">
+</div>
+
+
+
+
+
+
+
+                        <img src="<?= $image; ?>">
                     </div>
                     <?php
                 }

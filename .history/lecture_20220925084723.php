@@ -54,18 +54,13 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
 <nav>
 <a href="reception.php">Boîte de réception</a>
-<a href="envoi.php?r=<?= $p_exp ?>&o=<?= urlencode($m['objet']) ?>">Répondre</a>
-<a href="supprimer.php?id=<?= $m['id'] ?>">Supprimer</a><br/><br/><br/>
+        <a href="envoi.php?r=<?= $p_exp ?>&o=<?= urlencode($m['objet']) ?>">Répondre</a>
+        <a href="supprimer.php?id=<?= $m['id'] ?>">Supprimer</a><br/><br/><br/>
 </nav>
 
-
-      <div class="container_info_message"> 
-
-        <h3>Lecture du message <?= $p_exp ?></h3>
-
-
-
-
+       
+        <h3 align="center">Lecture du message <?= $p_exp ?></h3>
+        <div align="center">
             <?php if ($msg_nbr == 0) {
                 echo "Erreur";
             } else { ?>
@@ -80,16 +75,22 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                 // Ceci est une condition en ternaire (en une ligne)
                 if ($image !== false) {
                     ?>
-
-                    
-
-
+                    <div>
                         <p>Pièce jointe : </p>
 
-                    </div> <!-- container_info_message -->
 
 
-                        <img class="img_message" src="<?= $image; ?>">
+<div class="container_img_message">
+    <img class="img_message" src="images/1242x2688.png" alt="" srcset="">
+</div>
+
+
+
+
+
+
+
+                        <img src="<?= $image; ?>">
                     </div>
                     <?php
                 }

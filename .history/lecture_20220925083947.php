@@ -44,28 +44,25 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/lecture.css">
     <title>Lecture message<?= $id_message ?></title></head>
 
-
+    
 <body>
     
-<section>
-
-<nav>
-<a href="reception.php">Boîte de réception</a>
-<a href="envoi.php?r=<?= $p_exp ?>&o=<?= urlencode($m['objet']) ?>">Répondre</a>
-<a href="supprimer.php?id=<?= $m['id'] ?>">Supprimer</a><br/><br/><br/>
-</nav>
-
-
-      <div class="container_info_message"> 
-
-        <h3>Lecture du message <?= $p_exp ?></h3>
 
 
 
 
+
+
+
+
+
+        <a href="reception.php">Boîte de réception</a>
+        <a href="envoi.php?r=<?= $p_exp ?>&o=<?= urlencode($m['objet']) ?>">Répondre</a>
+        <a href="supprimer.php?id=<?= $m['id'] ?>">Supprimer</a><br/><br/><br/>
+        <h3 align="center">Lecture du message <?= $p_exp ?></h3>
+        <div align="center">
             <?php if ($msg_nbr == 0) {
                 echo "Erreur";
             } else { ?>
@@ -80,37 +77,16 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                 // Ceci est une condition en ternaire (en une ligne)
                 if ($image !== false) {
                     ?>
-
-                    
-
-
+                    <div>
                         <p>Pièce jointe : </p>
-
-                    </div> <!-- container_info_message -->
-
-
-                        <img class="img_message" src="<?= $image; ?>">
+                        <img src="<?= $image; ?>">
                     </div>
                     <?php
                 }
             } ?>
         </div>
-
-
-</section>
-
-
         </body>
-
-
-
-
         </html>
-
-
-
-
-
         <?php
         $lu = $bdd->prepare('UPDATE messages SET lu = 1 WHERE id = ?');
         $lu->execute(array($m['id']));
@@ -118,3 +94,6 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 }
 ?>
 
+</html>
+
+</body>

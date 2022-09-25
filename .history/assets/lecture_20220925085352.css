@@ -1,0 +1,27 @@
+body
+{
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    height: 100%;
+    width: 100%;
+}
+
+
+.container_img_message
+{
+    border: 5px solid red;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+.img_message
+{
+    border: 5px solid rgb(70, 255, 8);
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    text-align: center;
+}

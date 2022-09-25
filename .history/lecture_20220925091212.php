@@ -89,7 +89,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                     </div> <!-- container_info_message -->
 
 
-                        <img class="img_message" src="<?= $image; ?>">
+                        <img src="<?= $image; ?>">
                     </div>
                     <?php
                 }

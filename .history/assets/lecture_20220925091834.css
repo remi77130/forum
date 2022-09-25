@@ -1,0 +1,73 @@
+html{
+    width: 100%;
+    
+  
+}
+*{
+    box-sizing: border-box;
+}
+body
+{
+    width: 100%;
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    height: 100%;
+    
+}
+
+nav
+{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center ;
+
+}
+
+
+
+nav a
+{
+
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 5px;
+}
+
+
+nav a:hover
+{
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+}
+
+
+.container_img_message
+{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+.img_message
+{
+    width: 50%;
+    height: 50%;
+}
+
+section{
+    text-align: center;
+}

@@ -88,8 +88,17 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
                     </div> <!-- container_info_message -->
 
+<div class="container_img_message">
+    <img class="img_message" src="images/1242x2688.png" alt="" srcset="">
+</div>
 
-                        <img class="img_message" src="<?= $image; ?>">
+
+
+
+
+
+
+                        <img src="<?= $image; ?>">
                     </div>
                     <?php
                 }
