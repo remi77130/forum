@@ -11,9 +11,7 @@
         </a>
     </div>
     <div>
-        <a href="reception.php">Mes messages
-            <span class="notification">1</span>
-        </a>
+        <a href="reception.php">Mes messages</a>
     </div>
     <div>
         <a href="deconnexion.php">Se déconnecter</a>
