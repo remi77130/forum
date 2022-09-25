@@ -51,7 +51,6 @@ nav{
 {
 position: relative;
 top: -2px;
-display: none;
 }
 
 .items-sous-liste
@@ -63,12 +62,6 @@ display: none;
     border-bottom: 0.5px solid honeydew;
 }
 
-.items-sous-liste:hover
-{
+.items-sous-liste:hover{
     background: wheat;
-}
-
-.items:hover >ul 
-{
-    display: block;
 }

@@ -18,7 +18,7 @@
 
   <span>&#9660;</span>
   <ul class="sous-liste">
-  <li class="items-sous-liste">Modifier mon profil</li>
+  <li class="items-sous-liste">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, aspernatur. Eaque neque, est quae numquam mollitia ipsa dolorem iusto illo quod. Distinctio cum natus aliquam amet esse doloribus eius sit!</li>
   <li class="items-sous-liste">Condition</li>
   <li class="items-sous-liste">Contact</li>
   

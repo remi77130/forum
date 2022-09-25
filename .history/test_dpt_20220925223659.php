@@ -18,12 +18,15 @@
 
   <span>&#9660;</span>
   <ul class="sous-liste">
-  <li class="items-sous-liste">Modifier mon profil</li>
-  <li class="items-sous-liste">Condition</li>
-  <li class="items-sous-liste">Contact</li>
-  
+    <li class="items-sous-liste">lorem</li>
+    <li class="items-sous-liste">lorem</li>
+    <li class="items-sous-liste">lorem</li>
   </ul>
   </li>
+
+
+  <li class="items">lien 3</li>
+  <li class="items">lien 4</li>
 
 </ul>
 
