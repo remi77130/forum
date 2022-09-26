@@ -85,7 +85,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
             <div class="info_profil">
 
 
-                <div class="info_pseudo_age">
+                <div>
                     <span class="pseudo_profil"><?php echo $userinfo['pseudo']; ?></span>
                     <span class="age_profil"><?php echo $userinfo['age'] ?></span>
                 </div>
@@ -93,11 +93,13 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 <div>
                     <p><?php echo $userinfo['astrologie']; ?></p>
                 </div>
-             
+                <div>
+                    <p><?php echo $userinfo['astrologie']; ?></p>
+                </div>
 
 
                 <div class="container_profil_info_pseudo">
-                    <span style="font-size: 12px; border-bottom: 1px solid white;">Département : <?php echo $userinfo['departement_nom'] ?> </span>
+                    <span style="font-size: 12px; border-bottom: 1px solid white;"><?php echo $userinfo['departement_nom'] ?> </span>
                 </div>
 
                 <div class="descr_profil">

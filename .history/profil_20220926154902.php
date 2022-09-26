@@ -97,7 +97,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
 
                 <div class="container_profil_info_pseudo">
-                    <span style="font-size: 12px; border-bottom: 1px solid white;">Département : <?php echo $userinfo['departement_nom'] ?> </span>
+                    <span style="font-size: 12px; border-bottom: 1px solid white;"><?php echo $userinfo['departement_nom'] ?> </span>
                 </div>
 
                 <div class="descr_profil">

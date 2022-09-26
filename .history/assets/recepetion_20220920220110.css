@@ -1,4 +1,4 @@
-*, ::before, ::after
+*
 {
     margin: 0;
     padding: 0;
@@ -7,16 +7,12 @@
 
 }
 
-
-html{
-    font-family: 'IBM Plex Sans', sans-serif;
-}
-
 body{
     
-    background-color: rgb(37, 37, 40);
+    background-color: rgb(30, 30, 30);
     color: aliceblue;
 }
+
 h3{
     text-align: center;
     margin-bottom: 20px;

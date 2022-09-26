@@ -14,7 +14,7 @@ html{
 
 body{
     
-    background-color: rgb(37, 37, 40);
+    background-color: #333;
     color: aliceblue;
 }
 .section_profil_membre{
@@ -81,11 +81,6 @@ body{
     word-wrap: break-word;
 }
 
-.info_pseudo_age
-{
-    margin: 20px 0px 10px 0px;
-}
-
 .pseudo_profil{
 
     font-size: 22px;
@@ -97,7 +92,6 @@ body{
 
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
-    margin-left: 5px;
     
 
 }

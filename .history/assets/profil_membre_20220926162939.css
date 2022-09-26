@@ -81,7 +81,7 @@ display: none;
     font-weight: bold;
     border-bottom: .05px solid rgba(245, 222, 179, 0.671);
     font-family: 'IBM Plex Sans', sans-serif;
-    background-color: rgb(37, 37, 40);
+    background:rgb(30, 30, 30);
 }
 
 .items-sous-liste:hover

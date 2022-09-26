@@ -17,8 +17,17 @@ body{
     background-color: rgb(37, 37, 40);
     color: aliceblue;
 }
-select
-{
-    max-width: 100px;
+
+form a{
+
+text-decoration: underline;
+color: aliceblue;
+font-weight: 900;
 }
 
+form input
+{
+    background: none;
+    border: 0.5px solid rgb(231, 231, 231);
+
+}

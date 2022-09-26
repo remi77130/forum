@@ -83,7 +83,7 @@ body{
 
 .info_pseudo_age
 {
-    margin: 20px 0px 10px 0px;
+    margin: 20px;
 }
 
 .pseudo_profil{
@@ -97,7 +97,6 @@ body{
 
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
-    margin-left: 5px;
     
 
 }

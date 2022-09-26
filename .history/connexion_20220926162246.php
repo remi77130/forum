@@ -62,7 +62,7 @@ if(isset($_POST['formconnexion'])) {
             <input type="password" name="mdpconnect" placeholder="Mot de passe" />
             <br /><br />
 
-            <input class="connect_input" type="submit" name="formconnexion" value="Se connecter !" /> <br><br>
+            <button type="submit" name="formconnexion" value="Se connecter !" /> <br><br>
             <a href="recuperation.php">Mot de passe oublié !</a>
 
          </form>

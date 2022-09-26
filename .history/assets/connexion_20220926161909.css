@@ -17,8 +17,7 @@ body{
     background-color: rgb(37, 37, 40);
     color: aliceblue;
 }
-select
-{
-    max-width: 100px;
-}
 
+form a{
+    color: aliceblue;
+}

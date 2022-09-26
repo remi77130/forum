@@ -97,7 +97,7 @@ Form
 color: aliceblue;
 cursor: pointer;
 text-decoration: none;
-font-size: 25px;
+font-size: 22px;
 }
 
 .span_login_signup{
@@ -131,7 +131,7 @@ font-weight: bold;
 
 .box select{
     width: 90%;
-    height: 80px;
+    height: 30px;
     background: none;
     color: aliceblue;
     font-size: 22px;

@@ -44,8 +44,8 @@ $articles = $requete->fetchAll(); ?>
             <span>&#9660;</span>
             <ul class="sous-liste">
             <li class="items-sous-liste"><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  </li>
-           <!-- <li class="items-sous-liste">Condition</li>
-            <li class="items-sous-liste">Contact</li> -->
+            <li class="items-sous-liste">Condition</li>
+            <li class="items-sous-liste">Contact</li>
   
         </ul>
         </li>
