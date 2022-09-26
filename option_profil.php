@@ -15,6 +15,8 @@ if (!empty($_SESSION)) {
             'id_destinataire' => $id_destinataire
         ]
     );
+
+    $nb_message_non_lus = $req_selectMessagesNonLus->rowCount();
 } else {
     exit;
 }
@@ -28,7 +30,13 @@ if (!empty($_SESSION)) {
     </div>
     <div>
         <a href="reception.php">Mes messages
-            <span class="notification"><?= $req_selectMessagesNonLus->rowCount(); ?></span>
+            <?php
+            if ($nb_message_non_lus > 0) {
+                ?>
+                <span class="notification"><?= $nb_message_non_lus ?></span>
+                <?php
+            }
+            ?>
         </a>
     </div>
     <div>
