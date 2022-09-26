@@ -232,8 +232,8 @@ button
 
 .comment_profil{
 
-    overflow: visible;
-    height: 100%;
+    overflow: scroll;
+    height: 250px;
     box-shadow: 5px 3px 30px rgba(129, 129, 129, 0.315);
     margin-top: 25px;
     text-align: center;
@@ -256,15 +256,7 @@ button
    
 }
 
-.input_comment:hover
-{
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-}
+
 
 
 

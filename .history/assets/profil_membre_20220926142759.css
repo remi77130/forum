@@ -28,6 +28,8 @@ box-shadow: 5px 5px 10px rgba(110, 110, 110, 0.256);
 
 nav{
     height: 50px;
+    border-bottom: 0.5px solid red;
+    border: 2px solid greenyellow;
 }
 
 .liste-items
@@ -46,9 +48,6 @@ nav{
     cursor: pointer;
     margin: 0 20px;
     flex-shrink: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: rgb(244, 244, 244);
-    font-weight: bold;
 }
 
 .items span
@@ -72,16 +71,16 @@ display: none;
     text-align: center;
     padding: 0 10px;
     font-size: 22px;
+    text-decoration: underline;
     color: rgb(244, 244, 244);
     font-weight: bold;
-    border-bottom: .05px solid rgba(245, 222, 179, 0.671);
     font-family: 'IBM Plex Sans', sans-serif;
     background:rgb(30, 30, 30);
 }
 
 .items-sous-liste:hover
 {
-    background: rgb(100, 98, 96);
+    background: wheat;
 }
 
 .items:hover >ul 
@@ -100,14 +99,21 @@ display: none;
 
 
 
-nav a
+.profil_link a
 {
 
 font-size: 22px;
-text-decoration: none;
+text-decoration: underline;
 color: rgb(244, 244, 244);
 font-weight: bold;
 font-family: 'IBM Plex Sans', sans-serif;
+
+}
+.profil_link a:hover
+{
+
+    color: aliceblue;
+    transition: 300ms;
 
 }
 

@@ -47,8 +47,6 @@ nav{
     margin: 0 20px;
     flex-shrink: 0;
     font-family: 'IBM Plex Sans', sans-serif;
-    color: rgb(244, 244, 244);
-    font-weight: bold;
 }
 
 .items span
@@ -72,9 +70,9 @@ display: none;
     text-align: center;
     padding: 0 10px;
     font-size: 22px;
+    text-decoration: underline;
     color: rgb(244, 244, 244);
     font-weight: bold;
-    border-bottom: .05px solid rgba(245, 222, 179, 0.671);
     font-family: 'IBM Plex Sans', sans-serif;
     background:rgb(30, 30, 30);
 }
@@ -100,14 +98,21 @@ display: none;
 
 
 
-nav a
+a
 {
 
 font-size: 22px;
-text-decoration: none;
+text-decoration: underline;
 color: rgb(244, 244, 244);
 font-weight: bold;
 font-family: 'IBM Plex Sans', sans-serif;
+
+}
+.profil_link a:hover
+{
+
+    color: aliceblue;
+    transition: 300ms;
 
 }
 

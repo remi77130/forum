@@ -22,6 +22,15 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     // On vient gérer si un utilisateur poste une nouvelle photo
     include 'limit_send_album.php';
+
+
+    $reqville = $bdd->prepare("SELECT *
+    FROM villes_france
+    WHERE ville_id = ?");
+$reqville->execute([$articles['ville_id']]);
+// RECUPERE LES DONEES 
+$ville = $reqville->fetch();
+
     
     ?>
 

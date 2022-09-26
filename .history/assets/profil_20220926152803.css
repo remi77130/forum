@@ -232,8 +232,8 @@ button
 
 .comment_profil{
 
-    overflow: visible;
-    height: 100%;
+    overflow: auto;
+    height: 250px;
     box-shadow: 5px 3px 30px rgba(129, 129, 129, 0.315);
     margin-top: 25px;
     text-align: center;

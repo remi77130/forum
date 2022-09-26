@@ -1,4 +1,4 @@
-*, ::before, ::after
+*
 {
     margin: 0;
     padding: 0;
@@ -7,14 +7,9 @@
 
 }
 
-
-html{
-    font-family: 'IBM Plex Sans', sans-serif;
-}
-
 body{
     
-    background-color: #333;
+    background-color: rgb(30, 30, 30);
     color: aliceblue;
 }
 .section_profil_membre{
@@ -200,28 +195,11 @@ button
 .input_submit_form_profil
 {
    
-    text-decoration: none;
-    background: #333333;
-    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
-
-    border: none;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
-    color: aliceblue;
-    padding: 9px 15px;
-    margin: 20px ;
    
 }
 
 .input_submit_form_profil:hover
 {
-
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
   
 }
 
@@ -232,8 +210,8 @@ button
 
 .comment_profil{
 
-    overflow: visible;
-    height: 100%;
+    overflow: scroll;
+    height: 250px;
     box-shadow: 5px 3px 30px rgba(129, 129, 129, 0.315);
     margin-top: 25px;
     text-align: center;
@@ -243,28 +221,17 @@ button
 
 .input_comment
 {
-    text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
-
-    border: none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
     color: aliceblue;
-    padding: 9px 20px;
-    margin: 20px ;
-   
+    padding: 9px 35px;
+    margin: 20px;
+    cursor: pointer;
 }
 
-.input_comment:hover
-{
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-}
+
 
 
 
@@ -329,25 +296,17 @@ OPTION PROFIL
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
 
-    border: none;
+
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
     color: aliceblue;
-    padding: 9px 20px;
-    margin: 20px ;
-   
+    border-radius: 20px;
+    padding: 5px 35px;
+    margin-top: 20px;
     
 }
 
-.button_write_profil:hover
-{
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-}
+
 
 
 

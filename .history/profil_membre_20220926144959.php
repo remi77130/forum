@@ -35,25 +35,27 @@ $articles = $requete->fetchAll(); ?>
 
 
 <header class="header_profil_membre">
+  
+
     <nav>
 
-        <ul class="liste-items">
+<ul class="liste-items">
 
 
-            <li class="items">Mon profil
+  <li class="items">Mon profil
 
-            <span>&#9660;</span>
-            <ul class="sous-liste">
-            <li class="items-sous-liste"><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  </li>
-            <li class="items-sous-liste">Condition</li>
-            <li class="items-sous-liste">Contact</li>
+  <span>&#9660;</span>
+  <ul class="sous-liste">
+  <li class="items-sous-liste"><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a>  </li>
+  <li class="items-sous-liste">Condition</li>
+  <li class="items-sous-liste">Contact</li>
   
-        </ul>
-        </li>
+  </ul>
+  </li>
 
-        </ul>
+</ul>
 
-    </nav>
+</nav>
 
 </header>
 

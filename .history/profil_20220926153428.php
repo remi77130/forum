@@ -22,6 +22,13 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     // On vient gérer si un utilisateur poste une nouvelle photo
     include 'limit_send_album.php';
+
+
+    $reqdpt = $bdd->prepare("SELECT *
+    FROM departement
+    WHERE departement_code = ?");
+$reqdpt->execute([$articles['departement_nom']]);
+
     
     ?>
 

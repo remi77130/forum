@@ -22,9 +22,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     // On vient gérer si un utilisateur poste une nouvelle photo
     include 'limit_send_album.php';
-    
     ?>
-
 
     <html>
 
@@ -93,9 +91,6 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 <div>
                     <p><?php echo $userinfo['astrologie']; ?></p>
                 </div>
-                <div>
-                    <p><?php echo $userinfo['astrologie']; ?></p>
-                </div>
 
 
                 <div class="container_profil_info_pseudo">
@@ -129,11 +124,9 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
             echo '<span style="color:red;">' . $error . '</span>';
         }
         ?>
-
         <div class="option_profil_user">
             <a href="profil_membre.php">Acceuil</a>
         </div>
-
         <?php
         if ($_SESSION['id'] != $userinfo['id']) {
             ?>

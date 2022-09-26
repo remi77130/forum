@@ -47,8 +47,6 @@ nav{
     margin: 0 20px;
     flex-shrink: 0;
     font-family: 'IBM Plex Sans', sans-serif;
-    color: rgb(244, 244, 244);
-    font-weight: bold;
 }
 
 .items span
@@ -77,6 +75,7 @@ display: none;
     border-bottom: .05px solid rgba(245, 222, 179, 0.671);
     font-family: 'IBM Plex Sans', sans-serif;
     background:rgb(30, 30, 30);
+    margin-top: 20px;
 }
 
 .items-sous-liste:hover

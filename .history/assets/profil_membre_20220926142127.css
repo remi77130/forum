@@ -17,8 +17,7 @@ body{
 {
 display: flex;
 border-bottom: 0.5px solid rgb(90, 90, 90);
-justify-content: space-around;
-align-items: center;
+justify-content: center;
 margin-bottom: 20px;
 padding: 20px;
 background-color: rgb(77, 77, 77);
@@ -27,7 +26,11 @@ box-shadow: 5px 5px 10px rgba(110, 110, 110, 0.256);
 
 
 nav{
+    width: 50px;
     height: 50px;
+    background: rgb(253, 253, 253);
+    border-bottom: 0.5px solid red;
+    border: 5px solid red;
 }
 
 .liste-items
@@ -46,9 +49,6 @@ nav{
     cursor: pointer;
     margin: 0 20px;
     flex-shrink: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: rgb(244, 244, 244);
-    font-weight: bold;
 }
 
 .items span
@@ -56,6 +56,10 @@ nav{
     font-size: 17px;
 }
 
+.items:nth-child(3)
+{
+    margin-left: 0;
+}
 
 /* Sous liste */
 
@@ -71,17 +75,13 @@ display: none;
     list-style-type: none;
     text-align: center;
     padding: 0 10px;
-    font-size: 22px;
-    color: rgb(244, 244, 244);
-    font-weight: bold;
-    border-bottom: .05px solid rgba(245, 222, 179, 0.671);
-    font-family: 'IBM Plex Sans', sans-serif;
-    background:rgb(30, 30, 30);
+    background: red;
+    border-bottom: 0.5px solid honeydew;
 }
 
 .items-sous-liste:hover
 {
-    background: rgb(100, 98, 96);
+    background: wheat;
 }
 
 .items:hover >ul 
@@ -100,14 +100,21 @@ display: none;
 
 
 
-nav a
+.profil_link a
 {
 
 font-size: 22px;
-text-decoration: none;
+text-decoration: underline;
 color: rgb(244, 244, 244);
 font-weight: bold;
 font-family: 'IBM Plex Sans', sans-serif;
+
+}
+.profil_link a:hover
+{
+
+    color: aliceblue;
+    transition: 300ms;
 
 }
 
