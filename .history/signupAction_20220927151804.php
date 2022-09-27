@@ -1,10 +1,3 @@
-
-
-<?php
-session_start();
-require 'require/database.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +8,11 @@ require 'require/database.php';
 </head>
 <body>
 
+
 <?php
+session_start();
+require 'require/database.php';
+
 $registrationPass = true;
 $erreur = "";
 
