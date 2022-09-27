@@ -1,5 +1,4 @@
-*, ::before, ::after
-{
+*, ::before, ::after {
     margin: 0;
     padding: 0;
 
@@ -8,23 +7,24 @@
 }
 
 
-html{
+html {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
-body{
-    
+body {
+
     background-color: rgb(37, 37, 40);
     color: aliceblue;
 }
-.section_profil_membre{
+
+.section_profil_membre {
 
     text-align: center;
     margin-top: 50px;
 }
 
 
-.profil_membre H2{
+.profil_membre H2 {
 
     font-family: 'IBM Plex Sans', sans-serif;
     size: 22px;
@@ -34,8 +34,7 @@ body{
 
 }
 
-.descr_profil
-{
+.descr_profil {
 
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400px;
@@ -43,11 +42,10 @@ body{
     color: aliceblue;
     margin-top: 25px;
 
-    
+
 }
 
-.created_profil
-{
+.created_profil {
     color: aliceblue;
     font-size: 12px;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -56,54 +54,53 @@ body{
 
 }
 
-.profil_membre img{
+.profil_membre img {
     width: 250px;
     height: 250px;
-    
+
     border-radius: 200px;
     box-shadow: 3px 3px 3px rgba(85, 85, 85, 0.219);
     margin-top: 5px;
 
 }
 
-.profil_membre img:hover{
+.profil_membre img:hover {
 
     transition: 500ms;
     box-shadow: 0px 0px 0px rgba(141, 141, 141, 0.324);
 
 }
 
-.info_profil{
+.info_profil {
 
-    
+
     margin: auto;
     width: 200px;
     word-wrap: break-word;
 }
 
-.info_pseudo_age
-{
+.info_pseudo_age {
     margin: 20px 0px 10px 0px;
 }
 
-.pseudo_profil{
+.pseudo_profil {
 
     font-size: 22px;
     font-weight: 700;
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.age_profil{
+.age_profil {
 
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
     margin-left: 5px;
-    
+
 
 }
 
 
-.image_album_profil{
+.image_album_profil {
 
     display: flex;
     flex-wrap: wrap;
@@ -111,12 +108,12 @@ body{
 
 }
 
-.image_album_profil div{
+.image_album_profil div {
     width: 150px;
-    max-width: 150px ;
+    max-width: 150px;
 }
 
-.image_album_profil div img{
+.image_album_profil div img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -125,7 +122,7 @@ body{
     transition: 0.3s;
 }
 
-.image_album_profil img:hover{
+.image_album_profil img:hover {
     opacity: 0.7;
     transition: 400ms;
     box-shadow: 1px 3px 3px rgba(179, 176, 176, 0.397);
@@ -135,52 +132,48 @@ body{
 MESSAGERIE 
 */
 
-.pjointe
-{
+.pjointe {
     margin-top: 50px;
 }
 
 
-.message_profil_user{
+.message_profil_user {
 
     width: 350px;
     margin: auto;
     box-shadow: 3px 3px 10px rgba(40, 40, 40, 0.733), -5px -5px 10px rgba(112, 112, 112, 0.582);
     border-radius: 20px;
-    
+
 }
 
-.message_profil_user:hover
-{
+.message_profil_user:hover {
     box-shadow: none;
     transition: 5000ms;
     border: 0.5px solid rgba(230, 3, 3, 0.781);
 }
 
 
-.message_profil_user label{
+.message_profil_user label {
 
     Font-size: 15px;
     font-family: 'IBM Plex Sans', sans-serif;
 
 }
-.input_object_form_profil
-{
+
+.input_object_form_profil {
     border: 1px solid rgb(241, 241, 241);
-    background:none;
-   
+    background: none;
+
 }
 
 
-.message_profil_user input
-{
+.message_profil_user input {
     color: rgb(255, 255, 255);
     padding: 5px 20px;
     font-size: 17px;
 }
 
-textarea
-{
+textarea {
     padding: 5px 20px;
     font-size: 17px;
     background: none;
@@ -189,8 +182,7 @@ textarea
 
 }
 
-button
-{
+button {
 
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
@@ -203,9 +195,8 @@ button
 
 }
 
-.input_submit_form_profil
-{
-   
+.input_submit_form_profil {
+
     text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
@@ -215,12 +206,11 @@ button
     font-size: 14px;
     color: aliceblue;
     padding: 9px 15px;
-    margin: 20px ;
-   
+    margin: 20px;
+
 }
 
-.input_submit_form_profil:hover
-{
+.input_submit_form_profil:hover {
 
     background-color: rgb(30, 30, 30);
     color: aliceblue;
@@ -228,15 +218,11 @@ button
     border: 0.5px solid rgba(245, 222, 179, 0.589);
     border-radius: 30px;
     transition: 300ms;
-  
+
 }
 
 
-
-
-
-
-.comment_profil{
+.comment_profil {
 
     overflow: visible;
     height: 100%;
@@ -247,8 +233,7 @@ button
 }
 
 
-.input_comment
-{
+.input_comment {
     text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
@@ -258,12 +243,12 @@ button
     font-size: 14px;
     color: aliceblue;
     padding: 9px 20px;
-    margin: 20px ;
-   
+    margin: 20px;
+
 }
 
-.input_comment:hover
-{
+
+.input_comment:hover {
     background-color: rgb(30, 30, 30);
     color: aliceblue;
     box-shadow: none;
@@ -273,49 +258,29 @@ button
 }
 
 
+.option_profil_user_connect {
 
-
-
-
-
-
-
-
-
-
-
-
-
-.option_profil_user_connect{
-
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 25px;
 }
 
-.option_profil_user_connect div{
+.option_profil_user_connect div {
     margin-bottom: 35px;
 }
 
 .option_profil_user_connect .notification {
-
     padding: 4px 8px;
     border-radius: 20px;
     background: red;
-
-
 }
-
-
 
 /*
 OPTION PROFIL
 */
 
-
-.option_profil_user_connect a
-{
+.option_profil_user_connect a {
     text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
@@ -328,8 +293,8 @@ OPTION PROFIL
     margin: 5px;
 
 }
-.button_write_profil
-{
+
+.button_write_profil {
 
     text-decoration: none;
     background: #333333;
@@ -340,13 +305,12 @@ OPTION PROFIL
     font-size: 14px;
     color: aliceblue;
     padding: 9px 20px;
-    margin: 20px ;
-   
-    
+    margin: 20px;
+
+
 }
 
-.button_write_profil:hover
-{
+.button_write_profil:hover {
     background-color: rgb(30, 30, 30);
     color: aliceblue;
     box-shadow: none;
@@ -356,16 +320,11 @@ OPTION PROFIL
 }
 
 
-
-
-
-
-.option_profil_user{
+.option_profil_user {
     margin-top: 50px;
 }
 
-.option_profil_user_connect a:hover
-{
+.option_profil_user_connect a:hover {
     background-color: rgb(30, 30, 30);
     color: aliceblue;
     box-shadow: none;
@@ -374,8 +333,7 @@ OPTION PROFIL
     transition: 300ms;
 }
 
-.option_profil_user a
-{
+.option_profil_user a {
     text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
@@ -386,34 +344,34 @@ OPTION PROFIL
     color: aliceblue;
     padding: 9px 15px;
     margin: 2px;
- 
+
 }
 
 
-.option_profil_user a:hover
-{
+.option_profil_user a:hover {
     background-color: rgb(30, 30, 30);
-color: aliceblue;
-box-shadow: none;
-border: 0.5px solid rgba(245, 222, 179, 0.589);
-border-radius: 30px;
-transition: 300ms;
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
 }
 
-.parent_message_profil_user{
+.parent_message_profil_user {
     display: none;
     margin-top: 50px;
-   
+
 }
-.message_profil_user label
-{
+
+.message_profil_user label {
 
     font-weight: bold;
     font-family: 'IBM Plex Sans', sans-serif;
     letter-spacing: 1px;
 
 }
-.active{
+
+.active {
     display: inherit !important;
-    
+
 }
