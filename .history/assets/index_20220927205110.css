@@ -44,6 +44,7 @@ div{
         width: 90%;
         max-height: 40px;
         font-size: 17px;
+        border: 5px solid red;
     }
 
 
@@ -54,6 +55,7 @@ div{
     }
 
     .box .button_form{
+        border: 5px solid red;
         
    
     padding: 15px 40px;

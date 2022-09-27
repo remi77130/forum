@@ -48,13 +48,7 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
 
 
 <header class="title_section_signup">
-<h1>
-    
-<div style="margin: auto;" class="img_index">
-
-<img src="icones/logo2.svg" style="width: 100%;"  alt="" srcset="">
-</div>
-</h1>
+<h1>Chanderland</h1>
 <h3></h3>
 
 
@@ -66,6 +60,10 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
     <p class="info_site_index">Site en cours de développement</p>
 
 
+<div style="border: 5px solid red;" class="img_index">
+
+<img src="icones/logo1.svg"  alt="" srcset="">
+</div>
 
         <div class="box">
 
@@ -114,7 +112,7 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
 
                     <input type="password" minlength="5" name="password2" placeholder="Confirmation passe">
 
-                <button type="submit" class="button_form" name="validate" value="Senregistrer">S'inscrire</button>
+                <button type="submit" class="btn btn-primary" name="validate" value="Senregistrer">S'inscrire</button>
 
                 <div class="lien_compte_user">
                     <a class="login_signup" href="connexion.php"><p>J'ai déjà un compte, <span

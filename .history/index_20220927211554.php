@@ -50,7 +50,7 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
 <header class="title_section_signup">
 <h1>
     
-<div style="margin: auto;" class="img_index">
+<div style="border: 5px solid red;" class="img_index">
 
 <img src="icones/logo2.svg" style="width: 100%;"  alt="" srcset="">
 </div>

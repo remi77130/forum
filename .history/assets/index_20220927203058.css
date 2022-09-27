@@ -2,7 +2,6 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'IBM Plex Sans';
 
     box-sizing: border-box;
 
@@ -32,7 +31,6 @@ div{
     
     .box input{
         max-height: 40px;
-        margin-bottom: 10px;
     }
 
     .box ::placeholder{
@@ -47,20 +45,13 @@ div{
     }
 
 
-    .box .lien_compte_user p{
-
-        font-size: 17px;
-
-    }
-
-    .box .button_form{
+    .btn btn-primary{
+       
+        padding: 15px 40px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 20px;
         
-   
-    padding: 15px 40px;
-    letter-spacing: 2px;
-    font-size: 20px;
-    margin: 25px 0;
-    
     }
 }
 
@@ -215,7 +206,7 @@ font-weight: bold;
     
     height: auto;
 }
-.button_form{
+.box button{
 
     color: azure;
     text-decoration: none;
@@ -231,7 +222,7 @@ font-weight: bold;
     box-shadow: 2px 2px 8px rgba(106, 106, 106, 0.153);
 
 }
-.button_form:hover
+.box button:hover
 {
     border-radius: 10px;
     background-color: aliceblue;

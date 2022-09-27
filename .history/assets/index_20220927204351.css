@@ -2,7 +2,6 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'IBM Plex Sans';
 
     box-sizing: border-box;
 
@@ -44,6 +43,7 @@ div{
         width: 90%;
         max-height: 40px;
         font-size: 17px;
+        margin-bottom: 10;
     }
 
 
@@ -51,16 +51,6 @@ div{
 
         font-size: 17px;
 
-    }
-
-    .box .button_form{
-        
-   
-    padding: 15px 40px;
-    letter-spacing: 2px;
-    font-size: 20px;
-    margin: 25px 0;
-    
     }
 }
 

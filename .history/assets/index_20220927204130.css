@@ -2,7 +2,6 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'IBM Plex Sans';
 
     box-sizing: border-box;
 
@@ -32,7 +31,6 @@ div{
     
     .box input{
         max-height: 40px;
-        margin-bottom: 10px;
     }
 
     .box ::placeholder{
@@ -47,20 +45,11 @@ div{
     }
 
 
-    .box .lien_compte_user p{
+    .lien_compte_user p{
 
-        font-size: 17px;
+        font-size: 1.1em;
+        border: 5px solid red;
 
-    }
-
-    .box .button_form{
-        
-   
-    padding: 15px 40px;
-    letter-spacing: 2px;
-    font-size: 20px;
-    margin: 25px 0;
-    
     }
 }
 

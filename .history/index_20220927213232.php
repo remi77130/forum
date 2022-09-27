@@ -52,7 +52,7 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés "/
     
 <div style="margin: auto;" class="img_index">
 
-<img src="icones/logo2.svg" style="width: 100%;"  alt="" srcset="">
+<img src="icones/logo2.ai" style="width: 100%;"  alt="" srcset="">
 </div>
 </h1>
 <h3></h3>
