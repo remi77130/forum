@@ -135,10 +135,11 @@ Form
 color: aliceblue;
 cursor: pointer;
 text-decoration: none;
+font-size: 25px;
 }
 
 .span_login_signup{
-color: #4bd8ff;
+color: rgb(75, 216, 255);
 cursor: pointer;
 text-decoration: none;
 font-weight: bold;

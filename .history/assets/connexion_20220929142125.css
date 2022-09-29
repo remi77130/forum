@@ -67,6 +67,7 @@ form input
 
 .connect_compte
 {
+    border: 2px solid red;
     text-align: center;
     
 }
@@ -76,3 +77,14 @@ form input
     font-weight: 700;
 }
 
+
+.signup
+{
+    color: red;
+}
+
+
+.passe
+{
+
+}

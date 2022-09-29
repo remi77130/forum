@@ -67,12 +67,5 @@ form input
 
 .connect_compte
 {
-    text-align: center;
-    
+    border: 2px solid red;
 }
-.connect_compte a{
-    text-decoration: none;
-    color: aliceblue;
-    font-weight: 700;
-}
-

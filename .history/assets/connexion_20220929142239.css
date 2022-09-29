@@ -67,6 +67,7 @@ form input
 
 .connect_compte
 {
+    border: 2px solid red;
     text-align: center;
     
 }

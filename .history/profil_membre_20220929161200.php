@@ -28,14 +28,17 @@ include 'profil.php';
 
 <?php
 
-$requser = "SELECT * FROM membres ORDER BY id";
+$requser = "SELECT * FROM membres ORDER BY id DESC LIMIT '.$depart.','.$videosParPage. ";
 $requete = $bdd->query($requser);
+// RECUPERE LES DONEES 
 $articles = $requete->fetchAll(); 
+
+
 
 ?>
 
 
-
+?>
 
 
 

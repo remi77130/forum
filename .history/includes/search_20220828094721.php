@@ -44,7 +44,7 @@ if(isset($_GET['q']) AND !empty($_GET['q'])){
      
 
         <!-- Reultat recherche -->
-    <li><a href="profil.php?id=<//?= $articles['id'] ?>">-->
+    <li><!--<a href="profil.php?id=<//?= $articles['id'] ?>">-->
         <a href=""><?= $a ['pseudo']?></a>
      <br> </li>
     

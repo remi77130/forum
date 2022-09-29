@@ -14,7 +14,7 @@ new Typewriter(txtAnim, {
 //color: #44e3d0;
 .changeDelay(100)
 
-.typeString('<span style="color: #00f0f0;"> Venez</span>')
+.typeString('<span style="color: #39e7e7;"> Venez</span>')
 .pauseFor(500)
 
 .typeString('<span style="color: #00ff00;"> discutez </span>')
@@ -40,7 +40,7 @@ new Typewriter(txtAnim, {
 
 .deleteChars('10')
 
-.typeString('<span style="color: #ff46e0;"> gratuitement !</span>')
+.typeString('<span style="color: #44e3d0;"> gratuitement !</span>')
 
 .start()
 

@@ -61,24 +61,14 @@ if(isset($_POST['formconnexion'])) {
             <input type="email" name="mailconnect" placeholder="Mail" />
             <input type="password" name="mdpconnect" placeholder="Mot de passe" />
             <br /><br />
-
-            <input class="connect_input" type="submit" name="formconnexion" value="Se connecter !" /> <br><br>
-
-
-
-            </form>
-      </div>
-
 <div class="connect_compte">
+            <input class="connect_input" type="submit" name="formconnexion" value="Se connecter !" /> <br><br>
+            <a href="recuperation.php">Mot de passe oublié !</a>
 
-            <a href="recuperation.php">Mot de passe oublié !</a> <br> <br>
-
-             <a href="index.php">Je n'ai pas de compte, <span style="color: #4bd8ff;"> je m'inscris </span></a>
+               <a href="index.php">J n'ai pas de compte, je m'inscris</a>
 </div>
-
-
-
-
+         </form>
+      </div>
 </section>
          <?php
          if(isset($erreur)) {

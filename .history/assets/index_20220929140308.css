@@ -135,10 +135,11 @@ Form
 color: aliceblue;
 cursor: pointer;
 text-decoration: none;
+font-size: 25px;
 }
 
 .span_login_signup{
-color: #4bd8ff;
+color: rgb(75, 216, 255);
 cursor: pointer;
 text-decoration: none;
 font-weight: bold;
@@ -154,7 +155,7 @@ font-weight: bold;
     border: 2px solid;
     background: none;
     border: none;
-    color: aliceblue;
+    color: ;
     font-size: 20px;
     font-weight: bold;
     border-bottom: 1px solid rgb(179, 242, 245);
@@ -162,15 +163,14 @@ font-weight: bold;
 }
 
 .box ::placeholder{
-    color: rgb(208, 213, 213);
-    font-size: 18px;
+    color: rgb(213, 208, 208);
 }
 
 
 
 .box select{
     width: 90%;
-    height: 40px;
+    height: 60px;
     background: none;
     color: aliceblue;
     font-size: 22px;

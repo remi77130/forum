@@ -69,6 +69,7 @@ div{
     height: 90%;
     text-align: center;
 
+    background-color: aliceblue;
 }
 
 .parent_form_signup{
@@ -135,10 +136,11 @@ Form
 color: aliceblue;
 cursor: pointer;
 text-decoration: none;
+font-size: 25px;
 }
 
 .span_login_signup{
-color: #4bd8ff;
+color: rgb(75, 216, 255);
 cursor: pointer;
 text-decoration: none;
 font-weight: bold;
@@ -147,30 +149,28 @@ font-weight: bold;
 .box input {
     
     width: 90%;
-    height: 50px;
+    height: 90px;
     border-radius: 10px;
     margin-top: 15px;
     padding: 10px;
     border: 2px solid;
     background: none;
     border: none;
-    color: aliceblue;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     border-bottom: 1px solid rgb(179, 242, 245);
 
 }
 
 .box ::placeholder{
-    color: rgb(208, 213, 213);
-    font-size: 18px;
+    color: rgb(213, 208, 208);
 }
 
 
 
 .box select{
     width: 90%;
-    height: 40px;
+    height: 80px;
     background: none;
     color: aliceblue;
     font-size: 22px;

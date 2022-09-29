@@ -25,9 +25,9 @@ require 'signupAction.php';
           CONTENT="chanderland pour discuter en live , rencontres et discussion avec chanderland le meilleur tchat de france"/>
     <META NAME="ABSTRACT" CONTENT="Chat gratuit chanderland">
     <META NAME="KEYWORDS"
-          CONTENT="chanderland, chat, chat gratuit, tchat, chanderland chat, tchat gratuit, chanderland, rencontre discrete, rencontre rapide femme, paris."/>
+          CONTENT="chanderland, chat, chat gratuit, tchat, chanderland chat, tchat gratuit, chanderland, rencontre discrete"/>
     <META NAME="DESCRIPTION" CONTENT="chanderland est le premier chat gratuit de France : tchater et voir des profils.
-le chat avec inscription rapide pour discuter avec des milliers de connectés.  "/>
+le chat avec inscription rapide pour discuter avec des milliers de connectés "/>
 
     <META NAME="REVISIT-AFTER" CONTENT="2 DAYS"/>
     <meta http-equiv="cache-Control" content="no-cache, must-revalidate">
@@ -52,7 +52,8 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés.  
     
 <div style="margin: auto;" class="img_index">
 
-<img src="icones/Chanderland (1).png" style="width: 100%;"  alt="logo_chanderland" srcset="">
+<img src="icones/logo2.svg" style="width: 100%;"  alt="" srcset="">
+<img src="icones/alien.png" style="width: 100%;"  alt="" srcset="">
 </div>
 </h1>
 <h3></h3>

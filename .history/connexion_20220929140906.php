@@ -64,21 +64,14 @@ if(isset($_POST['formconnexion'])) {
 
             <input class="connect_input" type="submit" name="formconnexion" value="Se connecter !" /> <br><br>
 
+            <div class="lien_compte_user">
+                    <a class="login_signup" href="connexion.php"><p>J'ai déjà un compte, <span
+                                    class="span_login_signup"> je me connecte</span></p></a> <br>
+                </div>
+            <a href="recuperation.php">Mot de passe oublié !</a>
 
-
-            </form>
+         </form>
       </div>
-
-<div class="connect_compte">
-
-            <a href="recuperation.php">Mot de passe oublié !</a> <br> <br>
-
-             <a href="index.php">Je n'ai pas de compte, <span style="color: #4bd8ff;"> je m'inscris </span></a>
-</div>
-
-
-
-
 </section>
          <?php
          if(isset($erreur)) {

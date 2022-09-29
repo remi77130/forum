@@ -28,16 +28,10 @@ include 'profil.php';
 
 <?php
 
-$requser = "SELECT * FROM membres ORDER BY id";
+$requser = "SELECT * FROM membres ORDER BY id DESC LIMIT 0,5";
 $requete = $bdd->query($requser);
-$articles = $requete->fetchAll(); 
-
-?>
-
-
-
-
-
+// RECUPERE LES DONEES 
+$articles = $requete->fetchAll(); ?>
 
 
 <header class="header_profil_membre">

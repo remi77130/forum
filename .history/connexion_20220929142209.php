@@ -71,7 +71,7 @@ if(isset($_POST['formconnexion'])) {
 
 <div class="connect_compte">
 
-            <a href="recuperation.php">Mot de passe oublié !</a> <br> <br>
+            <a style="color: red;" href="recuperation.php">Mot de passe oublié !</a> <br>
 
              <a href="index.php">Je n'ai pas de compte, <span style="color: #4bd8ff;"> je m'inscris </span></a>
 </div>

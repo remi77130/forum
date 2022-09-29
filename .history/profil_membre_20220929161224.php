@@ -28,13 +28,27 @@ include 'profil.php';
 
 <?php
 
-$requser = "SELECT * FROM membres ORDER BY id";
+$requser = "SELECT * FROM membres ORDER BY id DESC LIMIT '.$depart.','.$videosParPage. ";
 $requete = $bdd->query($requser);
+// RECUPERE LES DONEES 
 $articles = $requete->fetchAll(); 
 
+// LIMITE AFFICHE PRODUIT 
+
+$videosParPage = 5;
+
+    
+}
+else // SI LA VARIABLE NE CONTIEN RIEN 
+{
+    $pageCourante = 1;
+}
+
+$depart = ($pageCourante-1)*$videosParPage;
 ?>
 
 
+?>
 
 
 

@@ -28,16 +28,10 @@ include 'profil.php';
 
 <?php
 
-$requser = "SELECT * FROM membres ORDER BY id";
+$requser = "SELECT * FROM membres ORDER BY id DESC";
 $requete = $bdd->query($requser);
-$articles = $requete->fetchAll(); 
-
-?>
-
-
-
-
-
+// RECUPERE LES DONEES 
+$articles = $requete->fetchAll(); ?>
 
 
 <header class="header_profil_membre">
@@ -66,11 +60,7 @@ $articles = $requete->fetchAll();
 <?php include 'includes/search.php'; ?> <!-- Bar de recherche -->
 
 <div class="container" js-filter>
-    <div class="row">
-        <div class="col-md-3" js-filter-form>
-            
-        </div>
-    </div>
+    <p>lfijve</p>
 </div>
 
 

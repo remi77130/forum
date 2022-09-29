@@ -28,7 +28,7 @@ include 'profil.php';
 
 <?php
 
-$requser = "SELECT * FROM membres ORDER BY id";
+$requser = "SELECT * FROM membres ORDER BY id  DESC LIMIT 5";
 $requete = $bdd->query($requser);
 $articles = $requete->fetchAll(); 
 

@@ -28,14 +28,31 @@ include 'profil.php';
 
 <?php
 
-$requser = "SELECT * FROM membres ORDER BY id";
+$requser = "SELECT * FROM membres ORDER BY id ";
 $requete = $bdd->query($requser);
+// RECUPERE LES DONEES 
 $articles = $requete->fetchAll(); 
 
+// LIMITE AFFICHE PRODUIT 
+
+$videosParPage = 5;
+$videosTotaleReq = $bdd->query('SELECT id From membres ');
+$videosTotales = $videosTotaleReq->rowCount();
+
+if (isset($_GET['page']) AND !empty($_GET['page'])){
+
+    $_GET['page'] = intval($_GET['page']);
+    $pageCourante = $_Get['page'];
+
+    
+}
+else // SI LA VARIABLE NE CONTIEN RIEN 
+{
+    $pageCourante = 1;
+}
+
+$depart = ($pageCourante-1)*$videosParPage;
 ?>
-
-
-
 
 
 
