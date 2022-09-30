@@ -31,17 +31,6 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés.  
 
     <META NAME="REVISIT-AFTER" CONTENT="2 DAYS"/>
     <meta http-equiv="cache-Control" content="no-cache, must-revalidate">
-
-    <!-- Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="icones/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icones/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icones/favicon/favicon-16x16.png">
-<link rel="manifest" href="icones/favicon/site.webmanifest">
-<link rel="mask-icon" href="icones/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-    <!-- Icon -->
-
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');

@@ -40,6 +40,7 @@ le chat avec inscription rapide pour discuter avec des milliers de connectés.  
 <link rel="mask-icon" href="icones/favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+
     <!-- Icon -->
 
 </head>

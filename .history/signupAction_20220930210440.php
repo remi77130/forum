@@ -7,8 +7,11 @@ require 'require/database.php';
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
 
-<?php include 'includes/head.php' ?>
+include 'includes/head.php'
+
+?>
 <body>
 
 <?php
