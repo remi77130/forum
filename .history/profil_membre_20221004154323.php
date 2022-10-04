@@ -48,7 +48,7 @@ $articles = $requete->fetchAll();
     <ul>
     <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a></li> <br>
 
-    <a  id="myBtn" href="#">Filtre</a>
+    <a id="myBtn" href="#">Filtre</a>
     
 
 </div>
@@ -62,18 +62,15 @@ $articles = $requete->fetchAll();
 <div class="modal-content">
     <span class="close">&times;</span>
     
-
-    <!-- Formulaire de recherche (ne pas oublier htmlspecialchars pour secur sql) -->
-
     <form action="">
 
-    <label>Homme</label>
+    <label for="">Homme</label>
     <input type="checkbox" name="H"> <br> 
     
-    <label>Femme</label>
+    <label for="">Femme</label>
     <input type="checkbox" name="F"> <br>
 
-    <!-- On vient récupérer le département ( meme id et name que sur index.php) -->
+    <!-- On vient récupérer le département -->
     <label>Département</label> <br>
     <select id="select_departement" name="departement" required="">
 
@@ -90,13 +87,11 @@ $articles = $requete->fetchAll();
     <input class="age_max_search" type="number" name="age_min"> <br>
 
 
-<label>Pseudo</label> <br>
+<label>Pseudo</label>
 
-<input class="pseudo_search" type="text"> <br> <br>
+<input type="text">
 
-<button class="btn_submit">Enregistrer</button>
-
-
+    <button class="btn_submit">Enregistrer</button>
 
     </form>
 

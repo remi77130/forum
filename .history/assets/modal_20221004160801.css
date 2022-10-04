@@ -22,15 +22,9 @@
     border: 1px solid black;
     width: 90%;
     height: 300px;
-
     
 }
 
-
-.modal-content form{
-    padding: 10px;
-    border-radius: 10px;
-}
 .myBtn
 {
     color: rgb(22, 22, 22);

@@ -2,7 +2,7 @@
 {
     margin: 0;
     padding: 0;
-    list-style: none;
+
     box-sizing: border-box;
 
 }
@@ -42,7 +42,6 @@ header
     background-image: url(icones/alien.png);
     background-size: cover;
     border: 5px solid red;
-    
 }
 
 
@@ -58,7 +57,6 @@ header
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    
 
 
 }
@@ -80,16 +78,7 @@ header
 {
 
     display: flex;
-    text-decoration: none;
-
-
-}
-.navbar .nav-links ul a
-{
-   color: aliceblue;
-   text-decoration: none;
-   
-   
+    border: 5px solid red;
 
 }
 
@@ -156,19 +145,23 @@ font-weight: 600;
     .nav-links.mobile-menu
 {
     margin-left: 0;
-    font-weight: bold;
-    
 
 }
-
-.nav-links.mobile-menu ul a
+.nav-links.mobile-menu a
 {
-    color: black;
-    
+color: rgb(22, 22, 22);
+font-size: 1.2em;
+font-weight: 600;
+
 
 }
 
-
+.myBtn
+{
+    color: rgb(22, 22, 22);
+    font-size: 1.2em;
+    font-weight: 600;
+}
 
     .nav-links ul 
     {
@@ -178,7 +171,7 @@ font-weight: 600;
 
     .navbar .nav-links ul li 
     {
-        margin: 10px 0;
+        margin: 25px 0;
         font-size: 1.2em;
         font-weight: 600;
         list-style: none;

@@ -1,4 +1,9 @@
+button
+{
 
+
+
+}
 
 .modal
 {
@@ -9,8 +14,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(246, 246, 246, 0.603);
-    backdrop-filter: blur(5px);
+    background-color: aqua;
 
     
 }
@@ -22,20 +26,7 @@
     border: 1px solid black;
     width: 90%;
     height: 300px;
-
     
-}
-
-
-.modal-content form{
-    padding: 10px;
-    border-radius: 10px;
-}
-.myBtn
-{
-    color: rgb(22, 22, 22);
-    font-size: 1.2em;
-    font-weight: 600;
 }
 
 .age_min_search
@@ -44,15 +35,6 @@
 }
 
 
-.age_max_search
-{
-    width: 50px;
-}
-
-.pseudo_search
-{
-    width: 100px;
-}
 
 
 .modal-content p 
@@ -71,5 +53,4 @@
     font-size: 50px;
     padding: 0 10px 0 0 ;
     font-weight: bold;
-    
 }

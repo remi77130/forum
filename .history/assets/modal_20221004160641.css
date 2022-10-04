@@ -22,20 +22,12 @@
     border: 1px solid black;
     width: 90%;
     height: 300px;
-
     
 }
 
-
-.modal-content form{
-    padding: 10px;
-    border-radius: 10px;
-}
-.myBtn
+.btn_filter
 {
-    color: rgb(22, 22, 22);
-    font-size: 1.2em;
-    font-weight: 600;
+    
 }
 
 .age_min_search

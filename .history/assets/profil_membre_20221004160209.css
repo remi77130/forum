@@ -2,7 +2,7 @@
 {
     margin: 0;
     padding: 0;
-    list-style: none;
+
     box-sizing: border-box;
 
 }
@@ -42,7 +42,6 @@ header
     background-image: url(icones/alien.png);
     background-size: cover;
     border: 5px solid red;
-    
 }
 
 
@@ -58,14 +57,13 @@ header
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    
 
 
 }
 
 .navbar a 
 {
-    color: aliceblue;
+    color: rgb(20, 21, 21);
 }
 
 .logo_nav
@@ -80,20 +78,9 @@ header
 {
 
     display: flex;
-    text-decoration: none;
-
-
-}
-.navbar .nav-links ul a
-{
-   color: aliceblue;
-   text-decoration: none;
-   
-   
+    border: 5px solid red;
 
 }
-
-
 
 
 .navbar .nav-links ul li
@@ -156,19 +143,8 @@ font-weight: 600;
     .nav-links.mobile-menu
 {
     margin-left: 0;
-    font-weight: bold;
-    
 
 }
-
-.nav-links.mobile-menu ul a
-{
-    color: black;
-    
-
-}
-
-
 
     .nav-links ul 
     {
@@ -178,7 +154,7 @@ font-weight: 600;
 
     .navbar .nav-links ul li 
     {
-        margin: 10px 0;
+        margin: 25px 0;
         font-size: 1.2em;
         font-weight: 600;
         list-style: none;
@@ -190,6 +166,7 @@ font-weight: 600;
     position: absolute;
     top: 15px;
     left: 20px;
+        color: aliceblue;
     }
 
 }

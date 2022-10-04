@@ -48,7 +48,7 @@ $articles = $requete->fetchAll();
     <ul>
     <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a></li> <br>
 
-    <a  id="myBtn" href="#">Filtre</a>
+    <a id="myBtn" href="#">Filtre</a>
     
 
 </div>
@@ -92,7 +92,7 @@ $articles = $requete->fetchAll();
 
 <label>Pseudo</label> <br>
 
-<input class="pseudo_search" type="text"> <br> <br>
+<input maxlength="10" type="text">
 
 <button class="btn_submit">Enregistrer</button>
 

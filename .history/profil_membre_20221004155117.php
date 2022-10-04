@@ -48,7 +48,7 @@ $articles = $requete->fetchAll();
     <ul>
     <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a></li> <br>
 
-    <a  id="myBtn" href="#">Filtre</a>
+    <a id="myBtn" href="#">Filtre</a>
     
 
 </div>
