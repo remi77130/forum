@@ -76,13 +76,11 @@ $articles = $requete->fetchAll();
     <div>
 
     <p>Je recherche des </p>
-        <label>Homme
+        <label>Homme</label>
         <input type="checkbox" name="H"><br>
-        </label> <br>
 
-        <label>Femme
+        <label>Femme</label>
         <input type="checkbox" name="F"> <br>
-        </label>
 
     </div>
 

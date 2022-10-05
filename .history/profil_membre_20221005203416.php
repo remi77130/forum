@@ -76,13 +76,11 @@ $articles = $requete->fetchAll();
     <div>
 
     <p>Je recherche des </p>
-        <label>Homme
+        <label>Homme</label>
         <input type="checkbox" name="H"><br>
-        </label> <br>
 
-        <label>Femme
+        <label>Femme</label>
         <input type="checkbox" name="F"> <br>
-        </label>
 
     </div>
 
@@ -110,11 +108,11 @@ $articles = $requete->fetchAll();
 
     <label>Age minimum</label> <br>
 
-        <input class="age_search" type="number" name="age_min"><br>
-
+        <input class="age_min_search" type="number" name="age_min">
+        
      <label>Age maximum</label> <br>
 
-        <input class="age_search" type="number" name="age_min">
+        <input class="age_max_search" type="number" name="age_min">
 
     </div>
 

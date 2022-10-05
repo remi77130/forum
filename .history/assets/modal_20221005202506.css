@@ -59,28 +59,10 @@
 
 
 
-.pseudo_search
-{
-    width: 50px;
-    color: aliceblue;
-    padding: 5px;
-    border-radius: 5px;
-    background: none;
-    border: 1px solid aliceblue;
-    font-weight: bold;
-    margin-top: 5px;
-}
 
-.age_search{
-width: 50px;
-color: aliceblue;
-padding: 5px;
-border-radius: 5px;
-background: none;
-border: 1px solid aliceblue;
-font-weight: bold;
 
-}
+
+
 
 
 
@@ -97,53 +79,16 @@ font-weight: bold;
   
 }
 
-
-.modal-content form select 
-{
-    background: none;
-    color: aliceblue;
-    font-weight: 600;
-    padding: 5px;
-    margin-top: 5px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-
-.modal-content form select:hover
-{
-    background: rgb(255, 255, 255);
-    color: black;
-}
-
-
-
-
-
-
-.modal-content input
-{
-    border-radius: 5px ;
-    margin-top: 5px;
-
-}
 .modal-content form label
 {
     font-weight: 800;
+    margin-top: 10px;
 
 }
 
 .modal-content form div{
-    text-align: center;
+    border: 1px solid red;
     margin-top: 15px;
-    padding: 15px;
-}
-
-.modal-content p
-{
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 5px;
 }
 
 

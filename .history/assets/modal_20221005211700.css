@@ -102,25 +102,9 @@ font-weight: bold;
 {
     background: none;
     color: aliceblue;
-    font-weight: 600;
     padding: 5px;
     margin-top: 5px;
-    border-radius: 5px;
-    text-align: center;
 }
-
-
-.modal-content form select:hover
-{
-    background: rgb(255, 255, 255);
-    color: black;
-}
-
-
-
-
-
-
 .modal-content input
 {
     border-radius: 5px ;
