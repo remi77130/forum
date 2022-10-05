@@ -44,6 +44,7 @@
     letter-spacing: 2px;
     font-size: 17px;
     margin: 40px 0;
+    border: 1px solid whitesmoke;
     cursor: pointer;
     box-shadow: 2px 2px 8px rgba(106, 106, 106, 0.153);
 

@@ -74,10 +74,10 @@ $articles = $requete->fetchAll();
     <form action="">
 
     <label>Homme</label>
-    <input type="checkbox" name="H"> <br> <br>
+    <input type="checkbox" name="H"> <br> 
     
     <label>Femme</label>
-    <input type="checkbox" name="F"> <br><br>
+    <input type="checkbox" name="F"> <br>
 
     <!-- On vient récupérer le département ( meme id et name que sur index.php) -->
     <label>Département</label> <br>

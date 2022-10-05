@@ -48,11 +48,10 @@ $articles = $requete->fetchAll();
     <ul>
 
     <li>
-    <a  id="myBtn" href="#">Filtre</a><span class="spn_icon_search"><img class="icon_search" src="icones/chanderland_search.svg" alt="chanderland"></span>
+    <a  id="myBtn" href="#">Filtre</a><img class="icon_search" src="icones/chanderland_search.svg" alt="chanderland">
     </li>
     
-    <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a><span class="spn_icon_search"><img class="icon_search" src="icones/chanderlan_profil.svg" alt="chanderland"></span>
-    </li> <br>
+    <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a></li> <br>
 
 
 </div>
@@ -62,22 +61,20 @@ $articles = $requete->fetchAll();
 
 
 <div id="myModal" class="modal">
-<div class="close"><span class="close">&times;</span></div> <br>
 
 <div class="modal-content">
-
+<span class="close">&times;</span>
+    
 
     <!-- Formulaire de recherche (ne pas oublier htmlspecialchars pour secur sql) -->
-
-    <div class="form_search">
 
     <form action="">
 
     <label>Homme</label>
-    <input type="checkbox" name="H"> <br> <br>
+    <input type="checkbox" name="H"> <br> 
     
     <label>Femme</label>
-    <input type="checkbox" name="F"> <br><br>
+    <input type="checkbox" name="F"> <br>
 
     <!-- On vient récupérer le département ( meme id et name que sur index.php) -->
     <label>Département</label> <br>
@@ -106,14 +103,9 @@ $articles = $requete->fetchAll();
 
     </form>
 
+</div>
 
-    </div>
-
-
-    
-</div> <!-- Fin modal content-->
-
-</div> <!-- Fin modal-->
+</div>
     
 
 

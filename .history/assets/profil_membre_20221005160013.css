@@ -41,19 +41,24 @@ header
     width: 100vw;
     background-image: url(icones/alien.png);
     background-size: cover;
+    border: 5px solid red;
     
 }
 
+.content_icon_search 
+{
+    width: 50px;
+    border: 2px solid green;
+}
 
-.icon_search
+.content_icon_search img 
 {
     width: 20px;
-    margin-left: 5px;
-
 }
 .navbar
 {
 
+    border: 5px solid green;
     position: absolute;
     padding: 30px;
     display: flex;
@@ -62,6 +67,8 @@ header
     width: 100%;
     box-sizing: border-box;
     
+
+
 }
 
 .navbar a 
@@ -118,7 +125,7 @@ font-weight: 600;
     display: none;
     width: 50px;
     position: absolute;
-    right:15px ;
+    right:20px ;
     top: 15px;
 
 }
@@ -194,6 +201,9 @@ font-weight: 600;
     }
 
 }
+
+
+
 
 
 

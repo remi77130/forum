@@ -62,22 +62,20 @@ $articles = $requete->fetchAll();
 
 
 <div id="myModal" class="modal">
-<div class="close"><span class="close">&times;</span></div> <br>
 
 <div class="modal-content">
-
+    <div><span class="close">&times;</span>
+</div>
 
     <!-- Formulaire de recherche (ne pas oublier htmlspecialchars pour secur sql) -->
-
-    <div class="form_search">
 
     <form action="">
 
     <label>Homme</label>
-    <input type="checkbox" name="H"> <br> <br>
+    <input type="checkbox" name="H"> <br> 
     
     <label>Femme</label>
-    <input type="checkbox" name="F"> <br><br>
+    <input type="checkbox" name="F"> <br>
 
     <!-- On vient récupérer le département ( meme id et name que sur index.php) -->
     <label>Département</label> <br>
@@ -106,14 +104,9 @@ $articles = $requete->fetchAll();
 
     </form>
 
+</div>
 
-    </div>
-
-
-    
-</div> <!-- Fin modal content-->
-
-</div> <!-- Fin modal-->
+</div>
     
 
 
