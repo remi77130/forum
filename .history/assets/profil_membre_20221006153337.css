@@ -203,7 +203,7 @@ font-weight: 600;
         font-size: 1.2em;
         font-weight: 600;
         list-style: none;
-        border-bottom: 1px solid rgba(74, 74, 74, 0.826);
+        border-bottom: 5px solid rgba(74, 74, 74, 0.826);
     }
 
     .logo_nav

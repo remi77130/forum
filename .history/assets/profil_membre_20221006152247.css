@@ -155,16 +155,9 @@ font-weight: 600;
     }
 
   
-.mobile-menu .filter_nav
+.nav-links .mobile-menu .filter_nav
 {
-    color: aliceblue;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 10px;
-
-
+    color: red;
 }
 
 
@@ -199,11 +192,10 @@ font-weight: 600;
 
     .navbar .nav-links ul li 
     {
-        margin: 15px 0;
+        margin: 10px 0;
         font-size: 1.2em;
         font-weight: 600;
         list-style: none;
-        border-bottom: 1px solid rgba(74, 74, 74, 0.826);
     }
 
     .logo_nav

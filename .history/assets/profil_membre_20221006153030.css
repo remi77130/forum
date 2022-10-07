@@ -163,6 +163,7 @@ font-weight: 600;
     font-weight: bold;
     letter-spacing: 2px;
     margin-top: 10px;
+    border-bottom: 0.5px solid rgb(110, 110, 110);
 
 
 }
@@ -199,11 +200,10 @@ font-weight: 600;
 
     .navbar .nav-links ul li 
     {
-        margin: 15px 0;
+        margin: 10px 0;
         font-size: 1.2em;
         font-weight: 600;
         list-style: none;
-        border-bottom: 1px solid rgba(74, 74, 74, 0.826);
     }
 
     .logo_nav

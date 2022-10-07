@@ -50,8 +50,8 @@ $articles = $requete->fetchAll();
     <li>
     <a  id="myBtn" href="#">
         <img class="icon_search" src="icones/chanderland_search.svg" alt="chanderland">
-    <span class="filter_nav">Filtre</span>
-    </li></a>
+    <span class="filter_nav">Filtre</span></a>
+    </li>
     
     <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">
   <img class="icon_search" src="icones/chanderlan_profil.svg" alt="chanderland">
