@@ -105,21 +105,20 @@ Rencontre gratuite
                         <option value="Femme">Femme</option>
                     </select>
 
-           <!-- <div id="departement">
+              <div id="departement">
                     <select id="select_departement" name="departement" required>
                         <option value="">Département</option>
                         <?php
                         // On récupère tous les départements triés par ordre alphabétique
-                   //     $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
+                        $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
 
                         // On boucle sur les départements
-                      // foreach ($req_selectDepartements->fetchAll() as $departement) {
-                          //  echo '<option value="' . $departement['departement_code'] . '">' . $departement['departement_nom'] . '</option>';
-                      //  }
-                   // ?>
+                       foreach ($req_selectDepartements->fetchAll() as $departement) {
+                            echo '<option value="' . $departement['departement_code'] . '">' . $departement['departement_nom'] . '</option>';
+                        }
+                    ?>
                     </select>
-                </div>-->
-
+          
                
                 <div id="ville" style="display: none;">
                     <select id="select_ville" name="ville_id" required></select>
@@ -220,24 +219,6 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
     Inscrivez-vous gratuitement et découvrez des milliers de profils proches de chez vous pour discuter et faire des rencontres coquines.
     
-    </p>
-
-</div>
-
-</div>
-
-
-<div class="index_container">
-
-<img class="icon_chanderland" src="icones/subscription_icone/fire02.svg" alt="photo_femme_chanderland">
-
-<div>
-
-<h2>Placer une icône près de votre pseudo pour vous démarquez <h2>
-
-    <p>
-    Souscrivez a un abonnement à 9,90€/mois pour vous dermarquez des autres membres. <br> 
-    Vous ne passerez plus inaperçu.
     </p>
 
 </div>

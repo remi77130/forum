@@ -229,7 +229,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 <div class="index_container">
 
-<img class="icon_chanderland" src="icones/subscription_icone/fire02.svg" alt="photo_femme_chanderland">
+    <img class="icon_chanderland" src="icones/subscription_icone/fire01.svg" alt="photo_femme_chanderland">
 
 <div>
 

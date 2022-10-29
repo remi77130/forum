@@ -256,7 +256,6 @@ button {
     border: 0.5px solid rgba(245, 222, 179, 0.589);
     border-radius: 30px;
     transition: 300ms;
-    cursor: pointer;
 }
 
 
