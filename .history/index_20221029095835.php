@@ -171,7 +171,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 <div class="index_container">
 
 
-    <img class="img_femme_chanderland" src="icones/chanderland_femme.svg" alt="photo_femme_chanderland">
+    <img class="img_femme_chanderland" src="icones/profil_chanderland.png" alt="photo_femme_chanderland">
 
 
 <div>
@@ -193,6 +193,26 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 
 
+<div class="index_container">
+
+
+<img class="img_femme_chanderland" src="icones/test_en_svg.svg" alt="photo_femme_chanderland">
+
+
+<div>
+<h2>Comment faire des rencontres rapides ? <h2>
+
+<p>
+Rejoignez chanderland et profitez gratuitement d'une messagerie pour faire des rencontres rapides.<br>
+Découvrez les profils autour de chez vous et envoyé des messages gratuitement. <br> 
+Chanderland est un site de rencontres ultra simples à prendre en main.
+</p>
+</div>
+</div>
+
+
+
+
 
 
 
@@ -202,7 +222,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
     <div class="index_container">
 
-    <img class="search_chanderland" src="icones/chanderland_search02.svg" alt="chanderland_profil">
+    <img class="search_chanderland" src="icones/filtre_chanderland.png" alt="chanderland_profil">
 
     
     <div>
@@ -223,7 +243,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 <div class="index_container">
 
-    <img class="img_femme_chanderland" src="icones/chanderland_membres.svg" alt="photo_femme_chanderland">
+    <img class="img_femme_chanderland" src="icones/membre_chanderland.png" alt="photo_femme_chanderland">
 
 <div>
 
@@ -242,7 +262,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 <div class="index_container">
 
-<img class="icon_chanderland" src="icones/1.svg" alt="photo_femme_chanderland">
+<img class="icon_chanderland" src="icones/subscription_icone/fire02.svg" alt="photo_femme_chanderland">
 
 <div>
 
