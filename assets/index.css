@@ -36,7 +36,7 @@ h1{
         margin-bottom: 10px;
     }
 
-
+  
     article{
         display: block !important;
     }
@@ -77,7 +77,7 @@ h1{
     }
 
 
-}  /*  Fin media 400 */
+}  /*  Fin media 700 */
 
 
 
@@ -93,6 +93,10 @@ h1{
 {
     width: 200px;
     margin: auto;
+    border-radius: 5px;
+    box-shadow:  -1px -2px 0px 2px rgb(120, 246, 255) ;
+
+
 }
 
 

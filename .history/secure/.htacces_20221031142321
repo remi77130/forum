@@ -1,0 +1,4 @@
+<!-- Message --> AuthName "Contenu securisee"
+<!--type --> AuthType Basic
+<!-- chemin absolut info id user -->AuthUserFile "C:\xampp\htdocs\Forum\secure\index_secure.php\.htpasswd"
+<!-- user valid dans fichier--> Require valid-AuthUserFile

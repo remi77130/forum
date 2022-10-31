@@ -1,0 +1,1 @@
+<?= realpath('index_secure.php'); ?>

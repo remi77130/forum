@@ -78,8 +78,8 @@ Rencontre gratuite
 </header>
   
 
-<div class="cont_beta">
-<img class="img_beta" src="icones/Beta_version.png" alt="" srcset="">
+<div style="text-align: center;" class="cont_beta">
+<img class="img_beta" src="icones/Version_beta.svg"  alt="image_chanderland" srcset="">
 
 </div>
 
@@ -105,20 +105,20 @@ Rencontre gratuite
                         <option value="Femme">Femme</option>
                     </select>
 
-           <!-- <div id="departement">
+            <div id="departement">
                     <select id="select_departement" name="departement" required>
                         <option value="">Département</option>
                         <?php
                         // On récupère tous les départements triés par ordre alphabétique
-                   //     $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
+                        $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
 
                         // On boucle sur les départements
-                      // foreach ($req_selectDepartements->fetchAll() as $departement) {
-                          //  echo '<option value="' . $departement['departement_code'] . '">' . $departement['departement_nom'] . '</option>';
-                      //  }
-                   // ?>
+                       foreach ($req_selectDepartements->fetchAll() as $departement) {
+                          echo '<option value="' . $departement['departement_code'] . '">' . $departement['departement_nom'] . '</option>';
+                        }
+                   ?>
                     </select>
-                </div>-->
+                </div>
 
                
                 <div id="ville" style="display: none;">
