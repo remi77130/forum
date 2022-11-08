@@ -1,0 +1,37 @@
+*
+{
+    font-family: 'IBM Plex Sans';
+
+    box-sizing: border-box;
+}
+
+
+
+/*   FOOTER */
+
+
+footer
+{
+height: 1px;
+
+
+}
+
+footer a 
+{
+    text-decoration: none;
+color: rgb(0, 136, 255);
+
+}
+.container_footer
+{
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+/* FOOTER */

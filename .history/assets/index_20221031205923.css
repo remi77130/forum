@@ -349,34 +349,3 @@ article h2
 
 }
 
-
-
-
-/*   FOOTER */
-
-
-footer
-{
-height: 1px;
-
-
-}
-
-footer a 
-{
-    text-decoration: none;
-color: aliceblue;
-font-weight: bold;
-}
-.container_footer
-{
-    height: auto;
-    width: 100%;
-}
-
-
-
-
-
-
-/* FOOTER */

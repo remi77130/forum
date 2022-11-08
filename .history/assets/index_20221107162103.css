@@ -1,0 +1,472 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans';
+
+    box-sizing: border-box;
+
+}
+
+
+html, body{
+    font-family: 'IBM Plex Sans', sans-serif; 
+    background-color: rgb(37, 37, 40);
+    color: aliceblue;
+    display: table;
+    height: 100%;
+    width: 100%
+    
+
+}
+
+
+
+h1{
+    color: aliceblue;
+    font-size: 40px;
+}
+
+h3
+{
+    margin-bottom: 25px;
+}
+
+.md1{
+    margin-left: 155px;
+}
+
+@media screen and (max-width: 700px) {
+    
+    .box input{
+        max-height: 40px;
+        margin-bottom: 10px;
+    }
+
+    
+
+  
+    article{
+        display: block !important;
+    }
+
+    .index_container p
+    {
+        font-size: 17px;
+        font-weight: lighter;
+    }
+
+    .index_container
+    {
+    margin: auto;
+    }
+        
+
+    .box ::placeholder{
+        font-size: 1.1em;
+    }
+
+    .box select{
+
+        width: 90%;
+        max-height: 40px;
+        font-size: 17px;
+    }
+
+
+    .box .lien_compte_user p{
+
+        font-size: 17px;
+
+    }
+
+    .box .button_form{
+        
+   
+    padding: 15px 40px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 25px 0;
+    
+    }
+
+
+}  /*  Fin media 700 */
+
+
+
+
+
+
+
+
+
+
+
+.cont_beta
+{
+    width: 200px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow:  -2px -2px 0px 2px  rgb(120, 246, 255) ;
+    border: 0.5px solid rgba(85, 85, 85, 0.352);
+
+
+}
+
+
+.section_signup{
+    height: 90%;
+   
+}
+
+.parent_form_signup{
+    height: 100%;
+    display: flex  ;
+    justify-content: space-evenly;
+
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+
+.div_img_index{
+     text-align: center;
+}
+
+
+
+
+.img_index
+{
+    width: 300px;
+}
+
+
+
+
+.title_section_signup{
+text-align: center;
+font-family: 'IBM Plex Sans';
+color:rgb(251, 209, 255);
+margin-top: 25px;
+
+}
+
+
+.form_signup{
+
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+/*
+Form
+*/
+
+
+.div_img_index
+{
+    margin-top: 50px;
+}
+
+
+
+.lien_compte_user p
+{
+color: aliceblue;
+cursor: pointer;
+text-decoration: none;
+}
+
+.span_login_signup{
+color: #4bd8ff;
+cursor: pointer;
+text-decoration: none;
+font-weight: bold;
+}
+
+.box input {
+    
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 2px solid;
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(179, 242, 245);
+
+}
+
+.box ::placeholder{
+    color: rgb(208, 213, 213);
+    font-size: 18px;
+}
+
+
+
+.box select{
+    width: 90%;
+    height: 40px;
+    background: none;
+    color: aliceblue;
+    font-size: 22px;
+    border-bottom: 0.3px solid rgba(245, 222, 179, 0.534);
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.box select:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+
+
+.form-control{
+    margin-top: 5px;
+}
+
+.info_site_index
+{
+    text-align: center;
+    font-family: 'IBM Plex Sans';
+    margin-top: 10px;
+}
+
+.box{
+    max-width: 50%;
+    height: 90%;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(30, 30, 30, 0.614);
+    border: 0.5px solid rgba(245, 222, 179, 0.425);
+
+    border-radius: 20px;
+    margin: 100px auto;
+    overflow: hidden;
+    
+    
+    
+}
+
+
+.box form
+{
+    
+    height: auto;
+}
+.button_form{
+
+    color: azure;
+    text-decoration: none;
+    border-radius: 3px;
+    background-color: #353535;
+    padding: 20px 50px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin: 40px 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(106, 106, 106, 0.153);
+
+}
+.button_form:hover
+{
+    border-radius: 10px;
+    background-color: aliceblue;
+    color: #353535;
+}
+
+.box::before,
+.box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 500%;
+    z-index: -1;
+    transform: scale(1.02);
+    border-radius: 15px;
+    animation: animate 50s infinite;
+}
+
+.box::after{
+    filter: blur(10px);
+    
+}
+
+
+
+@keyframes animate{
+    0% { background-position: 0 0;}
+    50% { background-position:300% 0;}
+    100% { background-position: 0 0;}
+}
+
+
+
+
+form ::placeholder{
+    font-size: 1.5em;
+    font-family: 'IBM Plex Sans';
+  
+}
+
+
+
+article
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+article h2
+{
+    margin-bottom: 10px;
+}
+
+.img_femme_chanderland
+{
+    width: 300px;
+}
+
+.index_container
+{
+    padding: 10px;
+    width: 250px;
+}
+
+.index_container img
+{
+    margin: auto;
+    width: 200px;
+}
+
+
+.index_container p
+{
+    font-weight: lighter;
+    font-size: 17px;
+    
+
+}
+
+
+.md1
+{
+    width: 300px;
+    padding: 10px;
+    font-size: 17px;
+    margin-left: 50px;
+}
+
+.md1 h2
+{
+    padding-bottom: 15px;
+}
+
+.container_button
+{
+    width: 400px;
+    text-align: center; 
+    margin: 200px auto;
+}
+.circle-btn
+{
+    outline: none;
+    background: none;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.circle-btn:hover
+{
+    transform: scale(1.2);
+}
+
+.circle-btn:active
+{
+    transform: scale(1.5);
+    
+}
+
+
+.circle-btn span{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    will-change: transform;
+}
+
+
+.circle-btn svg
+{
+
+}
+
+.bg-svg
+{
+    stroke: rgb(28, 28, 28);
+    stroke-width: 2;
+    
+}
+
+.filled
+{
+    stroke: #dbdbdb;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+}
+
+
+
+
+/*   FOOTER */
+
+
+footer
+{
+height: 1px;
+justify-content: space-around;
+display: flex;
+padding-bottom: 20px;
+
+}
+
+footer a 
+{
+text-decoration: none;
+color: aliceblue;
+font-weight: bold;
+padding-left: 10px;
+}
+.container_footer
+{
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+/* FOOTER */
