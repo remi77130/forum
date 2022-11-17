@@ -105,7 +105,7 @@ if (!empty($_POST['pseudo'])
             $password,
             $age,
             $sexe,
-            "default.jpg",// JPG !IMPORTANT
+            "default_04.jpg",
             // a mettre en commentaire si ville et dpt non utilisé
             htmlspecialchars($_POST['departement']),
             htmlspecialchars($_POST['ville_id'])

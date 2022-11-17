@@ -145,7 +145,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
                 $msg = "Erreur durant l'importation de votre photo de profil";
               }
            } else {
-              $msg = "Votre photo de profil doit être au format jpg, jpeg, gif, png ou svg";
+              $msg = "Votre photo de profil doit être au format jpg, jpeg, gif ou png";
            }
         } else {
            $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
