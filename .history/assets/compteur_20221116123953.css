@@ -1,0 +1,11 @@
+.counter_container
+{
+    display: flex;
+    border: 5px solid red;
+}
+
+
+#counter
+{
+    font-size: 2em;
+}

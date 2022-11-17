@@ -1,0 +1,419 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+
+    background-color: rgb(37, 37, 40);
+    color: aliceblue;
+}
+
+.section_profil_membre {
+
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.profil_membre H2 {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    size: 22px;
+    font-weight: 700px;
+    color: aliceblue;
+
+
+}
+
+.descr_profil {
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400px;
+    font-size: 14px;
+    color: aliceblue;
+    margin-top: 25px;
+
+
+}
+
+.created_profil {
+    color: aliceblue;
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-top: 15px;
+
+
+}
+
+.profil_membre img {
+    width: 250px;
+    height: 250px;
+
+    border-radius: 200px;
+    box-shadow: 3px 3px 3px rgba(85, 85, 85, 0.219);
+    margin-top: 5px;
+
+}
+
+.profil_membre img:hover {
+
+    transition: 500ms;
+    box-shadow: 0px 0px 0px rgba(141, 141, 141, 0.324);
+
+}
+.parent_form_album_photo
+{
+    border: 0.5px solid rgba(149, 149, 149, 0.573);
+    border-radius: 5px;
+    width: 280px;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.container_pseudo
+{
+    width: 200px;
+    margin: 30px    auto;
+
+}
+
+.pseudo_profil
+{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+.info_profil {
+
+
+    margin: auto;
+    width: 200px;
+    word-wrap: break-word;
+    font-size: 15px;
+}
+
+.info_pseudo_age {
+    margin: 20px 0px 10px 0px;
+}
+
+
+
+
+
+
+
+
+.image_album_profil {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+
+}
+
+.image_album_profil div {
+    width: 150px;
+    max-width: 150px;
+}
+
+.image_album_profil div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.image_album_profil img:hover {
+    opacity: 0.7;
+    transition: 400ms;
+    box-shadow: 1px 3px 3px rgba(179, 176, 176, 0.397);
+}
+
+/*
+MESSAGERIE 
+*/
+
+.pjointe {
+    margin-top: 50px;
+}
+
+
+.message_profil_user {
+
+    width: 350px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(40, 40, 40, 0.733), -5px -5px 10px rgba(112, 112, 112, 0.582);
+    border-radius: 20px;
+
+}
+
+.message_profil_user:hover {
+    box-shadow: none;
+    transition: 5000ms;
+    border: 0.5px solid rgba(230, 3, 3, 0.781);
+}
+
+
+.message_profil_user label {
+
+    Font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+}
+
+.input_object_form_profil {
+    border: 1px solid rgb(241, 241, 241);
+    background: none;
+
+}
+
+
+.message_profil_user input {
+    color: rgb(255, 255, 255);
+    padding: 5px 20px;
+    font-size: 17px;
+}
+
+textarea {
+    padding: 5px 20px;
+    font-size: 17px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(241, 241, 241);
+
+}
+
+button {
+
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 35px;
+    margin: 20px;
+    cursor: pointer;
+
+}
+
+.input_submit_form_profil {
+
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 20px;
+
+}
+
+.input_submit_form_profil:hover {
+
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+    cursor: pointer;
+
+}
+
+
+.comment_profil {
+
+    overflow: visible;
+    height: 100%;
+    box-shadow: 5px 3px 30px rgba(129, 129, 129, 0.315);
+    margin-top: 25px;
+    text-align: center;
+    padding: 5px;
+
+}
+
+
+.input_comment {
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 20px;
+    margin: 20px;
+
+}
+
+
+.input_comment:hover {
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+
+.option_profil_user_connect {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.option_profil_user_connect div {
+    margin-bottom: 35px;
+}
+
+.option_profil_user_connect .notification {
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: red;
+}
+
+/*
+OPTION PROFIL
+*/
+
+.option_profil_user_connect a {
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 5px;
+
+}
+
+.button_write_profil {
+
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 20px;
+    margin: 20px;
+
+
+}
+
+.button_write_profil:hover {
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+}
+
+
+.option_profil_user {
+    margin-top: 50px;
+}
+
+.option_profil_user_connect a:hover {
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+}
+
+.option_profil_user a {
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 2px;
+
+}
+
+
+.option_profil_user a:hover {
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+}
+
+.parent_message_profil_user {
+    display: none;
+    margin-top: 50px;
+
+}
+
+.message_profil_user label {
+
+    font-weight: bold;
+    font-family: 'IBM Plex Sans', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+.active {
+    display: inherit !important;
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+.info_profil{
+
+
+    margin: auto;
+    text-align: initial;
+
+}
+
+.info_pseudo_age span{
+    text-decoration: underline;
+    padding: 5px;
+}
+
+}
+
+
+

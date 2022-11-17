@@ -1,0 +1,23 @@
+body{
+    background-color: black;
+}
+
+h5{
+    color:  black;
+}
+
+p{
+    color: black;
+}
+
+.carousel-indicators
+{
+    color: black;
+}
+
+
+.carousel-inner img
+{
+margin: auto;
+max-width: 300px;
+}

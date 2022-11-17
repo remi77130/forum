@@ -1,0 +1,4 @@
+#RewriteEngine On
+RewriteRule ^salut$ connexion.php
+#RewriteCond %{HTTPS} off
+##RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]

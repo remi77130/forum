@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(38, 36, 36);
+}
+
+h5{
+    color:  aliceblue;
+}
+
+p{
+    color: aliceblue;
+}
+
+.carousel-indicators
+{
+    color: aliceblue;
+}
+
+
+.carousel-inner img
+{
+margin: auto;
+max-width: 300px;
+}
