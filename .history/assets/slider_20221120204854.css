@@ -1,0 +1,10 @@
+.slider
+{
+    text-align: center;
+}
+
+.slider img
+{
+    max-width: 250px;
+    border: 5px solid red;
+}

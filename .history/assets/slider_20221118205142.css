@@ -1,0 +1,16 @@
+img{
+    width: 500px;
+}
+
+p
+{
+    color: red;
+}
+.slides
+{
+    width: calc(500px * 3);
+}
+.slide
+{
+    float: left;
+}
