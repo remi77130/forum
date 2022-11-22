@@ -40,7 +40,7 @@ include 'profil.php';
 
 <nav class="navbar">
 
-<a class="logo_nav" href="profil_membre.php">Chanderland</a>
+<a  class="logo_nav" href="profil_membre.php">Chanderland</a>
 <div class="nav-links">
     <ul>
 
@@ -85,6 +85,11 @@ include 'profil.php';
 
 
 </header>
+
+<div class="to_go_header">
+    <img src="icones/to_go.svg" class="icone_to_go">
+</div>
+
 
 
 <?php include 'includes/search.php'; ?> <!-- Bar de recherche -->
@@ -193,8 +198,12 @@ include 'profil.php';
             </a>
         </div>
 
+  
    
     <?php endforeach; ?>
+
+
+
 
 
 </section>
@@ -237,6 +246,7 @@ include 'profil.php';
         })
     </script>
 <script src="js/modal.js"> </script>
+<script src="js/to_go.js"> </script>
 
 
 </html>
