@@ -80,3 +80,49 @@ nav a:hover
 section{
     text-align: center;
 }
+
+
+.button {
+    width:5em;
+    height:3em;
+    margin:0.5em auto 0 auto;
+    display: none;
+}
+
+.button a, input[type=submit] {
+    display:block;
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 2px;
+
+}
+
+
+.button a:hover, input[type=submit]:hover {
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+}
+input[type=submit]{
+    margin:auto;
+}
+
+#messages_container{
+    margin: 1em 5em;
+}
+.msg_sent{
+    text-align:right;
+}
+.msg_received{
+    text-align:left;
+}
