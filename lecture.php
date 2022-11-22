@@ -1,6 +1,8 @@
 <?php ////// FEUILLE LECTURE DU MESSAGE *********
 include __DIR__ . '/includes/init.php';
 include 'verif.php';
+require 'actions/securityAction.php';
+
 
 if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 

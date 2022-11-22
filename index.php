@@ -118,9 +118,9 @@ tchat france, chat ado, chate en ligne, chate gratuit, rencontres discretes, rub
                 </div> 
                 
 
-                    <input type="email" name="mail" placeholder="Mail" value="<?php if (isset($mail)) {
-                        echo $mail;
-                    } ?>">
+                  <!--  <input type="email" name="mail" placeholder="Mail" value="<//?//php// if (isset($mail)) {
+                       // echo $mail;
+                  //  } ?>"> -->
                 
 
                     <input type="password" minlength="5" name="password" placeholder="Mot de passe">

@@ -20,3 +20,13 @@ window.onclick = function(event) {
         
     }
 }
+
+
+const to_go_header = document.querySelector('.to_go_header');
+
+to_go_header.addEventListener('click', () =>{
+
+    window.scrollTo({
+        top: 0, left: 0, behavior: 'smooth'
+    })
+})

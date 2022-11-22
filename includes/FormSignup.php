@@ -46,9 +46,9 @@
 
 
 
-  <div>
-    <input type="email"  name="mail" placeholder="Mail" value="<?php if(isset($mail)) { echo $mail; } ?>">
-  </div>
+  <!--<div>
+    <input type="email"  name="mail" placeholder="Mail" value="<//?php// if(isset($mail)) { echo $mail; } ?>">
+  </div> -->
 
 
   <div>

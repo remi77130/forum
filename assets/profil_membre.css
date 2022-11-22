@@ -14,7 +14,7 @@ html{
 
 body{
     
-    background-color: rgb(37, 37, 40);
+    background-color: #252528;
     color: aliceblue;
     text-decoration: none;
     list-style: none;
@@ -119,8 +119,23 @@ font-weight: 600;
     display: none;
     width: 50px;
     position: absolute;
-    right:15px ;
+    right:1px ;
     top: 15px;
+
+}
+
+.to_go_header
+{
+    height: 50px;
+    width: 50px;
+    border: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 1px;
+    bottom: 10px;
+    cursor: pointer;
 
 }
 
@@ -128,6 +143,14 @@ font-weight: 600;
 
 
 @media screen and (max-width: 900px) {
+
+
+    
+.to_go_header
+{
+    display: block;
+}
+
 
     .navbar
     {
@@ -177,6 +200,8 @@ font-weight: 600;
     
 
 }
+
+
 .mobile-menu .icon_search
 {
    width: 100px;
