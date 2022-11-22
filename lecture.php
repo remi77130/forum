@@ -48,7 +48,6 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
 <nav>
 <a href="reception.php">Boîte de réception</a>
-<a href="envoi.php?r=<?= $p_exp ?>">Répondre</a>
 <a href="supprimer.php?id_expediteur=<?= $id_expediteur ?>">Supprimer</a><br/><br/><br/>
 </nav>
 
