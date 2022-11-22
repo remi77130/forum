@@ -37,8 +37,7 @@ function send_message($id_destinataire, $post, $file)
             $file_path = false; // On mets à false par défaut si jamais l'image n'a pas été envoyée
 
             // Si on a bien reçu une image
-            if (isset($_FILES) && !empty($_FILES['img_msg']) && !empty($file["name"])) {
-                $file = $_FILES['img_msg'];
+            if (!empty($file) && !empty($file["name"]) && !empty($file["tmp_name"])) {
 
                 // On regarde si on peut récupérer la taille de l'image
                 if (getimagesize($file["tmp_name"]) !== false) {
@@ -55,15 +54,13 @@ function send_message($id_destinataire, $post, $file)
                         $image_filename = sha1(rand() . '' . microtime()) . '.' . $imageFileType;
 
                         // On détermine le répertoire où sera envoyée l'image
-                        $image_path = $_SERVER['DOCUMENT_ROOT'] . '/images/messages_images/' . $image_filename;
-
+                        $image_path = BASE_DIR.'/images/messages_images/' . $image_filename;
                         if (move_uploaded_file($file["tmp_name"], $image_path)) {
                             $file_path = $image_filename;
                         }
                     }
                 }
             }
-
             // On prépare l'enregistrement dans les messages (dans tous les cas on enregistre quand même la valeur de file_path, même si elle est à false)
             $req_insertMessage = $bdd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message,lu,objet,img_msg,file_name,datafile,image_filename) VALUES (?,?,?,?,?,?,?,?,?)');
             $req_insertMessage->execute([

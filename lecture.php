@@ -6,7 +6,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
     // Si un message est envoyé sur un profil
     if (!empty($_POST['envoi_message']) && !empty($_FILES)) {
-        $error = send_message($_POST['destinataire_id'], $_POST, $_FILES);
+        $error = send_message($_POST['destinataire_id'], $_POST, $_FILES['img_msg']);
     }
     if (isset($_GET['id_expediteur']) and !empty($_GET['id_expediteur'])) {
         $id_expediteur = intval($_GET['id_expediteur']);
@@ -98,7 +98,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                             if ($image !== false) {
                                 ?>
                                 <div>
-                                    <img class="img_message" src="<?= $image; ?>">
+                                    <img class="img_message" src="<?= BASE_URL.$image; ?>">
                                 </div>
                                 <?php
                             }

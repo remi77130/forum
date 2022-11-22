@@ -17,7 +17,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     // Si un message est envoyé sur un profil
     if (!empty($_POST['envoi_message']) && !empty($_FILES)) {
-        $error = send_message($_POST['destinataire_id'], $_POST, $_FILES);
+        $error = send_message($_POST['destinataire_id'], $_POST, $_FILES['img_msg']);
     }
 
     // On vient gérer si un utilisateur poste une nouvelle photo

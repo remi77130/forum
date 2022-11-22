@@ -4,7 +4,7 @@ require 'require/database.php';
 
 if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     //On récupère les fils de discussion. Pour ça on se base sur l'id destinataire ou expediteur (il faut pouvoir voir les fils ou on a été le premier initiateur du message)
-    $msg = $bdd->prepare('SELECT * FROM messages WHERE id IN (SELECT max(id) FROM messages WHERE id_destinataire = ? OR id_expediteur = ? GROUP BY id_expediteur) ORDER BY id DESC');
+    $msg = $bdd->prepare('SELECT * FROM messages WHERE id IN (SELECT max(id) FROM messages WHERE id_destinataire = ? OR id_expediteur = ? GROUP BY id_expediteur, id_destinataire) ORDER BY id DESC');
     $msg->execute(array($_SESSION['id'], $_SESSION['id']));
     $msg_nbr = $msg->rowCount();
     $messages = $msg->fetchAll();
