@@ -113,27 +113,27 @@ include 'profil.php';
         }
     ?>
 
-    <?php foreach ($articles as $articles) : ?>
+    <?php foreach ($articles as $article) : ?>
 
         <?php
         $reqdpt = $bdd->prepare("SELECT *
                          FROM departement
                          WHERE departement_code = ?");
-        $reqdpt->execute([$articles['departement_nom']]);
+        $reqdpt->execute([$article['departement_nom']]);
 // RECUPERE LES DONEES 
         $departement = $reqdpt->fetch();
 
         $reqville = $bdd->prepare("SELECT *
                          FROM villes_france
                          WHERE ville_id = ?");
-        $reqville->execute([$articles['ville_id']]);
+        $reqville->execute([$article['ville_id']]);
 // RECUPERE LES DONEES 
         $ville = $reqville->fetch();
         ?>
 
 
-        <div class="container_profil_membre" data-sexe="<?= $articles['sexe'] ?>" data-age="<?= $articles['age'] ?>" data-dpt="<?= $departement['departement_nom'] ?>">
-            <a href="profil.php?id=<?= $articles['id'] ?>">
+        <div class="container_profil_membre" data-sexe="<?= $article['sexe'] ?>" data-age="<?= $article['age'] ?>" data-dpt="<?= $departement?$departement['departement_nom']:"" ?>">
+            <a href="profil.php?id=<?= $article['id'] ?>">
 
 
                 <div class="container_profil_info">
@@ -141,20 +141,20 @@ include 'profil.php';
 
                     <div class="container_profil_avatar">
                         <?php
-                        if (str_contains($articles['avatar'], 'https')) { ?>
-                            <img src="<?php echo $articles['avatar']; ?>" alt="photo_profil"><br>
+                        if (str_contains($article['avatar'], 'https')) { ?>
+                            <img src="<?php echo $article['avatar']; ?>" alt="photo_profil"><br>
                             <?php
                         } else {
                             ?>
-                            <img src="membres\avatars/<?php echo $articles['avatar']; ?>" alt="photo_profil"><br>
+                            <img src="membres\avatars/<?php echo $article['avatar']; ?>" alt="photo_profil"><br>
                             <?php
                         }
                         ?>
                     </div>
 
                     <div class="container_profil_info_pseudo">
-                        <h2><?php echo $articles['pseudo']?>
-                            <span class="age_profil_membre"><?php echo $articles['age'] ?></span></h2>
+                        <h2><?php echo $article['pseudo']?>
+                            <span class="age_profil_membre"><?php echo $article['age'] ?></span></h2>
 
                         <div></div>
                     </div>
@@ -171,7 +171,7 @@ include 'profil.php';
 
                             <?php
                             if ($reqdpt->rowCount() > 0) {
-                                echo $departement['departement_nom'] . '(' . $articles['departement_nom'] . ') - ';
+                                echo $departement['departement_nom'] . '(' . $article['departement_nom'] . ') - ';
                             }
 
                             if ($reqville->rowCount() > 0) {
@@ -189,7 +189,7 @@ include 'profil.php';
 
 
                     <div class="container_profil_info_descr">
-                        <?php echo $articles['description_profil'] ?>
+                        <?php echo $article['description_profil'] ?>
                     </div>
 
                 </div>
