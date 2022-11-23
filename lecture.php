@@ -9,6 +9,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     // Si un message est envoyé sur un profil
     if (!empty($_POST['envoi_message']) && !empty($_FILES)) {
         $error = send_message($_POST['destinataire_id'], $_POST, $_FILES['img_msg']);
+        header("location:".$_SERVER['REQUEST_URI']);
     }
     if (isset($_GET['id_expediteur']) and !empty($_GET['id_expediteur'])) {
         $id_expediteur = intval($_GET['id_expediteur']);
@@ -89,7 +90,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                             }
                         }
                         ?>
-                        <div data-message-id="<?= $m['id'] ?>" class="msg_<?= $m['id_expediteur']==$_SESSION['id']?"sent":"received" ?>">
+                        <div data-message-id="<?= $m['id'] ?>" class="message msg_<?= $m['id_expediteur']==$_SESSION['id']?"sent":"received" ?>">
                             <b><?= ($m['id_expediteur']==$_SESSION['id']?$_SESSION['pseudo']:$p_exp) ?></b> - <b>Objet :</b> <?= $m['objet'] ?>
 
                             <br/><br/>
@@ -147,6 +148,73 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
         return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
     }
     $(document).ready(function(){
+        //Formatte le message récupéré en contenu html
+        format_message = function(message){
+            // Cette variable permettra d'afficher une image si elle existe
+            let image = false; // Par défaut à false
+
+            // On récupère les données de l'image sauvegardée
+            let image_filename = message.image_filename;
+
+            // S'il y a bien un filename qui est présent
+            if (image_filename) {
+
+                // On détermine le chemin de l'image
+                let image_filepath = '/images/messages_images/' + image_filename;
+                image = $image_filepath;
+            }
+
+            let div = $("<div>");
+            div.attr("data-message-id", message.id);
+            div.addClass("message");
+            div.addClass("msg_" + (message.id_expediteur == <?= $_SESSION['id'] ?>?"sent":"received"));
+            let p_exp = message.id_expediteur==<?= $_SESSION['id'] ?> ? "<?= $_SESSION['pseudo'] ?>" : message.pseudo
+            let object = $("<b>" + p_exp + "</b> - <b>Objet : </b> " + message.objet + "<br/><br/>");
+            div.append(object);
+            div.append(nl2br(message.message) + "<br/><br/>")
+            if(image){
+                let div_img = $("<div>");
+                div_img.append('<img class="img_message" src="' + image + '">');
+                div.append(div_img);
+            }
+            return div;
+        }
+
+        //Ajoute le message à la fin
+        append_message = function(message){
+            $("#messages_container").append(format_message(message));
+        }
+
+        //Ajoute le message au début
+        prepend_message = function(message){
+            $("#messages_container").prepend(format_message(message));
+        }
+
+        check_new_messages = function(){
+            let div_last_message = $('#messages_container div.message').last();
+            let last_message_id = div_last_message.attr("data-message-id");
+            
+            $.ajax({
+                url: "api/messages.php",
+                data: {"action":"getNew", "id_expediteur":<?= $id_expediteur ?>, "last_message_id":last_message_id},
+                success: new_message_loaded,
+                dataType: "json"
+            });
+        }
+
+        new_message_loaded = function(data){
+            let data_limit_from = parseInt($('#btn_load_more a').attr('data-limit-from'));
+            for(message_id in data.messages){
+                append_message(data.messages[message_id]);
+                data_limit_from = data_limit_from + 1;
+                $('#btn_load_more a').attr('data-limit-from', data_limit_from);
+            }
+        }
+
+        window.setInterval(function(){
+            check_new_messages();
+        }, <?= REALTIME_REFRESH_TIME ?>);
+
         <?php
         //On n'affichera le bouton de chargement d'historique que s'il reste des messages à afficher
         if($msg_nbr > count($messages)){
@@ -188,47 +256,6 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                 }
                 loading = false;
             };
-
-            //Formatte le message récupéré en contenu html
-            format_message = function(message){
-                // Cette variable permettra d'afficher une image si elle existe
-                let image = false; // Par défaut à false
-
-                // On récupère les données de l'image sauvegardée
-                let image_filename = message.image_filename;
-
-                // S'il y a bien un filename qui est présent
-                if (image_filename) {
-
-                    // On détermine le chemin de l'image
-                    let image_filepath = '/images/messages_images/' + image_filename;
-                    image = $image_filepath;
-                }
-
-                let div = $("<div>");
-                div.attr("data-message-id", message.id);
-                div.addClass("msg_" + (message.id_expediteur == <?= $_SESSION['id'] ?>?"sent":"received"));
-                let p_exp = message.id_expediteur==<?= $_SESSION['id'] ?> ? "<?= $_SESSION['pseudo'] ?>" : message.pseudo
-                let object = $("<b>" + p_exp + "</b> - <b>Objet : </b> " + message.objet + "<br/><br/>");
-                div.append(object);
-                div.append(nl2br(message.message) + "<br/><br/>")
-                if(image){
-                    let div_img = $("<div>");
-                    div_img.append('<img class="img_message" src="' + image + '">');
-                    div.append(div_img);
-                }
-                return div;
-            }
-
-            //Ajoute le message à la fin
-            append_message = function(message){
-                $("#messages_container").append(format_message(message));
-            }
-
-            //Ajoute le message au début
-            prepend_message = function(message){
-                $("#messages_container").prepend(format_message(message));
-            }
         <?php
         }
         ?>

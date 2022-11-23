@@ -53,6 +53,7 @@ define("BASE_URL", base_url());
 define("BASE_DIR", dirname( dirname(__FILE__) ));
 define("NB_MESSAGES_INIT_LOAD", 4);
 define("NB_MESSAGES_AJAX_LOAD", 2);
+define("REALTIME_REFRESH_TIME", 5000);
 
 //DB Params
 define("DB_HOST", $db_host);
