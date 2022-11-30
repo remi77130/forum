@@ -119,7 +119,7 @@ if (!empty($_POST['pseudo'])
     }
 
     
-    $destinataire = "$mail"; // DEST DU MAIL
+    /*$destinataire = "$mail"; // DEST DU MAIL
     $sujet = "Confirmation de compte";
     $message = "Bienvenue sur le Chanderland $pseudo  ";
 
@@ -127,9 +127,9 @@ if (!empty($_POST['pseudo'])
     mail($destinataire, $sujet, $message, $headers);
 
 
-    echo "Mail envoyé à $destinataire avec succes ! ";
-    $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
-    $requser->execute(array($mail));
+    echo "Mail envoyé à $destinataire avec succes ! ";*/
+    $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
+    $requser->execute(array($pseudo));
     $userexist = $requser->rowCount();
 
     $userinfo = $requser->fetch();

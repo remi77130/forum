@@ -192,7 +192,9 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <div class="image_album_profil">
             <?php
             foreach ($tab as $image) {
-                echo '<div class="images"><img src="Images_album/' . $image["nom"] . '" alt="photo album" title="image"/></div>';
+                if(file_exists('Images_album/' . $image["nom"])){
+                    echo '<div class="images"><img src="Images_album/' . $image["nom"] . '" alt="photo album" title="image"/></div>';
+                }
             }
             ?>
         </div>

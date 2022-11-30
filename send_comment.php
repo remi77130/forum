@@ -44,7 +44,7 @@
    <!-- -->
 
    <div class="container_comment">
-   <strong>  <?= $membreSender['pseudo'] ?> </strong> <br> <?= $c['commentaire']?><br /> <br>
+   <strong>  <?= $membreSender['pseudo'] ?> </strong> <br> <?= nl2br($c['commentaire'])?><br /> <br>
 
    </div>
 

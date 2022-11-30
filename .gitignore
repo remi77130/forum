@@ -4,3 +4,4 @@ images/messages_images/*
 !images/messages_images/.keep
 /INFO.md
 .history/
+/membres/avatars/*

@@ -1,8 +1,26 @@
 
 <?php
+function is_valid_image($filename){
+   $type = exif_imagetype( $filename );
+   switch( $type ) {
+      case 1:
+         $isimage = @imagecreatefromgif( $filename );
+         return $isimage;
+         break;
+      case 2: 
+         $isimage = @imagecreatefromjpeg( $filename );
+         return $isimage;
+         break;
+      case 3:
+         echo "png : ";
+         $isimage = @imagecreatefrompng( $filename );
+         return $isimage;
+         break;
+   }
+   return false;
+}
 
 $id1=$_GET['id']; // Id utilisateur
-
 if(isset($_POST['valider'])){ // SI L'UTILISATEUR CHARGE UNE IMAGE
 
    // On enregistre les images dans le dossier
@@ -19,7 +37,7 @@ if(isset($_POST['valider'])){ // SI L'UTILISATEUR CHARGE UNE IMAGE
       $temp_name = $_FILES['image']['tmp_name'];
 
       // Si le fichier a été enregistré
-      if(move_uploaded_file($temp_name, $path.$image_name)){
+      if(is_valid_image($temp_name) && move_uploaded_file($temp_name, $path.$image_name)){
          //$req = $bdd->prepare("INSERT INTO images(nom,taille,type,bin) VALUES (?, ?, ?, ?)");
          $req = $bdd->prepare("INSERT INTO images(id,nom,taille,type) VALUES (?, ?, ?, ?)");
          $req->execute(array($id1,$image_name,$_FILES["image"]["size"], 
@@ -28,7 +46,6 @@ if(isset($_POST['valider'])){ // SI L'UTILISATEUR CHARGE UNE IMAGE
          $erreur = "Une erreur s'est produite lors de l'importation de votre image";
       }
    }
-   
    header( "Refresh:0");
 }
  ?>

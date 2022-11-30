@@ -145,8 +145,11 @@ include 'profil.php';
                             <img src="<?php echo $article['avatar']; ?>" alt="photo_profil"><br>
                             <?php
                         } else {
+                            if(!file_exists("membres/avatars/".$article['avatar'])){
+                                $article['avatar'] = "default.jpg";
+                            }
                             ?>
-                            <img src="membres\avatars/<?php echo $article['avatar']; ?>" alt="photo_profil"><br>
+                            <img src="membres/avatars/<?php echo $article['avatar']; ?>" alt="photo_profil"><br>
                             <?php
                         }
                         ?>
