@@ -266,18 +266,33 @@ font-weight: 600;
 {
     margin: 10px;
     width: 200px;
-    height: auto;
-    border: 0.5px solid rgba(255, 255, 255, 0.084);
+    height: auto;    
     border-bottom-right-radius: 10px;
-    box-shadow: 3px 2px 3px rgba(110, 110, 110, 0.066);
-    
-    
 }
 
-.container_profil_membre:hover
+.container_profil_membre[data-sexe=Homme]
 {
-    box-shadow: 3px 2px 3px rgba(110, 110, 110, 0);
+    border: 0.5px solid rgba(41, 68, 80, 0.68);
+    box-shadow: 3px 2px 3px rgba(110, 110, 220, 0.066);
+}
+.container_profil_membre[data-sexe=Femme]
+{
+    border: 0.5px solid rgba(170, 91, 170, 0.68);
+    box-shadow: 3px 2px 3px rgba(220, 110, 220, 0.066);
+}
 
+.container_profil_membre[data-sexe=Homme]:hover
+{
+    border: 0.5px solid rgba(100, 130, 170, 1);
+    box-shadow: 3px 2px 3px rgba(110, 110, 220, 0);
+    transition: 500ms;
+}
+
+.container_profil_membre[data-sexe=Femme]:hover
+{
+    border: 0.5px solid rgba(243, 91, 230, 1);
+    box-shadow: 3px 2px 3px rgba(220, 110, 220, 0);
+    transition: 500ms;
 }
 
 @media screen and (max-width: 500px){
@@ -287,10 +302,6 @@ font-weight: 600;
         margin: 10px;
         width: 150px;
         height: auto;
-        border: 0.5px solid rgba(255, 255, 255, 0.084);
-        border-bottom-right-radius: 10px;
-        box-shadow: 3px 2px 3px rgba(110, 110, 110, 0.066);
-        
     }
 }
 
@@ -312,12 +323,6 @@ font-weight: 600;
     width: 120px;
     height: 120px;
     border-radius: 100px;
-}
-
-.container_profil_membre:hover
-{
-    border: 0.5px solid rgba(255, 255, 255, 0.432);
-    transition: 500ms;
 }
 .container_profil_avatar
 {
