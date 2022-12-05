@@ -4,22 +4,24 @@ require 'signupAction.php';
 
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+
 <link rel="stylesheet" href="assets/index.css">
 <link rel="stylesheet" href="assets/FormSignup.css">
 <link rel="stylesheet" href="assets/compteur.css">
 
-<head>
+
+
 <!-- Google tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-240853356-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-240853356-1');</script>
 <TITLE>Rencontre gratuite</TITLE>
 
-<META NAME="DESCRIPTION" CONTENT="10.738 femmes en ligne actuellement, venez chatter avec gratuitement. 
-chanderland le premier tchat en ligne. venez tchater et voir des profils gratuitement."/>
+<META NAME="DESCRIPTION" CONTENT="Chat sans inscription. Venez chater sans inscrire votre email. "/>
+<meta name="robots" content="index, follow, all">
 
-<meta name="description" content="tchatche france, tchatche, tchatche gratuit, tchat gratuit sans inscription
-tchat france, chat ado, chate en ligne, chate gratuit, rencontres discretes, ruby nikara,rencontre gratuite. ">
-    <!-- Icon -->
+
+<!-- Icon -->
 <link rel="apple-touch-icon" sizes="180x180" href="icones/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icones/favicon/favicon-16x16.png">
@@ -29,6 +31,25 @@ tchat france, chat ado, chate en ligne, chate gratuit, rencontres discretes, rub
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 <meta name="theme-color" content="#ffffff">
     <!-- Icon -->
+
+    <!--Partage -->
+    <meta property="og:image" content="icones/1.svg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Chat sans inscription gratuit" />
+    <meta property="og:local" content="fr_FR" />
+    <meta property="og:TITLE" content="Chanderland rencontre" />
+
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="chanderland.com" />
+    <meta name="twitter:creator" content="@chanderland" />
+    <meta name="twitter:title" content="Chanderland un nouveau site de chat sans inscription" />
+    <meta name="twitter:description" content="Venez chater avec un simple pseudo" />
+    <meta name="twitter:image" content="icones/1.svg" />
+
+
+    
+
 
 </head>
 <style>
@@ -86,9 +107,12 @@ tchat france, chat ado, chate en ligne, chate gratuit, rencontres discretes, rub
                     <input type="text" name="pseudo" maxlength="10" minlength="3" placeholder="Pseudo"
                            value="<?php if (isset($pseudo)) {
                                echo $pseudo;
-                           } ?>"/>
+                           } ?>" />
+                    <img class="icone_form" src="icones/avatar_index_form.svg" alt="avatar-form">
 
-                    <input type="number" name="age" placeholder="Age" maxlength="2"> <br> <br>
+
+                    <input type="tel" pattern="[0-9]*" inputtype="numeric" name="age" placeholder="Age" maxLength="2" minlength="1" />
+                    <img class="icone_form" src="icones/date_index_form.svg" alt="icone_age"> <br>
 
 
                     <label>Vous êtes</label> <br>
@@ -99,7 +123,7 @@ tchat france, chat ado, chate en ligne, chate gratuit, rencontres discretes, rub
 
             <div id="departement">
                     <select id="select_departement" name="departement" required>
-                        <option value="">Département</option>
+                        <option value="">Département </option>
                         <?php
                         // On récupère tous les départements triés par ordre alphabétique
                         $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
@@ -124,14 +148,18 @@ tchat france, chat ado, chate en ligne, chate gratuit, rencontres discretes, rub
                 
 
                     <input type="password" minlength="5" name="password" placeholder="Mot de passe">
+                    <img class="icone_form" src="icones/locked_index_form.svg" alt="locked_form">
+
 
 
                     <input type="password" minlength="5" name="password2" placeholder="Confirmation passe">
+                    <img class="icone_form" src="icones/locked_index_form.svg" alt="locked_form">
+
 
                 <button type="submit" class="button_form" name="validate" value="Senregistrer">S'inscrire</button>
 
                 <div class="lien_compte_user">
-                <a href="connexion.php">J'ai déjà un compte, <strong>je me connecte</strong> </a> <br> <br>
+                <a href="connexion.php">J'ai déjà un compte, <strong style="color:#49b851 ;">je me connecte</strong> </a> <br> <br>
                 </div>
 
             </form>
@@ -215,7 +243,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 <div class="index_container">
 
-<img class="img_femme_chanderland" src="icones/recontre-gratuite.svg" alt="photo_femme_chanderland">
+<img class="img_femme_chanderland" src="icones/chat-gratuit.svg" alt="photo_femme_chanderland">
 
 <h2>Puis tchater gratuitement</h2>
 
@@ -256,5 +284,20 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
 </script>
 <script src="compteur.js" ></script>
+
+
+<script>
+                        
+var inputAge = document.querySelector('#age');
+
+inputAge.onkeyup = function(e) {
+    var max = 2; // The maxlength you want
+  
+    if(inputAge.value.length > max) {
+      inputAge.value = inputAge.value.substring(0, max);
+    }
+  
+};
+</script>
 
 <script src="js/index.js"></script>

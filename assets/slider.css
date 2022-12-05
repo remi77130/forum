@@ -9,8 +9,7 @@
 }
 
 
-html, body{
-    font-family: 'IBM Plex Sans', sans-serif; 
+body{
     background-color: rgb(37, 37, 40);
     color: aliceblue;
     display: table;
@@ -25,11 +24,62 @@ html, body{
 .slider
 {
     text-align: center;
-    border: 5px solid green;
 }
 
 .slider img
 {
     max-width: 250px;
-    border: 5px solid red;
+}
+
+
+h3
+{
+    text-align: center;
+}
+
+.icone_description
+{
+
+    width: 25px;
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+
+
+.description_1
+{
+    width: 200px;
+    position: relative;
+    top: 120px;
+    left: 350px;
+}
+
+.description_2
+{
+    width: 200px;
+    position: relative;
+    left: 950px;
+    bottom: 150px;
+    text-align: left;
+}
+
+.text_descr
+{
+    text-align: left;
+    color: rgb(208 208 208);
+}
+@media screen and (max-width:1200px){
+
+    .description_1
+    {
+        display: none;
+    }
+
+    .description_2
+    {
+        display: none;
+    }
+    
 }

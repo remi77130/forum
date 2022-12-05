@@ -24,7 +24,7 @@
                 <label>Pseudo :</label>
                 <input type="text" name="newpseudo" placeholder="Pseudo" maxlength="10" value="<?php echo $user['pseudo']; ?>" /><br /><br />
                 <label>Age</label>
-                <input type="text" name="newage" placeholder="age" value="<?php echo $user['age']; ?>" /><br /><br />
+                <input type="tel" pattern="[0-9]*" inputtype="numeric" name="newage" placeholder="age" minlength="1" maxlength="2" value="<?php echo $user['age']; ?>" /><br /><br />
                 <label>Mail :</label>
                 <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['mail']; ?>" /><br /><br />
                 
@@ -248,7 +248,7 @@
 
                <label>Ma description</label> <br> <br>
                <textarea class="textarea_edit_profil" name="description_profil" 
-               cols="30" rows="5" maxlength="150"><?php echo $user['description_profil'];?></textarea> <br> <br>
+               cols="30" rows="5" minlength="10" maxlength="150"><?php echo $user['description_profil'];?></textarea> <br> <br>
 
 
 

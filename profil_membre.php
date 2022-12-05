@@ -45,7 +45,6 @@ include 'profil.php';
     <ul>
 
     <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">
- <!-- <img class="icon_search" src="icones/chanderlan_profil.svg" alt="chanderland">-->
   <span style="font-size:1.2em;" class="filter_nav"> Mon profil</span>
     </li></a>
 
@@ -174,8 +173,13 @@ include 'profil.php';
 
                             <?php
                             if ($reqdpt->rowCount() > 0) {
-                                echo $departement['departement_nom'] . '(' . $article['departement_nom'] . ') - ';
-                            }
+                                echo $departement['departement_nom'] . ' (' . $article['departement_nom'] . ') ';
+                            }?>
+
+                            <br>
+
+                            <?php
+                        
 
                             if ($reqville->rowCount() > 0) {
                                 echo $ville['ville_nom_reel'];
@@ -203,7 +207,8 @@ include 'profil.php';
 
   
    
-    <?php endforeach; ?>
+    <?php endforeach; 
+    ?>
 
 
 

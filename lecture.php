@@ -50,8 +50,12 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 <section class="container_page">
 
 <nav>
+<a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon profil</a>
 <a href="reception.php">Boîte de réception</a>
-<a href="supprimer.php?id_expediteur=<?= $id_expediteur ?>">Supprimer</a><br/><br/><br/>
+<a href="supprimer.php?id_expediteur=<?= $id_expediteur ?>">Supprimer</a><br/>
+
+
+<br/><br/>
 </nav>
 
 

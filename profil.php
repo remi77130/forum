@@ -56,6 +56,14 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     <body>
 
+<header>
+    <nav>
+        <a class="slide-line" href="profil_membre.php">Accueil</a>
+        <a class="slide-line" href="reception.php">Messages</a>
+        <a style="color: #df1e1e;" class="slide-line" href="deconnexion.php">Déconnexion</a>
+    </nav>
+</header>
+
 
     <section class="section_profil_membre">
         <!-- Profil visible-->
@@ -106,7 +114,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 </div>
 
                 <div class="created_profil">
-                    <span><?php echo "profil crée le " . $userinfo['createdAt']; ?></span> 
+                    <span style="color: #787878;"><?php echo "Crée le " . $userinfo['createdAt']; ?></span> 
                     
                 </div>
 
@@ -127,7 +135,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         ?>
 
         <div class="option_profil_user">
-            <a href="profil_membre.php">Acceuil</a>
+            <a href="profil_membre.php">Accueil</a>
         </div>
 
         <?php

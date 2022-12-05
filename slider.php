@@ -10,18 +10,40 @@
 </head>
 <body>
 
-<div class="slider">
+
 
 <h3>Nos derniers abonnés</h3>
 
-<img src="icones/damien.jpg" name="slide">
+<div class="slider">
 
+<div class="description_1">
+<h5>
+<img class="icone_description" src="icones/chat_index.svg" alt="chat-gratuit">
+Un chat totalement gratuit
+</h5> <br>
+<p class="text_descr">
+Un lieu de rencontre pour un échange convivial sans interruption
+et sans prise de tête 24h/24 7j/7. 
+C'est rapide, simple et sans inscription.</p>
+</div>
+
+
+<img src="icones/1.svg" name="slide">
+
+<div class="description_2">
+<h5>
+<img class="icone_description" src="icones/locked_index.svg" alt="chat-gratuit">
+    Messagerie crypté
+</h5> <br>
+<p class="text_descr">Nous protégeons vos données sensibles telles que les messages par la prévention des fuites et le chiffrement des données.<br>
+vos messages s'affichent chiffrés dans notre base de données.</p>
+</div>
 
 </div>
 
 <script>
     var i = 0;
-    var images = ['icones/gilles75.jpg', 'icones/edwardo.jpg', 'icones/melanie_27.jpg', 'icones/rencontre-gratuite.jpg', 'icones/fred_028.jpg', 'icones/jessica_77.jpg', 'icones/marie_akal.jpg'];
+    var images = ['icones/1.svg','icones/3.svg', 'icones/4.svg', 'icones/5.svg', 'icones/6.svg', 'icones/8.svg'];
     var time = 10000;
 
          function changeImg(){

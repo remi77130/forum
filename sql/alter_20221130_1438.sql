@@ -15,7 +15,6 @@ CHANGE `img` `img` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 CHANGE `count_image_album` `count_image_album` INT(11) NULL,
 CHANGE `last_update_image_counter` `last_update_image_counter` DATE NULL DEFAULT CURRENT_TIMESTAMP,
 CHANGE `Online` `Online` ENUM('1','2') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
-CHANGE `confirme` `confirme` INT(3) NULL,
-CHANGE `level_subscription` `level_subscription` INT(11) NULL;
+CHANGE `confirme` `confirme` INT(3) NULL;
 
 ALTER TABLE `images` CHANGE `bin` `bin` LONGBLOB NULL;

@@ -268,29 +268,28 @@ font-weight: 600;
     width: 200px;
     height: auto;    
     border-bottom-right-radius: 10px;
+    box-shadow: 3px 5px 5px #ffffff0a;
+
 }
 
 .container_profil_membre[data-sexe=Homme]
 {
-    border: 0.5px solid rgba(41, 68, 80, 0.68);
-    box-shadow: 3px 2px 3px rgba(110, 110, 220, 0.066);
+    border: 0.5px solid rgb(40 127 165);
 }
 .container_profil_membre[data-sexe=Femme]
 {
-    border: 0.5px solid rgba(170, 91, 170, 0.68);
-    box-shadow: 3px 2px 3px rgba(220, 110, 220, 0.066);
+    border: 0.5px solid rgb(192, 47, 192)
 }
 
 .container_profil_membre[data-sexe=Homme]:hover
 {
-    border: 0.5px solid rgba(100, 130, 170, 1);
-    box-shadow: 3px 2px 3px rgba(110, 110, 220, 0);
+    border: 0.5px solid rgb(62, 197, 255);
     transition: 500ms;
 }
 
 .container_profil_membre[data-sexe=Femme]:hover
 {
-    border: 0.5px solid rgba(243, 91, 230, 1);
+    border: 0.5px solid rgb(251, 29, 255);
     box-shadow: 3px 2px 3px rgba(220, 110, 220, 0);
     transition: 500ms;
 }
@@ -345,20 +344,20 @@ font-weight: 600;
 .container_profil_info_pseudo
 {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     color: aliceblue;
     width: 90%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: center;
+    text-align: start;
     
 
 
 }
 
 .age_profil_membre{
-    font-size: 12px ;
+    font-size: 10px ;
     font-weight: 100;
     
 }
@@ -376,7 +375,8 @@ font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: 'IBM Plex Sans', sans-serif;
-    padding: 5px;
+    padding: 5px 0px 0px 7px;
+    font-size: 12px;
 
 }
 
@@ -388,12 +388,12 @@ font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 14px;
-    padding: 5px;
+    padding: 0px 0px 0px 7px;
     font-family: 'IBM Plex Sans', sans-serif;
 
     color: rgb(179, 179, 179);
     margin-top: 5px;
-    text-align: center;
+    text-align: start;
 
 }
 

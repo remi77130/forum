@@ -1,7 +1,6 @@
 .counter_container
 {
     display: flex;
-    border: 5px solid red;
     justify-content: center;
     min-height: 10vh;
     align-items: center;

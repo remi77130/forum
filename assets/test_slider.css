@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(21, 23, 31);
+}
+.caroussel
+{
+    white-space: nowrap;
+}
+
+.caroussel li 
+{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.caroussel img{
+    height: 250px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.caroussel 
+{
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    height: 400px;
+
+    /* aligner sur panneaux image */
+
+    -ms-scroll-snap-type:mandatory;
+    scroll-snap-type:mandatory;
+    -ms-scroll-snap-points-x:snapInterval(0px, 300px);
+    scroll-snap-points-x:snapInterval(0px, 300px);
+
+    /* défilement inertiel pour safari mobile */
+    -webkit-overflow-scrolling:touch;
+}

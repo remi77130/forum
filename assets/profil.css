@@ -8,15 +8,53 @@
 }
 
 
-html {
-    font-family: 'IBM Plex Sans', sans-serif;
-}
-
 body {
 
     background-color: rgb(37, 37, 40);
     color: aliceblue;
 }
+
+
+header
+{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+
+.slide-line
+{
+    position: relative;
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.slide-line::before
+{
+    content: "";
+    position: absolute;
+    background: red;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+
+.slide-line:hover::before
+{
+    transform-origin: 0 0;
+    transform: scaleX(1);
+}
+
+
 
 .section_profil_membre {
 
@@ -101,6 +139,7 @@ body {
     width: 200px;
     word-wrap: break-word;
     font-size: 15px;
+    text-align: initial;
 }
 
 .info_pseudo_age {
@@ -410,6 +449,5 @@ OPTION PROFIL
 
 
 }
-
 
 

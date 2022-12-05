@@ -48,7 +48,7 @@ if (!empty($_SESSION)) {
         <a href="deconnexion.php">Se déconnecter</a>
     </div>
     <div>
-        <a href="profil_membre.php">Acceuil</a>
+        <a href="profil_membre.php">Accueil</a>
     </div>
 </div>
 </body>
