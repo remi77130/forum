@@ -2,23 +2,142 @@
 {
     margin: 0;
     padding: 0;
+    font-family: 'IBM Plex Sans';
 
     box-sizing: border-box;
 
 }
 
 
-html{
-    font-family: 'IBM Plex Sans', sans-serif;
-}
-
-body{
-    
+html, body{
     background-color: rgb(37, 37, 40);
     color: aliceblue;
+    display: table;
+    height: 100%;
+    width: 100%;
+    
+
 }
 select
 {
     max-width: 150px;
 }
 
+header
+{
+    text-align: center;
+}
+
+
+form{
+    border: 5px solid lightpink;
+}
+
+form input
+{
+    width: 90%;
+    height: 50px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 2px solid;
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(179, 242, 245);
+
+}
+label
+{
+    font-size: 22px;
+}
+
+
+form
+{
+    max-width: 90%;
+    height: auto;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(30, 30, 30, 0.614);
+    border: 0.5px solid rgba(245, 222, 179, 0.425);
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 100px auto;
+    overflow: hidden;
+    padding-left: 20px;
+    
+}
+
+select
+{
+    max-width: 150px;
+    padding: 5px;
+    width: 150px;
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+    label
+    {
+        padding-left: 20px;
+    }
+}
+
+
+.safe
+{
+    text-decoration: none;
+    background: #007c0d;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 20px;
+    margin: 20px ;
+    cursor: pointer;
+}
+
+.safe:hover{
+    
+    background-color: #007c0d;
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+
+.return
+{
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 35px;
+    margin: 20px ;
+    cursor: pointer;
+}
+
+.return:hover{
+    
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    box-shadow: none;
+    border: 0.5px solid rgba(245, 222, 179, 0.589);
+    border-radius: 30px;
+    transition: 300ms;
+    cursor: pointer;
+}

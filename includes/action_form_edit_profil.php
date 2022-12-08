@@ -1,4 +1,3 @@
-
 <?php 
 session_start(); //pour recup dans la bdd
 
@@ -18,7 +17,6 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     //$taille = "";
     $choix = "";
     $poids = "";
-    $cheveux_color = "";
     $age = "";
     $mail = "";
     $mdp = "";
@@ -85,17 +83,6 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
             $poids = $user['poids'];
         }
         
-
-             // Modification cheveux color
-
-
-     if(isset($_POST['cheveux_color']) && ($_POST['cheveux_color']!=$user['cheveux_color'])) {
-        echo 'cheveux_color';
-        $executeRequest = true;
-        $cheveux_color = htmlspecialchars($_POST['cheveux_color']);
-        }else{
-            $cheveux_color = $user['cheveux_color'];
-        }
 
 
 
@@ -180,7 +167,6 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
           'astrologie' => $astrologie,
           'choix' => $choix,
           'poids' => $poids,
-          'cheveux_color' => $cheveux_color,
           'age' => $age,
           'mail' => $mail,
           'mdp' => $mdp,
@@ -197,7 +183,6 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
                                      astrologie = :astrologie,
                                      choix = :choix,
                                      poids = :poids,
-                                     cheveux_color = :cheveux_color,
                                      age = :age,
                                      mail = :mail,
                                      mdp = :mdp,
@@ -224,5 +209,3 @@ include 'includes/FormEditProfil.php'
     header("Location: connexion.php");
  }
  ?>
-
-

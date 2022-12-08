@@ -93,12 +93,13 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
 
                 <div class="info_pseudo_age">
-                    <span>Age <?php echo $userinfo['age'] ?></span> <br>
-                    <span class="taille">Taille :<?php echo $userinfo['taille'] ?> Cm</span> <br>
-                    <span><?php echo $userinfo['poids'] ?> Kilos</span> <br>
-                    <span><?php echo $userinfo['choix'] ?></span> <br>
-                    <span><?php echo $userinfo['astrologie']; ?></span><br>
-                    <span>Département : <?php echo $userinfo['departement_nom'] ?> </span>
+                    <span style="font-weight: bold;">Age <?php echo $userinfo['age'] ?></span> <br>
+                    <span style="font-weight: bold;">Taille <?php echo $userinfo['taille'] ?> Cm</span> <br>
+                    <span style="font-weight: bold;"><?php echo $userinfo['poids'] ?> Kilos</span> <br>
+                    <span style="font-weight: bold;"><?php echo $userinfo['choix'] ?></span> <br>
+                    <span style="font-weight: bold;"><?php echo $userinfo['astrologie']; ?></span><br>
+                    <span style="font-weight: bold;">Département  <?php echo $userinfo['departement_nom'] ?> </span>
+                    <span style="font-weight: bold;">Cheveux  <?php echo $userinfo['cheveux_color'] ?> </span>
 
           
                 </div>

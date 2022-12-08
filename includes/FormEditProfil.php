@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <title>Formulaire d'édition du profil</title>
-<html lang="fr">
 <link rel="stylesheet" href="assets/FormEditProfil.css">
-
 
 <body>
    
 
 
+<header>
+<h1>
+   Edition de mon profil
+</h1></header>
+
+
 <section class="container_editprofil">
 
-<div class="edit_profil_container">
 
-<h1>Edition de mon profil</h1>
-
-<div>
 
 
 
              <form method="POST" action="" enctype="multipart/form-data">
-                <label>Pseudo :</label>
+                <label>Pseudo</label>
                 <input type="text" name="newpseudo" placeholder="Pseudo" maxlength="10" value="<?php echo $user['pseudo']; ?>" /><br /><br />
                 <label>Age</label>
                 <input type="tel" pattern="[0-9]*" inputtype="numeric" name="newage" placeholder="age" minlength="1" maxlength="2" value="<?php echo $user['age']; ?>" /><br /><br />
@@ -244,6 +244,20 @@
 
                </select> <br> <br>
 
+               <select name="cheveux_color">
+               <option  value="<?php echo $user['cheveux_color']; ?>"selected>
+               <?php echo $user['cheveux_color'] ;  ?> </option>>
+
+               <option value="blond">Blond</option>
+               <option value="chatain_clair">Châtain clair</option>
+               <option value="chatain_fonce">Châtain foncé</option>
+               <option value="brun">Brun</option>
+               <option value="roux">Roux</option>
+
+
+
+               </select>
+<br>
 
 
                <label>Ma description</label> <br> <br>
@@ -251,26 +265,29 @@
                cols="30" rows="5" minlength="10" maxlength="150"><?php echo $user['description_profil'];?></textarea> <br> <br>
 
 
+               <button class="safe" 
+                type="submit" value="Enregistrer">Enregistrer</button>
+                <br>
+               
+               <button class="return"
+                type="button" value="Retour"onclick="history.go(-1);">
+               Retour
+               </button>
+             
+
+          
 
 
-                <input style="padding:20px; border:3px solid blue;" 
-                type="submit" value="Mettre à jour mon profil !" />
+             
 
-                <input style="padding:20px; border:3px solid blue;" 
-                type="button" value="Revenir en arrière"onclick="history.go(-1);" />
+
    
 
              </form>
 
 
 
-
-             
-
-
              <?php if(isset($msg)) { echo $msg; } ?>
-          </div>
-       </div>
 
 
 
