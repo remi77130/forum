@@ -191,7 +191,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <!------------------------ REQUETE AFFICHAGE ALBUM PHOTO -------->
 
         <?php
-        $req = $bdd->prepare("SELECT nom, type from images INNER JOIN membres on membres.id=images.id WHERE membres.id=?");
+        $req = $bdd->prepare("SELECT `index`, nom, type from images INNER JOIN membres on membres.id=images.id WHERE membres.id=?");
         // REQUETE DE SELECTION DANS LA BDD JOINTURE DE TABLES
         $req->setFetchMode(PDO::FETCH_ASSOC);
         $req->execute(array($_GET["id"]));
@@ -202,7 +202,16 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
             <?php
             foreach ($tab as $image) {
                 if(file_exists('Images_album/' . $image["nom"])){
-                    echo '<div class="images"><img src="Images_album/' . $image["nom"] . '" alt="photo album" title="image"/></div>';
+                    ?>
+                        <div class="image_container" data-image-id="<?= $image["index"] ?>">
+                            <div class="images_action">
+                                <a href="#" data-image-id="<?= $image["index"] ?>" class="btn_image_delete">supprimer</a>
+                            </div>
+                            <div class="images">
+                                <img src="Images_album/<?= $image["nom"] ?>" alt="photo album" title="image"/>
+                            </div>
+                        </div>
+                    <?php
                 }
             }
             ?>
@@ -290,4 +299,9 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 ?>
 
 
+<script
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/profil.js"></script>
 <script type="text/javascript" src="./js/image_viewer.js"></script>
