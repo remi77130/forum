@@ -9,7 +9,7 @@ Ajouter des photos à mon album
 <form method="post" enctype="multipart/form-data">
 
    <div>
-      <input style="background-color: red;" type="file" name="image" accept="image/png, image/jpeg" required /><br>
+      <input type="file" name="image" accept="image/png, image/jpeg" required /><br>
    </div>
 
    <div>

@@ -19,6 +19,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     $choix = "";
     $poids = "";
     $cheveux_color = "";
+    $situation = "";
     $age = "";
     $mail = "";
     $mdp = "";
@@ -84,11 +85,9 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
         }else{
             $poids = $user['poids'];
         }
-        
 
-             // Modification cheveux color
-
-
+          // Modification cheveux
+   
      if(isset($_POST['cheveux_color']) && ($_POST['cheveux_color']!=$user['cheveux_color'])) {
         echo 'cheveux_color';
         $executeRequest = true;
@@ -96,12 +95,21 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
         }else{
             $cheveux_color = $user['cheveux_color'];
         }
+        
+
+        
+
+     // Modification situation
 
 
 
-
-
-
+        if(isset($_POST['situation']) && ($_POST['situation']!=$user['situation'])) {
+           echo 'situation';
+           $executeRequest = true;
+           $situation = htmlspecialchars($_POST['situation']);
+            }else{
+              $situation = $user['situation'];
+            }
 
 
     //Modification age
@@ -181,6 +189,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
           'choix' => $choix,
           'poids' => $poids,
           'cheveux_color' => $cheveux_color,
+          'situation' => $situation,
           'age' => $age,
           'mail' => $mail,
           'mdp' => $mdp,
@@ -198,6 +207,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
                                      choix = :choix,
                                      poids = :poids,
                                      cheveux_color = :cheveux_color,
+                                     situation = :situation,
                                      age = :age,
                                      mail = :mail,
                                      mdp = :mdp,

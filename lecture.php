@@ -1,7 +1,6 @@
 <?php ////// FEUILLE LECTURE DU MESSAGE *********
 include __DIR__ . '/includes/init.php';
 include 'verif.php';
-require 'actions/securityAction.php';
 
 
 if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
@@ -120,15 +119,15 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
         </div>
         <form method="POST" enctype="multipart/form-data" action="">
             <p>
-                <input type="text" name="objet" placeholder="objet" />
+                <input class="objet_message" type="text" name="objet" placeholder="objet" />
             </p>
 
             <p>
-                <textarea placeholder="message" name="message"></textarea>
+                <textarea class="text_message" placeholder="message" name="message"></textarea>
             </p>
 
             <p>
-                <input type="file" name="img_msg" />
+                <input class="file_message" type="file" name="img_msg" />
             </p>
             <p>
                 <input type="hidden" name="destinataire_id" value="<?= $id_expediteur ?>" />

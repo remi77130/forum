@@ -49,16 +49,20 @@ $commentaires->execute(array($membreId));
 
    <div class="container_comment">
       <div>
-         <strong><?= $membreSender['pseudo'] ?></strong>
+         <strong class="pseudo_comment"><?= $membreSender['pseudo'] ?></strong>
       </div>
       <div>
-         <?= nl2br($c['commentaire']) ?>
+         <p class="comment"><?= nl2br($c['commentaire']) ?></p>
       </div>
       <div>
          <?php
          if(isset($_SESSION['id']) && $membreId == $_SESSION['id']){
          ?>
-            <?= $c['reported']?'<button disabled>signaler</button>':'<button class="btn_report_comment" data-comment-id="'.$c['id'].'">signaler</button>' ?>
+
+         <div class="disabled_container">
+         <?= $c['reported']?'<button disabled>signaler</button>':'<button class="btn_report_comment" data-comment-id="'.$c['id'].'">signaler</button>' ?>
+
+         </div>
          <?php
          }
          ?>

@@ -65,7 +65,7 @@ function getCommentById($id){
     if($comment == null){
         returnResponse("Not found : Commentaire non trouvée", null, 404);
     }
-    if (isset($_SESSION['id']) && $comment['idMembreSender'] != $_SESSION['id']){
+    if (isset($_SESSION['id']) && $comment['idMembre'] != $_SESSION['id']){
         returnResponse("Unauthorized : Vous ne pouvez pas signaler ce commentaire", null, 401);
     }
     return $comment;

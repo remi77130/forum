@@ -63,6 +63,7 @@ header
 }
 
 
+
 .profil_membre H2 {
 
     font-family: 'IBM Plex Sans', sans-serif;
@@ -157,7 +158,7 @@ header
 
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 25px 10px 10px 10px;
 
 }
 .image_album_profil .image_container{
@@ -172,6 +173,7 @@ header
 .image_album_profil div {
     width: 150px;
     max-width: 150px;
+    margin-bottom: 10px;
 }
 
 .image_album_profil div img {
@@ -181,12 +183,24 @@ header
     padding: 3px;
     cursor: pointer;
     transition: 0.3s;
+    opacity: 0.7;
+    border: 0.5px solid rgba(245, 222, 179, 0.349);
+
 }
 
 .image_album_profil img:hover {
-    opacity: 0.7;
     transition: 400ms;
-    box-shadow: 1px 3px 3px rgba(179, 176, 176, 0.397);
+    opacity: 1;
+
+
+}
+
+
+.btn_image_delete
+{
+    text-decoration: none;
+    color: rgb(131, 131, 131);
+    font-size: 12px;
 }
 
 /*
@@ -284,21 +298,57 @@ button {
 }
 
 .container_comment{
-    margin:1em auto;
+    margin: 10px;
+    width: 300px;
+    max-width: 300px;
+    text-align: start;
+    border-bottom: 0.5px solid #f0f8ff2b;
+
 }
+
+.container_comment button
+{
+    background: none;
+    box-shadow: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: rgb(247 49 49);
+    padding-right: 50px;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+}
+.pseudo_comment
+{
+    color: aliceblue;
+    font-weight: bold;
+
+}
+
+
 
 .comment_profil {
 
     overflow: visible;
     height: 100%;
-    box-shadow: 5px 3px 30px rgba(129, 129, 129, 0.315);
     margin-top: 25px;
     text-align: center;
     padding: 5px;
 
 }
 
+.icone_letter_profil
+{
+    width: 20px;
+    position: relative;
+    top: 4px;
+    right: 5;}
 
+.disabled_container
+{
+    text-align: end;
+    width: 100%;
+}
 .input_comment {
     text-decoration: none;
     background: #333333;
@@ -361,12 +411,17 @@ OPTION PROFIL
 
 }
 
+.write
+{
+    position: relative;
+    bottom: 1px;
+}
+
 .button_write_profil {
 
     text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
-
     border: none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
@@ -442,7 +497,6 @@ OPTION PROFIL
     display: inherit !important;
 
 }
-
 
 
 

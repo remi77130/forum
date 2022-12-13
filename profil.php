@@ -71,7 +71,8 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <div class="profil_membre">
 
 
-            <div>
+            <div>  
+                
                 <?php
                 if (str_contains($userinfo['avatar'], 'https')) { ?>
                     <img src="<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
@@ -98,15 +99,12 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                     <span style="font-weight: bold;"><?php echo $userinfo['poids'] ?> Kilos</span> <br>
                     <span style="font-weight: bold;"><?php echo $userinfo['choix'] ?></span> <br>
                     <span style="font-weight: bold;"><?php echo $userinfo['astrologie']; ?></span><br>
+                    <span style="font-weight: bold;"><?php echo $userinfo['situation']; ?></span><br>
+                    <span style="font-weight: bold;"><?php echo $userinfo['cheveux_color']; ?></span><br>
                     <span style="font-weight: bold;">Département  <?php echo $userinfo['departement_nom'] ?> </span>
-                    <span style="font-weight: bold;">Cheveux  <?php echo $userinfo['cheveux_color'] ?> </span>
 
           
                 </div>
-                
-             
-
-
 
                 <div class="descr_profil">
                     <p>
@@ -143,7 +141,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         if ($_SESSION['id'] != $userinfo['id']) {
             ?>
             <button class="button_write_profil" style="cursor: pointer;">
-                <a onClick="messagerie()">Ecrire</a>
+                <img class="icone_letter_profil" src="icones/letter.svg "><a class="write" onClick="messagerie()">Ecrire</a>
             </button>
             <?php
         }
@@ -205,7 +203,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                     ?>
                         <div class="image_container" data-image-id="<?= $image["index"] ?>">
                             <div class="images_action">
-                                <a href="#" data-image-id="<?= $image["index"] ?>" class="btn_image_delete">supprimer</a>
+                                <a href="#" data-image-id="<?= $image["index"] ?>" class="btn_image_delete">Supprimer</a>
                             </div>
                             <div class="images">
                                 <img src="Images_album/<?= $image["nom"] ?>" alt="photo album" title="image"/>

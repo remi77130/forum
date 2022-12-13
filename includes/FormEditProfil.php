@@ -244,7 +244,8 @@
 
                </select> <br> <br>
 
-               <select name="cheveux_color">
+               <label>Cheveux</label> 
+              <select name="cheveux_color">
                <option  value="<?php echo $user['cheveux_color']; ?>"selected>
                <?php echo $user['cheveux_color'] ;  ?> </option>>
 
@@ -253,11 +254,21 @@
                <option value="chatain_fonce">Châtain foncé</option>
                <option value="brun">Brun</option>
                <option value="roux">Roux</option>
+               <option value="raser">Raser</option>
+                </select> <br> <br>
+
+            <label>Situation </label>
+            <select name="situation">
+            <option value="<?php echo $user['situation']; ?>"selected>
+            <?php echo $user['situation'] ;  ?> </option>
+            <option value="En couple">En couple</option>
+            <option value="Celibataire">Celibataire</option>
+            <option value="C'est compliqué">C'est compliqué</option>
+
+            </select> <br> <br>
 
 
 
-               </select>
-<br>
 
 
                <label>Ma description</label> <br> <br>

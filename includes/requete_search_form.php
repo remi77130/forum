@@ -28,7 +28,10 @@ if(!empty($_POST['search']) && empty($_POST['reset'])) {
         
     }
 
-// RECHERCHE SUR ASTROLOGIE
+// RECHERCHE SUR LA SITUATION ///
+
+// RECHERCHE SUR ICI POUR //
+
 
 
 
@@ -67,7 +70,7 @@ if(!empty($_POST['poids_min']) || !empty($_POST['poids_max']))  {
 }
 
 
-// RECHERCHE SUR POIDS
+// RECHERCHE SUR LA TAILLE
 
 if(!empty($_POST['taille_min']) || !empty($_POST['taille_max']))  {
     $taille_min=135;
@@ -82,18 +85,6 @@ if(!empty($_POST['taille_min']) || !empty($_POST['taille_max']))  {
     }
     $conditions[] = "taille>='$taille_min' && taille<='$taille_max'";
 }
-
-
-    // RECHERCHE SUR ICI POUR...
-
-
-
-
-
-
-
-
-
 
 
 

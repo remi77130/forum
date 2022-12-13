@@ -71,10 +71,33 @@ nav a:hover
 
 .img_message
 {
-    width: 70%;
+    width: 50%;
     height: 70%;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px gainsboro;
+}
+.objet_message
+{
+    padding: 2px 13px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(241, 241, 241);
+}
+.text_message
+{
+    padding: 5px 20px;
+    font-size: 17px;
+    background: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(241, 241, 241);
+    margin-bottom: 10px;
+}
+
+.file_message
+{
+    margin-bottom: 20px;
+    width: 240px;
 }
 
 section{
