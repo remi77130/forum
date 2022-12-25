@@ -1,5 +1,4 @@
 <?php 
-session_start(); //pour recup dans la bdd
 
 include_once 'cookieconnect.php';
 require 'require/database.php';
@@ -16,6 +15,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     $astrologie = "";
     //$taille = "";
     $choix = "";
+    $nationality = "";
     $poids = "";
     $age = "";
     $mail = "";
@@ -48,15 +48,13 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     }else{
         $astrologie = $user['astrologie'];
     }
-
-
-
-   // Modification taille
+    
+    // Modification taille
    
-   if(isset($_POST['taille']) && ($_POST['taille']!=$user['taille'])) {
-    echo 'taille';
-    $executeRequest = true;
-    $taille = htmlspecialchars($_POST['taille']);
+    if(isset($_POST['taille']) && ($_POST['taille']!=$user['taille'])) {
+        echo 'taille';
+        $executeRequest = true;
+        $taille = htmlspecialchars($_POST['taille']);
     }else{
         $taille = $user['taille'];
     }
@@ -73,6 +71,18 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
         }
 
 
+             // Modification nationality
+
+    
+             if(isset($_POST['nationality']) && ($_POST['nationality']!=$user['nationality'])) {
+                echo 'nationality';
+                $executeRequest = true;
+                $nationality = htmlspecialchars($_POST['nationality']);
+                }else{
+                    $nationality = $user['nationality'];
+                }
+
+
      // Modification poids
    
      if(isset($_POST['poids']) && ($_POST['poids']!=$user['poids'])) {
@@ -83,10 +93,6 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
             $poids = $user['poids'];
         }
         
-
-
-
-
 
 
 
@@ -166,6 +172,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
           'description_profil' => $description,
           'astrologie' => $astrologie,
           'choix' => $choix,
+          'nationality' => $nationality,
           'poids' => $poids,
           'age' => $age,
           'mail' => $mail,
@@ -182,6 +189,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
                                      description_profil = :description_profil,
                                      astrologie = :astrologie,
                                      choix = :choix,
+                                     nationality = :nationality,
                                      poids = :poids,
                                      age = :age,
                                      mail = :mail,

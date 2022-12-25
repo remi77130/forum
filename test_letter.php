@@ -13,6 +13,16 @@
     <h1> culpa odio libero facere alias.</h1>
 
 
+    <?php
+
+    $name = 'remi';
+    $age = (31-1);
+
+
+    echo 'bonjour ' .$name. ' bienvenue sur le site jai ' .$age. ' ans' ;
+    ?>
+
+
 
 
 <!-- animation letter-->

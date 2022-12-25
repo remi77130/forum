@@ -133,6 +133,10 @@
             <!-- RECHERCHE SUR LA SITUATION ///
 
             // RECHERCHE SUR ICI POUR // -->
+            
+
+
+            <!-- Recherche sur nationality -->
             <div>
                 <p>Qui à</p>
                 <label>Age minimum</label>
@@ -215,6 +219,113 @@
                     <option value="C'est compliqué" <?php echo ($situation == "C'est compliqué") ? "selected" : "" ?>>C'est compliqué</option>
                 </select>
             </div>
+
+            <div>
+                <?php
+                $nationality = isset($nationality) ? $nationality : "";
+                ?>
+                <p>Nationalité</p>
+                <br />
+
+                <select name="nationality">
+
+<option value="Albanian">Albanian</option>
+<option value="American">American</option>
+<option value="Argentinian">Argentinian</option>
+<option value="Armenian">Armenian</option>
+<option value="Australian">Australian</option>
+<option value="Austrian">Austrian</option>
+<option value="Belarussian">Belarussian</option>
+<option value="Belgian">Belgian</option>
+<option value="Brazilian">Brazilian</option>
+<option value="British">British</option>
+<option value="Bulgarian">Bulgarian</option>
+<option value="Canadian">Canadian</option>
+<option value="Chinese">Chinese</option>
+<option value="Colombian">Colombian</option>
+<option value="Croatian">Croatian</option>
+<option value="Cuban">Cuban</option>
+<option value="Czech">Czech</option>
+<option value="Danish">Danish</option>
+<option value="Dutch">Dutch</option>
+<option value="Estonian">Estonian</option>
+<option value="Filipino">Filipino</option>
+<option value="Finnish">Finnish</option>
+<option value="French">French</option>
+<option value="German">German</option>
+<option value="Greek">Greek</option>
+<option value="Hungarian">Hungarian</option>
+<option value="Indian">Indian</option>
+<option value="Irish">Irish</option>
+<option value="Israeli">Israeli</option>
+<option value="Italian">Italian</option>
+<option value="Jamaican">Jamaican</option>
+<option value="Japanese">Japanese</option>
+<option value="Korean">Korean</option>
+<option value="Latvian">Latvian</option>
+<option value="Lithuanian">Lithuanian</option>
+<option value="Malaysian">Malaysian</option>
+<option value="Mexican">Mexican</option>
+<option value="Moldovian">Moldovian</option>
+<option value="Montenegrian">Montenegrian</option>
+<option value="Norwegian">Norwegian</option>
+<option value="Polish">Polish</option>
+<option value="Portuguese">Portuguese</option>
+<option value="Puerto Rican">Puerto Rican</option>
+<option value="Romanian">Romanian</option>
+<option value="Russian">Russian</option>
+<option value="Serbian">Serbian</option>
+<option value="Singaporean">Singaporean</option>
+<option value="Slovak">Slovak</option>
+<option value="Slovenian">Slovenian</option>
+<option value="Spanish">Spanish</option>
+<option value="Swedish">Swedish</option>
+<option value="Swiss">Swiss</option>
+<option value="Thai">Thai</option>
+<option value="Ukrainian">Ukrainian</option>
+<option value="Venezuelan">Venezuelan</option>
+<option value="Vietnamese">Vietnamese</option>
+</select> <br> <br>  
+               
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <div>
                 <label>Pseudo</label>

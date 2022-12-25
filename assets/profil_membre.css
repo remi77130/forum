@@ -82,7 +82,7 @@ header
 
     display: flex;
     text-decoration: none;
-    align-items: center;
+    align-items: start;
 
 
 }
@@ -278,7 +278,7 @@ font-weight: 600;
 }
 .container_profil_membre[data-sexe=Femme]
 {
-    border: 0.5px solid rgb(192, 47, 192)
+    border: 0.5px solid rgb(210, 54, 210)
 }
 
 .container_profil_membre[data-sexe=Homme]:hover
@@ -322,6 +322,7 @@ font-weight: 600;
     width: 120px;
     height: 120px;
     border-radius: 100px;
+
 }
 .container_profil_avatar
 {

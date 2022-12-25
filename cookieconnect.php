@@ -1,6 +1,7 @@
 <?php
 
-if(!isset($_SESSION['id']) AND isset($_COKIE['email'],$_COKIE['password']) 
+if(!isset($_SESSION['id']) 
+AND isset($_COKIE['email'],$_COKIE['password']) 
 AND !empty($_COKIE['email']) AND !empty($_COKIE['password'])){
 
     $reqUser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND mdp = ?");
@@ -12,7 +13,7 @@ AND !empty($_COKIE['email']) AND !empty($_COKIE['password'])){
          $userInfo = $reqUser->fetch();
          $_SESSION['id'] = $userInfo['id'];
          $_SESSION['pseudo'] = $userInfo['pseudo'];
-         $_SESSION['mail'] = $userInfo['mail'];
+         //_SESSION['mail'] = $userInfo['mail'];
       }
 
 }

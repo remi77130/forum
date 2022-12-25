@@ -7,7 +7,6 @@ require 'signupAction.php';
 <head>
 
 <link rel="stylesheet" href="assets/index.css">
-<link rel="stylesheet" href="assets/FormSignup.css">
 <link rel="stylesheet" href="assets/compteur.css">
 
 
@@ -17,8 +16,9 @@ require 'signupAction.php';
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-240853356-1');</script>
 <TITLE>Rencontre gratuite</TITLE>
 
-<META NAME="DESCRIPTION" CONTENT="Chat sans inscription. Venez chater sans inscrire votre email. "/>
+<META NAME="DESCRIPTION" CONTENT="Chat sans inscription. Sans email. Venez chater sans inscrire votre email. "/>
 <meta name="robots" content="index, follow, all">
+<meta name="keywords" content="chate en ligne">
 
 
 <!-- Icon -->
@@ -72,11 +72,7 @@ require 'signupAction.php';
 
 <h1>Chanderland, rencontre gratuite</h1>
 
-    
-<div style="margin: auto;" class="img_index">
-
-<img src="icones/Chanderland_logo.svg" style="width: 100%;"  alt="logo_chanderland.com" srcset="">
-</div>
+  
 <h3></h3>
 
 
@@ -88,85 +84,96 @@ require 'signupAction.php';
 
 </div>
 
-<section class="section_signup">
-    
-<div class="counter_container">
-    <p> 😍Il y a </p>
-<h2 id="counter">0</h2>
-<p>Personnes actuellement en lignes ! <br>
-<b>Rejoignez les</b> 😍 </p>
 
-</div>
+<div class="login-page">
+<div class="form">
 
+<form class="register-form"method="POST" action="">
+    <input type="text" name="pseudo" maxlength="10" minlength="3" placeholder="Pseudo"
+            value="<?php if (isset($pseudo)) {
+            echo $pseudo;} ?>" />
 
 
-        <div class="box">
+    <input type="tel" pattern="[0-9]*" inputtype="numeric" name="age" placeholder="Age" 
+           maxLength="2" minlength="1" />
 
-            <form style="text-align: center;" method="POST" enctype="multipart/form-data">
+    <label>Vous êtes</label> <br>
 
-                    <input type="text" name="pseudo" maxlength="10" minlength="3" placeholder="Pseudo"
-                           value="<?php if (isset($pseudo)) {
-                               echo $pseudo;
-                           } ?>" />
-                    <img class="icone_form" src="icones/avatar_index_form.svg" alt="avatar-form">
+    <select name="sexe" >
+    <option value="Homme">Homme</option>
+    <option value="Femme">Femme</option>
+    </select>
 
+<div id="departement">
 
-                    <input type="tel" pattern="[0-9]*" inputtype="numeric" name="age" placeholder="Age" maxLength="2" minlength="1" />
-                    <img class="icone_form" src="icones/date_index_form.svg" alt="icone_age"> <br>
+    <select id="select_departement" name="departement" required>
+    <option value="">Département </option>
+        <?php
+            // On récupère tous les départements triés par ordre alphabétique
+            $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
 
+            // On boucle sur les départements
+            foreach ($req_selectDepartements->fetchAll() as $departement) {
+            echo '<option value="' . $departement['departement_code'] . '">' . $departement['departement_nom'] . '</option>';
+            }?>
 
-                    <label>Vous êtes</label> <br>
-                    <select name="sexe" class="form-control">
-                        <option value="Homme">Homme</option>
-                        <option value="Femme">Femme</option>
-                    </select>
+    </select>
 
-            <div id="departement">
-                    <select id="select_departement" name="departement" required>
-                        <option value="">Département </option>
-                        <?php
-                        // On récupère tous les départements triés par ordre alphabétique
-                        $req_selectDepartements = $bdd->query('SELECT departement_code, departement_nom FROM departement ORDER BY departement_nom ASC');
-
-                        // On boucle sur les départements
-                       foreach ($req_selectDepartements->fetchAll() as $departement) {
-                          echo '<option value="' . $departement['departement_code'] . '">' . $departement['departement_nom'] . '</option>';
-                        }
-                   ?>
-                    </select>
                 </div>
 
                
-                <div id="ville" style="display: none;">
-                    <select id="select_ville" name="ville_id" required></select>
-                </div> 
+<div id="ville" style="display: none;">
+    <select id="select_ville" name="ville_id" required>
+    </select>
+</div> 
                 
 
                   <!--  <input type="email" name="mail" placeholder="Mail" value="<//?//php// if (isset($mail)) {
                        // echo $mail;
-                  //  } ?>"> -->
-                
+                  //  } ?>"--> 
+                  
 
-                    <input type="password" minlength="5" name="password" placeholder="Mot de passe">
-                    <img class="icone_form" src="icones/locked_index_form.svg" alt="locked_form">
-
-
-
-                    <input type="password" minlength="5" name="password2" placeholder="Confirmation passe">
-                    <img class="icone_form" src="icones/locked_index_form.svg" alt="locked_form">
+    <input type="password" minlength="5" name="password" placeholder="Mot de passe">
+    <input type="password" minlength="5" name="password2" placeholder="Confirmation passe">
 
 
-                <button type="submit" class="button_form" name="validate" value="Senregistrer">S'inscrire</button>
+    <button type="submit" name="validate" value="Senregistrer">S'inscrire</button>
 
-                <div class="lien_compte_user">
-                <a href="connexion.php">J'ai déjà un compte, <strong style="color:#49b851 ;">je me connecte</strong> </a> <br> <br>
-                </div>
+       
+    <p class="message">M'enregistrer <a href="#">Sign In</a></p>
 
-            </form>
+    <?php
+
+if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR 
+{
+    echo '<font color="red">' . $erreur . "</font>";
+
+}
+?>
+
+    </form>  <!-- Fin formulaire inscription -->
+
+    <form class="login-form" method="POST" action="">
+    <input autocomplete="username" id="login__username" 
+            type="text" name="pseudoconnect" class="form__input" 
+            placeholder="Pseudo" required>      
+    <input id="login__password" type="password" name="mdpconnect" class="form__input" 
+    placeholder="Password" required>
+
+    <input type="submit" name="formconnexion" value="Connexion">
+    <p class="message">Non enregistré ? <a href="#">Creer un compte</a></p>
+
+</div>
+
+
+    </form>
+
+</div>
+</div>
 
 
 
-            <div style="text-align: center ;">
+            <div style="text-align: center ;"> 
 <?php
 
 if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR 
@@ -180,11 +187,46 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
         </div>
         
 
+   <div>
+        <h3>On a voulu faire autrement</h3>
+
+        <p>Sur la pluspart des site de rencontre on ne sait pas vraiment par quoi commencé pour lancé la discution. <br>
+        Aujourd'hui il est incenssé de commencé une phrase ' par un salut ça va ? ' il faut sortir de l'ordinaire et être rapide car plusieur personne sont potentielement aussi en train de discuter avec la même personne. <br>
+        Etre rapide et sortir de l'ordinaire est difficile surtout si il faut payer pour envoyer un message.
+        c'est pour cela qu'on a mis en place un systéme de 'Boutton d'envie' qui vous permet de vous démarquer en partagant ce que vous avez envie de faire à l'instant present <br>
+        Avec ce systéme vous n'avez plus a refléchir comment lancé la discution car c'est vous qui avez déja proposer quelques chose que vous aimeriez faire <br>
+        Pour votre futur partenaire cela l'arrange beaucoup car il sait de quoi vous avez envie. <br>Vous n'avez plus cas attendre les messages des autre membres qui souhaite partager cet evenement avec vous. <br>
+        Mais atention les evenement ne dure que 30 minute donc reste connecter pour voir les nouvelle envie dans votre secteur. <br>
+        Qui sait peut etre qu'une personne prés de chez vous auras envie de boire un verre ou voir un film pourquoi allez le voir ensemble..
 
 
+     </div>
 
+<div class="b01"> 
+
+
+<div class="adv"> <h3>Que voulez vous faire aujourdhui ?</h3>
+    <img src="icones/chat-gratuit-notificationsvg.svg" alt="" srcset=""> 
+<p>Boire un verre ? Allez courir ? une rencontre rapide ? <br>
+     Dite le simplement puis attendez les propositions.</p>
+<div class="cont_not">
+        <h3 class="text-3xl font-bold">Chat discret</h3>
+                <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
+
+        <p>Profitez d'une conversation très discrète pour des rencontres sans stress.<br><br>
+        Nous avons désactivé le système de notification pour que vous puissiez faire des rencontres sans être dérangé par des notifications quand vous recevez un message. <br>
+        <span style="text-decoration: underline;">Même si votre portable est en mode sonnerie.</span></p>
+
+        <a class="lien_inscription" href="#form">M'inscrire gratuitement</a>
+    </div> <!-- cont_not -->
+
+
+    
+</div>
 
 <article>
+
+
 
 
 <div class="index_container">
@@ -261,7 +303,33 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 </article>
 
-<?php include 'slider.php'; ?>
+
+
+
+<!-- carrousel -->
+
+<div class="pic-ctn">
+    <img src="icones/1.svg" alt="" class="pic">
+    <img src="icones/3.svg" alt="" class="pic">
+    <img src="icones/4.svg" alt="" class="pic">
+    <img src="icones/5.svg" alt="" class="pic">
+    <img src="icones/6.svg" alt="" class="pic">
+    <img src="icones/8.svg" alt="" class="pic">
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?//php// include 'slider.php'; ?>
 
 
 

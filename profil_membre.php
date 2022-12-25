@@ -44,7 +44,7 @@ include 'profil.php';
 <div class="nav-links">
     <ul>
 
-    <li><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">
+    <li> <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">
   <span style="font-size:1.2em;" class="filter_nav"> Mon profil</span>
     </li></a>
 
@@ -100,6 +100,24 @@ include 'profil.php';
         </div>
     </div>
 </div>
+
+
+
+
+
+<div class="container_card_profil_choix">
+    <!-- le conteneur des cards des profils qui ont appuyer sur unb bouton d'envie -->
+
+<div class="card_profil_choix"> <!-- les cards profils contenant l'avatar, le pseudo, le choix -->
+    <div class="avatar_profil">img</div> <!-- l'avatar -->
+    <div class="pseudo_choix">pseudo et choix</div> <!-- pseudo et choix -->
+</div>
+
+</div>
+
+
+
+
 
 
 

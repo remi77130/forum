@@ -13,8 +13,12 @@
 
 
 <div>
-    <a href="aide.php">Aide</a>
+<a href="aide.php">Aide</a>
+<a href="includes/conditions.php" target="_blank">CGU</a>
+<a href=""></a>
+
     <!--<a href="#">Contact</a>-->
+
 
 </div>
 

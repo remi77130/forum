@@ -11,6 +11,7 @@
 
 
 
+
 canvas {
   height: auto;
   max-inline-size: 100%;
@@ -70,7 +71,7 @@ canvas {
 :root {
   --htmlFontSize: 100%;
 
-  --bodyBackgroundColor: #2c3338;
+  --bodyBackgroundColor: rgb(37, 37, 40);
   --bodyColor: var(--baseColor);
   --bodyFontFamily: "Open Sans";
   --bodyFontFamilyFallback: sans-serif;

@@ -28,6 +28,12 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
         $conditions[] = "situation='$situation'";
     }
 
+     // RECHERCHE SUR LA nationality ///
+     if (!empty($_POST['nationality'])) {
+        $nationality = htmlspecialchars($_POST['nationality']);
+        $conditions[] = "nationality='$nationality'";
+    }
+
     // RECHERCHE SUR LA COULEUR DE CHEVEUX ///
     if (!empty($_POST['cheveux_color'])) {
         $cheveux_color = htmlspecialchars($_POST['cheveux_color']);

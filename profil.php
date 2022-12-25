@@ -1,12 +1,16 @@
 <?php
 include './includes/init.php';
-
 include 'verif.php'; // BDD AND SESSION
 
 // Si l'utilisateur n'est pas connecté
 if (empty($_SESSION)) {
     exit;
 }
+
+
+
+
+
 
 if (isset($_GET['id']) and $_GET['id'] > 0) {
 
@@ -56,6 +60,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     <body>
 
+
 <header>
     <nav>
         <a class="slide-line" href="profil_membre.php">Accueil</a>
@@ -68,12 +73,21 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     <section class="section_profil_membre">
         <!-- Profil visible-->
 
-        <div class="profil_membre">
 
 
-            <div>  
-                
-                <?php
+        <ul class="cards">
+  <li>
+    <a href="" class="card">
+  
+    <div class="fond">
+        
+    </div>
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
+          
+
+          <?php
                 if (str_contains($userinfo['avatar'], 'https')) { ?>
                     <img src="<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
                     <?php
@@ -83,50 +97,35 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                     <?php
                 }
                 ?>
-            </div>
-
-           <div class="container_pseudo">
-<span class="pseudo_profil"><?php echo $userinfo['pseudo']; ?></span>
-
-           </div> 
-
-            <div class="info_profil">
-
-
-                <div class="info_pseudo_age">
-                    <span style="font-weight: bold;">Age <?php echo $userinfo['age'] ?></span> <br>
-                    <span style="font-weight: bold;">Taille <?php echo $userinfo['taille'] ?> Cm</span> <br>
-                    <span style="font-weight: bold;"><?php echo $userinfo['poids'] ?> Kilos</span> <br>
-                    <span style="font-weight: bold;"><?php echo $userinfo['choix'] ?></span> <br>
-                    <span style="font-weight: bold;"><?php echo $userinfo['astrologie']; ?></span><br>
-                    <span style="font-weight: bold;"><?php echo $userinfo['situation']; ?></span><br>
-                    <span style="font-weight: bold;"><?php echo $userinfo['cheveux_color']; ?></span><br>
-                    <span style="font-weight: bold;">Département  <?php echo $userinfo['departement_nom'] ?> </span>
-
           
-                </div>
+          <div class="card__header-text">
+            <h3 class="card__title"><?php echo $userinfo['pseudo']; ?>
+            <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?></span></h3>
+            <span class="card__status"><?php echo $userinfo['situation']; ?>
+         
+        
+        </span>
+          </div>          
+        </div>
+        <p class="card__description"><?php echo $userinfo['description_profil']; ?></p>
 
-                <div class="descr_profil">
-                    <p>
-                        <?php echo $userinfo['description_profil']; ?>
-                    </p>
-                </div>
+        <div class="info_profil">
 
-                <div class="created_profil">
-                    <span style="color: #787878;"><?php echo "Crée le " . $userinfo['createdAt']; ?></span> 
-                    
-                </div>
-
-            </div>
+        <ul>
+        <li><?php echo $userinfo['taille'] ?></li>
+        <li><?php echo $userinfo['poids'] ?></li>
+        <li><?php echo $userinfo['nationality'] ?></li>
+        <li><?php echo $userinfo['choix'] ?></li>
+        <li><?php echo $userinfo['astrologie']; ?></li>
+        <li><?php echo $userinfo['cheveux_color']; ?></li>
+        </ul>
 
         </div>
-
-
-        <!-- dislike en cours --->
-
-        <!---<a href="actions/action.php?t=0&id=<?= $id ?>">J'aime</a>(15) <br>
-        <a href="actions/action.php?t=1&id=<?= $id ?>">J'aime pas</a>(1)
---->
+      
+      </div>
+    </a>
+  </li>
+</ul> 
 
         <?php if (isset($error)) {
             echo '<span style="color:red;">' . $error . '</span>';
@@ -230,6 +229,25 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <!---   FORM ENVOIE PHOTO ALBUM -------->
         <?php include 'form_send_album_profil.php'; ?>
         <?php include 'option_profil.php'; ?>
+
+        <div class="line_01"> </div>
+
+        
+     <!--   <p>Dite à tout le monde de quoi avez-vous envie maintenant !</p> <br>
+
+        <h3>J'ai envie de </h3> <br> <br> <b></b>
+        
+     <div class="container_choix">
+
+	<button class="noselect red" data-statut_id="1">Boir un verre</button>
+	<button class="noselect green" data-statut_id="2">Faire une rencontre</button>
+    <button class="noselect blue" data-statut_id="3">Voir un film</button>
+	<button class="noselect purple" data-statut_id="4">Allez courir</button>
+
+        </div> -->
+
+   
+
 
         </div>
 

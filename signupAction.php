@@ -9,6 +9,7 @@ require 'require/database.php';
 <html lang="en">
 
 <body>
+<!-- Form inscription -->
 
 <?php
 $registrationPass = true;
@@ -145,8 +146,44 @@ if (!empty($_POST['pseudo'])
 ?>
 
 
+<!-- Form déja un compte -->
 
+<?php
+if(isset($_POST['formconnexion'])) {
+   //$mailconnect = htmlspecialchars($_POST['mailconnect']);
+   $mdpconnect = sha1($_POST['mdpconnect']);
+   $pseudoconnect = htmlspecialchars($_POST['pseudoconnect']);
 
+   //   if(!empty($mailconnect) AND !empty($mdpconnect)) {
+     // $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND mdp = ?");
+      //$requser->execute(array($mailconnect, $mdpconnect));
+     // $userexist = $requser->rowCount();
+      //if($userexist == 1) {
+        // $userinfo = $requser->fetch();
+         //$_SESSION['id'] = $userinfo['id'];
+         //$_SESSION['pseudo'] = $userinfo['pseudo'];
+         //$_SESSION['mail'] = $userinfo['mail'];
+         //header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
+
+   if(!empty($pseudoconnect) AND !empty($mdpconnect)) {
+      $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ? AND mdp = ?");
+      $requser->execute(array($pseudoconnect, $mdpconnect));
+      $userexist = $requser->rowCount();
+      if($userexist == 1) {
+         $userinfo = $requser->fetch();
+         $_SESSION['id'] = $userinfo['id'];
+         $_SESSION['pseudo'] = $userinfo['pseudo'];
+       //  $_SESSION['mail'] = $userinfo['mail'];
+         header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
+         
+      } else {
+         $erreur = "Mauvais mail ou mot de passe !";
+      }
+   } else {
+      $erreur = "Tous les champs doivent être complétés !";
+   }
+}
+?>
 
 
 
