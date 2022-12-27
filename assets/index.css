@@ -27,7 +27,7 @@ html, body{
 a{
     text-decoration: none;
     color: aliceblue;
-    padding: 10px;
+    
 }
 
 h1{
@@ -91,26 +91,6 @@ h3
 
 }
 
-.adv img{
-    width: 80px;
-}
-
-.adv
-{
-    border: 5px solid green;
-
-}
-
-
-
-
-.cont_not
-{
-
-    border: 5px solid green;
-
-}
-
 
 .section_signup{
     height: 90%;
@@ -133,16 +113,22 @@ h3
 }
 
 
-
+select
+{
+  width: 270px;
+  padding: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
 
 .img_index
 {
     width: 300px;
 }
 
-img{
-    object-fit: cover;
-}
+
 
 
 .title_section_signup{
@@ -170,7 +156,9 @@ Form
   .form {
     position: relative;
     z-index: 1;
-    background: #5e5e5e;
+    background: #051420;
+    border-left: 5px solid #878787;
+
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
@@ -184,10 +172,13 @@ Form
     width: 100%;
     border: 0;
     margin: 0 0 15px;
-    padding: 15px;
+    padding: 10px;
     box-sizing: border-box;
-    font-size: 14px;
-  }
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+}
+  
   .form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -251,19 +242,11 @@ Form
     color: #EF3B3A;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .p_advantage img
+  {
+    position: relative;
+    top: 5px;
+  }
 
 
 

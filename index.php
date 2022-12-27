@@ -99,7 +99,7 @@ require 'signupAction.php';
 
     <label>Vous êtes</label> <br>
 
-    <select name="sexe" >
+    <select class="h_f_select" name="sexe" >
     <option value="Homme">Homme</option>
     <option value="Femme">Femme</option>
     </select>
@@ -140,7 +140,7 @@ require 'signupAction.php';
     <button type="submit" name="validate" value="Senregistrer">S'inscrire</button>
 
        
-    <p class="message">M'enregistrer <a href="#">Sign In</a></p>
+    <p class="message"> J'ai déja un compte <a href="#">M'identifier</a></p>
 
     <?php
 
@@ -161,7 +161,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
     placeholder="Password" required>
 
     <input type="submit" name="formconnexion" value="Connexion">
-    <p class="message">Non enregistré ? <a href="#">Creer un compte</a></p>
+    <p class="message">Pas de compte ? <a href="#">Créer un compte</a></p>
 
 </div>
 
@@ -190,34 +190,40 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
    <div>
         <h3>On a voulu faire autrement</h3>
 
-        <p>Sur la pluspart des site de rencontre on ne sait pas vraiment par quoi commencé pour lancé la discution. <br>
-        Aujourd'hui il est incenssé de commencé une phrase ' par un salut ça va ? ' il faut sortir de l'ordinaire et être rapide car plusieur personne sont potentielement aussi en train de discuter avec la même personne. <br>
-        Etre rapide et sortir de l'ordinaire est difficile surtout si il faut payer pour envoyer un message.
-        c'est pour cela qu'on a mis en place un systéme de 'Boutton d'envie' qui vous permet de vous démarquer en partagant ce que vous avez envie de faire à l'instant present <br>
-        Avec ce systéme vous n'avez plus a refléchir comment lancé la discution car c'est vous qui avez déja proposer quelques chose que vous aimeriez faire <br>
-        Pour votre futur partenaire cela l'arrange beaucoup car il sait de quoi vous avez envie. <br>Vous n'avez plus cas attendre les messages des autre membres qui souhaite partager cet evenement avec vous. <br>
-        Mais atention les evenement ne dure que 30 minute donc reste connecter pour voir les nouvelle envie dans votre secteur. <br>
-        Qui sait peut etre qu'une personne prés de chez vous auras envie de boire un verre ou voir un film pourquoi allez le voir ensemble..
-
+        <p>Sur la plupart des sites de rencontre, on ne sait pas vraiment par quoi commencé pour lancé la discussion.<br>
+        Aujourd'hui, il est insensé de commencer une phrase par "un salut, ça va ? " Il faut sortir de l'ordinaire et être spontané, car plusieurs personnes sont potentiellement aussi en train de discuter avec la même personne. <br>
+        Être rapide et sortir de l'ordinaire sont difficile surtout s'il faut payer pour envoyer un message.
+        C'est pour cela qu'on a mis en place un système de (Bouton d'envie) qui vous permet de vous démarquer en partagent ce que vous avez envie de faire à l'instant présent.
+        Avec ce système, vous n'avez plus à réfléchir comment à lancer la discussion, car c'est vous qui avez déjà proposé quelque chose que vous aimeriez faire.
+        Pour votre futur partenaire, cela l'arrange beaucoup, car il sait de quoi vous avez envie. <br>
+        Vous n'avez plus cas attendre les messages des autre membres qui souhaite partager cet evenement avec vous. <br>
+        Mais attention les événements ne dure que 30 minutes donc reste connecter pour voir les nouvelles envies dans votre secteur.
+        Qui sait peut-être qu'une personne prés de chez vous aura envie de boire un verre ou de voir un film pourquoi ne pas aller le voir ensemble ?
 
      </div>
 
 <div class="b01"> 
 
 
-<div class="adv"> <h3>Que voulez vous faire aujourdhui ?</h3>
-    <img src="icones/chat-gratuit-notificationsvg.svg" alt="" srcset=""> 
-<p>Boire un verre ? Allez courir ? une rencontre rapide ? <br>
-     Dite le simplement puis attendez les propositions.</p>
+<div class="adv"> <h3>Que voulez vous faire aujourdhui ?</h3> <br>
+
+<p class="p_advantage">
+    <img src="icones/alcool.svg" style="width:30px;" alt="icone alcool">Boire un verre ?<br>
+    <img src="icones/film.svg" style="width: 25px;" alt="icones film"> Allez voir ce dernier film à la mode dont tout le monde parle ? <br> 
+    <img src="icones/heart.svg" style="width:30px;" alt="icone heart"> Ou bien une rencontre toride ? <br>
+
+<h4>Proposez le simplement puis attendez les propositions.</h4>
+
+
 <div class="cont_not">
         <h3 class="text-3xl font-bold">Chat discret</h3>
                 <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
 
         <p>Profitez d'une conversation très discrète pour des rencontres sans stress.<br><br>
         Nous avons désactivé le système de notification pour que vous puissiez faire des rencontres sans être dérangé par des notifications quand vous recevez un message. <br>
-        <span style="text-decoration: underline;">Même si votre portable est en mode sonnerie.</span></p>
+        Même si votre portable est en mode sonnerie.</p>
 
-        <a class="lien_inscription" href="#form">M'inscrire gratuitement</a>
+      <span style="text-decoration: underline;"><a class="lien_inscription" href="#form">M'inscrire gratuitement</a></span>
     </div> <!-- cont_not -->
 
 
