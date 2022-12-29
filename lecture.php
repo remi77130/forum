@@ -93,8 +93,9 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                             }
                         }
                         ?>
+                        
                         <div data-message-id="<?= $m['id'] ?>" class="message msg_<?= $m['id_expediteur']==$_SESSION['id']?"sent":"received" ?>">
-                            <b><?= ($m['id_expediteur']==$_SESSION['id']?$_SESSION['pseudo']:$p_exp) ?></b> - <b>Objet :</b> <?= $m['objet'] ?>
+                            <b><?= ($m['id_expediteur']==$_SESSION['id']?$_SESSION['pseudo']:$p_exp) ?></b> : <?= $m['objet'] ?>
 
                             <br/><br/>
                             <?= nl2br($m['message']) ?><br/> <br>

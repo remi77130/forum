@@ -144,8 +144,17 @@ input[type=submit]{
     margin: 1em 5em;
 }
 .msg_sent{
-    text-align:right;
+    text-align: right;
+    border-radius: px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #f5deb308;
+    border: 0.5px solid #f5deb31c;
+    max-width: 200px;
+
 }
+
 .msg_received{
     text-align:left;
 }

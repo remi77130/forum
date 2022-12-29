@@ -41,7 +41,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     foreach($fils as $m) {
         $user_id = ($m['id_expediteur'] == $_SESSION['id'])?$m['id_destinataire']:$m['id_expediteur'];
 
-        $p_exp = $bdd->prepare('SELECT pseudo FROM membres WHERE id = ?');
+        $p_exp = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
         $p_exp->execute(array($user_id));
         $p_exp = $p_exp->fetch();
         $p_exp = $p_exp['pseudo'];
@@ -50,12 +50,14 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
 
         <div class="container_msg"> <br>
+<div class="msg">
 
-        Fil de discussion avec <b><?= $p_exp ?></b><br/><br>
-        <b>Objet:</b> <?= $m['objet'] ?> <br>
-
-        <?= substr(nl2br($m['message']),0,50)."..." ?><br/> <br>
-
+<h4>Fil de discussion avec <?= $p_exp ?> </h4>
+       
+       <p class="message"><?= $m['objet'] ?> <br>
+       <?= substr(nl2br($m['message']),0,900)."..." ?></p>
+       
+</div>
         </div>
 
         <?php if ($m['lu'] == 1) { ?></span>

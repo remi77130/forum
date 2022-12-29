@@ -185,6 +185,12 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
         </div>
         </div>
+
+        <div class="30_min">
+
+            <h3>30 minutes pour trouver un partenaire </h3>
+            <p> Toute les 30 minutes vous pouvez proposez quelques chose et votre profil apparait en page 1 du site 
+        </div>
         
 
    <div>
