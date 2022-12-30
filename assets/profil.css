@@ -578,6 +578,14 @@ textarea {
 
   }
   
+  .container_choix button[data-disabled]{
+    
+  }
+  
+  .container_choix button[data-selected]{
+    
+  }
+
   .container_choix button {
       width: 120px;
       height: 50px;
@@ -591,13 +599,13 @@ textarea {
       font-size: 16px;
   }
   
-  .container_choix button:hover {
+  .container_choix button:not([data-disabled]):hover {
       box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
       font-size: 15px;
       transition: 500ms;
   }
   
-  .container_choix button:focus {
+  .container_choix button:not([data-disabled]):focus {
       outline: none;
   }
   
