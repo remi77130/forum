@@ -10,7 +10,7 @@ class UserRepository
         $sql = 'SELECT user.id, user.pseudo, user.ville_id, user.mail, user.avatar, user.age, user.sexe, user.departement_nom' . ($joinDesire ? ', user.desire_id, user.desire_datetime, desire.text' : '') . '
                 FROM membres as user';
         if ($joinDesire) {
-            $sql .= ' LEFT JOIN desire ON desire.id = user.desire_id AND desire_datetime > DATE_SUB(NOW(), INTERVAL 30 MINUTE)';
+            $sql .= ' LEFT JOIN desire ON desire.id = user.desire_id AND desire_datetime > DATE_SUB(UTC_TIMESTAMP , INTERVAL 30 MINUTE)';
         }
         $sql .= ' WHERE user.id = :user_id LIMIT 1';
         $req = $bdd->prepare($sql);
@@ -27,7 +27,7 @@ class UserRepository
         $sql = 'SELECT user.id, user.pseudo, user.ville_id, user.mail, user.avatar, user.age, user.sexe, user.departement_nom, user.desire_id, user.desire_datetime, desire.text
                 FROM membres as user
                 LEFT JOIN desire ON desire.id = user.desire_id
-                WHERE desire_id IS NOT NULL AND desire_datetime > DATE_SUB(NOW(), INTERVAL 30 MINUTE)';
+                WHERE desire_id IS NOT NULL AND desire_datetime > DATE_SUB(UTC_TIMESTAMP, INTERVAL 30 MINUTE)';
         $req = $bdd->prepare($sql);
         $req->execute();
         $user = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -39,7 +39,7 @@ class UserRepository
         global $bdd;
         $user = self::findUser($user_id, true);
         if(!$user->getDesire()){
-            $sql = "UPDATE membres SET desire_id = :desire_id, desire_datetime=NOW() WHERE id=:user_id";
+            $sql = "UPDATE membres SET desire_id = :desire_id, desire_datetime=UTC_TIMESTAMP WHERE id=:user_id";
             $req = $bdd->prepare($sql);
             $req->bindParam(":user_id", $user_id, PDO::PARAM_INT);
             $req->bindParam(":desire_id", $desire_id, PDO::PARAM_INT);

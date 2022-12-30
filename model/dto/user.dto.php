@@ -25,7 +25,7 @@ class UserDto
         $this->sexe = $sexe;
         $this->department = $department;
         $this->desire = $desire;
-        $this->desire_datetime = $desire_datetime;
+        $this->desire_datetime = $desire_datetime?new DateTime($desire_datetime):null;
     }
 
     public function getId()
@@ -81,5 +81,15 @@ class UserDto
     public function getDesireDateTime()
     {
         return $this->desire_datetime;
+    }
+
+    public function getDesireRestTime()
+    {
+        if(!$this->desire_datetime){
+            return 0;
+        }
+        $now = new DateTime();
+
+        return (30*60) - ($now->format('U') - $this->desire_datetime->format('U'));
     }
 }

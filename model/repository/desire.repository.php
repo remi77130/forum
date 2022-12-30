@@ -33,7 +33,7 @@ class DesireRepository
         global $bdd;
         $sql = 'SELECT user.id as user_id, user.desire_datetime, desire.id, desire.text, desire.color
                 FROM membres as user
-                LEFT JOIN desire ON desire.id = user.desire_id AND desire_datetime > DATE_SUB(NOW(), INTERVAL 30 MINUTE)
+                LEFT JOIN desire ON desire.id = user.desire_id AND desire_datetime > DATE_SUB(UTC_TIMESTAMP , INTERVAL 30 MINUTE)
                 WHERE user.id = :user_id LIMIT 1';
         $req = $bdd->prepare($sql);
         $req->bindParam(":user_id", $user_id, PDO::PARAM_INT);

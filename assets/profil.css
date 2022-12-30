@@ -26,6 +26,10 @@ header
 }
 
 
+.hidden{
+    display:none;
+}
+
 .slide-line
 {
     position: relative;

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    init_timer();
+
     //Quand on clique sur une envie
     $(".container_choix button").on("click", function (event) {
         let disabled = $(this).attr("data-disabled");
@@ -20,6 +22,9 @@ $(document).ready(function(){
                         //On la supprime de l'affichage
                         $(this).attr("data-selected", "selected");
                         $(".container_choix button").attr("data-disabled", "disabled");
+                        $("#desire_timer").attr("data-init", 30*60);
+                        $("#desire_timer").removeClass("hidden");
+                        init_timer();
                     }
                 },
     
@@ -111,5 +116,36 @@ $(document).ready(function(){
         });
         return false;
     });
+
+    function init_timer(){
+        const departSecondes = parseInt($("#desire_timer").attr("data-init"));
+        let temps = departSecondes;
+    
+        function appendtime(temps){
+            const timerElement = document.getElementById("desire_timer")
+            let minutes = parseInt(temps / 60, 10)
+            let secondes = parseInt(temps % 60, 10)
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes
+            secondes = secondes < 10 ? "0" + secondes : secondes
+    
+            timerElement.innerText = `${minutes}:${secondes}`
+        }
+
+        function afterEndOfTime(){
+            $("#desire_timer").addClass("hidden");
+            $(".container_choix button").removeAttr("data-selected");
+            $(".container_choix button").removeAttr("data-disabled");
+            clearInterval(interval);
+            return 0;
+        }
+    
+        appendtime(temps);
+    
+        var interval = setInterval(() => {
+            temps = temps - 1;
+            temps <= 0 ? afterEndOfTime() : appendtime(temps);
+        }, 1000);
+    }
 })
 

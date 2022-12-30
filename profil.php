@@ -243,6 +243,11 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                 <h3>J'ai envie de </h3> <br> <br> <b></b>
 
+                <!-- Timer -->
+                <div id="desire_timer" data-init="<?= $user->getDesireRestTime()?>" class="<?= $user->getDesireRestTime()==0?'hidden':''?>">
+                </div>
+                <!-- Fin Timer -->
+
                 <div class="container_choix">
                     <?php
                     foreach ($desires as $desire) {
