@@ -579,11 +579,12 @@ textarea {
   }
   
   .container_choix button[data-disabled]{
-    
+    /* bouton envie desactiver */
   }
   
   .container_choix button[data-selected]{
-    
+        /* bouton envie activer */
+
   }
 
   .container_choix button {

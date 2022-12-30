@@ -114,7 +114,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
     <div class="container_card_profil_choix">
-        <!-- le conteneur des cards des profils qui ont appuyé sur unb bouton d'envie -->
+        <!-- le conteneur des cards des profils qui ont appuyé sur un bouton d'envie -->
         <?php
         foreach ($usersWithDesire as $userWithDesire) {
         ?>
@@ -128,7 +128,8 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                             if (str_contains($userWithDesire->getAvatar(), 'https')) { ?>
                                 <img src="<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
                             <?php
-                            } else {
+                            } 
+                            else {
                                 if (!file_exists("membres/avatars/" . $userWithDesire->getAvatar())) {
                                     $userWithDesire->setAvatar("default.jpg");
                                 }
