@@ -250,14 +250,16 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                 <div class="container_choix">
                     <?php
-                    foreach ($desires as $desire) {
-                        $selected = ($user->getDesire() != null && $user->getDesire()->getId() == $desire->getId());
-                        $disabled = ($user->getDesire() != null);
-                    ?>
-                        <button class="noselect <?= $desire->getColor() ?>" data-desire_id="<?= $desire->getId() ?>" data-user_id="<?= $user->getId() ?>" <?= $disabled ? 'data-disabled="disabled"' : '' ?> <?= $selected ? 'data-selected="selected"' : '' ?>>
-                            <?= $desire->getText() ?>
-                        </button>
-                    <?php
+                    if(!empty($desires)){
+                        foreach ($desires as $desire) {
+                            $selected = ($user->getDesire() != null && $user->getDesire()->getId() == $desire->getId());
+                            $disabled = ($user->getDesire() != null);
+                        ?>
+                            <button class="noselect <?= $desire->getColor() ?>" data-desire_id="<?= $desire->getId() ?>" data-user_id="<?= $user->getId() ?>" <?= $disabled ? 'data-disabled="disabled"' : '' ?> <?= $selected ? 'data-selected="selected"' : '' ?>>
+                                <?= $desire->getText() ?>
+                            </button>
+                        <?php
+                        }
                     }
                     ?>
 
