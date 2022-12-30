@@ -116,44 +116,46 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <div class="container_card_profil_choix">
         <!-- le conteneur des cards des profils qui ont appuyé sur unb bouton d'envie -->
         <?php
-        foreach ($usersWithDesire as $userWithDesire) {
-        ?>
-            <div class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
-                <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
-                    <div class="container_profil_info">
+        if(!empty($usersWithDesire)){
+            foreach ($usersWithDesire as $userWithDesire) {
+            ?>
+                <div class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
+                    <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
+                        <div class="container_profil_info">
 
 
-                        <div class="container_profil_avatar">
-                            <?php
-                            if (str_contains($userWithDesire->getAvatar(), 'https')) { ?>
-                                <img src="<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
-                            <?php
-                            } else {
-                                if (!file_exists("membres/avatars/" . $userWithDesire->getAvatar())) {
-                                    $userWithDesire->setAvatar("default.jpg");
+                            <div class="container_profil_avatar">
+                                <?php
+                                if (str_contains($userWithDesire->getAvatar(), 'https')) { ?>
+                                    <img src="<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
+                                <?php
+                                } else {
+                                    if (!file_exists("membres/avatars/" . $userWithDesire->getAvatar())) {
+                                        $userWithDesire->setAvatar("default.jpg");
+                                    }
+                                ?>
+                                    <img src="membres/avatars/<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
+                                <?php
                                 }
-                            ?>
-                                <img src="membres/avatars/<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
-                            <?php
-                            }
-                            ?>
+                                ?>
+                            </div>
+
+                            <div class="container_profil_info_pseudo">
+                                <h2><?php echo $userWithDesire->getLogin() ?>
+                                    <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span>
+                                </h2>
+
+                                <div></div>
+                            </div>
+
                         </div>
-
-                        <div class="container_profil_info_pseudo">
-                            <h2><?php echo $userWithDesire->getLogin() ?>
-                                <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span>
-                            </h2>
-
-                            <div></div>
+                        <div class="profil_desire">
+                            <?= $userWithDesire->getDesire()->getText(); ?>
                         </div>
-
-                    </div>
-                    <div class="profil_desire">
-                        <?= $userWithDesire->getDesire()->getText(); ?>
-                    </div>
-                </a>
-            </div>
-        <?php
+                    </a>
+                </div>
+            <?php
+            }
         }
         ?>
 
