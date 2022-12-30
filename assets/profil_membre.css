@@ -369,6 +369,14 @@ font-weight: 600;
     display: flex;
 }
 
+.container_card_profil_choix *{
+    color: aliceblue;
+
+}
+.container_card_profil_choix .profil_desire{
+    text-align:center;
+}
+
 .container_profil_info_dtp{
     color: aliceblue;
     width: 90%;

@@ -1,4 +1,41 @@
 $(document).ready(function(){
+    //Quand on clique sur une envie
+    $(".container_choix button").on("click", function (event) {
+        let disabled = $(this).attr("data-disabled");
+        if(!disabled){
+            let desire_id = $(this).attr("data-desire_id");
+            let user_id = $(this).attr("data-user_id");
+            let datas = { "action": "updateDesire", "user_id": user_id, "desire_id": desire_id };
+            $.ajax({
+                // Adresse à laquelle la requête est envoyée
+                url: './api/user.php',
+                //Données à envoyer
+                data: datas,
+                //On travaillera en json
+                dataType: "json",
+                // La fonction à apeller si la requête aboutie et est en succès
+                success: function (data, statusText, xhr) {
+                    // Si on a un code retour 200, tout s'est bien passé, l'image a été supprimée
+                    if (xhr.status == 200) {
+                        //On la supprime de l'affichage
+                        $(this).attr("data-selected", "selected");
+                        $(".container_choix button").attr("data-disabled", "disabled");
+                    }
+                },
+    
+                // La fonction à appeler si la requête est en erreur
+                error: function (xhr) {
+                    //On affiche l'erreur dans une alert
+                    alert("Une erreur est survenue");
+                }
+    
+            });
+        }
+    })
+
+
+
+
     //Quand on clique sur un bouton de suppression d'image
     $(".btn_image_delete").on("click", function (event) {
         //On annule le comportement par défaut du lien car on ne veut pas recharger la page
