@@ -116,11 +116,12 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <div class="container_card_profil_choix">
         <!-- le conteneur des cards des profils qui ont appuyé sur un bouton d'envie -->
         <?php
-        foreach ($usersWithDesire as $userWithDesire) {
-        ?>
-            <div class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
-                <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
-                    <div class="container_profil_info">
+        if(!empty($usersWithDesire)){
+            foreach ($usersWithDesire as $userWithDesire) {
+            ?>
+                <div class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
+                    <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
+                        <div class="container_profil_info">
 
 
                         <div class="container_profil_avatar">
@@ -140,21 +141,22 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                             ?>
                         </div>
 
-                        <div class="container_profil_info_pseudo">
-                            <h2><?php echo $userWithDesire->getLogin() ?>
-                                <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span>
-                            </h2>
+                            <div class="container_profil_info_pseudo">
+                                <h2><?php echo $userWithDesire->getLogin() ?>
+                                    <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span>
+                                </h2>
 
-                            <div></div>
+                                <div></div>
+                            </div>
+
                         </div>
-
-                    </div>
-                    <div class="profil_desire">
-                        <?= $userWithDesire->getDesire()->getText(); ?>
-                    </div>
-                </a>
-            </div>
-        <?php
+                        <div class="profil_desire">
+                            <?= $userWithDesire->getDesire()->getText(); ?>
+                        </div>
+                    </a>
+                </div>
+            <?php
+            }
         }
         ?>
 
