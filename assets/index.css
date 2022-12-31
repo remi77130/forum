@@ -139,7 +139,10 @@ margin-top: 25px;
 
 }
 
-
+p,h3,h4
+{
+  padding:5px;
+}
 
 
 
@@ -247,7 +250,9 @@ Form
   {
     position: relative;
     top: 5px;
+    width:30px
   }
+
 
 
 

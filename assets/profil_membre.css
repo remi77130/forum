@@ -262,7 +262,7 @@ font-weight: 600;
 
 
 
-.container_profil_membre
+.container_profil_membre 
 {
     margin: 10px;
     width: 200px;
@@ -270,15 +270,21 @@ font-weight: 600;
     border-bottom-right-radius: 10px;
     box-shadow: 3px 5px 5px #ffffff0a;
 
+   
+
 }
 
 .container_profil_membre[data-sexe=Homme]
 {
     border: 0.5px solid rgb(40 127 165);
+    height: 250px;
+    margin: 10px;
 }
 .container_profil_membre[data-sexe=Femme]
 {
-    border: 0.5px solid rgb(210, 54, 210)
+    border: 0.5px solid rgb(210, 54, 210);
+    height:250px
+    
 }
 
 .container_profil_membre[data-sexe=Homme]:hover
@@ -300,7 +306,7 @@ font-weight: 600;
         
         margin: 10px;
         width: 150px;
-        height: auto;
+        height: 200px;
     }
 }
 
@@ -328,6 +334,7 @@ font-weight: 600;
 {
     text-align: center;
     margin-top: 15px;
+
  }
 
 .container_profil_info
@@ -369,14 +376,69 @@ font-weight: 600;
     display: flex;
 }
 
+.title_card_choix
+{
+    text-align: center;
+    text-shadow: 1px 2px 20px #ea00ff91;
+    color: #ea00ff;
+}
 .container_card_profil_choix *{
     color: aliceblue;
 
-}
-.container_card_profil_choix .profil_desire{
-    text-align:center;
+
 }
 
+.container_card_profil_choix
+{
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 280px;
+
+    /* défilement inertiel pour safari mobile Ios  */
+    -webkit-overflow-scrolling: touch;
+
+    /* alignement avec les cards profils lors de la fin du défilement 
+    La régle scroll snap points x deamnde au carrousel de s'aligner au début de la premiére
+     image (à 0px de la largeur du carrousel) puis de venir s'aligner tous les 150px 
+     à partir de là, soit la largeur des cards profils.*/
+
+    -ms-scroll-snap-type: mandatory !important;
+    scroll-snap-type: mandatory !important;
+    -ms-scroll-snap-points-x: snapInterval(0px, 150px) !important;
+    scroll-snap-points-x: snapInterval(0px, 150px) !important;
+    
+}
+
+.container_card_profil_choix li{
+
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+.container_card_profil_choix .profil_desire{
+    text-align: left;
+    margin-left: 8px;
+    font-size: smaller;
+
+}
+
+.container_card_profil_choix .container_profil_membre
+{
+    height:200px;
+}
+.container_card_profil_choix img
+{
+    width: 90px;
+    height: 90px;
+}
 .container_profil_info_dtp{
     color: aliceblue;
     width: 90%;
@@ -413,6 +475,7 @@ font-weight: 600;
     transition: 500ms;
 
 }
+
 
 /* Loader Wrapper*/
 .loader-wrapper {

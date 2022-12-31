@@ -25,7 +25,7 @@ class UserDto
         $this->sexe = $sexe;
         $this->department = $department;
         $this->desire = $desire;
-        $this->desire_datetime = $desire_datetime?new DateTime($desire_datetime):null;
+        $this->desire_datetime = $desire_datetime?new DateTime($desire_datetime, new DateTimeZone("UTC")):null;
     }
 
     public function getId()
@@ -88,8 +88,7 @@ class UserDto
         if(!$this->desire_datetime){
             return 0;
         }
-        $now = new DateTime();
-
+        $now = new DateTime("now", new DateTimeZone("UTC"));
         return (30*60) - ($now->format('U') - $this->desire_datetime->format('U'));
     }
 }

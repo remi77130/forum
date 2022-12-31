@@ -98,28 +98,29 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
 
-    <?php include 'includes/search.php'; ?>
-    <!-- Bar de recherche -->
 
-    <div class="container" js-filter>
-        <div class="row">
-            <div class="col-md-3" js-filter-form>
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <div class="container_card_profil_choix">
+  
         <!-- le conteneur des cards des profils qui ont appuyé sur un bouton d'envie -->
         <?php
         if(!empty($usersWithDesire)){
+            //On parcour chaque utilisateur ayant renseigné une envie
             foreach ($usersWithDesire as $userWithDesire) {
-            ?>
-                <div class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
+                /*
+                    Désormais l'utilisateur qu'on est en train de traiter est accessible avec la variable $userWithDesire
+                    Si on veut récupérer
+                    son login: $userWithDesire->getLogin()
+                    son avatar : $userWithDesire->getAvatar()
+                    son envie : $userWithDesire->getDesire()->getText()
+                    son age : $userWithDesire->getAge()
+                    son département : $userWithDesire->getDepartment()
+                */
+            
+                ?>
+                    <h4 class="title_card_choix">Ils désirs faire quelques chose.</h4>
+
+                  <ul class="container_card_profil_choix">
+               
+                <li class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>"  data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
                     <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
                         <div class="container_profil_info">
 
@@ -143,25 +144,28 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                             <div class="container_profil_info_pseudo">
                                 <h2><?php echo $userWithDesire->getLogin() ?>
-                                    <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span>
+                                    <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span> <br>
+                                    <span style="font-size: 12px;">Département : <?php echo $userWithDesire->getDepartment() ?></span>
+
                                 </h2>
 
                                 <div></div>
                             </div>
-
+                        
                         </div>
                         <div class="profil_desire">
                             <?= $userWithDesire->getDesire()->getText(); ?>
+
                         </div>
                     </a>
-                </div>
+                        </li>
             <?php
             }
         }
         ?>
 
 
-    </div>
+    </ul>
 
 
 

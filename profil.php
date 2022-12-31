@@ -249,14 +249,20 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 <!-- Fin Timer -->
 
                 <div class="container_choix">
-                    <?php
+                    <?php // CE CODE PARCOURS LA TABLE DESIRE POUR AFFICHER LES BOUTONS -->
+                    // on ajout/ supp des boutons directement dans la bdd 
                     if(!empty($desires)){
                         foreach ($desires as $desire) {
-                            $selected = ($user->getDesire() != null && $user->getDesire()->getId() == $desire->getId());
+                            $selected = ($user->getDesire() != null && 
+                            $user->getDesire()->getId() == $desire->getId());
                             $disabled = ($user->getDesire() != null);
                         ?>
-                            <button class="noselect <?= $desire->getColor() ?>" data-desire_id="<?= $desire->getId() ?>" data-user_id="<?= $user->getId() ?>" <?= $disabled ? 'data-disabled="disabled"' : '' ?> <?= $selected ? 'data-selected="selected"' : '' ?>>
-                                <?= $desire->getText() ?>
+                            <button class="noselect <?= $desire->getColor() ?>" 
+                            data-desire_id="<?= $desire->getId() ?>" 
+                            data-user_id="<?= $user->getId() ?>" 
+                            <?= $disabled ? 'data-disabled="disabled"' : '' ?>
+                            <?= $selected ? 'data-selected="selected"' : '' ?>>
+                            <?= $desire->getText() ?>
                             </button>
                         <?php
                         }
