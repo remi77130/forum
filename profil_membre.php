@@ -104,21 +104,24 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <?php
     if (!empty($usersWithDesire)) {
         //On parcour chaque utilisateur ayant renseigné une envie
-        foreach ($usersWithDesire as $userWithDesire) {
-            /*
-                    Désormais l'utilisateur qu'on est en train de traiter est accessible avec la variable $userWithDesire
-                    Si on veut récupérer
-                    son login: $userWithDesire->getLogin()
-                    son avatar : $userWithDesire->getAvatar()
-                    son envie : $userWithDesire->getDesire()->getText()
-                    son age : $userWithDesire->getAge()
-                    son département : $userWithDesire->getDepartment()
-                */
+    ?>
 
-        ?>
-            <h4 class="title_card_choix">Ils désirs faire quelques chose.</h4>
+        <h4 class="title_card_choix">Ils désirent faire quelques chose.</h4>
 
-            <ul class="container_card_profil_choix">
+        <ul class="container_card_profil_choix">
+            <?php
+            foreach ($usersWithDesire as $userWithDesire) {
+                /*
+                        Désormais l'utilisateur qu'on est en train de traiter est accessible avec la variable $userWithDesire
+                        Si on veut récupérer
+                        son login: $userWithDesire->getLogin()
+                        son avatar : $userWithDesire->getAvatar()
+                        son envie : $userWithDesire->getDesire()->getText()
+                        son age : $userWithDesire->getAge()
+                        son département : $userWithDesire->getDepartment()
+                    */
+
+            ?>
 
                 <li class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
                     <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
@@ -158,9 +161,11 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                         </div>
                     </a>
                 </li>
-            </ul>
-        <?php
-        }
+            <?php
+            }
+            ?>
+        </ul>
+    <?php
     }
     ?>
 
