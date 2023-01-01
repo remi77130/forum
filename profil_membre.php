@@ -99,13 +99,13 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
 
-  
-        <!-- le conteneur des cards des profils qui ont appuyé sur un bouton d'envie -->
-        <?php
-        if(!empty($usersWithDesire)){
-            //On parcour chaque utilisateur ayant renseigné une envie
-            foreach ($usersWithDesire as $userWithDesire) {
-                /*
+
+    <!-- le conteneur des cards des profils qui ont appuyé sur un bouton d'envie -->
+    <?php
+    if (!empty($usersWithDesire)) {
+        //On parcour chaque utilisateur ayant renseigné une envie
+        foreach ($usersWithDesire as $userWithDesire) {
+            /*
                     Désormais l'utilisateur qu'on est en train de traiter est accessible avec la variable $userWithDesire
                     Si on veut récupérer
                     son login: $userWithDesire->getLogin()
@@ -114,33 +114,32 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                     son age : $userWithDesire->getAge()
                     son département : $userWithDesire->getDepartment()
                 */
-            
-                ?>
-                    <h4 class="title_card_choix">Ils désirs faire quelques chose.</h4>
 
-                  <ul class="container_card_profil_choix">
-               
-                <li class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>"  data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
+        ?>
+            <h4 class="title_card_choix">Ils désirs faire quelques chose.</h4>
+
+            <ul class="container_card_profil_choix">
+
+                <li class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
                     <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
                         <div class="container_profil_info">
 
 
-                        <div class="container_profil_avatar">
-                            <?php
-                            if (str_contains($userWithDesire->getAvatar(), 'https')) { ?>
-                                <img src="<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
-                            <?php
-                            } 
-                            else {
-                                if (!file_exists("membres/avatars/" . $userWithDesire->getAvatar())) {
-                                    $userWithDesire->setAvatar("default.jpg");
+                            <div class="container_profil_avatar">
+                                <?php
+                                if (str_contains($userWithDesire->getAvatar(), 'https')) { ?>
+                                    <img src="<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
+                                <?php
+                                } else {
+                                    if (!file_exists("membres/avatars/" . $userWithDesire->getAvatar())) {
+                                        $userWithDesire->setAvatar("default.jpg");
+                                    }
+                                ?>
+                                    <img src="membres/avatars/<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
+                                <?php
                                 }
-                            ?>
-                                <img src="membres/avatars/<?php echo $userWithDesire->getAvatar(); ?>" alt="photo_profil"><br>
-                            <?php
-                            }
-                            ?>
-                        </div>
+                                ?>
+                            </div>
 
                             <div class="container_profil_info_pseudo">
                                 <h2><?php echo $userWithDesire->getLogin() ?>
@@ -151,21 +150,21 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                                 <div></div>
                             </div>
-                        
+
                         </div>
                         <div class="profil_desire">
                             <?= $userWithDesire->getDesire()->getText(); ?>
 
                         </div>
                     </a>
-                        </li>
-            <?php
-            }
+                </li>
+            </ul>
+        <?php
         }
-        ?>
+    }
+    ?>
 
 
-    </ul>
 
 
 
