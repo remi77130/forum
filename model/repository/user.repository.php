@@ -38,7 +38,8 @@ class UserRepository
                 FROM membres as user
                 LEFT JOIN departement ON user.departement_nom = departement.departement_code
                 LEFT JOIN villes_france as ville ON user.ville_id = ville.ville_id
-                LEFT JOIN desire ON desire.id = user.desire_id';
+                LEFT JOIN desire ON desire.id = user.desire_id
+                ORDER BY user.last_connection DESC';
         if($conditions){
             $sql .= " WHERE ".implode(" AND ", $conditions);
         }
@@ -60,7 +61,8 @@ class UserRepository
                 LEFT JOIN departement ON user.departement_nom = departement.departement_code
                 LEFT JOIN villes_france as ville ON user.ville_id = ville.ville_id
                 LEFT JOIN desire ON desire.id = user.desire_id
-                WHERE desire_id IS NOT NULL AND desire_datetime > DATE_SUB(UTC_TIMESTAMP, INTERVAL 30 MINUTE)';
+                WHERE desire_id IS NOT NULL AND desire_datetime > DATE_SUB(UTC_TIMESTAMP, INTERVAL 30 MINUTE)
+                ORDER BY user.last_connection DESC';
         $req = $bdd->prepare($sql);
         $req->execute();
         $user = $req->fetchAll(PDO::FETCH_ASSOC);
