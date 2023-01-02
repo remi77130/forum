@@ -1,0 +1,1 @@
+ALTER TABLE `membres` ADD `last_activity` DATETIME NULL AFTER `last_connection`;

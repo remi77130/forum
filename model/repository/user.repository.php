@@ -9,10 +9,10 @@ class UserRepository
     public static function findUser($id, $joinDesire = false)
     {
         global $bdd;
-        $sql = 'SELECT user.id, user.pseudo, user.mail, user.avatar, user.age, user.sexe, user.description_profil, user.last_connection,
+        $sql = 'SELECT user.id, user.pseudo, user.mail, user.avatar, user.age, user.sexe, user.description_profil, user.last_connection, user.last_activity,
                         departement.departement_code, departement.departement_nom,
                         ville.ville_code_postal, ville.ville_nom_reel'
-                        . ($joinDesire ? ', user.desire_id, user.desire_datetime, desire.text' : '') . '
+            . ($joinDesire ? ', user.desire_id, user.desire_datetime, desire.text' : '') . '
                 FROM membres as user
                 LEFT JOIN departement ON user.departement_nom = departement.departement_code
                 LEFT JOIN villes_france as ville ON user.ville_id = ville.ville_id';
@@ -28,10 +28,10 @@ class UserRepository
         return !$user ? null : self::getDto($user, $joinDesire);
     }
 
-    public static function findUsers($conditions=null)
+    public static function findUsers($conditions = null)
     {
         global $bdd;
-        $sql = 'SELECT user.id, user.pseudo, user.mail, user.avatar, user.age, user.sexe, user.departement_nom, user.description_profil, user.last_connection,
+        $sql = 'SELECT user.id, user.pseudo, user.mail, user.avatar, user.age, user.sexe, user.departement_nom, user.description_profil, user.last_connection, user.last_activity,
                         departement.departement_code, departement.departement_nom,
                         ville.ville_code_postal, ville.ville_nom_reel,
                         user.desire_id, user.desire_datetime, desire.text
@@ -40,8 +40,8 @@ class UserRepository
                 LEFT JOIN villes_france as ville ON user.ville_id = ville.ville_id
                 LEFT JOIN desire ON desire.id = user.desire_id
                 ORDER BY user.last_connection DESC';
-        if($conditions){
-            $sql .= " WHERE ".implode(" AND ", $conditions);
+        if ($conditions) {
+            $sql .= " WHERE " . implode(" AND ", $conditions);
         }
         $req = $bdd->prepare($sql);
         $req->execute();
@@ -53,7 +53,7 @@ class UserRepository
     public static function findUsersWithDesire()
     {
         global $bdd;
-        $sql = 'SELECT user.id, user.pseudo, user.mail, user.avatar, user.age, user.sexe, user.departement_nom, user.description_profil, user.last_connection,
+        $sql = 'SELECT user.id, user.pseudo, user.mail, user.avatar, user.age, user.sexe, user.departement_nom, user.description_profil, user.last_connection, user.last_activity,
                         departement.departement_code, departement.departement_nom,
                         ville.ville_code_postal, ville.ville_nom_reel,
                         user.desire_id, user.desire_datetime, desire.text
@@ -76,6 +76,18 @@ class UserRepository
         $user = self::findUser($user_id, true);
         if ($user) {
             $sql = "UPDATE membres SET last_connection = UTC_TIMESTAMP WHERE id=:user_id";
+            $req = $bdd->prepare($sql);
+            $req->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+            $req->execute();
+        }
+    }
+
+    public static function updateLastActivity($user_id)
+    {
+        global $bdd;
+        $user = self::findUser($user_id, true);
+        if ($user) {
+            $sql = "UPDATE membres SET last_activity = UTC_TIMESTAMP WHERE id=:user_id";
             $req = $bdd->prepare($sql);
             $req->bindParam(":user_id", $user_id, PDO::PARAM_INT);
             $req->execute();
@@ -121,7 +133,8 @@ class UserRepository
             $user['description_profil'],
             $desire,
             $user['desire_datetime'],
-            $user['last_connection']
+            $user['last_connection'],
+            $user['last_activity']
         );
     }
 

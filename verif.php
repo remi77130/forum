@@ -9,7 +9,7 @@ if (isset($_SESSION) && isset($_SESSION["id"])) {
     $user = UserRepository::findUser($_SESSION["id"]);
     if ($user) {
         //On met à jour sa date de dernière connexion
-        UserRepository::updateLastConnection($user->getId());
+        UserRepository::updateLastActivity($user->getId());
     }
 } elseif ($file = basename(__FILE__) != "index.php") {
     header('Location: index.php');

@@ -16,8 +16,9 @@ class UserDto
     public $desire;
     public $desire_datetime;
     public $last_connection;
+    public $last_activity;
 
-    public function __construct($id, $login, $mail, $city, $department, $avatar, $age, $sexe, $description, $desire, $desire_datetime, $last_connection)
+    public function __construct($id, $login, $mail, $city, $department, $avatar, $age, $sexe, $description, $desire, $desire_datetime, $last_connection, $last_activity)
     {
         $this->id = $id;
         $this->login = $login;
@@ -32,6 +33,7 @@ class UserDto
         $this->desire = $desire;
         $this->desire_datetime = $desire_datetime ? new DateTime($desire_datetime, new DateTimeZone("UTC")) : null;
         $this->last_connection = $last_connection ? new DateTime($last_connection, new DateTimeZone("UTC")) : null;
+        $this->last_activity = $last_activity ? new DateTime($last_activity, new DateTimeZone("UTC")) : null;
     }
 
     public function getId()
@@ -99,6 +101,11 @@ class UserDto
         return $this->last_connection;
     }
 
+    public function getLastActivity()
+    {
+        return $this->last_activity;
+    }
+
     public function getDesireRestTime()
     {
         if (!$this->desire_datetime) {
@@ -110,11 +117,11 @@ class UserDto
 
     public function isOnline(){
         //Si l'utilisateur ne s'est jamais connecté, il n'est pas online
-        if(!$this->last_connection){
+        if(!$this->last_activity){
             return false;
         }
-        //L'utilisateur est en ligne s'il sa last_connection est à moins de 5 minutes
+        //L'utilisateur est en ligne s'il sa last_activity est à moins de 5 minutes
         $now = new DateTime("now", new DateTimeZone("UTC"));
-        return ($now->format('U') - $this->last_connection->format('U') <= 300);
+        return ($now->format('U') - $this->last_activity->format('U') <= 300);
     }
 }

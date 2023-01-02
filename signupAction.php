@@ -3,6 +3,7 @@
 <?php
 session_start();
 require 'require/database.php';
+require_once 'model/repository/user.repository.php';
 ?>
 
 <!DOCTYPE html>
@@ -173,6 +174,8 @@ if(isset($_POST['formconnexion'])) {
          $userinfo = $requser->fetch();
          $_SESSION['id'] = $userinfo['id'];
          $_SESSION['pseudo'] = $userinfo['pseudo'];
+         UserRepository::updateLastConnection($_SESSION['id']);
+         UserRepository::updateLastActivity($_SESSION['id']);
        //  $_SESSION['mail'] = $userinfo['mail'];
          header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
          
