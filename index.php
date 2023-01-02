@@ -90,12 +90,12 @@ require 'signupAction.php';
     
 
 <form class="register-form"method="POST" action="">
-    <input type="text" name="pseudo" maxlength="10" minlength="3" placeholder="Pseudo"
+    <input class="u" type="text" name="pseudo" maxlength="10" minlength="3" placeholder="Pseudo"
             value="<?php if (isset($pseudo)) {
             echo $pseudo;} ?>" />
 
 
-    <input type="tel" pattern="[0-9]*" inputtype="numeric" name="age" placeholder="Age" 
+    <input class="u" type="tel" pattern="[0-9]*" inputtype="numeric" name="age" placeholder="Age" 
            maxLength="2" minlength="1" />
 
     <label>Vous êtes</label> <br>
@@ -134,11 +134,11 @@ require 'signupAction.php';
                   //  } ?>"--> 
                   
 
-    <input type="password" minlength="5" name="password" placeholder="Mot de passe">
-    <input type="password" minlength="5" name="password2" placeholder="Confirmation passe">
+    <input class="u" type="password" minlength="5" name="password" placeholder="Mot de passe">
+    <input class="u" type="password" minlength="5" name="password2" placeholder="Confirmation passe">
 
 
-    <button type="submit" name="validate" value="Senregistrer">S'inscrire</button>
+    <button class="submit_form" type="submit" name="validate" value="Senregistrer">S'inscrire</button>
 
        
     <p class="message"> J'ai déja un compte <a href="#">M'identifier</a></p>
@@ -155,13 +155,13 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
     </form>  <!-- Fin formulaire inscription -->
 
     <form class="login-form" method="POST" action="">
-    <input autocomplete="username" id="login__username" 
+    <input class="u" autocomplete="username" id="login__username" 
             type="text" name="pseudoconnect" class="form__input" 
             placeholder="Pseudo" required>      
-    <input id="login__password" type="password" name="mdpconnect" class="form__input" 
+    <input class="u" id="login__password" type="password" name="mdpconnect" class="form__input" 
     placeholder="Password" required>
 
-    <input type="submit" name="formconnexion" value="Connexion">
+    <input class="submit_form" type="submit" name="formconnexion" value="Connexion">
     <p class="message">Pas de compte ? <a href="#">Créer un compte</a></p>
 
 </div>

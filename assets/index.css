@@ -168,7 +168,7 @@ Form
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   }
-  .form input {
+  .u {
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -182,24 +182,26 @@ Form
     border-radius: 5px;
     border: none;
 }
-  
-  .form button {
+  .submit_form
+  {
     font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
     outline: 0;
-    background: #4CAF50;
+    background: rgb(120 246 255);
+    cursor: pointer;
+    color: #1f2020;
+    font-weight: 800;
     width: 100%;
     border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
+    margin: 0 0 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+
   }
-  .form button:hover,.form button:active,.form button:focus {
-    background: #43A047;
-  }
+
+
   .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;

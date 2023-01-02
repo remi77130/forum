@@ -106,7 +106,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
         //On parcour chaque utilisateur ayant renseigné une envie
     ?>
 
-        <h4 class="title_card_choix">Ils désirent faire quelques chose.</h4>
+        <h4 class="title_card_choix">Ils désirent faire quelques choses.</h4>
 
         <ul class="container_card_profil_choix">
             <?php

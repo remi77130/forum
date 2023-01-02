@@ -28,6 +28,14 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
         $conditions[] = "situation='$situation'";
     }
 
+    // RECHERCHE SUR LA SEXUALITE ///
+    if (!empty($_POST['sexualite'])) {
+    $sexualite = htmlspecialchars($_POST['sexualite']);
+    $conditions[] = "sexualite='$sexualite'";
+    }
+
+
+
      // RECHERCHE SUR LA nationality ///
      if (!empty($_POST['nationality'])) {
         $nationality = htmlspecialchars($_POST['nationality']);
@@ -40,8 +48,7 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
         $conditions[] = "cheveux_color='$cheveux_color'";
     }
 
-    // RECHERCHE SUR ICI POUR //
-
+    
     // RECHERCHE SUR AGE
 
     if (!empty($_POST['age_min']) || !empty($_POST['age_max'])) {

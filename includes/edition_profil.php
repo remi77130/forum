@@ -15,6 +15,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     $astrologie = "";
     //$taille = "";
     $choix = "";
+    $sexualite = "" ;
     $nationality = "";
     $poids = "";
     $age = "";
@@ -71,6 +72,17 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
         }
 
 
+     // Modification sexualite
+   
+     if(isset($_POST['sexualite']) && ($_POST['sexualite']!=$user['sexualite'])) {
+        echo 'sexualite';
+        $executeRequest = true;
+        $sexualite = htmlspecialchars($_POST['sexualite']);
+        }else{
+            $sexualite = $user['sexualite'];
+        }
+
+
              // Modification nationality
 
     
@@ -91,8 +103,31 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
         $poids = htmlspecialchars($_POST['poids']);
         }else{
             $poids = $user['poids'];
-        }
+
+
+        } 
         
+        // Modification cheveux
+   
+        if(isset($_POST['cheveux_color']) && ($_POST['cheveux_color']!=$user['cheveux_color'])) {
+           echo 'cheveux_color';
+           $executeRequest = true;
+           $cheveux_color = htmlspecialchars($_POST['cheveux_color']);
+           }else{
+               $cheveux_color = $user['cheveux_color'];
+           }
+        
+
+           // Modification situation
+   
+     if(isset($_POST['situation']) && ($_POST['situation']!=$user['situation'])) {
+        echo 'situation';
+        $executeRequest = true;
+        $situation = htmlspecialchars($_POST['situation']);
+        }else{
+            $situation = $user['situation'];
+        }
+
 
 
 
@@ -172,8 +207,11 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
           'description_profil' => $description,
           'astrologie' => $astrologie,
           'choix' => $choix,
+          'sexualite' => $sexualite,
           'nationality' => $nationality,
           'poids' => $poids,
+          'cheveux_color' => $cheveux_color,
+          'situation' => $situation,
           'age' => $age,
           'mail' => $mail,
           'mdp' => $mdp,
@@ -189,8 +227,11 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
                                      description_profil = :description_profil,
                                      astrologie = :astrologie,
                                      choix = :choix,
+                                     sexualite = :sexualite,
                                      nationality = :nationality,
                                      poids = :poids,
+                                     cheveux_color = :cheveux_color,
+                                     situation = :situation,
                                      age = :age,
                                      mail = :mail,
                                      mdp = :mdp,

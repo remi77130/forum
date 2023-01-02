@@ -573,13 +573,12 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     width: 40%;
-    border: 5px solid green;
     margin: auto;
 
   }
   
   .container_choix button[data-disabled]{
-    /* bouton envie desactiver */
+    color: yellow;
   }
   
   .container_choix button[data-selected]{
@@ -595,7 +594,6 @@ textarea {
       margin: 10px;
       border: none;
       border-radius: 10px;
-      box-shadow: -2px -2px 8px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
       color: rgb(154, 154, 154);
       font-size: 16px;
   }
@@ -608,26 +606,6 @@ textarea {
   
   .container_choix button:not([data-disabled]):focus {
       outline: none;
-  }
-  
-  .red:hover {
-      color: #f07171;
-      text-shadow: 0px 0px 10px #f07171;
-  }
-  
-  .green:hover {
-          color: #93f071;
-      text-shadow: 0px 0px 10px #93f071;
-  }
-  
-  .blue:hover {
-      color: #71b7f0;
-      text-shadow: 0px 0px 10px #71b7f0;
-  }
-  
-  .purple:hover {
-      color: #b971f0;
-      text-shadow: 0px 0px 10px #b971f0;
   }
 
 

@@ -38,7 +38,7 @@ header
 {
     list-style: none;
     height: 20vh;
-    width: 100vw;
+    width: 100%;
     background-size: cover;
     
 }
@@ -427,6 +427,7 @@ font-weight: 600;
     text-align: left;
     margin-left: 8px;
     font-size: smaller;
+    color: #ea00ff;
 
 }
 

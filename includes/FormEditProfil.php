@@ -54,18 +54,30 @@
                   <option value="Je suis poissons">Poissons </option>
 
                </select> <br> <br>
+
                <label>Ici pour</label> <br>
 
                <select name="choix">
                <option value="<?php echo $user['choix'];?>"selected><?php echo $user['choix']; ?></option>
                <option value="Je recherche une relation sérieuse">Relation sérieuse</option>
-               <option value="Ici pour on verra bien">On verra bien</option>
-               <option value="Ici pour du non sérieux">Non sérieux</option>
+               <option value="Ici pour : on verra bien">On verra bien</option>
+               <option value="Ici pour : du non sérieux">Non sérieux</option>
                </select> <br> <br>
 
 
+               <!-- Sexuality -->
 
+               <label>Ma sexualite</label> <br>
 
+               <select name="sexualite">
+               <option value="<?php echo $user['sexualite'];?>"selected><?php echo $user['sexualite']; ?></option>
+               <option value="Gay">Gay</option>
+               <option value="Lesbienne">Lesbienne</option>
+               <option value="Bisexuelle">Bisexuelle</option>
+               <option value="Trans">Trans</option>
+               <option value="Queers">Queers</option>
+               <option value="Extratereste">Extratereste</option>
+               </select> <br> <br>
 
 
 
@@ -74,63 +86,63 @@
                <label>Nationalité</label> <br>
                <select name="nationality">
 
-                    						<option value="Nationalité : Albanian">Albanian</option>
-                    						<option value="Nationalité : American">American</option>
-                    						<option value="Nationalité : Argentinian">Argentinian</option>
-                    						<option value="Nationalité : Armenian">Armenian</option>
-                    						<option value="Nationalité : Australian">Australian</option>
-                    						<option value="Nationalité : Austrian">Austrian</option>
-                    						<option value="Nationalité : Belarussian">Belarussian</option>
-                    						<option value="Nationalité : Belgian">Belgian</option>
-                    						<option value="Nationalité : Brazilian">Brazilian</option>
-                    						<option value="Nationalité : British">British</option>
-                    						<option value="Nationalité : Bulgarian">Bulgarian</option>
-                    						<option value="Nationalité : Canadian">Canadian</option>
-                    						<option value="Nationalité : Chinese">Chinese</option>
-                    						<option value="Nationalité : Colombian">Colombian</option>
-                    						<option value="Nationalité : Croatian">Croatian</option>
-                    						<option value="Nationalité : Cuban">Cuban</option>
-                    						<option value="Nationalité : Czech">Czech</option>
-                    						<option value="Nationalité : Danish">Danish</option>
-                    						<option value="Nationalité : Dutch">Dutch</option>
-                    						<option value="Nationalité : Estonian">Estonian</option>
-                    						<option value="Nationalité : Filipino">Filipino</option>
-                    						<option value="Nationalité : Finnish">Finnish</option>
-                    						<option value="Nationalité : French">French</option>
-                    						<option value="Nationalité : German">German</option>
-                    						<option value="Nationalité : Greek">Greek</option>
-                    						<option value="Nationalité : Hungarian">Hungarian</option>
-                    						<option value="Nationalité : Indian">Indian</option>
-                    						<option value="Nationalité : Irish">Irish</option>
-                    						<option value="Nationalité : Israeli">Israeli</option>
-                    						<option value="Nationalité : Italian">Italian</option>
-                    						<option value="Nationalité : Jamaican">Jamaican</option>
-                    						<option value="Nationalité : Japanese">Japanese</option>
-                    						<option value="Nationalité : Korean">Korean</option>
-                    						<option value="Nationalité : Latvian">Latvian</option>
-                    						<option value="Nationalité : Lithuanian">Lithuanian</option>
-                    						<option value="Nationalité : Malaysian">Malaysian</option>
-                    						<option value="Nationalité : Mexican">Mexican</option>
-                    						<option value="Nationalité : Moldovian">Moldovian</option>
-                    						<option value="Nationalité : Montenegrian">Montenegrian</option>
-                    						<option value="Nationalité : Norwegian">Norwegian</option>
-                    						<option value="Nationalité : Polish">Polish</option>
-                    						<option value="Nationalité : Portuguese">Portuguese</option>
-                    						<option value="Nationalité : Puerto Rican">Puerto Rican</option>
-                    						<option value="Nationalité : Romanian">Romanian</option>
-                    						<option value="Nationalité : Russian">Russian</option>
-                    						<option value="Nationalité : Serbian">Serbian</option>
-                    						<option value="Nationalité : Singaporean">Singaporean</option>
-                    						<option value="Nationalité : Slovak">Slovak</option>
-                    						<option value="Nationalité : Slovenian">Slovenian</option>
-                    						<option value="Nationalité : Spanish">Spanish</option>
-                    						<option value="Nationalité : Swedish">Swedish</option>
-                    						<option value="Nationalité : Swiss">Swiss</option>
-                    						<option value="Nationalité : Thai">Thai</option>
-                    						<option value="Nationalité : Ukrainian">Ukrainian</option>
-                    						<option value="Nationalité : Venezuelan">Venezuelan</option>
-                    						<option value="Nationalité : Vietnamese">Vietnamese</option>
-                    				</select> <br> <br>  
+               <option value="Nationalité : Albanian">Albanian</option>
+               <option value="Nationalité : American">American</option>
+               <option value="Nationalité : Argentinian">Argentinian</option>
+               <option value="Nationalité : Armenian">Armenian</option>
+               <option value="Nationalité : Australian">Australian</option>
+               <option value="Nationalité : Austrian">Austrian</option>
+               <option value="Nationalité : Belarussian">Belarussian</option>
+               <option value="Nationalité : Belgian">Belgian</option>
+               <option value="Nationalité : Brazilian">Brazilian</option>
+               <option value="Nationalité : British">British</option>
+               <option value="Nationalité : Bulgarian">Bulgarian</option>
+               <option value="Nationalité : Canadian">Canadian</option>
+               <option value="Nationalité : Chinese">Chinese</option>
+               <option value="Nationalité : Colombian">Colombian</option>
+               <option value="Nationalité : Croatian">Croatian</option>
+               <option value="Nationalité : Cuban">Cuban</option>
+               <option value="Nationalité : Czech">Czech</option>
+               <option value="Nationalité : Danish">Danish</option>
+               <option value="Nationalité : Dutch">Dutch</option>
+               <option value="Nationalité : Estonian">Estonian</option>
+               <option value="Nationalité : Filipino">Filipino</option>
+               <option value="Nationalité : Finnish">Finnish</option>
+               <option value="Nationalité : French">French</option>
+               <option value="Nationalité : German">German</option>
+               <option value="Nationalité : Greek">Greek</option>
+               <option value="Nationalité : Hungarian">Hungarian</option>
+               <option value="Nationalité : Indian">Indian</option>
+               <option value="Nationalité : Irish">Irish</option>
+               <option value="Nationalité : Israeli">Israeli</option>
+               <option value="Nationalité : Italian">Italian</option>
+               <option value="Nationalité : Jamaican">Jamaican</option>
+               <option value="Nationalité : Japanese">Japanese</option>
+               <option value="Nationalité : Korean">Korean</option>
+               <option value="Nationalité : Latvian">Latvian</option>
+               <option value="Nationalité : Lithuanian">Lithuanian</option>
+               <option value="Nationalité : Malaysian">Malaysian</option>
+               <option value="Nationalité : Mexican">Mexican</option>
+               <option value="Nationalité : Moldovian">Moldovian</option>
+               <option value="Nationalité : Montenegrian">Montenegrian</option>
+               <option value="Nationalité : Norwegian">Norwegian</option>
+               <option value="Nationalité : Polish">Polish</option>
+               <option value="Nationalité : Portuguese">Portuguese</option>
+               <option value="Nationalité : Puerto Rican">Puerto Rican</option>
+               <option value="Nationalité : Romanian">Romanian</option>
+               <option value="Nationalité : Russian">Russian</option>
+               <option value="Nationalité : Serbian">Serbian</option>
+               <option value="Nationalité : Singaporean">Singaporean</option>
+               <option value="Nationalité : Slovak">Slovak</option>
+               <option value="Nationalité : Slovenian">Slovenian</option>
+               <option value="Nationalité : Spanish">Spanish</option>
+               <option value="Nationalité : Swedish">Swedish</option>
+               <option value="Nationalité : Swiss">Swiss</option>
+               <option value="Nationalité : Thai">Thai</option>
+               <option value="Nationalité : Ukrainian">Ukrainian</option>
+               <option value="Nationalité : Venezuelan">Venezuelan</option>
+               <option value="Nationalité : Vietnamese">Vietnamese</option>
+         </select> <br> <br>  
 
 
 
@@ -321,12 +333,12 @@
                <option  value="<?php echo $user['cheveux_color']; ?>"selected>
                <?php echo $user['cheveux_color'] ;  ?> </option>>
 
-               <option value="J'ai les cheveux Blond">Blond</option>
-               <option value="J'ai les cheveux Chatain clair">Châtain clair</option>
-               <option value="J'ai les cheveux Chatain fonce">Châtain foncé</option>
-               <option value="J'ai les cheveux Brun">Brun</option>
-               <option value="J'ai les cheveux Roux">Roux</option>
-               <option value="J'ai les cheveux Raser">Raser</option>
+               <option value="blond">Blond</option>
+               <option value="chatain clair">Châtain clair</option>
+               <option value="chatain fonce">Châtain foncé</option>
+               <option value="brun">Brun</option>
+               <option value="roux">Roux</option>
+               <option value="raser">Raser</option>
                 </select> <br> <br>
 
             <label>Situation </label> <br>

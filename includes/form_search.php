@@ -130,7 +130,7 @@
                 </select>
             </div>
 
-            <!-- RECHERCHE SUR LA SITUATION ///
+            <!-- 
 
             // RECHERCHE SUR ICI POUR // -->
             
@@ -141,20 +141,24 @@
                 <p>Qui à</p>
                 <label>Age minimum</label>
                 <br />
-                <input class="age_search" type="number" name="age_min" id="age_min" value="<?php echo !empty($ageMin) ? $ageMin : ""; ?>" /><br>
+                <input class="age_search" type="number" name="age_min" id="age_min" 
+                value="<?php echo !empty($ageMin) ? $ageMin : ""; ?>" /><br>
 
                 <label>Age maximum</label>
                 <br />
-                <input class="age_search" type="number" name="age_max" id="age_max" value="<?php echo (!empty($ageMax) && $ageMax != 99) ? $ageMax : ""; ?>" />
+                <input class="age_search" type="number" name="age_max" id="age_max" 
+                value="<?php echo (!empty($ageMax) && $ageMax != 99) ? $ageMax : ""; ?>" />
             </div>
 
             <div>
                 <p>Taille</p>
                 <label>Taille minimum</label>
-                <input type="number" name="taille_min" id="taille_min" value="<?php echo !empty($taille_min) ? $taille_min : ""; ?>" />
+                <input type="number" name="taille_min" id="taille_min" 
+                value="<?php echo !empty($taille_min) ? $taille_min : ""; ?>" />
 
                 <label>Taille maximum</label>
-                <input type="number" name="taille_max" id="taille_max" value="<?php echo (!empty($taille_max) && $taille_max != 150) ? $poids_max : ""; ?>" />
+                <input type="number" name="taille_max" id="taille_max" 
+                value="<?php echo (!empty($taille_max) && $taille_max != 150) ? $poids_max : ""; ?>" />
             </div>
 
             <div>
@@ -170,7 +174,8 @@
                     <?php
                     for ($i = 40; $i <= 150; $i++) {
                     ?>
-                        <option value="<?= $i; ?>" <?php echo ($poids_min == $i) ? "selected" : "" ?>><?= $i; ?> kilos</option>
+                        <option value="<?= $i; ?>" <?php echo ($poids_min == $i) ? "selected" : "" ?>>
+                        <?= $i; ?> kilos</option>
                     <?php
                     }
                     ?>
@@ -182,7 +187,8 @@
                     <?php
                     for ($i = 50; $i <= 150; $i++) {
                     ?>
-                        <option value="<?= $i; ?>" <?php echo ($poids_max == $i) ? "selected" : "" ?>><?= $i; ?> kilos</option>
+                        <option value="<?= $i; ?>" <?php echo ($poids_max == $i) ? "selected" : "" ?>>
+                        <?= $i; ?> kilos</option>
                     <?php
                     }
                     ?>
@@ -220,6 +226,26 @@
                 </select>
             </div>
 
+
+            <div>
+                <?php
+                $sexualite = isset($sexualite) ? $sexualite : "";
+                ?>
+                <p>sexualite</p>
+                
+                <select name="sexualite" id="sexualite" value="<?php echo !empty($sexualite) ? $sexualite : "" ?>">
+                    <option value=""></option>
+                    <option value="Gay" <?php echo ($sexualite == "Gay") ? "selected" : "" ?>>Gay</option>
+                    <option value="Lesbienne" <?php echo ($sexualite == "Lesbienne") ? "selected" : "" ?>>Lesbienne</option>
+                    <option value="Bisexuelle" <?php echo ($sexualite == "Bisexuelle") ? "selected" : "" ?>>Bisexuelle</option>
+                    <option value="Trans" <?php echo ($sexualite == "Trans") ? "selected" : "" ?>>Trans</option>
+                    <option value="Queers" <?php echo ($sexualite == "Queers") ? "selected" : "" ?>>Queers</option>
+                    <option value="Extratereste" <?php echo ($sexualite == "Extratereste") ? "selected" : "" ?>>Extratereste</option>
+                </select>
+            </div>
+
+
+
             <div>
                 <?php
                 $nationality = isset($nationality) ? $nationality : "";
@@ -227,8 +253,8 @@
                 <p>Nationalité</p>
                 <br />
 
-                <select name="nationality">
-
+<select name="nationality">
+<option value=""></option>
 <option value="Albanian">Albanian</option>
 <option value="American">American</option>
 <option value="Argentinian">Argentinian</option>

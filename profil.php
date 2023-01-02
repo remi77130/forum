@@ -120,8 +120,10 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                                 <ul>
                                     <li><?php echo $userinfo['taille'] ?></li>
                                     <li><?php echo $userinfo['poids'] ?></li>
+                                    <li><?php echo $userinfo['cheveux_color'] ?></li>
                                     <li><?php echo $userinfo['nationality'] ?></li>
                                     <li><?php echo $userinfo['choix'] ?></li>
+                                    <li><?php echo $userinfo['sexualite'] ?></li>
                                     <li><?php echo $userinfo['astrologie']; ?></li>
                                     <li><?php echo $userinfo['cheveux_color']; ?></li>
                                 </ul>
