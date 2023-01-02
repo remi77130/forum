@@ -108,7 +108,13 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                                         <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?></span>
 
                                         <!-- ici svg connect -->
-                                        <span><img src="ICONES/connect_svg_green.svg" style="width: 12px;"></span>
+                                        <?php
+                                        if($user->isOnline()){
+                                        ?>
+                                            <span><img src="ICONES/connect_svg_green.svg" style="width: 12px;"></span>
+                                        <?php
+                                        }
+                                        ?>
 
                                     </h3>
                                     <span class="card__status"><?php echo $userinfo['situation']; ?>

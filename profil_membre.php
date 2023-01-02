@@ -2,7 +2,6 @@
 require 'require/database.php';
 include './includes/init.php';
 include 'verif.php'; // BDD AND SESSION
-require_once __DIR__ . "/model/repository/user.repository.php";
 
 $usersWithDesire = UserRepository::findUsersWithDesire();
 ?>
@@ -63,7 +62,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                 </li></a>
 
 
-                <li><a title="profil_membre" href="index.php?id=<?= $_SESSION['id'] ?>">
+                <li><a title="profil_membre" href="deconnexion.php">
                         <span style="color: red;" class="filter_nav">Déconnexion</span>
                 </li></a>
 
@@ -145,13 +144,13 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                             </div>
 
                             <div class="container_profil_info_pseudo">
-                        
+
 
                                 <h2><?php echo $userWithDesire->getLogin() ?>
                                     <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span> <br>
                                     <span style="font-size: 12px;">Département : <?php echo $userWithDesire->getDepartment() ?></span>
 
-                               
+
 
 
 
@@ -188,33 +187,15 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <section class="hero_index">
 
         <?php
-        if (count($articles) == 0) {
+        if (count($users) == 0) {
             echo 'Aucun resultat trouvé';
         }
         ?>
 
 
-        <?php foreach ($articles as $article) : ?>
-
-            <?php
-            $reqdpt = $bdd->prepare("SELECT *
-                         FROM departement
-                         WHERE departement_code = ?");
-            $reqdpt->execute([$article['departement_nom']]);
-            // RECUPERE LES DONEES 
-            $departement = $reqdpt->fetch();
-
-            $reqville = $bdd->prepare("SELECT *
-                         FROM villes_france
-                         WHERE ville_id = ?");
-            $reqville->execute([$article['ville_id']]);
-            // RECUPERE LES DONEES 
-            $ville = $reqville->fetch();
-            ?>
-
-
-            <div class="container_profil_membre" data-sexe="<?= $article['sexe'] ?>" data-age="<?= $article['age'] ?>" data-dpt="<?= $departement ? $departement['departement_nom'] : "" ?>">
-                <a href="profil.php?id=<?= $article['id'] ?>">
+        <?php foreach ($users as $user) : ?>
+            <div class="container_profil_membre" data-sexe="<?= $user->getSexe() ?>" data-age="<?= $user->getAge() ?>" data-dpt="<?= $user->getDepartment()->getName() ?>">
+                <a href="profil.php?id=<?= $user->getId() ?>">
 
 
                     <div class="container_profil_info">
@@ -222,24 +203,24 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                         <div class="container_profil_avatar">
                             <?php
-                            if (str_contains($article['avatar'], 'https')) { ?>
-                                <img src="<?php echo $article['avatar']; ?>" alt="photo_profil"><br>
+                            if (str_contains($user->getAvatar(), 'https')) { ?>
+                                <img src="<?php echo $user->getAvatar(); ?>" alt="photo_profil"><br>
                             <?php
                             } else {
-                                if (!file_exists("membres/avatars/" . $article['avatar'])) {
-                                    $article['avatar'] = "default.jpg";
+                                if (!file_exists("membres/avatars/" . $user->getAvatar())) {
+                                    $user->setAvatar("default.jpg");
                                 }
                             ?>
-                                <img src="membres/avatars/<?php echo $article['avatar']; ?>" alt="photo_profil"><br>
+                                <img src="membres/avatars/<?php echo $user->getAvatar(); ?>" alt="photo_profil"><br>
                             <?php
                             }
                             ?>
                         </div>
 
                         <div class="container_profil_info_pseudo">
-                            <h2><?php echo $article['pseudo'] ?>
-                                <span class="age_profil_membre"><?php echo $article['age'] ?></span> <br>   
-                    
+                            <h2><?php echo $user->getLogin(); ?>
+                                <span class="age_profil_membre"><?php echo $user->getAge(); ?></span> <br>
+
                             </h2>
 
                         </div>
@@ -256,8 +237,8 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
                                 <?php
-                                if ($reqdpt->rowCount() > 0) {
-                                    echo $departement['departement_nom'] . ' (' . $article['departement_nom'] . ') ';
+                                if ($user->getDepartment()) {
+                                    echo $user->getDepartment()->getName() . ' (' . $user->getDepartment()->getCode() . ') ';
                                 } ?>
 
                                 <br>
@@ -265,8 +246,8 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                                 <?php
 
 
-                                if ($reqville->rowCount() > 0) {
-                                    echo $ville['ville_nom_reel'];
+                                if ($user->getCity()) {
+                                    echo $user->getCity()->getName();
                                     echo '</span>';
                                 } else {
                                     echo '</span>';
@@ -275,8 +256,14 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                                 ?> <br>
 
                                 <!-- Ici le svg connect -->
-                                <span><img src="icones/connect_svg_green.svg" alt="" class="svg_conect"></span>
-                            
+                                <?php
+                                if ($user->isOnline()) {
+                                ?>
+                                    <span><img src="icones/connect_svg_green.svg" alt="" class="svg_conect"></span>
+                                <?php
+                                }
+                                ?>
+
                             </div>
 
 
@@ -284,7 +271,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
                         <div class="container_profil_info_descr">
-                            <?php echo $article['description_profil'] ?>
+                            <?php echo $user->getDescription() ?>
                         </div>
 
                     </div>
@@ -292,9 +279,6 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                 </a>
             </div>
-
-
-
         <?php endforeach;
         ?>
 

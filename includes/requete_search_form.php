@@ -1,5 +1,6 @@
 <!-- Page de recherche de profil -->
 <?php
+require_once __DIR__ . "/../model/repository/user.repository.php";
 
 if (!empty($_POST['search']) && empty($_POST['reset'])) {
     $conditions = array(); // Tableau de condition contenant les filtres
@@ -119,16 +120,8 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
         $conditions[] = "pseudo LIKE '%$pseudo%'";
     }
 
-    if (count($conditions) > 0) {
-        $requete .= " WHERE " . implode(" AND ", $conditions);
-    }
-
-
-    $result = $bdd->query($requete);
-    $articles = $result->fetchAll();
+    $users = UserRepository::findUsers($conditions);
 } else {
-    $requser = "SELECT * FROM membres ORDER BY id DESC";
-    $requete = $bdd->query($requser);
-    $articles = $requete->fetchAll();
+    $users = UserRepository::findUsers();
 }
 ?>
