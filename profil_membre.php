@@ -122,7 +122,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
             ?>
 
-                <li class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment() : "" ?>">
+                <li class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment()->getName() : "" ?>">
                     <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
                         <div class="container_profil_info">
 
@@ -148,7 +148,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                                 <h2><?php echo $userWithDesire->getLogin() ?>
                                     <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span> <br>
-                                    <span style="font-size: 12px;">Département : <?php echo $userWithDesire->getDepartment() ?></span>
+                                    <span style="font-size: 12px;">Département : <?php echo $userWithDesire->getDepartment()->getName() ?></span>
 
 
 
