@@ -106,6 +106,10 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                                 <div class="card__header-text">
                                     <h3 class="card__title"><?php echo $userinfo['pseudo']; ?>
                                         <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?></span>
+
+                                        <!-- ici svg connect -->
+                                        <span><img src="ICONES/connect_svg_green.svg" style="width: 12px;"></span>
+
                                     </h3>
                                     <span class="card__status"><?php echo $userinfo['situation']; ?>
 

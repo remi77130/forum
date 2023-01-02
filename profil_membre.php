@@ -63,7 +63,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                 </li></a>
 
 
-                <li><a title="profil_membre" href="deconnexion.php?id=<?= $_SESSION['id'] ?>">
+                <li><a title="profil_membre" href="index.php?id=<?= $_SESSION['id'] ?>">
                         <span style="color: red;" class="filter_nav">Déconnexion</span>
                 </li></a>
 
@@ -145,9 +145,16 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                             </div>
 
                             <div class="container_profil_info_pseudo">
+                        
+
                                 <h2><?php echo $userWithDesire->getLogin() ?>
                                     <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span> <br>
                                     <span style="font-size: 12px;">Département : <?php echo $userWithDesire->getDepartment() ?></span>
+
+                               
+
+
+
 
                                 </h2>
 
@@ -231,10 +238,10 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                         <div class="container_profil_info_pseudo">
                             <h2><?php echo $article['pseudo'] ?>
-                                <span class="age_profil_membre"><?php echo $article['age'] ?></span>
+                                <span class="age_profil_membre"><?php echo $article['age'] ?></span> <br>   
+                    
                             </h2>
 
-                            <div></div>
                         </div>
 
                     </div>
@@ -246,6 +253,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                         <div class="dpt_age">
 
                             <div class="container_profil_info_dtp">
+
 
                                 <?php
                                 if ($reqdpt->rowCount() > 0) {
@@ -264,7 +272,11 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                                     echo '</span>';
                                 }
 
-                                ?>
+                                ?> <br>
+
+                                <!-- Ici le svg connect -->
+                                <span><img src="icones/connect_svg_green.svg" alt="" class="svg_conect"></span>
+                            
                             </div>
 
 

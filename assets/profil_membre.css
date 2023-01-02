@@ -273,17 +273,23 @@ font-weight: 600;
    
 
 }
-
+.svg_conect
+{
+        height: 12px;
+        position: relative;
+        top: 5px;
+    
+}
 .container_profil_membre[data-sexe=Homme]
 {
     border: 0.5px solid rgb(40 127 165);
-    height: 250px;
+    height: 260px;
     margin: 10px;
 }
 .container_profil_membre[data-sexe=Femme]
 {
     border: 0.5px solid rgb(210, 54, 210);
-    height:250px
+    height:260px
     
 }
 
@@ -311,20 +317,13 @@ font-weight: 600;
 }
 
 
-.icone_maps_profil{
-    font-size: 3px;
-}
-
-
-
-
 
 
 .container_profil_membre a
 {
     text-decoration: none;
 }
-.container_profil_membre img{
+.container_profil_avatar img{
     width: 120px;
     height: 120px;
     border-radius: 100px;
@@ -449,8 +448,11 @@ font-weight: 600;
     font-family: 'IBM Plex Sans', sans-serif;
     padding: 5px 0px 0px 7px;
     font-size: 12px;
+    height: 55px;
 
 }
+
+
 
 .container_profil_info_descr 
 {
@@ -464,7 +466,6 @@ font-weight: 600;
     font-family: 'IBM Plex Sans', sans-serif;
 
     color: rgb(179, 179, 179);
-    margin-top: 5px;
     text-align: start;
 
 }
@@ -476,6 +477,7 @@ font-weight: 600;
     transition: 500ms;
 
 }
+
 
 
 /* Loader Wrapper*/
