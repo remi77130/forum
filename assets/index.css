@@ -20,6 +20,10 @@ html, body{
 
 }
 
+p
+{
+  color: #f0f8ff;
+}
 
 
 
@@ -35,10 +39,16 @@ h1{
     font-size: 40px;
 }
 
+h2
+{
+  color: #a4f9ff;
+}
+
 h3
 {
     margin-bottom: 5px;
     margin-bottom: 10px;
+    color: #ff22b1;
 }
 
 
@@ -160,10 +170,10 @@ Form
     position: relative;
     z-index: 1;
     background: #051420;
-    border-left: 5px solid #878787;
+    border-left: 5px solid #61f4ff;
 
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 0 auto 50px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -404,6 +414,7 @@ article
 article h2
 {
     margin-bottom: 10px;
+   
 }
 
 .img_femme_chanderland

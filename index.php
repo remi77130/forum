@@ -18,7 +18,7 @@ require 'signupAction.php';
 
 <META NAME="DESCRIPTION" CONTENT="Chat sans inscription. Sans email. Venez chater sans inscrire votre email. "/>
 <meta name="robots" content="index, follow, all">
-<meta name="keywords" content="chate en ligne">
+<meta name="keywords" content="rencontre gratuite, chate en ligne, clementine marceau, tchatche france, rencontre gratuite, tchat france">
 
 
 <!-- Icon -->
@@ -70,7 +70,7 @@ require 'signupAction.php';
 <header id="form" class="title_section_signup">
 
 
-<h1>Chanderland, rencontre gratuite</h1>
+<h1> Rencontre gratuite </h1>
 
   
 <h3></h3>
@@ -129,9 +129,9 @@ require 'signupAction.php';
 </div> 
                 
 
-                  <!--  <input type="email" name="mail" placeholder="Mail" value="<//?//php// if (isset($mail)) {
-                       // echo $mail;
-                  //  } ?>"--> 
+ <input class="u" type="email" name="mail" placeholder="Mail" value="<?php if (isset($mail)) {
+   $mail;
+    } ?>">
                   
 
     <input class="u" type="password" minlength="5" name="password" placeholder="Mot de passe">
@@ -143,7 +143,7 @@ require 'signupAction.php';
        
     <p class="message"> J'ai déja un compte <a href="#">M'identifier</a></p>
 
-    <?php
+<?php
 
 if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR 
 {
@@ -189,106 +189,17 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
         <div class="advantage_1">
 
-           <h3>30 minutes pour trouver un partenaire.</h3>
-           <p>Toutes les 30 minutes, vous pouvez proposer gratuitement ce que vous désirez <br> 
-            faire comme allez boire un verre, allez courir ou encore faire une rencontre. <br>
-            Ainsi, votre profil apparaît en tête du site afin d’avoir plus de visibilité <br>
+           <h3>30 minutes pour trouver un partenaire</h3>
+           <p>Toutes les 30 minutes, vous pouvez proposer <strong>gratuitement</strong> ce que vous désirez <br> 
+            faire comme allez courir, <strong>faire une rencontre</strong> ou encore allez boire un verre avec <strong>clementine marceau </strong> <br>
+            (Bon ça, ce n'est peut-être pas possible puisqu'elle n'est pas sur le site).<br>
+            En bref, quand vous proposez une activité, votre profil apparaît en tête du site afin d’avoir plus de visibilité <br>
             par tous les membres.</p>
  
         </div>
-        
-
-   <div>
-          <h3>Un site plus spontané.</h3>
-
-          <p>Sur la plupart des sites de rencontre, on ne sait pas vraiment par où commencer <br> pour lancer la discussion.<br>
-          Aujourd'hui, il est insensé voir même banal de commencer une phrase <br>
-          par " Salut, ça va ? " <br> <br>
-
-          Il faut sortir de l'ordinaire en étant original et spontané.<br>
-          Car plusieurs personnes peuvent potentiellement être aussi en train de discuter<br>
-          avec la même personne ciblée que vous.<br>
-          Être rapide et sortir de l'ordinaire est difficile de nos jours <br>
-          surtout s'il vous faut payer pour envoyer un message...<br> <br>
-
-          C'est pour cela qu'on a mis en place un système de (Bouton d'envie) qui vous permet de vous démarquer des autres membres en partageant à l'instant présent ce que vous avez envie de faire.
-          Ainsi, votre envie du moment peut également être l’envie de la personne d’en face.
-          Donc, la spontanéité, est ce qu'il vous faut !
-          Avec ce système, vous n'avez plus à réfléchir à comment démarrer une discussion <br>
-          car votre envie est déjà exprimée avec notre option. <br> <br>
-
-          Pour votre futur partenaire, cela est un avantage, car il sait d’avance <br> 
-          ce dont vous avez envie tout de suite.<br>
-          Vous n'avez plus cas attendre les propositions des autres membres qui souhaitent <br>
-          partager cet envie également. <br> <br>
-
-          En revanche, vos propositions d’envies ne durent que 30 minutes <br> 
-          donc veillez à rester connecté pour ainsi ne pas louper les nouvelles envies <br>
-          publiées dans votre secteur. <br>
-          Qui sait, peut-être, qu'une personne près de vous aura envie de boire un verre <br>
-          ou d‘aller  voir un film au cinéma <br> 
-          alors dans ce cas pourquoi ne pas y aller ensemble ? </p> <br>
 
 
-    </div>
-
-<div class="b01"> 
-
-
-<div class="adv"> 
-    <h3>Que voulez vous faire aujourdhui ?</h3> <br>
-
-
-<p class="p_advantage">
-    <img src="icones/alcool.svg" alt="icone alcool">Boire un verre ?<br>
-    <img src="icones/film.svg"  alt="icones film"> Allez voir ce dernier film à la mode ? <br> 
-    <img src="icones/heart.svg" alt="icone heart"> Ou bien une rencontre toride ? <br>
-</p> <br>
-<h4>Proposez-le simplement puis attendez les propositions.</h4> <br>
-
-
-
-<h3>Les rencontres spontanées sont celles qui se produisent sans qu'on ne s’y attendent à l'avance.</h3>
-<p> Cela correspond à des rencontres fortuites, c'est-à-dire des rencontres <br> 
-qui se produisent par hasard ou alors des rencontres qui résultent <br> 
-d'une décision prise sur un coup de tête. <br>
-Ces rencontres spontanées peuvent être très gratifiantes <br> 
-parce qu'elles nous permettent de sortir <br>
-de notre routine et de découvrir ainsi de nouvelles personnes et de nouvelles expériences <br>
-mais elles peuvent également, nous ouvrir à de nouvelles perspectives <br> 
-et ainsi nous permettre de prendre des risques. <br> <br>
-
-Cependant, il est important d'être vigilant et de prendre certaines précautions<br>
-en particulier quand vous rencontrez spontanément quelqu'un <br> 
-que vous ne connaissez pas. <br>
-Il est conseillé de se renseigner sur la personne que l’on va rencontrer afin <br> 
-de s'assurer d’être en sécurité avant de partir à l'aventure. <br> <br>
-
-C'est pour cela, que nous avons mis en place des fiches profils avec un minimum <br> d'information, comme votre photo de profil, taille, âge ainsi <br>
-qu’un système de commentaire sur chaque profil. <br> 
-Cela permettra d'être averti si le profil est fake ou non. <br>
-En fin de compte, la spontanéité peut être une qualité très positive, mais il est également <br>
-important de trouver un équilibre et de savoir à quel moment <br>
-Il est approprié de la mettre en pratique. <br> </p> <br>
-
-
-
-<div class="cont_not">
-        <h3 class="text-3xl font-bold">Chat discret</h3>
-                <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
-
-        <p>Profitez d'une conversation très discrète pour des rencontres sans stress.<br><br>
-        Nous avons désactivé le système de notification pour que vous puissiez faire des rencontres sans être dérangé par des notifications quand vous recevez un message. <br>
-        Même si votre portable est en mode sonnerie.</p> <br>
-
-      <span style="text-decoration: underline;"><a class="lien_inscription" href="#form">M'inscrire gratuitement</a></span>
-    </div> <!-- cont_not -->
-
-
-    
-</div>
-
-<article>
+        <article>
 
 
 
@@ -304,7 +215,7 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 
     <p>
     Rejoignez chanderland et profitez gratuitement d'une messagerie pour <strong> faire des rencontres rapides.</strong><br>
-    Découvrez les profils autour de chez vous et envoyé des messages gratuitement. <br> 
+    Découvrez les profils autour de chez vous et <strong> envoyé des messages gratuitement</strong>.<br> 
     Chanderland est un site de rencontres ultra simples à prendre en main.
     </p>
 </div>
@@ -334,7 +245,7 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 
 <div>
 
-<h2>Et découvrez des milliers de profils<h2>
+<h2>Des milliers de profils<h2>
 
     <p>
 
@@ -351,7 +262,7 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 
 <img class="img_femme_chanderland" src="icones/chat-gratuit.svg" alt="photo_femme_chanderland">
 
-<h2>Puis tchater gratuitement</h2>
+<h2>Tchater gratuitement</h2>
 
 <p> 
  Rencontrez des gens de votre choix,
@@ -361,11 +272,109 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
  son cercle d'amis et <br> 
  <strong>rencontrer de nouvelles personnes</strong> 
  sympathiques. <br>
- De quoi faciliter les <strong>rencontre.</strong>
+ De quoi faciliter les <strong>rencontres.</strong>
 </div>
 
 
 </article>
+
+        
+
+   <div>
+          <h3>Un site plus spontané</h3>
+
+          <p>Sur la plupart des <strong>sites de rencontre</strong>, on ne sait pas vraiment par où commencer <br> 
+          pour lancer la discussion.<br>
+          Aujourd'hui, il est insensé voir même banal de commencer une phrase <br>
+          par " Salut, ça va ? " <br> <br>
+
+          Il faut sortir de l'ordinaire en étant original et spontané.<br>
+          Car plusieurs personnes peuvent potentiellement être aussi en train de <strong>discuter</strong><br>
+          avec la même personne ciblée que vous.<br>
+          Être rapide et sortir de l'ordinaire est difficile de nos jours <br>
+          surtout s'il vous faut payer pour envoyer un message...<br> <br>
+
+          C'est pour cela qu'on a mis en place un système de (Bouton d'envie) qui vous permet de vous démarquer <br> 
+          des autres membres en partageant à l'instant présent ce que vous avez envie de faire. <br>
+          Ainsi, votre envie du moment peut également être l’envie de la personne d’en face. <br>
+          Donc, <strong>la spontanéité</strong>, est ce qu'il vous faut ! <br>
+          Avec ce système, vous n'avez plus à réfléchir à comment <strong>démarrer une discussion</strong> <br>
+          car votre envie est déjà exprimée avec notre option. <br> <br>
+
+          Pour votre futur <strong>partenaire</strong>, cela est un avantage, car il sait d’avance <br> 
+          ce dont vous avez envie tout de suite.<br>
+          Vous n'avez plus cas attendre les <strong>propositions</strong> des autres membres qui souhaitent <br>
+          partager cet envie également. <br> <br>
+
+          En revanche, vos propositions d’envies ne durent que <b>30minutes</b> <br> 
+          donc veillez à rester connecté pour ainsi ne pas louper les nouvelles envies <br>
+          publiées dans votre <strong>secteur</strong>. <br>
+          Qui sait, peut-être, qu'une personne près de vous aura envie de <strong>boire un verre</strong> <br>
+          ou d‘aller <strong>voir un filù</strong><br> 
+          alors dans ce cas pourquoi ne pas y aller ensemble ? </p> <br>
+
+
+    </div>
+
+<div class="b01"> 
+
+
+<div class="adv"> 
+    <h3>Que voulez vous faire aujourdhui ?</h3> <br>
+
+
+<p class="p_advantage">
+    <img src="icones/alcool.svg" alt="icone alcool">Boire un verre ?<br>
+    <img src="icones/film.svg"  alt="icones film"> Allez voir ce dernier film à la mode ? <br> 
+    <img src="icones/heart.svg" alt="icone heart"> Ou bien une rencontre toride ? <br>
+</p> <br>
+<h4>Proposez-le simplement puis attendez les propositions.</h4> <br>
+
+
+
+<h3>Les rencontres spontanées</h3>
+
+<p>Sont celles qui se produisent sans qu'on ne s’y attendent à l'avance. <br>
+Cela correspond à des <strong>rencontres</strong> fortuites, c'est-à-dire des <strong>rencontres</strong> <br> 
+qui se produisent par hasard ou alors des <strong>rencontres</strong> qui résultent <br> 
+d'une décision prise sur un coup de tête. <br>
+Ces <strong>rencontres</strong> spontanées peuvent être très gratifiantes <br> 
+parce qu'elles nous permettent de sortir <br>
+de notre routine et de découvrir ainsi de nouvelles personnes et de nouvelles expériences <br>
+mais elles peuvent également, nous ouvrir à de nouvelles perspectives <br> 
+et ainsi nous permettre de prendre des risques. <br> <br>
+
+Cependant, il est important d'être vigilant et de prendre certaines précautions<br>
+en particulier quand vous rencontrez spontanément quelqu'un <br> 
+que vous ne connaissez pas. <br>
+Il est conseillé de se renseigner sur la personne que l’on va rencontrer afin <br> 
+de s'assurer d’être en sécurité avant de partir à l'aventure. <br> <br>
+
+C'est pour cela, que nous avons mis en place des <strong>fiches profils</strong> avec un minimum <br>
+d'information, comme votre <strong>photo de profil</strong>, <strong>taille</strong>, <strong>âge</strong> ainsi <br>
+qu’un système de commentaire sur chaque profil. <br> 
+Cela permettra d'être averti si un profil est un <strong>profil fake</strong>ou non. <br>
+En fin de compte, la spontanéité peut être une qualité très positive, mais il est également <br>
+important de trouver un équilibre et de savoir à quel moment <br>
+Il est approprié de la mettre en pratique. <br> </p> <br>
+
+
+
+<div class="cont_not">
+        <h3 class="text-3xl font-bold">Chat discret</h3>
+                <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
+
+        <p>Profitez d'une <strong>conversation discrète</strong> pour <strong>des rencontres</strong> sans stress.<br><br>
+        Nous avons désactivé le système de notification pour que vous puissiez faire <strong>des rencontres</strong> sans être dérangé par des notifications quand vous recevez un message. <br>
+        Même si votre portable est en mode sonnerie.</p> <br>
+
+      <span style="text-decoration: underline;"><a class="lien_inscription" href="#form">M'inscrire gratuitement</a></span>
+    </div> <!-- cont_not -->
+
+
+    
+</div>
+
 
 
 
@@ -433,3 +442,9 @@ inputAge.onkeyup = function(e) {
 </script>
 
 <script src="js/index.js"></script>
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LfCwOQjAAAAAMtmfY5Bo9IOXG7ftYbd5_5C-qjb"></script>
+
+<!-- Recaptcha 
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LeC8eMjAAAAABdU5QaRe3xMJJBaPPVzqIRV-B4o"></script>
+<script src="js/index.js"></script>-->

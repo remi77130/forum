@@ -149,3 +149,26 @@ $(document).ready(function(){
     }
 })
 
+///// Bouton like 
+
+
+
+  function like() {
+    var button = document.querySelector('.like-button');
+    button.classList.toggle('liked');
+  }
+
+
+  ///// Info profil
+
+const toggleButton = document.getElementById('toggleButton');
+const content = document.getElementById('content');
+
+toggleButton.addEventListener('click', function() {
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    
+  } else {
+    content.style.display = 'none';
+  }
+});

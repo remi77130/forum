@@ -38,7 +38,9 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     <head>
 
         <link rel="stylesheet" href="assets/profil.css">
+        <link rel="stylesheet" href="assets/profil.scss">
         <link rel="stylesheet" href="./assets/image_viewer.css">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital, wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -76,23 +78,11 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <section class="section_profil_membre">
             <!-- Profil visible-->
 
+<div class="container_avatar">
 
-
-            <ul class="cards">
-                <li>
-                    <a href="" class="card">
-
-                        <div class="fond">
-
-                        </div>
-                        <div class="card__overlay">
-                            <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
-                                </svg>
-
-
-                                <?php
+        <div class="avatar_profil">
+                        <!-- Avatar -->
+                        <?php
                                 if (str_contains($userinfo['avatar'], 'https')) { ?>
                                     <img src="<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
                                 <?php
@@ -103,47 +93,72 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                                 }
                                 ?>
 
-                                <div class="card__header-text">
-                                    <h3 class="card__title"><?php echo $userinfo['pseudo']; ?>
-                                        <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?></span>
 
-                                        <!-- ici svg connect -->
+         </div>
+</div>
+                                <div class="card__header_text">
+                                   <div class="container_text">
+                                   <h3 class="card__title">
+                                    <?php echo $userinfo['pseudo']; ?>
+                                       
+                                     
+                                        <!-- Ici svg connect fake -->
+                                        <span><img class="connect_svg_profil" src="icones/connect_svg_green.svg">
+                                        </span>
+
+                                      
+
+                                        <!-- ici svg connect reel 
                                         <?php
                                         if($user->isOnline()){
                                         ?>
-                                            <span><img src="ICONES/connect_svg_green.svg" style="width: 12px;"></span>
+                                            <span><img class="connect_svg_profil" src="icones/connect_svg_green.svg"></span>
                                         <?php
                                         }
                                         ?>
-
+                                                -->
+                                                
                                     </h3>
+                                    <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?> ans</span> <br>
                                     <span class="card__status"><?php echo $userinfo['situation']; ?>
 
 
                                     </span>
-                                </div>
-                            </div>
-                            <p class="card__description"><?php echo $userinfo['description_profil']; ?></p>
+                                
+                            <p class="card__description"><?php echo $userinfo['description_profil']; ?></p> <br>
 
-                            <div class="info_profil">
+                            <!-- Bouton like rendre visible seulement par les autres users -->
+                         
+                            <!--<img  onclick="like()" style="width: 20px;" src="images/icones/like.svg" alt="">
+                               <img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
+                                   </div> 
+                                </div>
+
+<div class="line_separate">
+
+</div>
+
+<button id="toggleButton" class="button_info_profil">Afficher/cacher les infos</button>
+
+
+
+<div id="content" class="info_profil" style="display: none;"> <!-- Info profil rendre visible seulement si rempli -->
+<div class="container_info">
+
 
                                 <ul>
                                     <li><?php echo $userinfo['taille'] ?></li>
                                     <li><?php echo $userinfo['poids'] ?></li>
-                                    <li><?php echo $userinfo['cheveux_color'] ?></li>
+                                    <li><?php echo $userinfo['situation'] ?></li>
                                     <li><?php echo $userinfo['nationality'] ?></li>
                                     <li><?php echo $userinfo['choix'] ?></li>
                                     <li><?php echo $userinfo['sexualite'] ?></li>
                                     <li><?php echo $userinfo['astrologie']; ?></li>
                                     <li><?php echo $userinfo['cheveux_color']; ?></li>
                                 </ul>
+</div>
+</div>
 
-                            </div>
-
-                        </div>
-                    </a>
-                </li>
-            </ul>
 
             <?php if (isset($error)) {
                 echo '<span style="color:red;">' . $error . '</span>';
@@ -155,53 +170,54 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
             </div>
 
             <?php
-            if ($_SESSION['id'] != $userinfo['id']) {
+        if ($_SESSION['id'] != $userinfo['id']) {
             ?>
-                <button class="button_write_profil" style="cursor: pointer;">
-                    <img class="icone_letter_profil" src="icones/letter.svg "><a class="write" onClick="messagerie()">Ecrire</a>
-                </button>
+            <button class="button_write_profil" style="cursor: pointer;">
+               
+                <a class="write" onClick="messagerie()">
+                <img class="icone_letter_profil" src="icones/letter.svg "></a>
+            </button>
             <?php
-            }
+        }
+        ?>
+        <?php
+        if ($_SESSION['id'] != $userinfo['id']) {
             ?>
-            <?php
-            if ($_SESSION['id'] != $userinfo['id']) {
-            ?>
-                <!-- MESSAGERIE  -->
-                <div class="parent_message_profil_user" id="messagerie">
+            <!-- MESSAGERIE  -->
+            <div class="parent_message_profil_user" id="messagerie">
 
-                    <div class="message_profil_user">
+                <div class="message_profil_user">
 
-                        <form method="POST" enctype="multipart/form-data">
-                            <input type="hidden" name="destinataire_id" value="<?= $userinfo['id']; ?>">
+                    <form method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="destinataire_id" value="<?= $userinfo['id']; ?>">
 
-                            <label style="display:block">Objet</label>
+                        <label style="display:block">Objet</label>
 
-                            <input class="input_object_form_profil" type="submittext" name="objet" <?php if (isset($o)) {
-                                                                                                        echo 'value="' . $o . '"';
-                                                                                                    } ?> /> </br>
-                            <label class="pjointe" style="display:block"> Pièce jointe</label><br><br>
+                        <input class="input_object_form_profil" type="submittext" name="objet" <?php if (isset($o)) {
+                            echo 'value="' . $o . '"';
+                        } ?> /> </br>
+                        <label class="pjointe" style="display:block"> Pièce jointe</label><br><br>
 
-                            <input class="input_file_form_profil" type="file" name="img_msg"> <br><br>
+                        <input class="input_file_form_profil" type="file" name="img_msg"> <br><br>
 
-                            <label style="display:block;"> Ecrire un message</label><br>
-                            <textarea placeholder="Votre message" name="message"></textarea><br>
+                        <label style="display:block;"> Ecrire un message</label><br>
+                        <textarea placeholder="Votre message" name="message"></textarea><br>
 
-                            <input class="input_submit_form_profil" type="submit" value="Envoyer" name="envoi_message" />
+                        <input class="input_submit_form_profil" type="submit" value="Envoyer" name="envoi_message"/>
 
-                        </form>
-                    </div>
-                    <!--FIN MESSAGERIE  -->
+                    </form>
                 </div>
-                <!--FIN PARENT MESSAGERIE  -->
-
-                </div>
-
-            <?php
-            }
-            ?>
+                <!--FIN MESSAGERIE  -->
+            </div>
+            <!--FIN PARENT MESSAGERIE  -->
 
             </div>
 
+            <?php
+        }
+        ?>
+
+        </div>
 
             <!------------------------ REQUETE AFFICHAGE ALBUM PHOTO -------->
 

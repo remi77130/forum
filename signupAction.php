@@ -24,7 +24,7 @@ $erreur = "";
 if (!empty($_POST['validate'])) { 
     
     $pseudo = htmlspecialchars($_POST['pseudo']);
-    //$mail = htmlspecialchars($_POST['mail']);
+    $mail = htmlspecialchars($_POST['mail']);
     $password = sha1($_POST['password']);
     $password2 = sha1($_POST['password2']);
     $age = htmlspecialchars($_POST['age']);
@@ -34,7 +34,7 @@ if (!empty($_POST['validate'])) {
 
     // Si tous les champs sont bien complétés
 if (!empty($_POST['pseudo'])
-    //and !empty($_POST['mail'])
+    and !empty($_POST['mail'])
     and !empty($_POST['password'])
     and !empty($_POST['password2'])
     and !empty($_POST['age'])
@@ -61,17 +61,17 @@ if (!empty($_POST['pseudo'])
         $registrationPass = false;
     }
 
-    //$reqmail = $bdd->prepare("SELECT * 
-              //                FROM membres 
-                //              WHERE mail = ? ");  // REQUETE SI MAIL EXISTE DEJA
-               // $reqmail->execute(array($mail,));
-               // $mailexist = $reqmail->rowCount();
+    $reqmail = $bdd->prepare("SELECT * 
+                              FROM membres 
+                              WHERE mail = ? ");  // REQUETE SI MAIL EXISTE DEJA
+                $reqmail->execute(array($mail,));
+                $mailexist = $reqmail->rowCount();
 
     // Si le mail est déjà utilisé par un autre compte
-   // if ($mailexist != 0){
-     //   $erreur = $erreur . "Votre mail est d&eacute;j&agrave; utilis&eacute; par un autre compte <br>";
-       // $registrationPass = false;
-  //  }
+    if ($mailexist != 0){
+        $erreur = $erreur . "Votre mail est d&eacute;j&agrave; utilis&eacute; par un autre compte <br>";
+        $registrationPass = false;
+    }
 
     // Si les mots de passses ne correspondent pas 
     if ($password != $password2) {
@@ -95,15 +95,15 @@ if (!empty($_POST['pseudo'])
     try {
         
         // AVEC VILLE ET DPT
-        $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mdp, age, sexe, avatar, departement_nom, ville_id)
-                                    VALUES(?,?,?,?,?,?,?)");
+        $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, avatar, departement_nom, ville_id)
+                                    VALUES(?,?,?,?,?,?,?,?)");
         //Sans ville et dpt
         /*$insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, avatar)
         VALUES(?,?,?,?,?,?)");*/
                                     
         $insertmbr->execute(array(
             $pseudo,
-           // $mail,
+            $mail,
             $password,
             $age,
             $sexe,
@@ -121,7 +121,7 @@ if (!empty($_POST['pseudo'])
     }
 
     
-    /*$destinataire = "$mail"; // DEST DU MAIL
+    $destinataire = "$mail"; // DEST DU MAIL
     $sujet = "Confirmation de compte";
     $message = "Bienvenue sur le Chanderland $pseudo  ";
 
@@ -129,7 +129,8 @@ if (!empty($_POST['pseudo'])
     mail($destinataire, $sujet, $message, $headers);
 
 
-    echo "Mail envoyé à $destinataire avec succes ! ";*/
+    echo "Mail envoyé à $destinataire avec succes ! ";
+    
     $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
     $requser->execute(array($pseudo));
     $userexist = $requser->rowCount();
@@ -137,10 +138,9 @@ if (!empty($_POST['pseudo'])
     $userinfo = $requser->fetch();
     $_SESSION['id'] = $userinfo['id'];
     $_SESSION['pseudo'] = $userinfo['pseudo'];
-   // $_SESSION['mail'] = $userinfo['mail'];
+    $_SESSION['mail'] = $userinfo['mail'];
     header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
     
-    //header("Location: profil_membre.php");
  }
 
 }
@@ -155,17 +155,18 @@ if(isset($_POST['formconnexion'])) {
    $mdpconnect = sha1($_POST['mdpconnect']);
    $pseudoconnect = htmlspecialchars($_POST['pseudoconnect']);
 
-   //   if(!empty($mailconnect) AND !empty($mdpconnect)) {
-     // $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND mdp = ?");
-      //$requser->execute(array($mailconnect, $mdpconnect));
-     // $userexist = $requser->rowCount();
-      //if($userexist == 1) {
-        // $userinfo = $requser->fetch();
-         //$_SESSION['id'] = $userinfo['id'];
-         //$_SESSION['pseudo'] = $userinfo['pseudo'];
-         //$_SESSION['mail'] = $userinfo['mail'];
-         //header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
-
+      if(!empty($mailconnect) AND !empty($mdpconnect)) {
+      $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND mdp = ?");
+      $requser->execute(array($mailconnect, $mdpconnect));
+      $userexist = $requser->rowCount();
+      if($userexist == 1) {
+         $userinfo = $requser->fetch();
+         $_SESSION['id'] = $userinfo['id'];
+         $_SESSION['pseudo'] = $userinfo['pseudo'];
+         $_SESSION['mail'] = $userinfo['mail'];
+        
+         header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
+    }}
    if(!empty($pseudoconnect) AND !empty($mdpconnect)) {
       $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ? AND mdp = ?");
       $requser->execute(array($pseudoconnect, $mdpconnect));
@@ -176,7 +177,7 @@ if(isset($_POST['formconnexion'])) {
          $_SESSION['pseudo'] = $userinfo['pseudo'];
          UserRepository::updateLastConnection($_SESSION['id']);
          UserRepository::updateLastActivity($_SESSION['id']);
-       //  $_SESSION['mail'] = $userinfo['mail'];
+         $_SESSION['mail'] = $userinfo['mail'];
          header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
          
       } else {

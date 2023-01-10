@@ -41,3 +41,11 @@
 $('.message a').click(function(){
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
  });
+
+// Recaptcha index
+ grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LeC8eMjAAAAABdU5QaRe3xMJJBaPPVzqIRV-B4o', 
+    {action: 'login'}).then(function(token) {
+       
+    });
+});

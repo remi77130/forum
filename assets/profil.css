@@ -138,7 +138,20 @@ header
     font-size: 22px;
 }
 
+.button_info_profil
+{
+    text-decoration: none;
+    background: #333333;
+    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
 
+}
 .info_profil {
 
 
@@ -152,14 +165,19 @@ header
 
 
 
+.info_profil li
+{
+    border-bottom: 1px solid #ff22b2ab;
+    padding: 10px;
+    width: 90%;
+    font-weight: bold;
+}
+
+
 .info_pseudo_age {
     margin: 20px 0px 10px 0px;
 }
 
-
-img {
-    max-width: 100%;
-  }
   * {
     box-sizing: border-box;
     line-height: 1.5;
@@ -167,10 +185,36 @@ img {
   }
   
   img {
-    max-width: 100%;
+    max-width: 50%;
   }
   
- 
+  @media screen and (max-width: 900px) {
+
+
+    .container_info
+    {
+      width: 80%;
+      margin-left: 5px;
+    }
+  
+
+
+  }
+
+  .container_info
+  {
+    width: 50%;
+    margin-left: 10px;
+
+  }
+
+  
+
+  
+ .card__header_text
+ {
+    padding-top: 10px;
+ }
 
 
 :root {
@@ -179,7 +223,11 @@ img {
     --curve: 40;
   }
   
-
+.avatar_profil
+{
+    width: 100%;
+    margin: auto;
+}
   
   .cards {
     display: grid;
@@ -248,12 +296,13 @@ img {
 {
     list-style: none;
     color: white;
+    text-align: left;
+    width: 100%;
 }
 
 .connect_svg_profil
 {
-    width: 12px !important;
-    position: relative;
+    width: 8px !important;
     top: 20px;
     left: 5px;
 }
@@ -287,7 +336,6 @@ img {
   
   .card__title {
     font-size: 1em;
-    margin: 0 0 .3em;
     color: #f4f4f4;
     font-weight: bold;
   }
@@ -306,16 +354,50 @@ img {
   }
   
   .card__description {
-    padding: 0 2em 2em;
-    margin: 0;
-    color: #fdfdfd;
-    font-family: "MockFlowFont";   
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }    
+      
+        color: #fdfdfd;
+        font-family: "MockFlowFont";
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        font-weight: 700;
 
+  }    
+  .like-button {
+    font-weight: 700;
+    display: inline-block;
+
+    cursor: pointer;
+    background: none;
+    color: rgb(255, 0, 0);
+   
+
+}
+
+  .mon-bouton-cliqué {
+    background-color: red;
+  }
+  
+  
+  .liked {
+    color: aqua;
+    background: none;
+
+  }
+  .container_text
+  {
+    width: 50%;
+    margin: auto;
+    text-align: initial;
+  }
+
+  .line_separate
+  {
+    width: 90%;
+    border: 0.5px solid wheat;
+    margin: 20px auto;
+  }
 
 .image_album_profil {
 
@@ -426,28 +508,19 @@ textarea {
 
     text-decoration: none;
     background: #333333;
-    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
-
+    cursor: pointer;
     border: none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
     color: aliceblue;
     padding: 9px 15px;
     margin: 20px;
+    width: 120px;
+    border: 0.5px solid #f5deb3e6;
+    font-weight: 700;
 
 }
 
-.input_submit_form_profil:hover {
-
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-    cursor: pointer;
-
-}
 
 .container_comment{
     margin: 10px;
@@ -491,11 +564,8 @@ textarea {
 
 .icone_letter_profil
 {
-    width: 20px;
-    position: relative;
-    top: 3px;
-    right: 5;
-
+    width: 50px;
+   
 }
 
 .disabled_container
@@ -507,7 +577,7 @@ textarea {
     text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
-
+    cursor: pointer;
     border: none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
@@ -518,24 +588,15 @@ textarea {
 }
 
 
-.input_comment:hover {
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-    cursor: pointer;
-}
-
 
 .option_profil_user_connect 
 {
 
-    display: flex;
-    justify-content: center;
+    display: block;
     flex-wrap: wrap;
-    margin-top: 25px;
+    width: 70%;
+    margin: auto;
+
 }
 
 .option_profil_user_connect div {
@@ -544,7 +605,21 @@ textarea {
 }
 
 .option_profil_user_connect a{
+    text-decoration: none;
+    background: #333333;
+    /* box-shadow: 5px 5px 10px #ffffff00, -2px -2px 10px #ffffff12; */
+    cursor: pointer;
+    border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+    padding: 9px 15px;
+    margin: 20px;
     width: 150px;
+
+    border: 0.5px solid #f5deb3e6;
+    font-weight: 700;
+
 }
 
 .option_profil_user_connect .notification {
@@ -584,28 +659,31 @@ textarea {
   }
   
   .container_choix button[data-disabled]{
-    color: yellow;
+    color: rgb(241, 241, 241);
   }
   
   .container_choix button[data-selected]{
-        /* bouton envie activer */
 
+    color: #ff22b2ab;
+    border: none;
+    transition: 5ms;
   }
 
   .container_choix button {
-      width: 120px;
-      height: 50px;
-      cursor: pointer;
-      background: #333;
-      margin: 10px;
-      border: none;
-      border-radius: 10px;
-      color: rgb(154, 154, 154);
-      font-size: 16px;
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+    background: #333;
+    margin: 10px;
+    border: 1px solid wheat;
+    box-shadow: 2px 3px 5px #f5deb308;
+    border-radius: 5px;
+    color: rgb(154, 154, 154);
+    font-size: 16px;
+
   }
   
   .container_choix button:not([data-disabled]):hover {
-      box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
       font-size: 15px;
       transition: 500ms;
   }
@@ -619,19 +697,6 @@ textarea {
 OPTION PROFIL
 */
 
-.option_profil_user_connect a {
-    text-decoration: none;
-    background: #333333;
-    box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
-
-
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
-    color: aliceblue;
-    padding: 9px 15px;
-    margin: 5px;
-
-}
 
 .write
 {
@@ -640,42 +705,27 @@ OPTION PROFIL
 }
 
 .button_write_profil {
-
-    text-decoration: none;
     background: #333333;
     box-shadow: 5px 5px 10px #202020, -2px -2px 10px #38383882;
     border: none;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
+    font-weight: 600;
     color: aliceblue;
-    padding: 9px 20px;
+    padding: 5px 20px;
     margin: 20px;
+    border: 1px solid #61f4ff;
+    border-radius: 5px;
+
 
 
 }
-
-.button_write_profil:hover {
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-}
-
 
 .option_profil_user {
     margin-top: 50px;
 }
 
-.option_profil_user_connect a:hover {
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-}
+
 
 .option_profil_user a {
     text-decoration: none;
@@ -686,20 +736,13 @@ OPTION PROFIL
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
     color: aliceblue;
-    padding: 9px 15px;
+    padding: 12px 25px;
     margin: 2px;
 
 }
 
 
-.option_profil_user a:hover {
-    background-color: rgb(30, 30, 30);
-    color: aliceblue;
-    box-shadow: none;
-    border: 0.5px solid rgba(245, 222, 179, 0.589);
-    border-radius: 30px;
-    transition: 300ms;
-}
+
 
 .parent_message_profil_user {
     display: none;

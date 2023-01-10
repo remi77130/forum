@@ -22,6 +22,7 @@ if (!empty($_SESSION)) {
 }
 ?>
 
+<div id="content_Info" class="container_option">
 <div class="option_profil_user_connect">
 <!------------<div>
         <a href="paiement_paypal.php">
@@ -45,11 +46,15 @@ if (!empty($_SESSION)) {
         </a>
     </div>
     <div>
-        <a href="deconnexion.php">Se déconnecter</a>
+    <a href="profil_membre.php">Accueil</a>
     </div>
     <div>
-        <a href="profil_membre.php">Accueil</a>
+        <a style="color: #ff4646;" href="deconnexion.php">Se déconnecter</a>
+
     </div>
 </div>
+
+</div>
+
 </body>
 </html>

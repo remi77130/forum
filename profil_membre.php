@@ -148,7 +148,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                                 <h2><?php echo $userWithDesire->getLogin() ?>
                                     <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span> <br>
-                                    <span style="font-size: 12px;">Département : <?php echo $userWithDesire->getDepartment()->getName() ?></span>
+                                    <span style="font-size: 12px;"><?php echo $userWithDesire->getDepartment()->getName() ?></span>
 
 
 
@@ -255,14 +255,19 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                                 ?> <br>
 
-                                <!-- Ici le svg connect -->
+                                 <!-- Ici svg connect fake -->
+                                 <span><img style="width: 12px; margin-top:5px;" class="connect_svg_profil" src="icones/connect_svg_green.svg">
+                                    </span>
+
+
+                                <!-- Ici le svg connect reel
                                 <?php
                                 if ($user->isOnline()) {
                                 ?>
                                     <span><img src="icones/connect_svg_green.svg" alt="" class="svg_conect"></span>
                                 <?php
                                 }
-                                ?>
+                                ?>-->
 
                             </div>
 

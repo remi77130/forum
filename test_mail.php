@@ -1,6 +1,6 @@
 <?php
 
-$destinataire = "sandra.piccirillo@hotmail.fr"; // DEST DU MAIL
+$destinataire = "projetpro77@gmail.com"; // DEST DU MAIL
 $sujet = "Biensur";
 $message = "Oui j'imprime ta feuille :)";
 

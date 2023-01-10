@@ -40,6 +40,7 @@ header
     height: 20vh;
     width: 100%;
     background-size: cover;
+    margin-bottom: 30px;
     
 }
 
@@ -54,7 +55,7 @@ header
 {
 
     position: absolute;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     background-color: black;
     align-items: center;
@@ -82,7 +83,7 @@ header
 
     display: flex;
     text-decoration: none;
-    align-items: start;
+    align-items: baseline;
 
 
 }
@@ -276,32 +277,31 @@ font-weight: 600;
 .svg_conect
 {
         height: 12px;
-        position: relative;
-        top: 5px;
+        margin-top: 5px;
     
 }
 .container_profil_membre[data-sexe=Homme]
 {
-    border: 0.5px solid rgb(40 127 165);
+    border: 0.5px solid #a4f9ff;
     height: 260px;
     margin: 10px;
 }
 .container_profil_membre[data-sexe=Femme]
 {
-    border: 0.5px solid rgb(210, 54, 210);
+    border: 0.5px solid #ff7dd2;
     height:260px
     
 }
 
 .container_profil_membre[data-sexe=Homme]:hover
 {
-    border: 0.5px solid rgb(62, 197, 255);
+    border: 0.5px solid #4df3ff;
     transition: 500ms;
 }
 
 .container_profil_membre[data-sexe=Femme]:hover
 {
-    border: 0.5px solid rgb(251, 29, 255);
+    border: 0.5px solid #ff22b1;
     box-shadow: 3px 2px 3px rgba(220, 110, 220, 0);
     transition: 500ms;
 }
@@ -383,6 +383,7 @@ font-weight: 600;
 }
 .container_card_profil_choix *{
     color: aliceblue;
+    width: 150px;
 
 
 }
@@ -395,7 +396,7 @@ font-weight: 600;
     display: flex;
     align-items: center;
     width: 100%;
-    height: 280px;
+    height: 220px;
 
     /* défilement inertiel pour safari mobile Ios  */
     -webkit-overflow-scrolling: touch;
@@ -412,6 +413,11 @@ font-weight: 600;
     
 }
 
+.container_card_profil_choix h2
+{
+    padding-left: 10px;
+}
+
 .container_card_profil_choix li{
 
     display: inline-block;
@@ -424,7 +430,7 @@ font-weight: 600;
 
 .container_card_profil_choix .profil_desire{
     text-align: left;
-    margin-left: 8px;
+    padding-left: 10px;
     font-size: smaller;
     color: #ea00ff;
 
