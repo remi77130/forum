@@ -94,16 +94,23 @@ if (!empty($_POST['pseudo'])
  if($registrationPass == true){
     try {
         
+        // Comfirmation de compte avec chiffres aléatoire table = confirmkey & confirme *****
+        // LONGEURE DE LA CLEF + ON INITIALISE LA VARIABLE
+        $longueurkey = 5;
+        $key = "";
+        for($i = 1; $i < $longueurkey; $i++){
+            $key .= mt_rand(0,9);
+
+        }
         // AVEC VILLE ET DPT
-        $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, avatar, departement_nom, ville_id)
-                                    VALUES(?,?,?,?,?,?,?,?)");
-        //Sans ville et dpt
-        /*$insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, mdp, age, sexe, avatar)
-        VALUES(?,?,?,?,?,?)");*/
+        $insertmbr = $bdd->prepare("INSERT INTO membres (pseudo, mail, confirmkey, mdp, age, sexe, avatar, 
+        departement_nom, ville_id)
+                                    VALUES(?,?,?,?,?,?,?,?,?)");
                                     
         $insertmbr->execute(array(
             $pseudo,
             $mail,
+            $key, // clef
             $password,
             $age,
             $sexe,
@@ -120,10 +127,12 @@ if (!empty($_POST['pseudo'])
 
     }
 
+
+    // Envoie d'un mail à l'inscription
     
     $destinataire = "$mail"; // DEST DU MAIL
     $sujet = "Confirmation de compte";
-    $message = "Bienvenue sur le Chanderland $pseudo  ";
+    $message = "Bienvenue sur Chanderland $pseudo ";
 
     $headers = "From:hguv5320@hguv5320.odns.fr";
     mail($destinataire, $sujet, $message, $headers);
@@ -139,7 +148,7 @@ if (!empty($_POST['pseudo'])
     $_SESSION['id'] = $userinfo['id'];
     $_SESSION['pseudo'] = $userinfo['pseudo'];
     $_SESSION['mail'] = $userinfo['mail'];
-    header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
+    header("Location: confirmation.php?pseudo='.urlencode($pseudo).'&key.$key.'"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
     
  }
 

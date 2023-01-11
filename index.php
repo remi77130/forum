@@ -87,6 +87,7 @@ require 'signupAction.php';
 
 <div class="login-page">
 <div class="form">
+
     
 
 <form class="register-form"method="POST" action="">
