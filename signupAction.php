@@ -129,10 +129,11 @@ if (!empty($_POST['pseudo'])
 
 
     // Envoie d'un mail à l'inscription
-    
+    $confirmation_link = "http://www.chanderland.com/confirmaccount.php?key=".$key;
     $destinataire = "$mail"; // DEST DU MAIL
     $sujet = "Confirmation de compte";
-    $message = "Bienvenue sur Chanderland $pseudo ";
+    $message = "Bienvenue sur Chanderland $pseudo <br /><br />";
+    $message = 'Veuillez cliquer sur ce lien pour confirmer votre compte : <a href="'.urlencode($confirmation_link).'">'.$confirmation_link.'</a>';
 
     $headers = "From:hguv5320@hguv5320.odns.fr";
     mail($destinataire, $sujet, $message, $headers);
@@ -145,10 +146,7 @@ if (!empty($_POST['pseudo'])
     $userexist = $requser->rowCount();
 
     $userinfo = $requser->fetch();
-    $_SESSION['id'] = $userinfo['id'];
-    $_SESSION['pseudo'] = $userinfo['pseudo'];
-    $_SESSION['mail'] = $userinfo['mail'];
-    header("Location: confirmation.php?pseudo='.urlencode($pseudo).'&key.$key.'"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
+    $erreur = $erreur . "Votre compte est créé. Vous allez recevoir un mail pour confirmer votre compte.<br>";
     
  }
 
