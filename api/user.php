@@ -21,7 +21,7 @@ function getDesire()
 {
     $response = array();
     if (isset($_GET["id"]) && !empty($_GET["id"])) {
-        $user = UserRepository::findUser($_GET["id"]);
+        $user = UserRepository::findById($_GET["id"]);
         if ($user) {
             $response["desire"] = DesireRepository::getForUser($user->getId());
         }
@@ -42,7 +42,7 @@ function updateDesire()
 {
     $response = array();
     if (isset($_GET["user_id"]) && !empty($_GET["user_id"]) && $_SESSION['id'] == $_GET["user_id"] && isset($_GET["desire_id"]) && !empty($_GET["desire_id"])) {
-        $user = UserRepository::findUser($_GET["user_id"]);
+        $user = UserRepository::findById($_GET["user_id"]);
         if ($user) {
             UserRepository::updateDesire($_GET["user_id"], $_GET["desire_id"]);
         }

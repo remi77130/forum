@@ -1,4 +1,7 @@
 <?php
+header ("Refresh: 5;URL=index.php");
+require './require/database.php';
+require_once("./model/repository/user.repository.php");
 //récupérer la clé dans le GET
 $key = isset($_GET["key"])?$_GET["key"]:null;
 if(!$key){
@@ -6,8 +9,12 @@ if(!$key){
 }
 
 //Vérifier en base de données s'il existe un compte non validé avec cette clé
-//...
-
-//S'il existe, activer le compte et le rediriger vers son compte
-
-//S'il n'existe pas, afficher une erreur avec un die comme j'ai fait au dessus)
+$user = UserRepository::findByKey($key);
+if($user){
+    //Si l'utilisateur n'est pas confirmé
+    if(!$user->isConfirmedAccount()){
+        //On confirme son compte
+        UserRepository::confirmAccount($user);
+        echo "<h4>Votre compte est confirmé, vous allez être redirigé dans quelques secondes...</h4>";
+    }
+}

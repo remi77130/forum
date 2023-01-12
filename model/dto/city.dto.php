@@ -2,13 +2,19 @@
 
 class CityDto
 {
+    public $id;
     public $postal_code;
     public $name;
 
-    public function __construct($postal_code, $name)
+    public function __construct($id, $postal_code, $name)
     {
+        $this->id = $id;
         $this->postal_code = $postal_code;
         $this->name = $name;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     public function getPostalCode()

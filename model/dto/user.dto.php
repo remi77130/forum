@@ -6,19 +6,20 @@ class UserDto
 {
     public $id;
     public $login;
-    public $city;
+    public CityDto $city;
     public $mail;
     public $avatar;
     public $age;
     public $sexe;
-    public $department;
+    public DepartmentDto $department;
     public $description;
     public $desire;
     public $desire_datetime;
     public $last_connection;
     public $last_activity;
+    public $confirmed_account;
 
-    public function __construct($id, $login, $mail, $city, $department, $avatar, $age, $sexe, $description, $desire, $desire_datetime, $last_connection, $last_activity)
+    public function __construct($id, $login, $mail, CityDto $city, DepartmentDto $department, $avatar, $age, $sexe, $description, $desire, $desire_datetime, $last_connection, $last_activity, $confirmed_account=0)
     {
         $this->id = $id;
         $this->login = $login;
@@ -34,6 +35,7 @@ class UserDto
         $this->desire_datetime = $desire_datetime ? new DateTime($desire_datetime, new DateTimeZone("UTC")) : null;
         $this->last_connection = $last_connection ? new DateTime($last_connection, new DateTimeZone("UTC")) : null;
         $this->last_activity = $last_activity ? new DateTime($last_activity, new DateTimeZone("UTC")) : null;
+        $this->confirmed_account = (int) $confirmed_account;
     }
 
     public function getId()
@@ -46,12 +48,12 @@ class UserDto
         return $this->login;
     }
 
-    public function getCity()
+    public function getCity() : CityDto
     {
         return $this->city;
     }
 
-    public function getDepartment()
+    public function getDepartment() : DepartmentDto
     {
         return $this->department;
     }
@@ -123,5 +125,9 @@ class UserDto
         //L'utilisateur est en ligne s'il sa last_activity est à moins de 5 minutes
         $now = new DateTime("now", new DateTimeZone("UTC"));
         return ($now->format('U') - $this->last_activity->format('U') <= 300);
+    }
+
+    public function isConfirmedAccount(){
+        return ($this->confirmed_account == 1);
     }
 }

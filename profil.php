@@ -16,7 +16,7 @@ if (empty($_SESSION)) {
 
 
 if (isset($_GET['id']) and $_GET['id'] > 0) {
-    $user = UserRepository::findUser($_GET['id'], true);
+    $user = UserRepository::findById($_GET['id'], true);
     $getid = intval($_GET['id']);
     $requser = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
     $requser->execute(array($getid));
