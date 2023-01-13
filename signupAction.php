@@ -22,7 +22,6 @@ require_once 'model/repository/city.repository.php';
 
     // SI LUTILISATEUR A CLIQUER SUR LE BOUTON DENREGISTREMENT
     if (!empty($_POST['validate'])) {
-
         $pseudo = isset($_POST['pseudo']) ? $_POST['pseudo'] : null;
         $mail = isset($_POST['mail']) ? $_POST['mail'] : null;
         $password = isset($_POST['password']) ? $_POST['password'] : null;
@@ -116,18 +115,15 @@ require_once 'model/repository/city.repository.php';
 
 
             // Envoie d'un mail à l'inscription
-            $confirmation_link = "http://www.chanderland.com/confirmaccount.php?key=" . $key;
+            $confirmation_link = BASE_URL."confirmaccount.php?key=" . $key;
             $destinataire = "$mail"; // DEST DU MAIL
             $sujet = "Confirmation de compte";
             $message = "Bienvenue sur Chanderland $pseudo <br /><br />";
-            $message = 'Veuillez cliquer sur ce lien pour confirmer votre compte : <a href="' . urlencode($confirmation_link) . '">' . $confirmation_link . '</a>';
+            $message = 'Veuillez cliquer sur ce lien pour confirmer votre compte : ' . $confirmation_link;
 
             $headers = "From:hguv5320@hguv5320.odns.fr";
             mail($destinataire, $sujet, $message, $headers);
-
-
-            echo "Mail envoyé à $destinataire avec succes ! ";
-            echo $message;
+            
             $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
             $requser->execute(array($pseudo));
             $userexist = $requser->rowCount();
