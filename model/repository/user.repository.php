@@ -38,11 +38,11 @@ class UserRepository
                 FROM membres as user
                 LEFT JOIN departement ON user.departement_nom = departement.departement_code
                 LEFT JOIN villes_france as ville ON user.ville_id = ville.ville_id
-                LEFT JOIN desire ON desire.id = user.desire_id
-                ORDER BY user.last_connection DESC';
+                LEFT JOIN desire ON desire.id = user.desire_id';
         if ($conditions) {
             $sql .= " WHERE " . implode(" AND ", $conditions);
         }
+        $sql .= ' ORDER BY user.last_connection DESC';
         $req = $bdd->prepare($sql);
         $req->execute();
         $user = $req->fetchAll(PDO::FETCH_ASSOC);
