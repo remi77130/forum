@@ -148,7 +148,7 @@ require 'signupAction.php';
 
 if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR 
 {
-    echo '<font color="red">' . $erreur . "</font>";
+    echo '<font color="wheat">' . $erreur . "</font>";
 
 }
 ?>

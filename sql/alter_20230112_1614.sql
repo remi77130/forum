@@ -1,2 +1,2 @@
-UPDATE membres SET confirme=0;
-ALTER TABLE `membres` CHANGE `confirme` `confirme` INT(1) NOT NULL DEFAULT '0';
+ALTER TABLE `membres` ADD `confirmkey` VARCHAR(255) NOT NULL AFTER `mail`;
+ALTER TABLE `membres` ADD `confirme` INT(1) NOT NULL AFTER `Online` DEFAULT '0';

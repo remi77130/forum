@@ -6,11 +6,13 @@
             <div>
                 <p>Je recherche des </p>
                 <label>Homme
-                    <input type="checkbox" name="homme" value="1" id="checkMen" <?php echo (!empty($homme) && $homme == 1) ? "checked" : ""; ?> /><br>
+                    <input type="checkbox" name="homme" value="1" id="checkMen" <?php echo (!empty($homme) and $homme == 1) ? "checked" : ""; ?> /><br>
                 </label>
                 <br />
                 <label>Femme
-                    <input type="checkbox" name="femme" value="1" id="checkWomen" <?php echo (!empty($femme) && $femme == 1) ? "checked" : ""; ?> /> <br>
+
+           
+                    <input type="checkbox" name="femme" value="1" id="checkWomen" <?php echo (!empty($femme) and $femme == 1) ? "checked" : ""; ?> /> <br>
                 </label>
             </div>
 
@@ -23,8 +25,8 @@
             </div>
 
             <div>
-                <option value="<?php echo (!empty($departement_code) && $departement_code != -1) ? $dpcode : -1; ?>">
-                    <?php echo (!empty($departement_code) && $departement_code != -1) ? $dpnom : 'Choisir un département'; ?>
+                <option value="<?php echo (!empty($departement_code) and $departement_code != -1) ? $dpcode : -1; ?>">
+                    <?php echo (!empty($departement_code) and $departement_code != -1) ? $dpnom : 'Choisir un département'; ?>
                 </option>
                 <option value="01">Ain</option>
                 <option value="02">Aisne</option>
@@ -147,7 +149,7 @@
                 <label>Age maximum</label>
                 <br />
                 <input class="age_search" type="number" name="age_max" id="age_max" 
-                value="<?php echo (!empty($ageMax) && $ageMax != 99) ? $ageMax : ""; ?>" />
+                value="<?php echo (!empty($ageMax) and $ageMax != 99) ? $ageMax : ""; ?>" />
             </div>
 
             <div>
@@ -158,7 +160,7 @@
 
                 <label>Taille maximum</label>
                 <input type="number" name="taille_max" id="taille_max" 
-                value="<?php echo (!empty($taille_max) && $taille_max != 150) ? $poids_max : ""; ?>" />
+                value="<?php echo (!empty($taille_max) and $taille_max != 150) ? $poids_max : ""; ?>" />
             </div>
 
             <div>

@@ -1,1 +1,0 @@
-ALTER TABLE `commentaires` ADD `reported` INT NOT NULL DEFAULT '0' AFTER `commentaire`;

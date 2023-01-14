@@ -19,13 +19,53 @@ html, body{
 
 }
 
+.circle-btn
+{
+  outline: none;
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+
+
+}
+
+.circle-btn:hover
+{
+  transform: scale(1.2);
+}
+
+*//  Action au clique avec active
+.circle-btn:active
+{
+  transform: scale(1.5);
+}
+
+.circle-btn span
+{
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+ // SI BUG  will-change: transform;
+}
+
+
+
+
+.icone_title
+{
+  display: none;
+}
+
 .product-card {
-  background-color: #fdfefe;
   max-width: 550px;
   min-height: 400px;
   margin: 0 auto;
   margin-top: 50px;
-  margin-bottom: 150px;
   box-shadow: 8px 12px 30px $shadow-color;
   color: #919495;
   font-weight: normal;
@@ -38,7 +78,7 @@ html, body{
   width: 53%;
   float: left;
   height: 100%;
-  padding: 30px;
+  padding: 20px;
   h1 {
     color: #333;
     font-family: $cursive-font;
@@ -64,6 +104,7 @@ html, body{
   top: -40px;
   img {
     max-width: 400px;
+   
   }
 }
 
@@ -83,25 +124,84 @@ html, body{
   .product-details {
     width: 60%;
     z-index: 1;
+    position: absolute;
   }
   .product-image {
     width: 100%;
-    left: 40%;
-    top: -50px;
+    left: 50%;
+    top: 0px;
   }
 }
 
 @media (max-width: 440px) {
     .product-details {
       width: 65%;
+      position: absolute;
+      
   }
 }
 
 @media (max-width: 365px) {
-    .product-details {
-      width: 80%;
-      position: relative;
-      color: #333;
-      background-color: rgba(255, 255, 255, 0.7);
-  }
+  .product-details {
+    width: 80%;
+    position: relative;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.product-image {
+  width: 100%;
+  left: 40%;
+  top: 0px;
+}
+
+
+
+.icone_title
+{
+  display: block;
+}
+
+
+@media (max-width: 300px) {
+  .product-details {
+    width: 80%;
+    position: relative;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.product-image {
+  width: 100%;
+  left: 20%;
+  top: 0px;
+}
+
+
+.product-card {
+  margin-bottom: -100px;
+}
+}
+
+
+}
+
+@media (max-width: 250px) {
+  .product-details {
+    width: 80%;
+    position: relative;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.product-image {
+  width: 100%;
+  left: 10%;
+  top: 0px;
+}
+
+
+.product-card {
+  margin-bottom: -100px;
+}
 }

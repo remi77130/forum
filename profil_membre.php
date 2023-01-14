@@ -17,6 +17,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Les profils chanderland</title>
 </head>
 <style>
@@ -38,11 +39,18 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
     <?php include 'includes/requete_search_form.php' ?>
 
+    <header> 
+    
 
 
-    <!-- a placer pour aller sur profil <li class="items"><a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon Profil</a> 
 
--->
+
+
+
+    <!-- a placer pour aller sur profil--> 
+
+
+
 
     <nav class="navbar">
 
@@ -50,14 +58,19 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
         <div class="nav-links">
             <ul>
 
-                <li> <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">
-                        <span style="font-size:1.2em;" class="filter_nav"> Mon profil</span>
-                </li></a>
+            <li class="filter_nav">
+        <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">
+        <span style="font-size:1.2em;" class="filter_nav">Mon profil</span></a>
+
+
+                <!--<li> <a title="profil_membre" href="product.php" >
+                        <span style="font-size:1.2em;" class="filter_nav">Etre certifié</span>
+                </li></a>-->
 
 
                 <li>
                     <a id="myBtn" href="#">
-                        <!--<img class="icon_search" src="icones/chanderland_search.svg" alt="chanderland">-->
+                     <!--   <img class="icon_search" src="icones/chanderland_search.svg" alt="chanderland">-->
                         <span class="filter_nav">Filtre</span>
                 </li></a>
 
@@ -75,26 +88,24 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
 
-        <div id="myModal" class="modal">
+<div id="myModal" class="modal">
             <div class="close"><span class="close">&times;</span></div> <br>
 
             <?php include 'includes/form_search.php' ?>
-        </div> <!-- Fin modal-->
+        </div> 
 
 
 
-    </nav>
+    </nav> 
 
-
-    <header>
-
-
-    </header>
 
     <div class="to_go_header">
         <img src="icones/to_go.svg" class="icone_to_go">
     </div>
 
+
+
+    </header>
 
 
 
@@ -293,7 +304,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
     </section>
 
-    <!-- LOADER -->
+    <!-- LOADER 
     <div class="loader-wrapper">
         <div class="loader">
 
@@ -312,7 +323,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
         </div>
 
 
-    </div>
+    </div>-->
 
 
 
@@ -332,6 +343,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 </script>
 <script src="js/modal.js"> </script>
 <script src="js/to_go.js"> </script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
 </html>
