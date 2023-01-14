@@ -19,7 +19,7 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
             $departmnt = $reqdpt->fetch();
             $dpcode = $departmnt['departement_code'];
             $dpnom = $departmnt['departement_nom'];
-            $conditions[] = "departement_nom='$dpcode'";
+            $conditions[] = "departement.departement_nom='$dpcode'";
         }
     }
 
