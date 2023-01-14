@@ -60,4 +60,7 @@ define("DB_HOST", $db_host);
 define("DB_USER", $db_user);
 define("DB_PASS", $db_pass);
 define("DB_BASE", $db_base);
+
+//Mail params
+define("MAIL_FROM", "hguv5320@hguv5320.odns.fr");
 ?>

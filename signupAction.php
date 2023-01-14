@@ -4,6 +4,7 @@ require 'require/database.php';
 require_once 'model/repository/user.repository.php';
 require_once 'model/repository/department.repository.php';
 require_once 'model/repository/city.repository.php';
+require_once 'utils/mail.util.php';
 ?>
 
 <!DOCTYPE html>
@@ -119,16 +120,9 @@ require_once 'model/repository/city.repository.php';
             $destinataire = "$mail"; // DEST DU MAIL
             $sujet = "Confirmation de compte";
             $message = "Bienvenue sur Chanderland $pseudo <br /><br />";
-            $message = 'Veuillez cliquer sur ce lien pour confirmer votre compte : ' . $confirmation_link;
+            $message = 'Veuillez cliquer sur ce lien pour confirmer votre compte : <a href="' . $confirmation_link.'">'.$confirmation_link.'</a>';
+            MailUtil::send(MAIL_FROM, $destinataire, $sujet, $message);
 
-            $headers = "From:hguv5320@hguv5320.odns.fr";
-            mail($destinataire, $sujet, $message, $headers);
-            
-            $requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
-            $requser->execute(array($pseudo));
-            $userexist = $requser->rowCount();
-
-            $userinfo = $requser->fetch();
             $erreur = $erreur . "Votre compte est créé. Vous allez recevoir un mail pour confirmer votre compte.<br>";
         }
     }
