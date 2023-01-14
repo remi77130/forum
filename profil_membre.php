@@ -198,80 +198,80 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <section class="hero_index">
 
         <?php
-        if (count($users) == 0) {
+        if (!$users || count($users) == 0) {
             echo 'Aucun resultat trouvé';
-        }
+        } else {
         ?>
 
 
-        <?php foreach ($users as $user) : ?>
-            <div class="container_profil_membre" data-sexe="<?= $user->getSexe() ?>" data-age="<?= $user->getAge() ?>" data-dpt="<?= $user->getDepartment()->getName() ?>">
-                <a href="profil.php?id=<?= $user->getId() ?>">
+            <?php foreach ($users as $user) : ?>
+                <div class="container_profil_membre" data-sexe="<?= $user->getSexe() ?>" data-age="<?= $user->getAge() ?>" data-dpt="<?= $user->getDepartment()->getName() ?>">
+                    <a href="profil.php?id=<?= $user->getId() ?>">
 
 
-                    <div class="container_profil_info">
+                        <div class="container_profil_info">
 
 
-                        <div class="container_profil_avatar">
-                            <?php
-                            if (str_contains($user->getAvatar(), 'https')) { ?>
-                                <img src="<?php echo $user->getAvatar(); ?>" alt="photo_profil"><br>
-                            <?php
-                            } else {
-                                if (!file_exists("membres/avatars/" . $user->getAvatar())) {
-                                    $user->setAvatar("default.jpg");
-                                }
-                            ?>
-                                <img src="membres/avatars/<?php echo $user->getAvatar(); ?>" alt="photo_profil"><br>
-                            <?php
-                            }
-                            ?>
-                        </div>
-
-                        <div class="container_profil_info_pseudo">
-                            <h2><?php echo $user->getLogin(); ?>
-                                <span class="age_profil_membre"><?php echo $user->getAge(); ?></span> <br>
-
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-                    <!-- info profil -->
-
-                    <div class="info_profil_pseudo&nom_dpt">
-
-                        <div class="dpt_age">
-
-                            <div class="container_profil_info_dtp">
-
-
+                            <div class="container_profil_avatar">
                                 <?php
-                                if ($user->getDepartment()) {
-                                    echo $user->getDepartment()->getName() . ' (' . $user->getDepartment()->getCode() . ') ';
-                                } ?>
-
-                                <br>
-
+                                if (str_contains($user->getAvatar(), 'https')) { ?>
+                                    <img src="<?php echo $user->getAvatar(); ?>" alt="photo_profil"><br>
                                 <?php
-
-
-                                if ($user->getCity()) {
-                                    echo $user->getCity()->getName();
-                                    echo '</span>';
                                 } else {
-                                    echo '</span>';
+                                    if (!file_exists("membres/avatars/" . $user->getAvatar())) {
+                                        $user->setAvatar("default.jpg");
+                                    }
+                                ?>
+                                    <img src="membres/avatars/<?php echo $user->getAvatar(); ?>" alt="photo_profil"><br>
+                                <?php
                                 }
+                                ?>
+                            </div>
 
-                                ?> <br>
+                            <div class="container_profil_info_pseudo">
+                                <h2><?php echo $user->getLogin(); ?>
+                                    <span class="age_profil_membre"><?php echo $user->getAge(); ?></span> <br>
 
-                                 <!-- Ici svg connect fake -->
-                                 <span><img style="width: 12px; margin-top:5px;" class="connect_svg_profil" src="icones/connect_svg_green.svg">
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <!-- info profil -->
+
+                        <div class="info_profil_pseudo&nom_dpt">
+
+                            <div class="dpt_age">
+
+                                <div class="container_profil_info_dtp">
+
+
+                                    <?php
+                                    if ($user->getDepartment()) {
+                                        echo $user->getDepartment()->getName() . ' (' . $user->getDepartment()->getCode() . ') ';
+                                    } ?>
+
+                                    <br>
+
+                                    <?php
+
+
+                                    if ($user->getCity()) {
+                                        echo $user->getCity()->getName();
+                                        echo '</span>';
+                                    } else {
+                                        echo '</span>';
+                                    }
+
+                                    ?> <br>
+
+                                    <!-- Ici svg connect fake -->
+                                    <span><img style="width: 12px; margin-top:5px;" class="connect_svg_profil" src="icones/connect_svg_green.svg">
                                     </span>
 
 
-                                <!-- Ici le svg connect reel
+                                    <!-- Ici le svg connect reel
                                 <?php
                                 if ($user->isOnline()) {
                                 ?>
@@ -280,22 +280,23 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                                 }
                                 ?>-->
 
+                                </div>
+
+
                             </div>
 
 
+                            <div class="container_profil_info_descr">
+                                <?php echo $user->getDescription() ?>
+                            </div>
+
                         </div>
 
 
-                        <div class="container_profil_info_descr">
-                            <?php echo $user->getDescription() ?>
-                        </div>
-
-                    </div>
-
-
-                </a>
-            </div>
+                    </a>
+                </div>
         <?php endforeach;
+        }
         ?>
 
 

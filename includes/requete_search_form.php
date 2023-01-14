@@ -62,7 +62,7 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
         if (!empty($_POST['age_max'])) {
             $ageMax = intval(htmlspecialchars($_POST['age_max']));
         }
-        $conditions[] = "age>='$ageMin' && age<='$ageMax'";
+        $conditions[] = "age>='$ageMin' AND age<='$ageMax'";
     }
 
     // RECHERCHE SUR POIDS
@@ -76,7 +76,7 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
         if (!empty($_POST['poids_max'])) {
             $poids_max = intval(htmlspecialchars($_POST['poids_max']));
         }
-        $conditions[] = "poids>='$poids_min' && poids<='$poids_max'";
+        $conditions[] = "poids>='$poids_min' AND poids<='$poids_max'";
     }
 
 
@@ -91,7 +91,7 @@ if (!empty($_POST['search']) && empty($_POST['reset'])) {
         if (!empty($_POST['taille_max'])) {
             $taille_max = intval(htmlspecialchars($_POST['taille_max']));
         }
-        $conditions[] = "taille>='$taille_min' && taille<='$taille_max'";
+        $conditions[] = "taille>='$taille_min' AND taille<='$taille_max'";
     }
 
 
