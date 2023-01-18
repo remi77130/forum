@@ -30,3 +30,15 @@ to_go_header.addEventListener('click', () =>{
         top: 0, left: 0, behavior: 'smooth'
     })
 })
+
+
+// Modal welcome
+
+if (newUser) {
+    var modal = document.querySelector(".modal");
+    modal.style.display = "block";
+  }
+  var closeButton = document.querySelector("#close-modal");
+closeButton.addEventListener("click", function() {
+  modal.style.display = "none";
+});

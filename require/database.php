@@ -1,4 +1,4 @@
-<?php
+<?php // NE PAS ENVOYER EN PRODUCTION !!!!!
 /*
  * On vient récupérer le fichier où se trouvent les configurations pour se connecter à la DB
  * 'require_once' fait le même rôle que include, mais est plus adapté pour ce cas-là 

@@ -66,13 +66,20 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     <body>
 
 
-        <header>
+    <header> 
+
             <nav>
+
+            
                 <a class="slide-line" href="profil_membre.php">Accueil</a>
                 <a class="slide-line" href="reception.php">Messages</a>
                 <a style="color: #df1e1e;" class="slide-line" href="deconnexion.php">Déconnexion</a>
             </nav>
-        </header>
+      
+
+            </header>
+        
+
 
 
         <section class="section_profil_membre">
@@ -142,7 +149,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
 
 
-<div id="content" class="info_profil" style="display: none;"> <!-- Info profil rendre visible seulement si rempli -->
+<div id="content" class="info_profil" style="display: block;"> <!-- Info profil rendre visible seulement si rempli -->
 <div class="container_info">
 
 

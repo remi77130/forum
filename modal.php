@@ -8,20 +8,13 @@
     <title>Modal</title>
 </head>
 <body>
-
-<button id="myBtn">Ouvrir la fenetre</button>
-
-<div id="myModal" class="modal">
-
-<div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Voici du texte</p>
-
+<div class="modal">
+  <h2>Bienvenue sur notre site !</h2>
+  <p>Nous sommes heureux de vous voir ici !</p>
+  <button id="close-modal">Fermer</button>
 </div>
 
-</div>
-    
-
-<script src="js/modal.js"> </script>
 </body>
 </html>
+
+<script src="js/modal.js"> </script>

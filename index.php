@@ -84,6 +84,14 @@ require 'signupAction.php';
 
 </div>
 
+<div class="nbr_user_connect_index">
+<img class="svg_nmb" src="icones/connect_svg_green.svg">
+<div class="nbr" id="number">
+</div>
+<p>membres connéctés actuellement</p>
+
+</div>
+
 
 <div class="login-page">
 <div class="form">
@@ -180,7 +188,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR 
 {
-    echo '<font color="red">' . $erreur . "</font>";
+    echo '<span>' . $erreur . "</span>";
 
 }
 ?>
@@ -192,7 +200,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
            <h3>30 minutes pour trouver un partenaire</h3>
            <p>Toutes les 30 minutes, vous pouvez proposer <strong>gratuitement</strong> ce que vous désirez <br> 
-            faire comme allez courir, <strong>faire une rencontre</strong> ou encore allez boire un verre avec <strong>clementine marceau </strong> <br>
+            faire comme allez courir, <strong>faire une rencontre</strong> ou encore allez boire un verre.<br>
             (Bon ça, ce n'est peut-être pas possible puisqu'elle n'est pas sur le site).<br>
             En bref, quand vous proposez une activité, votre profil apparaît en tête du site afin d’avoir plus de visibilité <br>
             par tous les membres.</p>
@@ -362,7 +370,7 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 
 
 <div class="cont_not">
-        <h3 class="text-3xl font-bold">Chat discret</h3>
+        <h3 class="text-3xl font-bold">Aucun profil fake</h3>
                 <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
 
         <p>Profitez d'une <strong>conversation discrète</strong> pour <strong>des rencontres</strong> sans stress.<br><br>
@@ -443,9 +451,16 @@ inputAge.onkeyup = function(e) {
 </script>
 
 <script src="js/index.js"></script>
+<script>
+    // afficher nmbr user connect 
+function displayRandomNumber() {
+    var randomNumber = Math.floor(Math.random() * 687) + 346;
+    document.getElementById("number").innerHTML = randomNumber;
+  }
+  displayRandomNumber();
+</script>
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfCwOQjAAAAAMtmfY5Bo9IOXG7ftYbd5_5C-qjb"></script>
-
 <!-- Recaptcha 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeC8eMjAAAAABdU5QaRe3xMJJBaPPVzqIRV-B4o"></script>
 <script src="js/index.js"></script>-->

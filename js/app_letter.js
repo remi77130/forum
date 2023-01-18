@@ -14,8 +14,8 @@ new Typewriter(txtAnim, {
 //color: #44e3d0;
 .changeDelay(100)
 
-.typeString('<span style="color: #00f0f0;"> Venez</span>')
-.pauseFor(500)
+.typeString('<span style="color: rgb(120 246 255);"> Venez</span>')
+.pauseFor(200)
 
 .typeString('<span style="color: #00ff00;"> discutez </span>')
 .pauseFor(500)
@@ -31,16 +31,26 @@ new Typewriter(txtAnim, {
 .deleteChars('8')
 
 .typeString('<span style="color: #d27eff;">échanger</span>')
-.pauseFor(2000)
 
-.deleteChars('8')
-
-.typeString('<span style="color: #f00f0f;"> rencontrer</span>')
+.typeString('<span style="color: #f00f0f;"> des photos </span>')
 .pauseFor(2800)
 
-.deleteChars('10')
+.deleteChars('20')
 
-.typeString('<span style="color: #ff46e0;"> gratuitement !</span>')
+.typeString('<span style="color: #f00f0f;"> rencontrer </span>')
+
+.typeString('<span style="color: #59fd3d;"> de nouvelles personnes </span>')
+.pauseFor(2500)
+
+.deleteChars('35')
+
+
+.typeString('<span style="color: #ff22b1;"> chatter </span>')
+
+.start()
+
+
+.typeString('<span style="color: #ff22b1;"> gratuitement !</span>')
 
 .start()
 

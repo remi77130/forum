@@ -165,10 +165,10 @@ const toggleButton = document.getElementById('toggleButton');
 const content = document.getElementById('content');
 
 toggleButton.addEventListener('click', function() {
-  if (content.style.display === 'none') {
-    content.style.display = 'block';
+  if (content.style.display === 'block') {
+    content.style.display = 'none';
     
   } else {
-    content.style.display = 'none';
+    content.style.display = 'block';
   }
 });

@@ -13,7 +13,7 @@ if(isset($_SESSION['id'])) //autorisation affichage page si compte existe
     $pseudo = "";
     $description = "";
     $astrologie = "";
-    //$taille = "";
+    $taille = "";
     $choix = "";
     $sexualite = "" ;
     $nationality = "";

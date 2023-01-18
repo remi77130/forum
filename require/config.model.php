@@ -1,4 +1,5 @@
-<?php
+
+<?php  // NE PAS ENVOYER EN PRODUCTION !!!!!
 $host = $_SERVER['HTTP_HOST'];
 
 switch($host) {

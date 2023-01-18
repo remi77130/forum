@@ -77,7 +77,7 @@
 <?php
 if(isset($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET
 {
-  echo '<font color="red">'.$erreur."</font>";
+  echo '<span">'.$erreur."</span>";
   
 } 
 ?>

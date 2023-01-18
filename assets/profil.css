@@ -29,6 +29,7 @@ header
 }
 
 
+
 .hidden{
     display:none;
 }
@@ -199,6 +200,7 @@ header
       width: 80%;
       margin-left: 5px;
     }
+
   
 
 
@@ -770,9 +772,24 @@ OPTION PROFIL
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 300px) {
+
+.slide-line
+{
+       padding: 0px;
+}
+
+nav 
+{
+  margin:10px 
+}
 
 
+.container_info
+{
+  width: 100%;
+  margin-left: 10px;
+}
 
 }
 

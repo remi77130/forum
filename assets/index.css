@@ -20,6 +20,32 @@ html, body{
 
 }
 
+.nbr_user_connect_index
+{
+  width: 200px;
+  margin: auto;
+
+
+}
+.svg_nmb
+{
+  width: 12px;
+  position: relative;
+  top: 21px;
+
+}
+
+.nbr
+{
+  padding-left: 20px;
+}
+
+
+.nbr_user_connect_index p
+{
+  padding: 0px;
+}
+
 p
 {
   color: #f0f8ff;

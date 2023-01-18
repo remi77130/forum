@@ -17,6 +17,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
     <title>Les profils chanderland</title>
 </head>
@@ -42,12 +43,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <header> 
     
 
-
-
-
-
-
-    <!-- a placer pour aller sur profil--> 
+    <!-- a placer pour aller sur profil -->
 
 
 
@@ -63,16 +59,15 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
         <span style="font-size:1.2em;" class="filter_nav">Mon profil</span></a>
 
 
-                <!--<li> <a title="profil_membre" href="product.php" >
+              <!--  <li> <a title="profil_membre" href="product.php" >
                         <span style="font-size:1.2em;" class="filter_nav">Etre certifié</span>
                 </li></a>-->
 
 
                 <li>
                     <a id="myBtn" href="#">
-                     <!--   <img class="icon_search" src="icones/chanderland_search.svg" alt="chanderland">-->
                         <span class="filter_nav">Filtre</span>
-                </li></a>
+                </li></a>zzzzz
 
 
                 <li><a title="profil_membre" href="deconnexion.php">
@@ -88,7 +83,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
 
-<div id="myModal" class="modal">
+        <div id="myModal" class="modal">
             <div class="close"><span class="close">&times;</span></div> <br>
 
             <?php include 'includes/form_search.php' ?>
@@ -102,7 +97,6 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <div class="to_go_header">
         <img src="icones/to_go.svg" class="icone_to_go">
     </div>
-
 
 
     </header>
@@ -345,6 +339,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 <script src="js/modal.js"> </script>
 <script src="js/to_go.js"> </script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 
 
 </html>
