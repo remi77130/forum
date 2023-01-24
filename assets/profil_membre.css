@@ -14,15 +14,43 @@ html{
 
 body{
     
-    background-color: #252528;
+    background-color: #252528 !important;
     color: aliceblue;
     text-decoration: none;
     list-style: none;
 
 }
+.title_profil_membre
+{
+color:black !important;
+
+}
+.navbar
+{
+background-color: #e4e4e4 !important;
+position: fixed !important;
+
+}
+
+
+
+.navbar span
+{
+    padding-right: 15px;
+    
+    
+}
+
+.close
+{
+    width: 100%;
+    text-align: right;
+    
+}
 .menu_computer
 {
     border: 5px solid hotpink;
+    
 }
 
 .menu_mobile
@@ -35,9 +63,57 @@ body{
 .menu_mobile{
     display: block;
 }
-    
+
+
+
+.to_go_header
+{
+    display: block;
+}
+
+
+    .navbar
+    {
+        padding: 0;
+        --bs-navbar-padding-y:0rem !important;
+        --bs-navbar-toggler-padding-y: 0.10rem !important;
+        --bs-navbar-toggler-padding-x: 0.25rem !important;
+    }
+
+  
+
+
+.mobile-menu .filter_nav
+{
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 10px;
+
 
 }
+
+    
+
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .header_profil_membre
 {
 display: flex;
@@ -55,7 +131,7 @@ box-shadow: 5px 5px 10px rgba(110, 110, 110, 0.256);
 header
 {
     list-style: none;
-    height: 20vh;
+    height: 10vh;
     width: 100%;
     background-size: cover;
     margin-bottom: 30px;
@@ -86,6 +162,7 @@ header
 .navbar a 
 {
     color: #ff7dd2;
+    font-weight: 700;
 }
 
 .logo_nav
@@ -95,178 +172,6 @@ header
     color: aliceblue;
 }
 
-
-.navbar .nav-links ul
-{
-
-    display: flex;
-    text-decoration: none;
-    align-items: baseline;
-
-
-}
-.navbar .nav-links ul a
-{
-   color: aliceblue;
-   text-decoration: none;
-   
-   
-
-}
-
-
-
-
-.navbar .nav-links ul li
-{
-
-margin: 0 20px;
-
-}
-
-
-.navbar .nav-links ul li.active a
-{
-
-color: rgb(32, 156, 209);
-font-weight: 600;
-
-}
-
-.navbar .menu_humb_nav
-{
-    display: none;
-    width: 50px;
-    position: absolute;
-    right:1px ;
-    top: 15px;
-
-}
-
-.to_go_header
-{
-    height: 50px;
-    width: 50px;
-    border: 50%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    right: 1px;
-    bottom: 10px;
-    cursor: pointer;
-
-}
-
-
-
-
-@media screen and (max-width: 900px) {
-
-
-    
-.to_go_header
-{
-    display: block;
-}
-
-
-    .navbar
-    {
-        padding: 0;
-    }
-
-    .navbar .menu_humb_nav
-    {
-        display: block;
-        
-    }
-    .nav-links{
-        top: 0;
-        left: 0;
-        position: absolute;
-        background-color: rgba(12, 12, 12, 0.603);
-        backdrop-filter: blur(7px);
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -100%;
-        transition:all 0.5s ease-in-out ;
-        
-    }
-
-  
-.mobile-menu .filter_nav
-{
-    color: aliceblue;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 10px;
-
-
-}
-
-
-
-    .nav-links.mobile-menu
-{
-    margin-left: 0;
-    font-weight: bold;
-    
-
-}
-
-
-.mobile-menu .icon_search
-{
-   width: 100px;
-}
-
-.nav-links.mobile-menu ul a
-{
-    color: black;
-
-}
-
-.mobile-menu span {
-    display: block;
-}
-
-    .nav-links ul 
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .navbar .nav-links ul li 
-    {
-        margin: 10px 0;
-        font-size: 1.2em;
-        font-weight: 600;
-        list-style: none;
-        border-bottom: 1px solid rgba(74, 74, 74, 0.826);
-    }
-
-    .logo_nav
-    {
-
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    }
-
-}
-
-
-
-
-/* Header */
 
 
 

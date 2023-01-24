@@ -88,12 +88,15 @@ require 'signupAction.php';
 <img class="svg_nmb" src="icones/connect_svg_green.svg">
 <div class="nbr" id="number">
 </div>
-<p>membres connéctés actuellement</p>
+<p>membres connectés actuellement</p>
 
 </div>
 
 
+
+
 <div class="login-page">
+
 <div class="form">
 
     
@@ -195,14 +198,21 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
         </div>
         </div>
-
         <div class="advantage_1">
 
            <h3>30 minutes pour trouver un partenaire</h3>
-           <p>Toutes les 30 minutes, vous pouvez proposer <strong>gratuitement</strong> ce que vous désirez <br> 
-            faire comme allez courir, <strong>faire une rencontre</strong> ou encore allez boire un verre.<br>
-            (Bon ça, ce n'est peut-être pas possible puisqu'elle n'est pas sur le site).<br>
-            En bref, quand vous proposez une activité, votre profil apparaît en tête du site afin d’avoir plus de visibilité <br>
+
+           <div class="btn_container">
+           <div><button class="btn_choix_index">Boire un verre</button></div>
+            <div><button class="btn_choix_index">Faire une rencontre</button></div>
+            <div><button class="btn_choix_index">Allez courir</button></div>
+            <div><button class="btn_choix_index">Voir un film</button></div>
+            </div>
+
+           <p>Toutes les 30 minutes, vous pouvez activer des options gratuites pour dire ce que vous souhaitez faire <br>
+            comme allez courir, faire une rencontre ou encore allez boire un verre.<br>
+
+            En bref, quand vous proposez une activité, votre profil apparaît en tête du site afin d'être visible <br>
             par tous les membres.</p>
  
         </div>
@@ -454,7 +464,7 @@ inputAge.onkeyup = function(e) {
 <script>
     // afficher nmbr user connect 
 function displayRandomNumber() {
-    var randomNumber = Math.floor(Math.random() * 687) + 346;
+    var randomNumber = Math.floor(Math.random() *25) + 534;
     document.getElementById("number").innerHTML = randomNumber;
   }
   displayRandomNumber();

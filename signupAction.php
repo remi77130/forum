@@ -8,7 +8,7 @@ require_once 'utils/mail.util.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <body>
     <!-- Form inscription -->
@@ -141,7 +141,9 @@ require_once 'utils/mail.util.php';
             $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND mdp = ?");
             $requser->execute(array($mailconnect, $mdpconnect));
             $userexist = $requser->rowCount();
+
             if ($userexist == 1) {
+                // Authentifier l'utilisateur et récupérer ses données
                 $userinfo = $requser->fetch();
                 $_SESSION['id'] = $userinfo['id'];
                 $_SESSION['pseudo'] = $userinfo['pseudo'];

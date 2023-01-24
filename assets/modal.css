@@ -12,11 +12,13 @@
 body {
 
     background-color: rgb(37, 37, 40);
-    color: aliceblue;
+    color: rgb(0, 125, 235);
 }
 
 
 
-.modal {
+.modal_search {
     display: none;
+    background-color: rgb(37, 37, 40);
+    color:rgb(252, 252, 252);
   }

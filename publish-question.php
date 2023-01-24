@@ -1,3 +1,6 @@
+<?php
+require('actions/publishQuestionAction.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,22 +11,38 @@
 </head>
 <body>
 
+<?php include 'includes/navbar.php'; ?>
+
 
 <h1>Publiez une question</h1>
          <br /><br />
          <form method="POST" action="">
+
+         <?php 
+         if(isset($errorMsg)) // MESSAGE ERREUR SI CHAMPS VIDE
+         { echo
+          '<p>'.$errorMsg.'</p>';
+          }
+          
+          elseif (isset($successMsg)) // MESSAGE SUCCESS SI CHAMPS REMPLIS
+          {
+            echo '<p>'.$successMsg.'</p>';
+          } 
+          
+          ?>
+
           
          <label>Titre de la question</label>
-         <input type="text" name="title"> 
+         <input type="text" name="title"> <br>
          
          <label>Description de la question</label>
-         <input type="text" name="lastname"> 
+         <textarea type="text" name="description"> </textarea> <br>
          
-         <label>Titre de la question</label>
-         <input type="text" name="title">
+         <label>Contenu de la question</label>
+         <input type="text" name="content"><br>
 
 
-
+<button type="submit" name="validate">Publier</button>
 
 
             </form>

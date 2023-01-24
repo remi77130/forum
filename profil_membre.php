@@ -9,9 +9,14 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 <!-- Page affichage des membres -->
 <!DOCTYPE html>
 <html lang="fr">
-<link rel="stylesheet" href="./assets/profil_membre.css">
+<link rel="stylesheet" href="assets/profil_membre.css">
 <link rel="stylesheet" href="assets/modal.css">
 <link rel="stylesheet" href="assets/loader.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
@@ -41,62 +46,78 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
     <?php include 'includes/requete_search_form.php' ?>
 
     <header> 
-    
-
-    <!-- a placer pour aller sur profil -->
-
-
 
 
     <nav class="navbar">
 
-        <a class="logo_nav" href="profil_membre.php">Chanderland</a>
-        <div class="nav-links">
-            <ul>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="profil_membre.php">
+        <img src="icones/cercle.svg" alt="" style="width: 50px;"></a>
 
-            <li class="filter_nav">
-        <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">
-        <span style="font-size:1.2em;" class="filter_nav">Mon profil</span></a>
+        <span classe="title_profil_membre">
+            
+        </span>
 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
+    aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-              <!--  <li> <a title="profil_membre" href="product.php" >
-                        <span style="font-size:1.2em;" class="filter_nav">Etre certifié</span>
-                </li></a>-->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
 
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="profil_membre.php">Accueil</a>
+        </li>
 
-                <li>
-                    <a id="myBtn" href="#">
-                        <span class="filter_nav">Filtre</span>
-                </li></a>zzzzz
+        <li class="nav-item">
+        <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon profil</a>
+        </li>    
 
-
-                <li><a title="profil_membre" href="deconnexion.php">
-                        <span style="color: red;" class="filter_nav">Déconnexion</span>
-                </li></a>
-
-
-
-        </div>
-
-
-        <img class="menu_humb_nav" src="icones/chanderland_menu.svg" alt="chanderland_menu">
-
-
-
-        <div id="myModal" class="modal">
-            <div class="close"><span class="close">&times;</span></div> <br>
-
-            <?php include 'includes/form_search.php' ?>
-        </div> 
+        <li class="nav-item">
+         <a  id="myBtn" href="#">Filtre</a>           
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="deconnexion.php">Deconnexion</a>
+        </li>
+       <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Forum</a>
+        </li>-->
 
 
+       <!-- <li class="nav-item dropdown">
 
-    </nav> 
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Plus d'options
+          </a>
+
+          <ul class="dropdown-menu">
+
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+          </ul>
+        </li> nav-item dropdown 
+      </ul>dropdown-menu -->
+
+    </div><!-- container-fluid -->
+  </div> <!-- collapse navbar-collapse -->
 
 
-    <div class="to_go_header">
-        <img src="icones/to_go.svg" class="icone_to_go">
-    </div>
+  <div id="myModal" class="modal_search"> <!-- modal recherche -->
+  <div class="close">
+                
+<span class="close">&times;</span></div> <br>
+
+<?php include 'includes/form_search.php' ?>
+</div> <!-- Fin modal de recherche-->
+  
+</nav>
+    
+
 
 
     </header>
