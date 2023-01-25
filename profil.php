@@ -45,6 +45,15 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital, wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="assets/modal.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+
+
+
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,13 +77,81 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
     <header> 
 
-            <nav>
+    
+    <nav class="navbar">
 
+  <div class="container-fluid">
+    <a class="navbar-brand" href="profil_membre.php">
+        <img src="icones/cercle.svg" alt=""></a>
+
+        <span classe="title_profil_membre">
             
+        </span>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
+    aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="profil_membre.php">Accueil</a>
+        </li>
+
+        <li class="nav-item">
+        <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon profil</a>
+        </li>    
+
+        <li class="nav-item">
+         <a  id="myBtn" href="#">Filtre</a>           
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="deconnexion.php">Deconnexion</a>
+        </li>
+       <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Forum</a>
+        </li>-->
+
+
+       <!-- <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Plus d'options
+          </a>
+
+          <ul class="dropdown-menu">
+
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+          </ul>
+        </li> nav-item dropdown 
+      </ul>dropdown-menu -->
+
+    </div><!-- container-fluid -->
+  </div> <!-- collapse navbar-collapse -->
+
+
+  <div id="myModal" class="modal_search"> <!-- modal recherche -->
+  <div class="close">
+                
+<span class="close">&times;</span></div> <br>
+
+
+</div> <!-- Fin modal de recherche-->
+  
+</nav>
+
+        <!--    <nav>
                 <a class="slide-line" href="profil_membre.php">Accueil</a>
                 <a class="slide-line" href="reception.php">Messages</a>
                 <a style="color: #df1e1e;" class="slide-line" href="deconnexion.php">Déconnexion</a>
-            </nav>
+            </nav>-->
       
 
             </header>

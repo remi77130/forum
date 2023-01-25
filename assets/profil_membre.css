@@ -165,13 +165,10 @@ header
     font-weight: 700;
 }
 
-.logo_nav
+.navbar img
 {
-    font-size: 2em;
-    font-weight: bold;
-    color: aliceblue;
+    width: 50px;
 }
-
 
 
 
@@ -182,6 +179,7 @@ header
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 100px;
 }
 
 
@@ -229,7 +227,7 @@ header
     transition: 500ms;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 300px){
     
     .container_profil_membre{
         
@@ -237,6 +235,25 @@ header
         width: 150px;
         height: 200px;
     }
+
+    .navbar img
+{
+    max-width: 40px !important;
+}
+
+.navbar-toggler
+{
+    padding: 0px !important;
+}
+
+.navbar-toggler-icon
+{
+    padding: 12px !important;
+    width: 1.2em;
+    height: 1.2em;
+
+}
+
 }
 
 
