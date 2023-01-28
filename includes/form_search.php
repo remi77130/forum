@@ -1,330 +1,316 @@
-<div class="modal-content">
-    <!-- Formulaire de recherche (ne pas oublier htmlspecialchars pour secur sql) -->
-    <div class="form_search">
+<!-- Formulaire de recherche (ne pas oublier htmlspecialchars pour secur sql) -->
+<div class="form_search">
 
-        <form action="" method="POST">
-            <div>
-                <p>Je recherche des </p>
-                <label>Homme
-                    <input type="checkbox" name="homme" value="1" id="checkMen" <?php echo (!empty($homme) and $homme == 1) ? "checked" : ""; ?> /><br>
-                </label>
-                <br />
-                <label>Femme
+    <form action="" method="POST">
+        <div>
+            <p>Je recherche des </p>
+            <label>Homme
+                <input type="checkbox" name="homme" value="1" id="checkMen" <?php echo (!empty($homme) and $homme == 1) ? "checked" : ""; ?> /><br>
+            </label>
+            <br />
+            <label>Femme
 
-           
-                    <input type="checkbox" name="femme" value="1" id="checkWomen" <?php echo (!empty($femme) and $femme == 1) ? "checked" : ""; ?> /> <br>
-                </label>
-            </div>
 
-            <!-- On vient récupérer le département ( meme id et name que sur index.php) -->
-            <div>
-                <p>Qui habite</p>
-                <label>Département</label>
-                <br />
-                <select id="select_departement" name="departement" required="">
-            </div>
+                <input type="checkbox" name="femme" value="1" id="checkWomen" <?php echo (!empty($femme) and $femme == 1) ? "checked" : ""; ?> /> <br>
+            </label>
+        </div>
 
-            <div>
-                <option value="<?php echo (!empty($departement_code) and $departement_code != -1) ? $dpcode : -1; ?>">
-                    <?php echo (!empty($departement_code) and $departement_code != -1) ? $dpnom : 'Choisir un département'; ?>
-                </option>
-                <option value="01">Ain</option>
-                <option value="02">Aisne</option>
-                <option value="03">Allier</option>
-                <option value="04">Alpes-de-Haute-Provence</option>
-                <option value="06">Alpes-Maritimes</option>
-                <option value="07">Ardèche</option>
-                <option value="08">Ardennes</option>
-                <option value="09">Ariège</option>
-                <option value="10">Aube</option>
-                <option value="11">Aude</option>
-                <option value="12">Aveyron</option>
-                <option value="67">Bas-Rhin</option>
-                <option value="13">Bouches-du-Rhône</option>
-                <option value="14">Calvados</option>
-                <option value="15">Cantal</option>
-                <option value="16">Charente</option>
-                <option value="17">Charente-Maritime</option>
-                <option value="18">Cher</option>
-                <option value="19">Corrèze</option>
-                <option value="2a">Corse-du-sud</option>
-                <option value="21">Côte-d'or</option>
-                <option value="22">Côtes-d'armor</option>
-                <option value="23">Creuse</option>
-                <option value="79">Deux-Sèvres</option>
-                <option value="24">Dordogne</option>
-                <option value="25">Doubs</option>
-                <option value="26">Drôme</option>
-                <option value="91">Essonne</option>
-                <option value="27">Eure</option>
-                <option value="28">Eure-et-Loir</option>
-                <option value="29">Finistère</option>
-                <option value="30">Gard</option>
-                <option value="32">Gers</option>
-                <option value="33">Gironde</option>
-                <option value="971">Guadeloupe</option>
-                <option value="973">Guyane</option>
-                <option value="68">Haut-Rhin</option>
-                <option value="2b">Haute-corse</option>
-                <option value="31">Haute-Garonne</option>
-                <option value="43">Haute-Loire</option>
-                <option value="52">Haute-Marne</option>
-                <option value="70">Haute-Saône</option>
-                <option value="74">Haute-Savoie</option>
-                <option value="87">Haute-Vienne</option>
-                <option value="05">Hautes-Alpes</option>
-                <option value="65">Hautes-Pyrénées</option>
-                <option value="92">Hauts-de-Seine</option>
-                <option value="34">Hérault</option>
-                <option value="35">Ile-et-Vilaine</option>
-                <option value="36">Indre</option>
-                <option value="37">Indre-et-Loire</option>
-                <option value="38">Isère</option>
-                <option value="39">Jura</option>
-                <option value="40">Landes</option>
-                <option value="41">Loir-et-Cher</option>
-                <option value="42">Loire</option>
-                <option value="44">Loire-Atlantique</option>
-                <option value="45">Loiret</option>
-                <option value="46">Lot</option>
-                <option value="47">Lot-et-Garonne</option>
-                <option value="48">Lozère</option>
-                <option value="49">Maine-et-Loire</option>
-                <option value="50">Manche</option>
-                <option value="51">Marne</option>
-                <option value="972">Martinique</option>
-                <option value="53">Mayenne</option>
-                <option value="976">Mayotte</option>
-                <option value="54">Meurthe-et-Moselle</option>
-                <option value="55">Meuse</option>
-                <option value="56">Morbihan</option>
-                <option value="57">Moselle</option>
-                <option value="58">Nièvre</option>
-                <option value="59">Nord</option>
-                <option value="60">Oise</option>
-                <option value="61">Orne</option>
-                <option value="75">Paris</option>
-                <option value="62">Pas-de-Calais</option>
-                <option value="63">Puy-de-Dôme</option>
-                <option value="64">Pyrénées-Atlantiques</option>
-                <option value="66">Pyrénées-Orientales</option>
-                <option value="974">Réunion</option>
-                <option value="69">Rhône</option>
-                <option value="71">Saône-et-Loire</option>
-                <option value="72">Sarthe</option>
-                <option value="73">Savoie</option>
-                <option value="77">Seine-et-Marne</option>
-                <option value="76">Seine-Maritime</option>
-                <option value="93">Seine-Saint-Denis</option>
-                <option value="80">Somme</option>
-                <option value="81">Tarn</option>
-                <option value="82">Tarn-et-Garonne</option>
-                <option value="90">Territoire de Belfort</option>
-                <option value="95">Val-d'oise</option>
-                <option value="94">Val-de-Marne</option>
-                <option value="83">Var</option>
-                <option value="84">Vaucluse</option>
-                <option value="85">Vendée</option>
-                <option value="86">Vienne</option>
-                <option value="88">Vosges</option>
-                <option value="89">Yonne</option>
-                <option value="78">Yvelines</option>
-                </select>
-            </div>
+        <!-- On vient récupérer le département ( meme id et name que sur index.php) -->
+        <div>
+            <p>Qui habite</p>
+            <label>Département</label>
+            <br />
+            <select id="select_departement" name="departement" required="">
+        </div>
 
-            <!-- 
+        <div>
+            <option value="<?php echo (!empty($departement_code) and $departement_code != -1) ? $dpcode : -1; ?>">
+                <?php echo (!empty($departement_code) and $departement_code != -1) ? $dpnom : 'Choisir un département'; ?>
+            </option>
+            <option value="01">Ain</option>
+            <option value="02">Aisne</option>
+            <option value="03">Allier</option>
+            <option value="04">Alpes-de-Haute-Provence</option>
+            <option value="06">Alpes-Maritimes</option>
+            <option value="07">Ardèche</option>
+            <option value="08">Ardennes</option>
+            <option value="09">Ariège</option>
+            <option value="10">Aube</option>
+            <option value="11">Aude</option>
+            <option value="12">Aveyron</option>
+            <option value="67">Bas-Rhin</option>
+            <option value="13">Bouches-du-Rhône</option>
+            <option value="14">Calvados</option>
+            <option value="15">Cantal</option>
+            <option value="16">Charente</option>
+            <option value="17">Charente-Maritime</option>
+            <option value="18">Cher</option>
+            <option value="19">Corrèze</option>
+            <option value="2a">Corse-du-sud</option>
+            <option value="21">Côte-d'or</option>
+            <option value="22">Côtes-d'armor</option>
+            <option value="23">Creuse</option>
+            <option value="79">Deux-Sèvres</option>
+            <option value="24">Dordogne</option>
+            <option value="25">Doubs</option>
+            <option value="26">Drôme</option>
+            <option value="91">Essonne</option>
+            <option value="27">Eure</option>
+            <option value="28">Eure-et-Loir</option>
+            <option value="29">Finistère</option>
+            <option value="30">Gard</option>
+            <option value="32">Gers</option>
+            <option value="33">Gironde</option>
+            <option value="971">Guadeloupe</option>
+            <option value="973">Guyane</option>
+            <option value="68">Haut-Rhin</option>
+            <option value="2b">Haute-corse</option>
+            <option value="31">Haute-Garonne</option>
+            <option value="43">Haute-Loire</option>
+            <option value="52">Haute-Marne</option>
+            <option value="70">Haute-Saône</option>
+            <option value="74">Haute-Savoie</option>
+            <option value="87">Haute-Vienne</option>
+            <option value="05">Hautes-Alpes</option>
+            <option value="65">Hautes-Pyrénées</option>
+            <option value="92">Hauts-de-Seine</option>
+            <option value="34">Hérault</option>
+            <option value="35">Ile-et-Vilaine</option>
+            <option value="36">Indre</option>
+            <option value="37">Indre-et-Loire</option>
+            <option value="38">Isère</option>
+            <option value="39">Jura</option>
+            <option value="40">Landes</option>
+            <option value="41">Loir-et-Cher</option>
+            <option value="42">Loire</option>
+            <option value="44">Loire-Atlantique</option>
+            <option value="45">Loiret</option>
+            <option value="46">Lot</option>
+            <option value="47">Lot-et-Garonne</option>
+            <option value="48">Lozère</option>
+            <option value="49">Maine-et-Loire</option>
+            <option value="50">Manche</option>
+            <option value="51">Marne</option>
+            <option value="972">Martinique</option>
+            <option value="53">Mayenne</option>
+            <option value="976">Mayotte</option>
+            <option value="54">Meurthe-et-Moselle</option>
+            <option value="55">Meuse</option>
+            <option value="56">Morbihan</option>
+            <option value="57">Moselle</option>
+            <option value="58">Nièvre</option>
+            <option value="59">Nord</option>
+            <option value="60">Oise</option>
+            <option value="61">Orne</option>
+            <option value="75">Paris</option>
+            <option value="62">Pas-de-Calais</option>
+            <option value="63">Puy-de-Dôme</option>
+            <option value="64">Pyrénées-Atlantiques</option>
+            <option value="66">Pyrénées-Orientales</option>
+            <option value="974">Réunion</option>
+            <option value="69">Rhône</option>
+            <option value="71">Saône-et-Loire</option>
+            <option value="72">Sarthe</option>
+            <option value="73">Savoie</option>
+            <option value="77">Seine-et-Marne</option>
+            <option value="76">Seine-Maritime</option>
+            <option value="93">Seine-Saint-Denis</option>
+            <option value="80">Somme</option>
+            <option value="81">Tarn</option>
+            <option value="82">Tarn-et-Garonne</option>
+            <option value="90">Territoire de Belfort</option>
+            <option value="95">Val-d'oise</option>
+            <option value="94">Val-de-Marne</option>
+            <option value="83">Var</option>
+            <option value="84">Vaucluse</option>
+            <option value="85">Vendée</option>
+            <option value="86">Vienne</option>
+            <option value="88">Vosges</option>
+            <option value="89">Yonne</option>
+            <option value="78">Yvelines</option>
+            </select>
+        </div>
+
+        <!-- 
 
             // RECHERCHE SUR ICI POUR // -->
-            
 
 
-            <!-- Recherche sur nationality -->
-            <div>
-                <p>Qui à</p>
-                <label>Age minimum</label>
-                <br />
-                <input class="age_search" type="number" name="age_min" id="age_min" 
-                value="<?php echo !empty($ageMin) ? $ageMin : ""; ?>" /><br>
 
-                <label>Age maximum</label>
-                <br />
-                <input class="age_search" type="number" name="age_max" id="age_max" 
-                value="<?php echo (!empty($ageMax) and $ageMax != 99) ? $ageMax : ""; ?>" />
-            </div>
+        <!-- Recherche sur nationality -->
+        <div>
+            <p>Qui à</p>
+            <label>Age minimum</label>
+            <br />
+            <input class="age_search" type="number" name="age_min" id="age_min" value="<?php echo !empty($ageMin) ? $ageMin : ""; ?>" /><br>
 
-            <div>
-                <p>Taille</p>
-                <label>Taille minimum</label>
-                <input type="number" name="taille_min" id="taille_min" 
-                value="<?php echo !empty($taille_min) ? $taille_min : ""; ?>" />
+            <label>Age maximum</label>
+            <br />
+            <input class="age_search" type="number" name="age_max" id="age_max" value="<?php echo (!empty($ageMax) and $ageMax != 99) ? $ageMax : ""; ?>" />
+        </div>
 
-                <label>Taille maximum</label>
-                <input type="number" name="taille_max" id="taille_max" 
-                value="<?php echo (!empty($taille_max) and $taille_max != 150) ? $poids_max : ""; ?>" />
-            </div>
+        <div>
+            <p>Taille</p>
+            <label>Taille minimum</label>
+            <input type="number" name="taille_min" id="taille_min" value="<?php echo !empty($taille_min) ? $taille_min : ""; ?>" />
 
-            <div>
+            <label>Taille maximum</label>
+            <input type="number" name="taille_max" id="taille_max" value="<?php echo (!empty($taille_max) and $taille_max != 150) ? $poids_max : ""; ?>" />
+        </div>
+
+        <div>
+            <?php
+            $poids_min = isset($_POST['poids_min']) ? $_POST['poids_min'] : "";
+            $poids_max = isset($_POST['poids_max']) ? $_POST['poids_max'] : "";
+            ?>
+            <p>Poids</p>
+            <br />
+            <select name="poids_min" id="poids_min">
+                <option value="">min</option>
+                <option value=""></option>
                 <?php
-                $poids_min = isset($_POST['poids_min']) ? $_POST['poids_min'] : "";
-                $poids_max = isset($_POST['poids_max']) ? $_POST['poids_max'] : "";
+                for ($i = 40; $i <= 150; $i++) {
                 ?>
-                <p>Poids</p>
-                <br />
-                <select name="poids_min" id="poids_min">
-                    <option value="">min</option>
-                    <option value=""></option>
-                    <?php
-                    for ($i = 40; $i <= 150; $i++) {
-                    ?>
-                        <option value="<?= $i; ?>" <?php echo ($poids_min == $i) ? "selected" : "" ?>>
+                    <option value="<?= $i; ?>" <?php echo ($poids_min == $i) ? "selected" : "" ?>>
                         <?= $i; ?> kilos</option>
-                    <?php
-                    }
-                    ?>
-                </select>
-                et
-                <select name="poids_max" id="poids_max">
-                    <option value="">max</option>
-                    <option value=""></option>
-                    <?php
-                    for ($i = 50; $i <= 150; $i++) {
-                    ?>
-                        <option value="<?= $i; ?>" <?php echo ($poids_max == $i) ? "selected" : "" ?>>
+                <?php
+                }
+                ?>
+            </select>
+            et
+            <select name="poids_max" id="poids_max">
+                <option value="">max</option>
+                <option value=""></option>
+                <?php
+                for ($i = 50; $i <= 150; $i++) {
+                ?>
+                    <option value="<?= $i; ?>" <?php echo ($poids_max == $i) ? "selected" : "" ?>>
                         <?= $i; ?> kilos</option>
-                    <?php
-                    }
-                    ?>
-                </select>
-            </div>
-
-            <div>
                 <?php
-                $cheveux_color = isset($cheveux_color) ? $cheveux_color : "";
+                }
                 ?>
-                <p>Cheveux</p>
-                <br />
-                <select name="cheveux_color" id="cheveux_color">
-                    <option value=""></option>
-                    <option value="blond" <?php echo ($cheveux_color == "blond") ? "selected" : "" ?>>Blond</option>
-                    <option value="chatain_clair" <?php echo ($cheveux_color == "chatain_clair") ? "selected" : "" ?>>Châtain clair</option>
-                    <option value="chatain_fonce" <?php echo ($cheveux_color == "chatain_fonce") ? "selected" : "" ?>>Châtain foncé</option>
-                    <option value="brun" <?php echo ($cheveux_color == "brun") ? "selected" : "" ?>>Brun</option>
-                    <option value="roux" <?php echo ($cheveux_color == "roux") ? "selected" : "" ?>>Roux</option>
-                    <option value="raser" <?php echo ($cheveux_color == "raser") ? "selected" : "" ?>>Raser</option>
-                </select>
-            </div>
+            </select>
+        </div>
 
-            <div>
-                <?php
-                $situation = isset($situation) ? $situation : "";
-                ?>
-                <p>Situation</p>
-                <br />
-                <select name="situation" id="situation" value="<?php echo !empty($situation) ? $situation : "" ?>">
-                    <option value=""></option>
-                    <option value="En couple" <?php echo ($situation == "En couple") ? "selected" : "" ?>>En couple</option>
-                    <option value="Celibataire" <?php echo ($situation == "Celibataire") ? "selected" : "" ?>>Celibataire</option>
-                    <option value="C'est compliqué" <?php echo ($situation == "C'est compliqué") ? "selected" : "" ?>>C'est compliqué</option>
-                </select>
-            </div>
+        <div>
+            <?php
+            $cheveux_color = isset($cheveux_color) ? $cheveux_color : "";
+            ?>
+            <p>Cheveux</p>
+            <br />
+            <select name="cheveux_color" id="cheveux_color">
+                <option value=""></option>
+                <option value="blond" <?php echo ($cheveux_color == "blond") ? "selected" : "" ?>>Blond</option>
+                <option value="chatain_clair" <?php echo ($cheveux_color == "chatain_clair") ? "selected" : "" ?>>Châtain clair</option>
+                <option value="chatain_fonce" <?php echo ($cheveux_color == "chatain_fonce") ? "selected" : "" ?>>Châtain foncé</option>
+                <option value="brun" <?php echo ($cheveux_color == "brun") ? "selected" : "" ?>>Brun</option>
+                <option value="roux" <?php echo ($cheveux_color == "roux") ? "selected" : "" ?>>Roux</option>
+                <option value="raser" <?php echo ($cheveux_color == "raser") ? "selected" : "" ?>>Raser</option>
+            </select>
+        </div>
 
-
-            <div>
-                <?php
-                $sexualite = isset($sexualite) ? $sexualite : "";
-                ?>
-                <p>sexualite</p>
-                
-                <select name="sexualite" id="sexualite" value="<?php echo !empty($sexualite) ? $sexualite : "" ?>">
-                    <option value=""></option>
-                    <option value="Gay" <?php echo ($sexualite == "Gay") ? "selected" : "" ?>>Gay</option>
-                    <option value="Lesbienne" <?php echo ($sexualite == "Lesbienne") ? "selected" : "" ?>>Lesbienne</option>
-                    <option value="Bisexuelle" <?php echo ($sexualite == "Bisexuelle") ? "selected" : "" ?>>Bisexuelle</option>
-                    <option value="Trans" <?php echo ($sexualite == "Trans") ? "selected" : "" ?>>Trans</option>
-                    <option value="Queers" <?php echo ($sexualite == "Queers") ? "selected" : "" ?>>Queers</option>
-                    <option value="Extratereste" <?php echo ($sexualite == "Extratereste") ? "selected" : "" ?>>Extratereste</option>
-                </select>
-            </div>
+        <div>
+            <?php
+            $situation = isset($situation) ? $situation : "";
+            ?>
+            <p>Situation</p>
+            <br />
+            <select name="situation" id="situation" value="<?php echo !empty($situation) ? $situation : "" ?>">
+                <option value=""></option>
+                <option value="En couple" <?php echo ($situation == "En couple") ? "selected" : "" ?>>En couple</option>
+                <option value="Celibataire" <?php echo ($situation == "Celibataire") ? "selected" : "" ?>>Celibataire</option>
+                <option value="C'est compliqué" <?php echo ($situation == "C'est compliqué") ? "selected" : "" ?>>C'est compliqué</option>
+            </select>
+        </div>
 
 
+        <div>
+            <?php
+            $sexualite = isset($sexualite) ? $sexualite : "";
+            ?>
+            <p>sexualite</p>
 
-            <div>
-                <?php
-                $nationality = isset($nationality) ? $nationality : "";
-                ?>
-                <p>Nationalité</p>
-                <br />
-
-<select name="nationality">
-<option value=""></option>
-<option value="Albanian">Albanian</option>
-<option value="American">American</option>
-<option value="Argentinian">Argentinian</option>
-<option value="Armenian">Armenian</option>
-<option value="Australian">Australian</option>
-<option value="Austrian">Austrian</option>
-<option value="Belarussian">Belarussian</option>
-<option value="Belgian">Belgian</option>
-<option value="Brazilian">Brazilian</option>
-<option value="British">British</option>
-<option value="Bulgarian">Bulgarian</option>
-<option value="Canadian">Canadian</option>
-<option value="Chinese">Chinese</option>
-<option value="Colombian">Colombian</option>
-<option value="Croatian">Croatian</option>
-<option value="Cuban">Cuban</option>
-<option value="Czech">Czech</option>
-<option value="Danish">Danish</option>
-<option value="Dutch">Dutch</option>
-<option value="Estonian">Estonian</option>
-<option value="Filipino">Filipino</option>
-<option value="Finnish">Finnish</option>
-<option value="French">French</option>
-<option value="German">German</option>
-<option value="Greek">Greek</option>
-<option value="Hungarian">Hungarian</option>
-<option value="Indian">Indian</option>
-<option value="Irish">Irish</option>
-<option value="Israeli">Israeli</option>
-<option value="Italian">Italian</option>
-<option value="Jamaican">Jamaican</option>
-<option value="Japanese">Japanese</option>
-<option value="Korean">Korean</option>
-<option value="Latvian">Latvian</option>
-<option value="Lithuanian">Lithuanian</option>
-<option value="Malaysian">Malaysian</option>
-<option value="Mexican">Mexican</option>
-<option value="Moldovian">Moldovian</option>
-<option value="Montenegrian">Montenegrian</option>
-<option value="Norwegian">Norwegian</option>
-<option value="Polish">Polish</option>
-<option value="Portuguese">Portuguese</option>
-<option value="Puerto Rican">Puerto Rican</option>
-<option value="Romanian">Romanian</option>
-<option value="Russian">Russian</option>
-<option value="Serbian">Serbian</option>
-<option value="Singaporean">Singaporean</option>
-<option value="Slovak">Slovak</option>
-<option value="Slovenian">Slovenian</option>
-<option value="Spanish">Spanish</option>
-<option value="Swedish">Swedish</option>
-<option value="Swiss">Swiss</option>
-<option value="Thai">Thai</option>
-<option value="Ukrainian">Ukrainian</option>
-<option value="Venezuelan">Venezuelan</option>
-<option value="Vietnamese">Vietnamese</option>
-</select> <br> <br>  
-               
-            </div>
+            <select name="sexualite" id="sexualite" value="<?php echo !empty($sexualite) ? $sexualite : "" ?>">
+                <option value=""></option>
+                <option value="Gay" <?php echo ($sexualite == "Gay") ? "selected" : "" ?>>Gay</option>
+                <option value="Lesbienne" <?php echo ($sexualite == "Lesbienne") ? "selected" : "" ?>>Lesbienne</option>
+                <option value="Bisexuelle" <?php echo ($sexualite == "Bisexuelle") ? "selected" : "" ?>>Bisexuelle</option>
+                <option value="Trans" <?php echo ($sexualite == "Trans") ? "selected" : "" ?>>Trans</option>
+                <option value="Queers" <?php echo ($sexualite == "Queers") ? "selected" : "" ?>>Queers</option>
+                <option value="Extratereste" <?php echo ($sexualite == "Extratereste") ? "selected" : "" ?>>Extratereste</option>
+            </select>
+        </div>
 
 
 
+        <div>
+            <?php
+            $nationality = isset($nationality) ? $nationality : "";
+            ?>
+            <p>Nationalité</p>
+            <br />
 
+            <select name="nationality">
+                <option value=""></option>
+                <option value="Albanian">Albanian</option>
+                <option value="American">American</option>
+                <option value="Argentinian">Argentinian</option>
+                <option value="Armenian">Armenian</option>
+                <option value="Australian">Australian</option>
+                <option value="Austrian">Austrian</option>
+                <option value="Belarussian">Belarussian</option>
+                <option value="Belgian">Belgian</option>
+                <option value="Brazilian">Brazilian</option>
+                <option value="British">British</option>
+                <option value="Bulgarian">Bulgarian</option>
+                <option value="Canadian">Canadian</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Colombian">Colombian</option>
+                <option value="Croatian">Croatian</option>
+                <option value="Cuban">Cuban</option>
+                <option value="Czech">Czech</option>
+                <option value="Danish">Danish</option>
+                <option value="Dutch">Dutch</option>
+                <option value="Estonian">Estonian</option>
+                <option value="Filipino">Filipino</option>
+                <option value="Finnish">Finnish</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Greek">Greek</option>
+                <option value="Hungarian">Hungarian</option>
+                <option value="Indian">Indian</option>
+                <option value="Irish">Irish</option>
+                <option value="Israeli">Israeli</option>
+                <option value="Italian">Italian</option>
+                <option value="Jamaican">Jamaican</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Korean">Korean</option>
+                <option value="Latvian">Latvian</option>
+                <option value="Lithuanian">Lithuanian</option>
+                <option value="Malaysian">Malaysian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Moldovian">Moldovian</option>
+                <option value="Montenegrian">Montenegrian</option>
+                <option value="Norwegian">Norwegian</option>
+                <option value="Polish">Polish</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Puerto Rican">Puerto Rican</option>
+                <option value="Romanian">Romanian</option>
+                <option value="Russian">Russian</option>
+                <option value="Serbian">Serbian</option>
+                <option value="Singaporean">Singaporean</option>
+                <option value="Slovak">Slovak</option>
+                <option value="Slovenian">Slovenian</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Swedish">Swedish</option>
+                <option value="Swiss">Swiss</option>
+                <option value="Thai">Thai</option>
+                <option value="Ukrainian">Ukrainian</option>
+                <option value="Venezuelan">Venezuelan</option>
+                <option value="Vietnamese">Vietnamese</option>
+            </select> <br> <br>
 
-
-
-
-
+        </div>
 
 
 
@@ -355,13 +341,21 @@
 
 
 
-            <div>
-                <label>Pseudo</label>
-                <br />
-                <input class="pseudo_search" name="pseudo" type="text" value="<?php echo !empty($pseudo) ? $pseudo : ""; ?>">
-            </div>
-            <input class="button" type="submit" name="search" value="search" />
-            <input class="button" type="submit" name="reset" value="reset" />
-        </form>
-    </div>
-</div> <!-- Fin modal content-->
+
+
+
+
+
+
+
+
+
+        <div>
+            <label>Pseudo</label>
+            <br />
+            <input class="pseudo_search" name="pseudo" type="text" value="<?php echo !empty($pseudo) ? $pseudo : ""; ?>">
+        </div>
+        <input class="button d-none" id="btnFilterSearch" type="submit" name="search" value="search" />
+        <input class="button d-none" id="btnFilterReset" type="submit" name="reset" value="reset" />
+    </form>
+</div>

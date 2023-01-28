@@ -13,7 +13,6 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 <link rel="stylesheet" href="assets/modal.css">
 <link rel="stylesheet" href="assets/loader.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
@@ -73,10 +72,6 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                         </li>
 
                         <li class="nav-item">
-                            <a id="myBtn" href="#">Filtre</a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link" href="deconnexion.php">Deconnexion</a>
                         </li>
                         <!-- <li class="nav-item">
@@ -102,16 +97,6 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                 </div><!-- container-fluid -->
             </div> <!-- collapse navbar-collapse -->
-
-
-            <div id="myModal" class="modal_search"> <!-- modal recherche -->
-                <div class="close">
-
-                    <span class="close">&times;</span>
-                </div> <br>
-
-                <?php include 'includes/form_search.php' ?>
-            </div> <!-- Fin modal de recherche-->
 
         </nav>
 
@@ -146,7 +131,6 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                     */
 
             ?>
-
                 <li class="container_profil_membre" data-sexe="<?= $userWithDesire->getSexe() ?>" data-age="<?= $userWithDesire->getAge() ?>" data-dpt="<?= $userWithDesire->getDepartment() ? $userWithDesire->getDepartment()->getName() : "" ?>">
                     <a href="profil.php?id=<?= $userWithDesire->getId() ?>">
                         <div class="container_profil_info">
@@ -205,10 +189,12 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
 
-
-
-
-
+    <div class="filter d-flex flex-row-reverse">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">
+            Filtre
+        </button>
+    </div>
     <section class="hero_index">
 
         <?php
@@ -342,24 +328,44 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
 
-</body>
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script>
-    /*const menuHamburger = document.querySelector(".menu_humb_nav")
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+        /*const menuHamburger = document.querySelector(".menu_humb_nav")
     const navLinks = document.querySelector(".nav-links")
 
     menuHamburger.addEventListener('click', () => {
         navLinks.classList.toggle('mobile-menu')
     })*/
 
-    $(window).on("load", function() {
-        $(".loader-wrapper").fadeOut("slow");
-    })
-</script>
-<script src="js/modal.js"> </script>
-<!--<script src="js/to_go.js"> </script>-->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        $(window).on("load", function() {
+            $(".loader-wrapper").fadeOut("slow");
+        })
+    </script>
+    <script src="js/modal.js"> </script>
+    <!--<script src="js/to_go.js"> </script>-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+
+    <!-- Modal -->
+    <div class="modal fade " id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true" data-bs-theme="dark">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="filterModalLabel">Filtrer les membres</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php include 'includes/form_search.php' ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btnModalReset" data-bs-dismiss="modal">Réinitialiser le filtre</button>
+                    <button type="button" class="btn btn-primary" id="btnModalApply">Appliquer le filtre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 
 </html>
