@@ -9,6 +9,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 <!-- Page affichage des membres -->
 <!DOCTYPE html>
 <html lang="fr">
+<link rel="stylesheet" href="assets/navbar.css">
 <link rel="stylesheet" href="assets/profil_membre.css">
 <link rel="stylesheet" href="assets/modal.css">
 <link rel="stylesheet" href="assets/loader.css">
@@ -44,66 +45,8 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
     <?php include 'includes/requete_search_form.php' ?>
 
-    <header>
+    <?php include 'includes/header.php' ?>
 
-
-        <nav class="navbar">
-
-            <div class="container-fluid">
-                <a class="navbar-brand" href="profil_membre.php">
-                    <img class="avatar_navbar" src="membres/avatars/<?= $_SESSION["user"]->getAvatar() ?>" alt=""></a>
-
-                <a href="profil_membre.php"><img class="logo_navbar" src="icones/logo_navbar.svg" alt="logo-chanderland"></a>
-
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="profil_membre.php">Accueil</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon profil</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="deconnexion.php">Deconnexion</a>
-                        </li>
-                        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Forum</a>
-        </li>-->
-
-
-                        <!-- <li class="nav-item dropdown">
-
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Plus d'options
-          </a>
-
-          <ul class="dropdown-menu">
-
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-
-          </ul>
-        </li> nav-item dropdown 
-      </ul>dropdown-menu -->
-
-                </div><!-- container-fluid -->
-            </div> <!-- collapse navbar-collapse -->
-
-        </nav>
-
-
-
-
-    </header>
 
 
 

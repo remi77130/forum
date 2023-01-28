@@ -22,7 +22,7 @@ body{
 {
     margin-top: 10px;
 }
-nav
+section nav
 {
 
     width: 100%;
@@ -35,7 +35,7 @@ nav
 
 
 
-nav a
+section nav a
 {
 
     text-decoration: none;
@@ -51,7 +51,7 @@ nav a
 }
 
 
-nav a:hover
+section nav a:hover
 {
     background-color: #303030;
     color: aliceblue;
