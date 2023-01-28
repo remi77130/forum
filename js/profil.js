@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    init_timer();
+    if ($('#desire_timer')[0]) {
+        init_timer();
+    }
 
     //Quand on clique sur une envie
     $(".container_choix button").on("click", function (event) {

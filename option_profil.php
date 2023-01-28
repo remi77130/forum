@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="assets/profil.css">
-</head>
-<body>
+
 
 <?php
 if (!empty($_SESSION)) {
@@ -55,6 +51,3 @@ if (!empty($_SESSION)) {
 </div>
 
 </div>
-
-</body>
-</html>
