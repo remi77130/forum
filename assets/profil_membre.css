@@ -184,6 +184,7 @@ header
 .avatar_navbar
 {
     width: 50px;
+    border-radius: 50%;
 }
 
 
