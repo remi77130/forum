@@ -82,11 +82,8 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
   <div class="container-fluid">
     <a class="navbar-brand" href="profil_membre.php">
-        <img src="icones/cercle.svg" alt=""></a>
-
-        <span classe="title_profil_membre">
-            
-        </span>
+        <img class="avatar_navbar" src="icones/cercle.svg" alt=""></a>
+        <a href="profil_membre.php"><img class="logo_navbar" src="icones/logo_navbar.svg" alt="logo-chanderland"></a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
@@ -105,10 +102,6 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon profil</a>
         </li>    
 
-        <li class="nav-item">
-         <a  id="myBtn" href="#">Filtre</a>           
-        </li>
-        
         <li class="nav-item">
           <a class="nav-link" href="deconnexion.php">Deconnexion</a>
         </li>

@@ -17,13 +17,29 @@ html, body{
     height: 100%;
     width: 100%;
 
-    /*background-image: url(../icones/city_fond_profil.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #333;*/
+
+
     
 
+}
+
+
+
+.title_section_signup {
+  text-align: center;
+  font-family: 'IBM Plex Sans';
+  color: rgb(251, 209, 255);
+  background-image: url(./tchatche-gartuit.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 1px;
+
+}
+
+.nbr
+{position: relative;
+left: 5px;
 }
 
 .nbr_user_connect_index
@@ -37,19 +53,15 @@ html, body{
 {
   width: 12px;
   position: relative;
-  top: 21px;
+  left: 5px;
 
 }
+.nbr_user_connect_index
 
-.nbr
 {
-  padding-left: 20px;
-}
-
-
-.nbr_user_connect_index p
-{
-  padding: 0px;
+  background-color: #000000d1;
+  text-align: initial;
+  margin-top: 10px;
 }
 
 p
@@ -86,6 +98,9 @@ h3
 {
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
 }
 .btn_choix_index
 {
@@ -96,17 +111,54 @@ h3
   
     margin: 10px;
     border: 1px solid wheat;
-    box-shadow: 5px 5px 10px #0000007a;
+    box-shadow: 5px 5px 10px #000000;
     border-radius: 5px;
     color: white;
     font-size: 16px;
 
 }
 
-.btn_choix_index
+.btn_choix_index:hover
 {
   box-shadow: none;
+  background-color: #212020;
 }
+
+@media screen and (max-width: 250px)
+{
+
+  .title_section_signup {
+    text-align: center;
+    font-family: 'IBM Plex Sans';
+    color: rgb(251, 209, 255);
+    background-image: url(./tchatche-gartuit.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -380px;
+  
+  }
+
+}
+
+
+@media screen and (max-width: 500px)
+{
+
+  .title_section_signup {
+    text-align: center;
+    font-family: 'IBM Plex Sans';
+    color: rgb(251, 209, 255);
+    background-image: url(./tchatche-gartuit.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -220px;
+
+  }
+
+}
+
 
 
 
@@ -116,6 +168,20 @@ h3
     article{
         display: block !important;
     }
+
+  
+    .title_section_signup {
+      text-align: center;
+      font-family: 'IBM Plex Sans';
+      color: rgb(251, 209, 255);
+      background-image: url(./tchatche-gartuit.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: -180px;
+  
+    }
+
 
     .index_container p
     {
@@ -135,9 +201,32 @@ h3
         margin-left: 160px !important;
     }
 
-
+.form
+{
+  margin-top: 10px;
+}
 
 }  /*  Fin media 700 */
+
+
+
+@media screen and (max-width: 980px)
+{
+
+  .title_section_signup {
+    text-align: center;
+    font-family: 'IBM Plex Sans';
+    color: rgb(251, 209, 255);
+    background-image: url(./tchatche-gartuit.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -145px;
+    background-position-y: 1px;
+
+  }
+
+}
 
 
 
@@ -154,8 +243,7 @@ h3
     width: 200px;
     margin: auto;
     border-radius: 5px;
-    box-shadow:  -2px -2px 0px 2px  rgb(120, 246, 255) ;
-    border: 0.5px solid rgba(85, 85, 85, 0.352);
+    box-shadow:  -2px -2px 0px 2px rgb(120 246 255);
 
 
 }
@@ -200,13 +288,15 @@ select
 
 
 
-.title_section_signup{
-text-align: center;
-font-family: 'IBM Plex Sans';
-color:rgb(251, 209, 255);
-margin-top: 25px;
 
+.title_section_signup p
+{
+  
+    font-weight: 600;
+    text-align: initial;
 }
+
+
 
 p,h3,h4
 {
@@ -218,23 +308,30 @@ Form
 */
 
 .login-page {
-    width: 360px;
-    padding: 8% 0 0;
-    margin: auto;
+  width: 100%;
+  padding: 8% 0 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+
    
   }
+
+ 
+
+
   .form {
     position: relative;
     z-index: 1;
-    background: #051420;
-    border-left: 5px solid #61f4ff;
+    background: #05142080;
     max-width: 360px;
-    margin: 0 auto 50px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
-    
-  }
+}
+
 
 
 

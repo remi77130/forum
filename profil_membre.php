@@ -56,11 +56,10 @@ crossorigin="anonymous"></script>
 
   <div class="container-fluid">
     <a class="navbar-brand" href="profil_membre.php">
-        <img src="icones/cercle.svg" alt=""></a>
+        <img class="avatar_navbar" src="icones/cercle.svg" alt=""></a>
 
-        <span classe="title_profil_membre">
-            
-        </span>
+            <a href="profil_membre.php"><img class="logo_navbar" src="icones/logo_navbar.svg" alt="logo-chanderland"></a>
+  
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
@@ -138,6 +137,7 @@ crossorigin="anonymous"></script>
         <h4 class="title_card_choix">Ils désirent faire quelques choses.</h4>
 
         <ul class="container_card_profil_choix">
+      
             <?php
             foreach ($usersWithDesire as $userWithDesire) {
                 /*

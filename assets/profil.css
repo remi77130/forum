@@ -45,10 +45,18 @@ width: 100%;
   font-weight: 700;
 }
 
-.navbar img
+
+.avatar_navbar
 {
-  width: 50px;
+    width: 50px;
 }
+
+
+.logo_navbar
+{
+width: 200px;
+}
+
 
 
 .navbar span
@@ -216,7 +224,11 @@ width: 100%;
         width: 100%;
     }
 
-  
+    .logo_navbar
+    {
+        width: 150px;
+    }
+        
 
   
 
@@ -622,7 +634,8 @@ textarea {
     display: block;
     flex-wrap: wrap;
     width: 70%;
-    margin: auto;
+    margin: 50px auto;
+
 
 }
 
@@ -798,10 +811,9 @@ OPTION PROFIL
 
    
 
-  
-  .navbar img
+  .logo_navbar
   {
-    width: 40px !important;
+      width: 110px;
   }
 
 
@@ -811,6 +823,10 @@ OPTION PROFIL
   margin-left: 10px;
 }
 
+.avatar_navbar
+{
+    max-width: 40px !important;
+}
 
 
 

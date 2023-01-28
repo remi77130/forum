@@ -10,6 +10,12 @@ require 'signupAction.php';
 <link rel="stylesheet" href="assets/compteur.css">
 
 
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8Q7JX5"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- Google tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-240853356-1"></script>
@@ -18,7 +24,7 @@ require 'signupAction.php';
 
 <META NAME="DESCRIPTION" CONTENT="Chat sans inscription. Sans email. Venez chater sans inscrire votre email. "/>
 <meta name="robots" content="index, follow, all">
-<meta name="keywords" content="rencontre gratuite, chate en ligne, clementine marceau, tchatche france, rencontre gratuite, tchat france">
+<meta name="keywords" content="rencontre gratuite, chate en ligne, tchatche france, rencontre gratuite, tchat france">
 
 
 <!-- Icon -->
@@ -47,27 +53,23 @@ require 'signupAction.php';
     <meta name="twitter:description" content="Venez chater avec un simple pseudo" />
     <meta name="twitter:image" content="icones/1.svg" />
 
-
-    
-
-
-</head>
-<style>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
-</style>
-<style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
-</style>
+    </style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
+    </style>
+    
+</head>
+
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8Q7JX5"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+
+
+
 
 
 <header id="form" class="title_section_signup">
+
 
 
 <h1> Rencontre gratuite </h1>
@@ -76,8 +78,7 @@ require 'signupAction.php';
 <h3></h3>
 
 
-</header>
-  
+
 
 <div style="text-align: center;" class="cont_beta">
 <img class="img_beta" src="icones/Version_beta.svg"  alt="image_chanderland" srcset="">
@@ -86,8 +87,8 @@ require 'signupAction.php';
 
 <div class="nbr_user_connect_index">
 <img class="svg_nmb" src="icones/connect_svg_green.svg">
-<div class="nbr" id="number">
-</div>
+<span class="nbr" id="number">
+</span>
 <p>membres connectés actuellement</p>
 
 </div>
@@ -164,6 +165,8 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 }
 ?>
 
+
+
     </form>  <!-- Fin formulaire inscription -->
 
     <form class="login-form" method="POST" action="">
@@ -197,7 +200,11 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 ?>
 
         </div>
+        
         </div>
+
+
+        
         <div class="advantage_1">
 
            <h3>30 minutes pour trouver un partenaire</h3>
@@ -217,10 +224,9 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
  
         </div>
 
-
+</header>
         <article>
-
-
+     
 
 
 <div class="index_container">
@@ -239,6 +245,8 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
     </p>
 </div>
 </div>
+
+
 
 
     <div class="index_container">
@@ -260,7 +268,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 <div class="index_container">
 
-    <img class="img_femme_chanderland" src="icones/chanderland_membres.svg" alt="photo_femme_chanderland">
+    <img class="img_femme_chanderland" src="icones/chat-gratuit_2.svg" alt="photo_femme_chanderland">
 
 <div>
 
@@ -388,7 +396,15 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
         Même si votre portable est en mode sonnerie.</p> <br>
 
       <span style="text-decoration: underline;"><a class="lien_inscription" href="#form">M'inscrire gratuitement</a></span>
-    </div> <!-- cont_not -->
+</div> <!-- cont_not 
+
+
+<div>
+    <h3>Si vous êtes different montrer le</h3>
+    <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
+
+    <p>Que recherche une femme ? vous devez vous demarquez, vous deevez montrer que vous avez une situation stable. </p>
+</div>
 
 
     
@@ -430,14 +446,16 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 
 
 
-<!-- animation letter-->
-<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-<script src="js/app_letter.js"></script>
-    
 
 </body>
 
 </html>
+
+
+<!-- animation letter-->
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<script src="js/app_letter.js"></script>
+    
 
 <!-- ON RAJOUTE JQUERY A LA FIN DU FICHIER -->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"
