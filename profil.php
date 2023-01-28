@@ -46,11 +46,11 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital, wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="assets/modal.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
 
 
 
@@ -75,42 +75,40 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     <body>
 
 
-    <header> 
+        <header>
 
-    
-    <nav class="navbar">
 
-  <div class="container-fluid">
-    <a class="navbar-brand" href="profil_membre.php">
-        <img class="avatar_navbar" src="icones/cercle.svg" alt=""></a>
-        <a href="profil_membre.php"><img class="logo_navbar" src="icones/logo_navbar.svg" alt="logo-chanderland"></a>
+            <nav class="navbar">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" 
-    aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="profil_membre.php">
+                        <img class="avatar_navbar" src="icones/cercle.svg" alt=""></a>
+                    <a href="profil_membre.php"><img class="logo_navbar" src="icones/logo_navbar.svg" alt="logo-chanderland"></a>
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="profil_membre.php">Accueil</a>
-        </li>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
 
-        <li class="nav-item">
-        <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon profil</a>
-        </li>    
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="profil_membre.php">Accueil</a>
+                            </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="deconnexion.php">Deconnexion</a>
-        </li>
-       <!-- <li class="nav-item">
+                            <li class="nav-item">
+                                <a title="profil_membre" href="profil.php?id=<?= $_SESSION['id'] ?>">Mon profil</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="deconnexion.php">Deconnexion</a>
+                            </li>
+                            <!-- <li class="nav-item">
           <a class="nav-link" href="#">Forum</a>
         </li>-->
 
 
-       <!-- <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
 
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Plus d'options
@@ -126,115 +124,115 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         </li> nav-item dropdown 
       </ul>dropdown-menu -->
 
-    </div><!-- container-fluid -->
-  </div> <!-- collapse navbar-collapse -->
+                    </div><!-- container-fluid -->
+                </div> <!-- collapse navbar-collapse -->
 
 
-  <div id="myModal" class="modal_search"> <!-- modal recherche -->
-  <div class="close">
-                
-<span class="close">&times;</span></div> <br>
+                <div id="myModal" class="modal_search"> <!-- modal recherche -->
+                    <div class="close">
+
+                        <span class="close">&times;</span>
+                    </div> <br>
 
 
-</div> <!-- Fin modal de recherche-->
-  
-</nav>
+                </div> <!-- Fin modal de recherche-->
 
-        <!--    <nav>
+            </nav>
+
+            <!--    <nav>
                 <a class="slide-line" href="profil_membre.php">Accueil</a>
                 <a class="slide-line" href="reception.php">Messages</a>
                 <a style="color: #df1e1e;" class="slide-line" href="deconnexion.php">Déconnexion</a>
             </nav>-->
-      
 
-            </header>
-        
+
+        </header>
+
 
 
 
         <section class="section_profil_membre">
             <!-- Profil visible-->
 
-<div class="container_avatar">
+            <div class="container_avatar">
 
-        <div class="avatar_profil">
-                        <!-- Avatar -->
-                        <?php
-                                if (str_contains($userinfo['avatar'], 'https')) { ?>
-                                    <img src="<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
-                                <?php
-                                } else {
-                                ?>
-                                    <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
-                                <?php
-                                }
-                                ?>
+                <div class="avatar_profil">
+                    <!-- Avatar -->
+                    <?php
+                    if (str_contains($userinfo['avatar'], 'https')) { ?>
+                        <img src="<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
+                    <?php
+                    } else {
+                    ?>
+                        <img src="membres\avatars/<?php echo $userinfo['avatar']; ?>" alt="photo_profil"><br>
+                    <?php
+                    }
+                    ?>
 
 
-         </div>
-</div>
-                                <div class="card__header_text">
-                                   <div class="container_text">
-                                   <h3 class="card__title">
-                                    <?php echo $userinfo['pseudo']; ?>
-                                       
-                                     
-                                        <!-- Ici svg connect fake -->
-                                        <span><img class="connect_svg_profil" src="icones/connect_svg_green.svg">
-                                        </span>
+                </div>
+            </div>
+            <div class="card__header_text">
+                <div class="container_text">
+                    <h3 class="card__title">
+                        <?php echo $userinfo['pseudo']; ?>
 
-                                      
 
-                                        <!-- ici svg connect reel 
+                        <!-- Ici svg connect fake -->
+                        <span><img class="connect_svg_profil" src="icones/connect_svg_green.svg">
+                        </span>
+
+
+
+                        <!-- ici svg connect reel 
                                         <?php
-                                        if($user->isOnline()){
+                                        if ($user->isOnline()) {
                                         ?>
                                             <span><img class="connect_svg_profil" src="icones/connect_svg_green.svg"></span>
                                         <?php
                                         }
                                         ?>
                                                 -->
-                                                
-                                    </h3>
-                                    <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?> ans</span> <br>
-                                    <span class="card__status"><?php echo $userinfo['situation']; ?>
+
+                    </h3>
+                    <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?> ans</span> <br>
+                    <span class="card__status"><?php echo $userinfo['situation']; ?>
 
 
-                                    </span>
-                                
-                            <p class="card__description"><?php echo $userinfo['description_profil']; ?></p> <br>
+                    </span>
 
-                            <!-- Bouton like rendre visible seulement par les autres users -->
-                         
-                            <!--<img  onclick="like()" style="width: 20px;" src="images/icones/like.svg" alt="">
+                    <p class="card__description"><?php echo $userinfo['description_profil']; ?></p> <br>
+
+                    <!-- Bouton like rendre visible seulement par les autres users -->
+
+                    <!--<img  onclick="like()" style="width: 20px;" src="images/icones/like.svg" alt="">
                                <img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
-                                   </div> 
-                                </div>
+                </div>
+            </div>
 
-<div class="line_separate">
+            <div class="line_separate">
 
-</div>
+            </div>
 
-<button id="toggleButton" class="button_info_profil">Afficher/cacher les infos</button>
-
-
-
-<div id="content" class="info_profil" style="display: block;"> <!-- Info profil rendre visible seulement si rempli -->
-<div class="container_info">
+            <button id="toggleButton" class="button_info_profil">Afficher/cacher les infos</button>
 
 
-                                <ul>
-                                    <li><?php echo $userinfo['taille'] ?></li>
-                                    <li><?php echo $userinfo['poids'] ?></li>
-                                    <li><?php echo $userinfo['situation'] ?></li>
-                                    <li><?php echo $userinfo['nationality'] ?></li>
-                                    <li><?php echo $userinfo['choix'] ?></li>
-                                    <li><?php echo $userinfo['sexualite'] ?></li>
-                                    <li><?php echo $userinfo['astrologie']; ?></li>
-                                    <li><?php echo $userinfo['cheveux_color']; ?></li>
-                                </ul>
-</div>
-</div>
+
+            <div id="content" class="info_profil" style="display: block;"> <!-- Info profil rendre visible seulement si rempli -->
+                <div class="container_info">
+
+                    <ul>
+                        <?= $userinfo['taille'] ? "<li>" . $userinfo['taille'] . "</li>" : "" ?>
+                        <?= $userinfo['poids'] ? "<li>" . $userinfo['poids'] . "</li>" : "" ?>
+                        <?= $userinfo['situation'] ? "<li>" . $userinfo['situation'] . "</li>" : "" ?>
+                        <?= $userinfo['nationality'] ? "<li>" . $userinfo['nationality'] . "</li>" : "" ?>
+                        <?= $userinfo['choix'] ? "<li>" . $userinfo['choix'] . "</li>" : "" ?>
+                        <?= $userinfo['sexualite'] ? "<li>" . $userinfo['sexualite'] . "</li>" : "" ?>
+                        <?= $userinfo['astrologie'] ? "<li>" . $userinfo['astrologie'] . "</li>" : "" ?>
+                        <?= $userinfo['cheveux_color'] ? "<li>" . $userinfo['cheveux_color'] . "</li>" : "" ?>
+                    </ul>
+                </div>
+            </div>
 
 
             <?php if (isset($error)) {
@@ -247,54 +245,54 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
             </div>
 
             <?php
-        if ($_SESSION['id'] != $userinfo['id']) {
+            if ($_SESSION['id'] != $userinfo['id']) {
             ?>
-            <button class="button_write_profil" style="cursor: pointer;">
-               
-                <a class="write" onClick="messagerie()">
-                <img class="icone_letter_profil" src="icones/letter.svg "></a>
-            </button>
+                <button class="button_write_profil" style="cursor: pointer;">
+
+                    <a class="write" onClick="messagerie()">
+                        <img class="icone_letter_profil" src="icones/letter.svg "></a>
+                </button>
             <?php
-        }
-        ?>
-        <?php
-        if ($_SESSION['id'] != $userinfo['id']) {
+            }
             ?>
-            <!-- MESSAGERIE  -->
-            <div class="parent_message_profil_user" id="messagerie">
+            <?php
+            if ($_SESSION['id'] != $userinfo['id']) {
+            ?>
+                <!-- MESSAGERIE  -->
+                <div class="parent_message_profil_user" id="messagerie">
 
-                <div class="message_profil_user">
+                    <div class="message_profil_user">
 
-                    <form method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="destinataire_id" value="<?= $userinfo['id']; ?>">
+                        <form method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="destinataire_id" value="<?= $userinfo['id']; ?>">
 
-                        <label style="display:block">Objet</label>
+                            <label style="display:block">Objet</label>
 
-                        <input class="input_object_form_profil" type="submittext" name="objet" <?php if (isset($o)) {
-                            echo 'value="' . $o . '"';
-                        } ?> /> </br>
-                        <label class="pjointe" style="display:block"> Pièce jointe</label><br><br>
+                            <input class="input_object_form_profil" type="submittext" name="objet" <?php if (isset($o)) {
+                                                                                                        echo 'value="' . $o . '"';
+                                                                                                    } ?> /> </br>
+                            <label class="pjointe" style="display:block"> Pièce jointe</label><br><br>
 
-                        <input class="input_file_form_profil" type="file" name="img_msg"> <br><br>
+                            <input class="input_file_form_profil" type="file" name="img_msg"> <br><br>
 
-                        <label style="display:block;"> Ecrire un message</label><br>
-                        <textarea placeholder="Votre message" name="message"></textarea><br>
+                            <label style="display:block;"> Ecrire un message</label><br>
+                            <textarea placeholder="Votre message" name="message"></textarea><br>
 
-                        <input class="input_submit_form_profil" type="submit" value="Envoyer" name="envoi_message"/>
+                            <input class="input_submit_form_profil" type="submit" value="Envoyer" name="envoi_message" />
 
-                    </form>
+                        </form>
+                    </div>
+                    <!--FIN MESSAGERIE  -->
                 </div>
-                <!--FIN MESSAGERIE  -->
-            </div>
-            <!--FIN PARENT MESSAGERIE  -->
+                <!--FIN PARENT MESSAGERIE  -->
 
-            </div>
+                </div>
 
             <?php
-        }
-        ?>
+            }
+            ?>
 
-        </div>
+            </div>
 
             <!------------------------ REQUETE AFFICHAGE ALBUM PHOTO -------->
 
@@ -349,27 +347,23 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 <h3>J'ai envie de </h3> <br> <br> <b></b>
 
                 <!-- Timer -->
-                <div id="desire_timer" data-init="<?= $user->getDesireRestTime()?>" class="<?= $user->getDesireRestTime()==0?'hidden':''?>">
+                <div id="desire_timer" data-init="<?= $user->getDesireRestTime() ?>" class="<?= $user->getDesireRestTime() == 0 ? 'hidden' : '' ?>">
                 </div>
                 <!-- Fin Timer -->
 
                 <div class="container_choix">
                     <?php // CE CODE PARCOURS LA TABLE DESIRE POUR AFFICHER LES BOUTONS -->
                     // on ajout/ supp des boutons directement dans la bdd 
-                    if(!empty($desires)){
+                    if (!empty($desires)) {
                         foreach ($desires as $desire) {
-                            $selected = ($user->getDesire() != null && 
-                            $user->getDesire()->getId() == $desire->getId());
+                            $selected = ($user->getDesire() != null &&
+                                $user->getDesire()->getId() == $desire->getId());
                             $disabled = ($user->getDesire() != null);
-                        ?>
-                            <button class="noselect <?= $desire->getColor() ?>" 
-                            data-desire_id="<?= $desire->getId() ?>" 
-                            data-user_id="<?= $user->getId() ?>" 
-                            <?= $disabled ? 'data-disabled="disabled"' : '' ?>
-                            <?= $selected ? 'data-selected="selected"' : '' ?>>
-                            <?= $desire->getText() ?>
+                    ?>
+                            <button class="noselect <?= $desire->getColor() ?>" data-desire_id="<?= $desire->getId() ?>" data-user_id="<?= $user->getId() ?>" <?= $disabled ? 'data-disabled="disabled"' : '' ?> <?= $selected ? 'data-selected="selected"' : '' ?>>
+                                <?= $desire->getText() ?>
                             </button>
-                        <?php
+                    <?php
                         }
                     }
                     ?>
