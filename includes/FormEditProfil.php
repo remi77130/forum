@@ -22,7 +22,8 @@
 
              <form method="POST" action="" enctype="multipart/form-data">
                 <label>Pseudo</label>
-                <input type="text" name="newpseudo" placeholder="Pseudo" maxlength="10" value="<?php echo $user['pseudo']; ?>" /><br /><br />
+                <input type="text" name="newpseudo" placeholder="Pseudo" maxlength="10"
+                value="<?php echo $user['pseudo']; ?>" /><br /><br />
                 <label>Age</label>
                 <input type="tel" pattern="[0-9]*" inputtype="numeric" name="newage" placeholder="age" minlength="1" maxlength="2" value="<?php echo $user['age']; ?>" /><br /><br />
                 <!--<label>Mail :</label>

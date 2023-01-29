@@ -24,6 +24,13 @@ html, body{
 }
 
 
+p,h3,h4
+{
+  padding:5px;
+  color: #f0f8ff;
+}
+
+
 
 .title_section_signup {
   text-align: center;
@@ -37,10 +44,7 @@ html, body{
 
 }
 
-.nbr
-{position: relative;
-left: 5px;
-}
+
 
 .nbr_user_connect_index
 {
@@ -53,22 +57,15 @@ left: 5px;
 {
   width: 12px;
   position: relative;
-  left: 5px;
+
 
 }
 .nbr_user_connect_index
 
 {
-  background-color: #000000d1;
   text-align: initial;
   margin-top: 10px;
 }
-
-p
-{
-  color: #f0f8ff;
-}
-
 
 
 
@@ -124,6 +121,21 @@ h3
   background-color: #212020;
 }
 
+.advantage_1 p
+{
+  text-align: initial;
+  font-weight: bold;
+  background-color: #000000a3;
+}
+
+.advantage_1 h3
+{
+  background-color: #0000008a;
+
+}
+
+
+
 @media screen and (max-width: 250px)
 {
 
@@ -135,7 +147,24 @@ h3
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: -380px;
+    background-position-x: -320px;
+  
+  }
+
+}
+
+@media screen and (max-width: 360px)
+{
+
+  .title_section_signup {
+    text-align: center;
+    font-family: 'IBM Plex Sans';
+    color: rgb(251, 209, 255);
+    background-image: url(./tchatche-gartuit.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -260px;
   
   }
 
@@ -289,19 +318,19 @@ select
 
 
 
-.title_section_signup p
+.form p
 {
   
     font-weight: 600;
-    text-align: initial;
+    text-align: center;
+    background-color: #0000008a;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
 }
 
 
 
-p,h3,h4
-{
-  padding:5px;
-}
 
 /*
 Form
@@ -322,14 +351,13 @@ Form
  
 
 
-  .form {
-    position: relative;
+  .form {    position: relative;
     z-index: 1;
-    background: #05142080;
-    max-width: 360px;
+    max-width: 300px;
     padding: 45px;
     text-align: center;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
+
+
 }
 
 
@@ -356,11 +384,11 @@ Form
     outline: 0;
     background: rgb(120 246 255);
     cursor: pointer;
-    color: #1f2020;
+    color: #000000;
     font-weight: 800;
     width: 100%;
     border: 0;
-    margin: 0 0 15px;
+    margin: 0 0 5px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 12px;
@@ -371,13 +399,15 @@ Form
 
 
   .form .message {
-    margin: 15px 0 0;
-    color: #b3b3b3;
-    font-size: 12px;
+   
+    color: #ffffff;
+    font-size: 13px;
+    background-color: #0000008a;
+    font-weight: bold;
   }
   .form .message a {
-    color: #4CAF50;
-    text-decoration: none;
+    color: #00c106;
+    text-decoration: underline;
   }
   .form .register-form {
     display: none;

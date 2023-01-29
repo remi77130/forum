@@ -12,7 +12,7 @@ include 'actions/myQuestionsAction.php'; // Pour aceder a la requete getAllMyque
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes questions</title>
+    <title>Mes questions des utilisateurs</title>
 </head>
 <body>
 
@@ -26,7 +26,7 @@ while($question = $getAllMyquestions->fetch()){
         <p><?= $question['description'] ?></p>
         <p><?= $question['contenu'] ?></p>
 
-        <a href="#">Accéder à l'artticle</a>
+        <a href="#">Accéder à la question</a>
         <a href="#">Modifier</a>
 
 

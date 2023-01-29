@@ -134,7 +134,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
     <div class="filter d-flex flex-row-reverse">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">
+        <button type="button" class="btn_filter" data-bs-toggle="modal" data-bs-target="#filterModal">
             Filtre
         </button>
     </div>

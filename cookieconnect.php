@@ -1,6 +1,6 @@
 <?php  
 
-setcookie("usename", "pseudo", "mail", time()+60*60*24*30); //30jours
+//setcookie("usename", "pseudo", "mail", time()+60*60*24*30); //30jours
 ?>
 
 <?php

@@ -2,7 +2,7 @@
 <?php 
 session_start(); //pour recup dans la bdd
 
-include_once 'cookieconnect.php';
+//include_once 'cookieconnect.php';
 require 'require/database.php';
 
 ?>

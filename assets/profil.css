@@ -377,6 +377,7 @@ width: 200px;
     font-size: 1em;
     color: #f4f4f4;
     font-weight: bold;
+    text-transform: capitalize;
   }
   
   .card__tagline {

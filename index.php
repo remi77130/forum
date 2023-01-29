@@ -85,13 +85,7 @@ require 'signupAction.php';
 
 </div>
 
-<div class="nbr_user_connect_index">
-<img class="svg_nmb" src="icones/connect_svg_green.svg">
-<span class="nbr" id="number">
-</span>
-<p>membres connectés actuellement</p>
 
-</div>
 
 
 
@@ -99,6 +93,14 @@ require 'signupAction.php';
 <div class="login-page">
 
 <div class="form">
+    
+<div class="nbr_user_connect_index">
+
+<p><img class="svg_nmb" src="icones/connect_svg_green.svg">
+<span class="nbr" id="number"> <br>
+</span> membres connectés actuellement</p>
+
+</div>
 
     
 
@@ -174,7 +176,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
             type="text" name="pseudoconnect" class="form__input" 
             placeholder="Pseudo" required>      
     <input class="u" id="login__password" type="password" name="mdpconnect" class="form__input" 
-    placeholder="Password" required>
+    placeholder="Mot de passe" required>
 
     <input class="submit_form" type="submit" name="formconnexion" value="Connexion">
     <p class="message">Pas de compte ? <a href="#">Créer un compte</a></p>
