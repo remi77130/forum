@@ -180,6 +180,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
     <input class="submit_form" type="submit" name="formconnexion" value="Connexion">
     <p class="message">Pas de compte ? <a href="#">Créer un compte</a></p>
+    <a href="recuperation.php">Mot de passe perdu</a>
 
 </div>
 

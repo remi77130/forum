@@ -1,4 +1,3 @@
-
 <h4 class="title-element">Récupération de mot de passe</h4>
 <br/>
 <?php 

@@ -134,8 +134,10 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                     <!-- Bouton like rendre visible seulement par les autres users -->
 
-                    <!--<img  onclick="like()" style="width: 20px;" src="images/icones/like.svg" alt="">
-                               <img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
+                    <a href="#"><img  onclick="like()" 
+                    style="width: 20px;" src="images/icones/like.svg" alt=""></a>
+
+                 <!--<img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
                 </div>
             </div>
 

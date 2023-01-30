@@ -178,7 +178,7 @@ body {
 
 .container_profil_info_pseudo {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     color: aliceblue;
     width: 90%;
     white-space: nowrap;
@@ -186,8 +186,13 @@ body {
     text-overflow: ellipsis;
     text-align: start;
 
+}
 
-
+.container_profil_info_pseudo h2
+{
+    font-size: 1.5em;
+    margin: 5px 0px;
+    text-transform: capitalize;
 }
 
 .age_profil_membre {
@@ -247,6 +252,7 @@ body {
 
 .container_card_profil_choix h2 {
     padding-left: 10px;
+    font-size: 1.5em !important;
 }
 
 .container_card_profil_choix li {

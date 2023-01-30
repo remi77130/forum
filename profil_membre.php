@@ -99,13 +99,10 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
                                 <h2><?php echo $userWithDesire->getLogin() ?>
-                                    <span class="age_profil_membre"><?php echo $userWithDesire->getAge() ?></span> <br>
-                                    <span style="font-size: 12px;"><?php echo $userWithDesire->getDepartment()->getName() ?></span>
-
-
-
-
-
+                                    <span class="age_profil_membre">
+                                        <?php echo $userWithDesire->getAge() ?></span> <br>
+                                    <span style="font-size: 12px;">
+                                    <?php echo $userWithDesire->getDepartment()->getName() ?></span>
 
                                 </h2>
 
@@ -173,7 +170,8 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
                             <div class="container_profil_info_pseudo">
                                 <h2><?php echo $user->getLogin(); ?>
-                                    <span class="age_profil_membre"><?php echo $user->getAge(); ?></span> <br>
+                                    <span class="age_profil_membre"><?php echo $user->getAge(); ?>
+                                </span> <br>
 
                                 </h2>
 

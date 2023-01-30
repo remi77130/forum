@@ -18,7 +18,7 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])){
         $recup_mail = htmlspecialchars($_POST['recup_mail']);
     if(filter_var($recup_mail,FILTER_VALIDATE_EMAIL)){  // VERIF ADRESSE MAIL VALID
 
-        //echo  "Ok envoyé !"; // ???
+        echo  "Ok envoyé !"; // ???
         // RECUPERE LES DONEES EMAIL DANS LA BDD
         $mail_exist = $bdd->prepare('SELECT id,pseudo FROM membres WHERE mail=?');
         $mail_exist->execute(array($recup_mail));
@@ -57,8 +57,8 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])){
                 $recup_insert->execute(array($recup_mail,$recup_code));
             }
 
-           // $recup_insert = $bdd->prepare('INSERT INTO recuperation (mail,code) VALUES (?, ?)');
-           // $recup_insert->execute(array($recup_mail,$recup_code));
+            $recup_insert = $bdd->prepare('INSERT INTO recuperation (mail,code) VALUES (?, ?)');
+            $recup_insert->execute(array($recup_mail,$recup_code));
 
             // EMAIL 
 
@@ -129,6 +129,7 @@ if(isset($_POST['recup_submit'],$_POST['recup_mail'])){
            $verif_req = $bdd->prepare('SELECT id FROM recuperation WHERE mail = ? AND code = ?');
            $verif_req->execute(array($_SESSION['recup_mail'],$verif_code));
            $verif_req = $verif_req->rowCount();
+           
            if($verif_req == 1) {
               $up_req = $bdd->prepare('UPDATE recuperation SET confirme = 1 WHERE mail = ?');
               $up_req->execute(array($_SESSION['recup_mail']));
@@ -148,17 +149,22 @@ if(isset($_POST['change_submit'])) {
        $verif_confirme->execute(array($_SESSION['recup_mail']));
        $verif_confirme = $verif_confirme->fetch();
        $verif_confirme = $verif_confirme['confirme'];
+
        if($verif_confirme == 1) {
           $mdp = htmlspecialchars($_POST['change_mdp']);
           $mdpc = htmlspecialchars($_POST['change_mdpc']);
+
           if(!empty($mdp) AND !empty($mdpc)) {
              if($mdp == $mdpc) {
                 $mdp = sha1($mdp);
                 $ins_mdp = $bdd->prepare('UPDATE membres SET mdp = ? WHERE mail = ?');
                 $ins_mdp->execute(array($mdp,$_SESSION['recup_mail']));
+
               $del_req = $bdd->prepare('DELETE FROM recuperation WHERE mail = ?');
               $del_req->execute(array($_SESSION['recup_mail']));
+
                 header('Location:http://localhost/Forum/connexion.php');
+
              } else {
                 $error = "Vos mots de passes ne correspondent pas";
              }
