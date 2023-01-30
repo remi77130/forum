@@ -1,3 +1,6 @@
+<?php
+$user = UserRepository::findById($_SESSION["id"]);
+?>
 <header>
 
 
@@ -5,7 +8,7 @@
 
     <div class="container-fluid">
       <a class="navbar-brand" href="profil_membre.php">
-        <img class="avatar_navbar" src="membres/avatars/<?= $_SESSION["user"]->getAvatar() ?>" alt=""></a>
+        <img class="avatar_navbar" src="membres/avatars/<?= $user->getAvatar() ?>" alt=""></a>
 
       <a href="profil_membre.php"><img class="logo_navbar" src="icones/logo_navbar.svg" alt="logo-chanderland"></a>
 
