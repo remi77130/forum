@@ -24,6 +24,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     $userinfo = $requser->fetch();
     $hasLike = LikeRepository::hasLikeUser($_SESSION['id'], $_GET['id']);
     $likeCounter = LikeRepository::countLikeForUser($_GET['id']);
+    $isOwner = ($_SESSION['id'] == $user->getId());
 
     // Si un message est envoyé sur un profil
     if (!empty($_POST['envoi_message']) && !empty($_FILES)) {
@@ -137,7 +138,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                     <!-- Bouton like rendre visible seulement par les autres users -->
                     <div class="like_container">
-                        <a href="" class="like_button" data-user-id="<?php echo $userinfo['id'] ?>">
+                        <a href="" class="like_button<?= $isOwner?" disabled":""?>" data-user-id="<?php echo $userinfo['id'] ?>">
                             <img class="img_not_liked<?= $hasLike ? " hide" : "" ?>" src="images/icones/like.svg" alt="">
                             <img class="img_liked<?= !$hasLike ? " hide" : "" ?>" src="images/icones/like_2.svg" alt="">
                         </a>

@@ -155,6 +155,9 @@ $(document).ready(function(){
         let button = $(this);
         //On annule le comportement par défaut du lien car on ne veut pas recharger la page
         event.preventDefault();
+        if(button.hasClass("disabled")){
+            return false;
+        }
         //On récupère l'identifiant de l'utilisateur à liker
         let user_id = $(this).attr("data-user-id");
         //On crée les données à envoyer à l'API, notament l'action like, et l'identifiant de l'utilisateur à liker
