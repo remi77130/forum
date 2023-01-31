@@ -20,12 +20,12 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 function like()
 {
     if (isset($_GET["id"]) && !empty($_GET["id"])) {
-        if(LikeRepository::hasLikeUser($_SESSION['id'], $_GET["id"])){
+        if (LikeRepository::hasLikeUser($_SESSION['id'], $_GET["id"])) {
             unlike();
             return;
         }
         LikeRepository::addLike($_SESSION['id'], $_GET["id"]);
-        returnResponse("Like ok", array("like"=>true, "unlike"=>false));
+        returnResponse("Like ok", array("like" => true, "unlike" => false, "counter" => LikeRepository::countLikeForUser($_GET["id"])));
         return;
     }
     returnResponse("Paramètre manquant", null, 400);
@@ -35,7 +35,7 @@ function unLike()
 {
     if (isset($_GET["id"]) && !empty($_GET["id"])) {
         LikeRepository::removeLike($_SESSION['id'], $_GET["id"]);
-        returnResponse("Unlike ok", array("like"=>false, "unlike"=>true));
+        returnResponse("Unlike ok", array("like" => false, "unlike" => true, "counter" => LikeRepository::countLikeForUser($_GET["id"])));
     }
     returnResponse("Paramètre manquant", null, 400);
 }
@@ -58,8 +58,9 @@ function hasLike()
     returnResponse("Paramètre manquant", null, 400);
 }
 
-function returnResponse($message, $datas=null, $code=200){
-    $response = array("message"=>$message, "datas"=>$datas);
+function returnResponse($message, $datas = null, $code = 200)
+{
+    $response = array("message" => $message, "datas" => $datas);
     http_response_code($code);
     echo json_encode($response);
     exit;

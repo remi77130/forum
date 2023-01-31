@@ -23,6 +23,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     $requser->execute(array($getid));
     $userinfo = $requser->fetch();
     $hasLike = LikeRepository::hasLikeUser($_SESSION['id'], $_GET['id']);
+    $likeCounter = LikeRepository::countLikeForUser($_GET['id']);
 
     // Si un message est envoyé sur un profil
     if (!empty($_POST['envoi_message']) && !empty($_FILES)) {
@@ -135,11 +136,13 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                     <p class="card__description"><?php echo $userinfo['description_profil']; ?></p> <br>
 
                     <!-- Bouton like rendre visible seulement par les autres users -->
-
-                    <a href="" class="like_button" data-user-id="<?php echo $userinfo['id'] ?>">
-                        <img class="img_not_liked<?= $hasLike?" hide":""?>" src="images/icones/like.svg" alt="">
-                        <img class="img_liked<?= !$hasLike?" hide":""?>" src="images/icones/like_2.svg" alt="">
-                    </a>
+                    <div class="like_container">
+                        <a href="" class="like_button" data-user-id="<?php echo $userinfo['id'] ?>">
+                            <img class="img_not_liked<?= $hasLike ? " hide" : "" ?>" src="images/icones/like.svg" alt="">
+                            <img class="img_liked<?= !$hasLike ? " hide" : "" ?>" src="images/icones/like_2.svg" alt="">
+                        </a>
+                        <span class="like_counter">(<?= $likeCounter; ?>)</span>
+                    </div>
 
                     <!--<img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
                 </div>

@@ -181,6 +181,7 @@ $(document).ready(function(){
                         button.children(".img_liked").addClass("hide");
                         button.children(".img_not_liked").removeClass("hide");
                     }
+                    button.closest(".like_container").children(".like_counter").text("(" + data.datas.counter + ")");
                 }
             },
 

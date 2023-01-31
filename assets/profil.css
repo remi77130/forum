@@ -150,7 +150,9 @@ body {
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
 }
-
+.like_container a{
+  text-decoration:none;
+}
 .like_button img{
   width:1.5em;
 }
