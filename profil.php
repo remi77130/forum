@@ -134,10 +134,9 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                     <!-- Bouton like rendre visible seulement par les autres users -->
 
-                    <a href="#"><img  onclick="like()" 
-                    style="width: 20px;" src="images/icones/like.svg" alt=""></a>
+                    <a href="#"><img onclick="like()" style="width: 20px;" src="images/icones/like.svg" alt=""></a>
 
-                 <!--<img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
+                    <!--<img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
                 </div>
             </div>
 
@@ -153,14 +152,14 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 <div class="container_info">
 
                     <ul>
-                        <?= $userinfo['taille'] ? "<li>" . $userinfo['taille'] . "</li>" : "" ?>
-                        <?= $userinfo['poids'] ? "<li>" . $userinfo['poids'] . "</li>" : "" ?>
-                        <?= $userinfo['situation'] ? "<li>" . $userinfo['situation'] . "</li>" : "" ?>
-                        <?= $userinfo['nationality'] ? "<li>" . $userinfo['nationality'] . "</li>" : "" ?>
-                        <?= $userinfo['choix'] ? "<li>" . $userinfo['choix'] . "</li>" : "" ?>
-                        <?= $userinfo['sexualite'] ? "<li>" . $userinfo['sexualite'] . "</li>" : "" ?>
-                        <?= $userinfo['astrologie'] ? "<li>" . $userinfo['astrologie'] . "</li>" : "" ?>
-                        <?= $userinfo['cheveux_color'] ? "<li>" . $userinfo['cheveux_color'] . "</li>" : "" ?>
+                        <?= $userinfo['taille'] ? "<li>Taille : " . $userinfo['taille'] . "</li>" : "" ?>
+                        <?= $userinfo['poids'] ? "<li>Poids : " . $userinfo['poids'] . "</li>" : "" ?>
+                        <?= $userinfo['situation'] ? "<li>Situation : " . $userinfo['situation'] . "</li>" : "" ?>
+                        <?= $userinfo['nationality'] ? "<li>Nationalité : " . $userinfo['nationality'] . "</li>" : "" ?>
+                        <?= $userinfo['choix'] ? "<li>Choix : " . $userinfo['choix'] . "</li>" : "" ?>
+                        <?= $userinfo['sexualite'] ? "<li>Sexualité : " . $userinfo['sexualite'] . "</li>" : "" ?>
+                        <?= $userinfo['astrologie'] ? "<li>Astrologie : " . $userinfo['astrologie'] . "</li>" : "" ?>
+                        <?= $userinfo['cheveux_color'] ? "<li>Cheveux : " . $userinfo['cheveux_color'] . "</li>" : "" ?>
                     </ul>
                 </div>
             </div>

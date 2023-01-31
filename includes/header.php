@@ -1,4 +1,5 @@
 <?php
+require_once("model/repository/user.repository.php");
 $user = UserRepository::findById($_SESSION["id"]);
 ?>
 <header>

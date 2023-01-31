@@ -44,6 +44,7 @@ if (isset($_POST['formconnexion'])) {
     } else {
       $_SESSION['id'] = $user->getId();
       $_SESSION['pseudo'] = $user->getLogin();
+      $_SESSION['mail'] = $user->getMail();
       header("Location: profil_membre.php"); // USERS REDIRIGE SUR LA PAGE INDEX VIA CONNEXION.PHP
     }
   } else {
