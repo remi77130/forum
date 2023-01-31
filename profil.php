@@ -3,6 +3,7 @@ include './includes/init.php';
 include 'verif.php'; // BDD AND SESSION
 require_once __DIR__ . "/model/repository/desire.repository.php";
 require_once __DIR__ . "/model/repository/user.repository.php";
+require_once __DIR__ . "/model/repository/like.repository.php";
 
 $desires = DesireRepository::findAll();
 // Si l'utilisateur n'est pas connecté
@@ -21,6 +22,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     $requser = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
     $requser->execute(array($getid));
     $userinfo = $requser->fetch();
+    $hasLike = LikeRepository::hasLikeUser($_SESSION['id'], $_GET['id']);
 
     // Si un message est envoyé sur un profil
     if (!empty($_POST['envoi_message']) && !empty($_FILES)) {
@@ -134,7 +136,10 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                     <!-- Bouton like rendre visible seulement par les autres users -->
 
-                    <a href="#"><img onclick="like()" style="width: 20px;" src="images/icones/like.svg" alt=""></a>
+                    <a href="" class="like_button" data-user-id="<?php echo $userinfo['id'] ?>">
+                        <img class="img_not_liked<?= $hasLike?" hide":""?>" src="images/icones/like.svg" alt="">
+                        <img class="img_liked<?= !$hasLike?" hide":""?>" src="images/icones/like_2.svg" alt="">
+                    </a>
 
                     <!--<img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
                 </div>

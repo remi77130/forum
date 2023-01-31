@@ -151,7 +151,12 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-
+.like_button img{
+  width:1.5em;
+}
+.like_button img.hide{
+  display:none;
+}
 
 @media screen and (max-width: 900px) {
 

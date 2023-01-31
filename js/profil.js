@@ -149,16 +149,51 @@ $(document).ready(function(){
             temps <= 0 ? afterEndOfTime() : appendtime(temps);
         }, 1000);
     }
+
+    // Bouton Like
+    $(".like_button").on("click", function(event){
+        let button = $(this);
+        //On annule le comportement par défaut du lien car on ne veut pas recharger la page
+        event.preventDefault();
+        //On récupère l'identifiant de l'utilisateur à liker
+        let user_id = $(this).attr("data-user-id");
+        //On crée les données à envoyer à l'API, notament l'action like, et l'identifiant de l'utilisateur à liker
+        let datas = { "action": "like", "id": user_id };
+        //On définit enfin la requête ajax
+        $.ajax({
+            // Adresse à laquelle la requête est envoyée
+            url: './api/likes.php',
+            //Données à envoyer
+            data: datas,
+            //On travaillera en json
+            dataType: "json",
+            // La fonction à apeller si la requête aboutie et est en succès
+            success: function (data, statusText, xhr) {
+                // Si on a un code retour 200, tout s'est bien passé, le commentaire a été supprimée
+                if (xhr.status == 200) {
+                    //On la supprime de l'affichage
+                    //button.attr("disabled", "disabled");
+                    if(data.datas.like){
+                        button.children(".img_not_liked").first().addClass("hide");
+                        button.children(".img_liked").first().removeClass("hide");
+                    }
+                    else{
+                        button.children(".img_liked").addClass("hide");
+                        button.children(".img_not_liked").removeClass("hide");
+                    }
+                }
+            },
+
+            // La fonction à appeler si la requête est en erreur
+            error: function (xhr) {
+                //On affiche l'erreur dans une alert
+                alert(xhr.responseJSON.message);
+            }
+
+        });
+        return false;
+    });
 })
-
-///// Bouton like 
-
-
-
-  function like() {
-    var button = document.querySelector('.like-button');
-    button.classList.toggle('liked');
-  }
 
 
   ///// Info profil
