@@ -139,13 +139,12 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                     <!-- Bouton like rendre visible seulement par les autres users -->
                     <div class="like_container">
                         <a href="" class="like_button<?= $isOwner?" disabled":""?>" data-user-id="<?php echo $userinfo['id'] ?>">
-                            <img class="img_not_liked<?= $hasLike ? " hide" : "" ?>" src="images/icones/like.svg" alt="">
-                            <img class="img_liked<?= !$hasLike ? " hide" : "" ?>" src="images/icones/like_2.svg" alt="">
+                            <img class="img_not_liked<?= $hasLike ? " hide" : "" ?>" src="images/icones/heart.svg" alt="">
+                            <img class="img_liked<?= !$hasLike ? " hide" : "" ?>" src="images/icones/heart2.svg" alt="">
                         </a>
-                        <span class="like_counter">(<?= $likeCounter; ?>)</span>
+                        <span class="like_counter"><?= $likeCounter; ?></span>
                     </div>
 
-                    <!--<img  style="width: 20px;" class="like-button" src="images/icones/like_2.svg" alt="" srcset="">-->
                 </div>
             </div>
 

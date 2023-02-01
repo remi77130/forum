@@ -1,9 +1,13 @@
+
 <!-- Afficher les questions de user -->
 
 <?php 
-//require ('actions/securityAction.php');// AJOUTER UN FICHIER POUR PERMETTRE A USER DETRE REDIRIGER SUR LA PAGE DE CONNEXION SI IL EST PAS AUTHENTIFIER
-
 include 'actions/myQuestionsAction.php'; // Pour aceder a la requete getAllMyquestions
+
+//require ('actions/securityAction.php');// AJOUTER UN FICHIER POUR PERMETTRE A USER DETRE REDIRIGER SUR LA PAGE DE CONNEXION SI IL EST PAS AUTHENTIFIER
+include 'includes/init.php';
+//include 'verif.php';
+
 
 ?>
 <!DOCTYPE html>
@@ -12,9 +16,11 @@ include 'actions/myQuestionsAction.php'; // Pour aceder a la requete getAllMyque
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes questions des utilisateurs</title>
+    <title>Mes questions</title>
 </head>
 <body>
+
+<h2>Toutes mes questions</h2>
 
 <?php include 'includes/navbar.php' ?>
 
@@ -27,7 +33,7 @@ while($question = $getAllMyquestions->fetch()){
         <p><?= $question['contenu'] ?></p>
 
         <a href="#">Accéder à la question</a>
-        <a href="#">Modifier</a>
+        <a href="#">Modifier ma question</a>
 
 
 

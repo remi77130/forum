@@ -150,11 +150,27 @@ body {
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
 }
-.like_container a{
+
+.like_container
+{
+  display: flex;
+  align-items: center;
+}
+
+
+.like_container a
+
+{
   text-decoration:none;
+  
+}
+.like_counter
+{
+  font-size: 12px;
+  font-weight: bold;
 }
 .like_button img{
-  width:1.5em;
+  width:40px;
 }
 .like_button img.hide{
   display:none;
@@ -196,7 +212,7 @@ body {
 
 
 .card__header_text {
-  padding-top: 10px;
+  padding-top: 50px;
 }
 
 
@@ -213,6 +229,8 @@ body {
 
 .avatar_profil img {
   width: 40%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #000000c2;
 }
 
 .cards {

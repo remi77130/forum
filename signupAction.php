@@ -123,7 +123,7 @@ require_once 'utils/mail.util.php';
             $message = 'Veuillez cliquer sur ce lien pour confirmer votre compte : <a href="' . $confirmation_link.'">'.$confirmation_link.'</a>';
             MailUtil::send(MAIL_FROM, $destinataire, $sujet, $message);
 
-            $erreur = $erreur . "Votre compte est créé. Vous allez recevoir un mail pour confirmer votre compte.<br>";
+            $erreur = $erreur . "Bravo ! Votre compte est créé. Vous allez recevoir un mail pour confirmer votre compte.<br>";
         }
     }
     ?>

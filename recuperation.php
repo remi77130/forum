@@ -1,5 +1,8 @@
-<?php
 
+<head>
+ <link rel="stylesheet" href="assets/recuperation.css">
+</head>
+<?php
 session_start();
 require 'require/database.php';
 
@@ -148,7 +151,7 @@ if (isset($_POST['change_submit'])) {
                $del_req = $bdd->prepare('DELETE FROM recuperation WHERE mail = ?');
                $del_req->execute(array($_SESSION['recup_mail']));
 
-               header('Location:connexion.php');
+               header('Location:index.php');
             } else {
                $error = "Vos mots de passes ne correspondent pas";
             }

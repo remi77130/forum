@@ -1,5 +1,5 @@
 <?php
-require ('signupAction.php');
+require ('./signupAction.php');
 
 
 
@@ -18,14 +18,19 @@ if (isset($_POST['validate'])){
             $question_pseudo_author = $_SESSION['pseudo'];  // pseudo dans signupAction
 
             // insere dans la bdd via variable bdd dans database.php
-            $insertQuestionOnWebSite = $bdd->prepare('INSERT INTO questions (titre, description, contenu,
-                                                     date_publication)
-                                                    VALUES(?,?,?,?)');
+            $insertQuestionOnWebSite = $bdd->prepare('INSERT INTO questions (titre, description, contenu, 
+                                                    id_auteur, 
+                                                    pseudo_auteur,
+                                                    date_publication)
+                                                    VALUES(?,?,?,?,?,?)');
             
-            $insertQuestionOnWebSite->execute(array(
+            $insertQuestionOnWebSite->
+            execute(array(
             $question_title,
             $question_description,
             $question_content,
+            $question_id_author,
+            $question_pseudo_author,
             $question_date,
             
             ));
