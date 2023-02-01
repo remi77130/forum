@@ -2,6 +2,7 @@
 
 session_start();
 require 'require/database.php';
+require_once 'utils/mail.util.php';
 
 if (isset($_GET['section'])) {
 
@@ -53,11 +54,6 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
             }
 
             // EMAIL 
-
-            $header = "MIME-Version: 1.0\r\n";
-            $header .= 'From:"[VOUS]"<hguv5320@hguv5320.odns.fr>' . "\n";
-            $header .= 'Content-Type:text/html; charset="utf-8"' . "\n";
-            $header .= 'Content-Transfer-Encoding: 8bit';
             $message = '
                <html>
                   <head>
@@ -90,7 +86,8 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
                   </body>
                </html>
                ';
-            mail($recup_mail, "Récupération de mot de passe - Chanderland.com", $message, $header);
+            
+            MailUtil::send(MAIL_FROM, $recup_mail, "Récupération de mot de passe - Chanderland.com", $message);
             header("Location: recuperation.php?section=code");
          } else // Si adresse mail non trouvé dans la bdd
          {
