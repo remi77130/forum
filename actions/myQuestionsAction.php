@@ -6,9 +6,9 @@ require('require/database.php') ?>
 
 <?php
 // RECUP LES QUESTIONS OU ID AUTEUR
-$getAllMyquestions = $bdd->prepare('SELECT id, titre, description FROM questions where id_auteur = ?');
+$getAllMyquestions = $bdd->prepare('SELECT id, titre, description FROM questions where id_auteur = 0');
 
-//$getAllMyquestions->execute(array($_SESSION['id']));
+$getAllMyquestions->execute(array($_SESSION['id']));
 
 
 

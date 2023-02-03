@@ -67,6 +67,7 @@ header {
     width: 100%;
     background-size: cover;
     margin-bottom: 30px;
+    
 }
 
 @media screen and (max-width: 300px) {
