@@ -9,21 +9,21 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 <!-- Page affichage des membres -->
 <!DOCTYPE html>
 <html lang="fr">
-<link rel="stylesheet" href="assets/navbar.css">
-<link rel="stylesheet" href="assets/profil_membre.css">
-<link rel="stylesheet" href="assets/modal.css">
-<link rel="stylesheet" href="assets/loader.css">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/navbar.css">
+    <link rel="stylesheet" href="assets/profil_membre.css">
+    <link rel="stylesheet" href="assets/modal.css">
+    <link rel="stylesheet" href="assets/loader.css">
 
     <title>Les profils chanderland</title>
 </head>
@@ -103,7 +103,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                                     <span class="age_profil_membre">
                                         <?php echo $userWithDesire->getAge() ?></span> <br>
                                     <span style="font-size: 12px;">
-                                    <?php echo $userWithDesire->getDepartment()->getName() ?></span>
+                                        <?php echo $userWithDesire->getDepartment()->getName() ?></span>
 
                                 </h2>
 
@@ -172,7 +172,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
                             <div class="container_profil_info_pseudo">
                                 <h2><?php echo $user->getLogin(); ?>
                                     <span class="age_profil_membre"><?php echo $user->getAge(); ?>
-                                </span> <br>
+                                    </span> <br>
 
                                 </h2>
 

@@ -2,7 +2,6 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'IBM Plex Sans';
 
     box-sizing: border-box;
 
@@ -10,7 +9,6 @@
 
 
 html, body{
-    font-family: 'IBM Plex Sans', sans-serif; 
     background-color: rgb(37, 37, 40);
     color: aliceblue;
     display: table;
