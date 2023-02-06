@@ -22,7 +22,7 @@ require 'signupAction.php';
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-240853356-1');</script>
 <TITLE>Rencontre gratuite</TITLE>
 
-<META NAME="DESCRIPTION" CONTENT="Chat sans inscription. Sans email. Venez chater sans inscrire votre email. "/>
+<META NAME="DESCRIPTION" CONTENT="Site de tchat gratuit en france"/>
 <meta name="robots" content="index, follow, all">
 <meta name="keywords" content="rencontre gratuite, chate en ligne, tchatche france, rencontre gratuite, tchat france">
 
