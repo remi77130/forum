@@ -9,6 +9,11 @@ require 'signupAction.php';
 <link rel="stylesheet" href="assets/index.css">
 <link rel="stylesheet" href="assets/compteur.css">
 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
+</style>
+<style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
+</style>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -53,15 +58,34 @@ require 'signupAction.php';
     <meta name="twitter:description" content="Venez chater avec un simple pseudo" />
     <meta name="twitter:image" content="icones/1.svg" />
 
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
-    </style>
-    <style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
-    </style>
+
+    <!-- Google ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7886663401596675"
+     crossorigin="anonymous"></script>
     
 </head>
 
 <body>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <p>Ce site est un service réservé à un public majeur et averti. 
+        Ce service peut contenir des textes et des photos qui peuvent être choquants 
+        pour certaines sensibilités.
+ </p>
+
+ <div class="verif_modal">
+    <p>Veuillez entrer votre âge :</p>
+
+    <input type="text" maxlength="2" id="ageInput"> <br> <br>
+
+
+    <button class="btn_verif" id="checkBtn">Vérifier</button>
+ </div>
+  </div>
+</div>
 
 
 
@@ -279,7 +303,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
     <p>
 
-    Inscrivez-vous gratuitement et découvrez des milliers de profils proches de chez vous pour discuter et faire des <strong>rencontres coquines.</strong> 
+    Inscrivez-vous gratuitement et découvrez des milliers de profils proches de chez vous pour discuter et faire des <strong>rencontres rapide.</strong> 
     
     </p>
 
@@ -308,10 +332,10 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 </article>
 
-        
+<div class="bcg_txt" > 
 
    <div>
-          <h3>Un site plus spontané</h3>
+          <h3>Des rencontres spontané</h3>
 
           <p>Sur la plupart des <strong>sites de rencontre</strong>, on ne sait pas vraiment par où commencer <br> 
           pour lancer la discussion.<br>
@@ -391,7 +415,7 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 
 
 <div class="cont_not">
-        <h3 class="text-3xl font-bold">Aucun profil fake</h3>
+        <h3 class="text-3xl font-bold">Pas de notification pour plus de discrétion</h3>
                 <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
 
         <p>Profitez d'une <strong>conversation discrète</strong> pour <strong>des rencontres</strong> sans stress.<br><br>
@@ -399,7 +423,23 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
         Même si votre portable est en mode sonnerie.</p> <br>
 
       <span style="text-decoration: underline;"><a class="lien_inscription" href="#form">M'inscrire gratuitement</a></span>
-</div> <!-- cont_not 
+</div> 
+
+
+
+<div class="cont_not">
+        <h3 class="text-3xl font-bold">Aucun profil fake</h3>
+                <img src="icones/fake.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
+
+       <p>Nous tenons à vous assurer que la sécurité et la protection de vos données est notre priorité absolue. C'est pour cette raison que nous utilisons ReCAPTCHA, un outil développé par Google, 
+        pour vérifier l'authenticité de chaque profil sur notre plateforme.
+       </p>
+       <p>En utilisant ReCAPTCHA, nous sommes en mesure de garantir que tous les profils sur notre plateforme sont authentiques et appartiennent réellement à des personnes réelles. Cela permet également de préserver la qualité de la communauté en empêchant les spams, les trolls et les autres comportements indésirables.</p>
+</div> 
+
+
+</div> <!-- container -->
+<!-- cont_not 
 
 
 <div>
@@ -490,6 +530,8 @@ function displayRandomNumber() {
   }
   displayRandomNumber();
 </script>
+
+
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfCwOQjAAAAAMtmfY5Bo9IOXG7ftYbd5_5C-qjb"></script>
 <!-- Recaptcha 

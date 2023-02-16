@@ -11,10 +11,8 @@
                 <h3>Comment modifier mon profil ?</h3>
             
                   <p class="paragraph">Pour modifier votre profil c'est super simple ! allez dans le menu en haut à droite, appuyez sur "Mon profil" puis cliquez sur "Éditer mon profil".<br></p>
-                <h3 class="h3">Comment devenir premium ?</h3>
-              
-                  <p class="paragraph">Pour devenir membre premium, allez dans le menu en haut à droite, appuyez sur "Mon profil" puis cliquez sur "Devenir Premium".<br></p>
-                <h3 class="h3">Comment écrire un message à un autre membre ?</h3>
+
+                  <h3 class="h3">Comment écrire un message à un autre membre ?</h3>
                 
                   <p class="paragraph">Pour écrire un message à un membre vous allez sur son profil puis vous cliquez sur "Écrire"<br></p>
          

@@ -1,4 +1,31 @@
-   // Le .ready est obligatoire pour pouvoir faire un script jQuery
+// modal age
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("checkBtn");
+var span = document.getElementsByClassName("close")[0];
+var ageInput = document.getElementById("ageInput");
+
+btn.onclick = function() {
+  if (ageInput.value < 18) {
+    alert("Vous n'êtes pas majeur. Vous n'êtes pas autorisé à accéder à ce site.");
+    window.location.replace("http://www.google.com");
+  } else {
+    alert("Bienvenue sur ce site !");
+    modal.style.display = "none";
+  }
+};
+
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// Le .ready est obligatoire pour pouvoir faire un script jQuery
    $(document).ready(function () {
 
     // Si une modification est faite sur le département

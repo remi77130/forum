@@ -1,3 +1,22 @@
+
+<?php
+if (!empty($_SESSION)) {
+    $id_destinataire = $_SESSION['id'];
+
+    // On récupère les messages non-lus
+    $req_selectMessagesNonLus = $bdd->prepare('SELECT * FROM messages WHERE id_destinataire = :id_destinataire AND lu <> 1');
+    $req_selectMessagesNonLus->execute(
+        [
+            'id_destinataire' => $id_destinataire
+        ]
+    );
+
+    $nb_message_non_lus = $req_selectMessagesNonLus->rowCount();
+} else {
+    exit;
+}
+?>
+
 <?php
 require_once("model/repository/user.repository.php");
 $user = UserRepository::findById($_SESSION["id"]);
@@ -20,13 +39,29 @@ $user = UserRepository::findById($_SESSION["id"]);
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="profil.php">Mon profil</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="reception.php">Mes messages</a>
+            <a class="nav-link" aria-current="page" href="editProfil.php">Editer mon profil</a>
+          </li>
+
+
+          <li class="nav-item">
+          <a class="nav-link" href="reception.php">Mes messages
+            <?php
+            if ($nb_message_non_lus > 0) {
+                ?>
+                <span class="notification"><?= $nb_message_non_lus ?></span>
+                <?php
+            }
+            ?>
+        </a>
           </li>
         </ul>
 
+
+
         <div class="d-flex">
-          <a class="nav-logout" aria-current="page" href="reception.php">Déconnexion</a>
+          <a class="nav-logout" aria-current="page" href="deconnexion.php">Déconnexion</a>
         </div>
       </div>
     </div>

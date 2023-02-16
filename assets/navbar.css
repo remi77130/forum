@@ -1,13 +1,13 @@
 
 .logo_navbar {
-    width: 200px;
+    width: 150px;
 }
 
 .avatar_navbar {
     width: 50px;
     border-radius: 50%;
     box-shadow: 3px 2px 10px #00000080;
-    border: 2px solid #0dcaf0;
+    border: 2px solid #000000;
 
 }
 

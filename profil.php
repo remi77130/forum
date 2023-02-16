@@ -129,18 +129,22 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                     </h3>
                     <span style="font-size: 12px; "> <?php echo $userinfo['age'] ?> ans</span> <br>
-                    <span class="card__status"><?php echo $userinfo['situation']; ?>
+                    <span class="card__status"><?php echo $userinfo['situation']; ?> </span>
 
+                    <p class="card__description"><?php echo $userinfo['description_profil']; ?></p> 
 
-                    </span>
-
-                    <p class="card__description"><?php echo $userinfo['description_profil']; ?></p> <br>
+                    <?php // Suppresions de commpte
+                    if (isset($_SESSION['id']) and $userinfo['id'] == $_SESSION['id']) { // SI USER CONNECT
+                    ?>
+                    <a class="supp" href="suppresion.php">Supprimer mon compte</a>
+                    <?php }?>
+                                
 
                     <!-- Bouton like rendre visible seulement par les autres users -->
                     <div class="like_container">
                         <a href="" class="like_button<?= $isOwner?" disabled":""?>" data-user-id="<?php echo $userinfo['id'] ?>">
-                            <img class="img_not_liked<?= $hasLike ? " hide" : "" ?>" src="images/icones/heart.svg" alt="">
-                            <img class="img_liked<?= !$hasLike ? " hide" : "" ?>" src="images/icones/heart2.svg" alt="">
+                            <img class="img_not_liked<?= $hasLike ? " hide" : "" ?>" src="images/icones/heart.svg">
+                            <img class="img_liked<?= !$hasLike ? " hide" : "" ?>" src="images/icones/heart2.svg">
                         </a>
                         <span class="like_counter"><?= $likeCounter; ?></span>
                     </div>
@@ -275,7 +279,6 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
             ?>
                 <!---   FORM ENVOIE PHOTO ALBUM -------->
                 <?php include 'form_send_album_profil.php'; ?>
-                <?php include 'option_profil.php'; ?>
 
                 <div class="line_01"> </div>
 

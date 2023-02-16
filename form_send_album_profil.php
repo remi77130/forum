@@ -6,7 +6,7 @@
 
    <form method="post" enctype="multipart/form-data">
 
-      <div>
+      <div style=" font-size:12px;">
          <input type="file" name="image" accept="image/png, image/jpeg" required /><br>
       </div>
 
