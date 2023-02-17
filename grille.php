@@ -32,9 +32,6 @@ for($i=1;$i<=49;$i++){
 <input type="submit" value="jouer" name="jouer" />
 
 </form>
-<a class="link_grille" href="#" onclick="window.open('//buy.stripe.com/cN214Ieh9dzTakMaEF', 'popup','width=300, height=300'); 
-return false;">Je tente ma chance !</a>
-
 <script> 
 i=0;
     function jouer(val){

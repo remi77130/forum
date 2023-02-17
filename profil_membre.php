@@ -36,11 +36,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 </style>
 
 <body>
-
-
-    <?php
-
-    ?>
+<?php ?>
 
 
 
