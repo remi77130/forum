@@ -7,13 +7,7 @@ require 'signupAction.php';
 <head>
 
 <link rel="stylesheet" href="assets/index.css">
-<link rel="stylesheet" href="assets/compteur.css">
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
-</style>
-<style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
-</style>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -25,9 +19,10 @@ require 'signupAction.php';
 <!-- Google tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-240853356-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-240853356-1');</script>
-<TITLE>Rencontre gratuite</TITLE>
+<TITLE>Rencontre gratuite | Venez chatter gratuitement !| Chanderland France</TITLE>
 
-<META NAME="DESCRIPTION" CONTENT="Site de tchat gratuit en france"/>
+<META NAME="DESCRIPTION" CONTENT="Rencontre gratuite | Venez chatter gratuitement !| Chanderland France | Chate en ligne | 
+tchatche."/>
 <meta name="robots" content="index, follow, all">
 <meta name="keywords" content="rencontre gratuite, chate en ligne, tchatche france, rencontre gratuite, tchat france">
 
@@ -58,34 +53,16 @@ require 'signupAction.php';
     <meta name="twitter:description" content="Venez chater avec un simple pseudo" />
     <meta name="twitter:image" content="icones/1.svg" />
 
-
-    <!-- Google ADS -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7886663401596675"
-     crossorigin="anonymous"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
+    </style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lato&display=swap');
+    </style>
     
 </head>
 
 <body>
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-
-    <p>Ce site est un service réservé à un public majeur et averti. 
-        Ce service peut contenir des textes et des photos qui peuvent être choquants 
-        pour certaines sensibilités.
- </p>
-
- <div class="verif_modal">
-    <p>Veuillez entrer votre âge :</p>
-
-    <input type="text" maxlength="2" id="ageInput"> <br> <br>
-
-
-    <button class="btn_verif" id="checkBtn">Vérifier</button>
- </div>
-  </div>
-</div>
 
 
 
@@ -108,10 +85,6 @@ require 'signupAction.php';
 <img class="img_beta" src="icones/Version_beta.svg"  alt="image_chanderland" srcset="">
 
 </div>
-
-
-
-
 
 
 <div class="login-page">
@@ -186,7 +159,10 @@ require 'signupAction.php';
 
 if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR 
 {
-    echo '<font color="wheat">' . $erreur . "</font>";
+    echo '<span style="text-align: center;
+    font-weight: 900;
+    color: green;
+    background-color: blanchedalmond;";>' . $erreur . "</span>";
 
 }
 ?>
@@ -221,7 +197,10 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR 
 {
-    echo '<span>' . $erreur . "</span>";
+    echo '<span style="text-align: center;
+    font-weight: 900;
+    color: green;
+    background-color: blanchedalmond;";>' . $erreur . "</span>";
 
 }
 ?>
@@ -334,7 +313,7 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
 <div class="bcg_txt" > 
 
-   <div>
+   <div class="cont01">
           <h3>Des rencontres spontané</h3>
 
           <p>Sur la plupart des <strong>sites de rencontre</strong>, on ne sait pas vraiment par où commencer <br> 
@@ -370,11 +349,10 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 
     </div>
 
-<div class="b01"> 
+<div class="cont01"> 
 
 
-<div class="adv"> 
-    <h3>Que voulez vous faire aujourdhui ?</h3> <br>
+<h3>Que voulez vous faire aujourdhui ?</h3> <br>
 
 
 <p class="p_advantage">
@@ -384,8 +362,9 @@ if (!empty($erreur))  //ERREUR MESSAGE CHAMPS NON COMPLET OU ERREUR
 </p> <br>
 <h4>Proposez-le simplement puis attendez les propositions.</h4> <br>
 
+</div>
 
-
+<div class="cont01">
 <h3>Les rencontres spontanées</h3>
 
 <p>Sont celles qui se produisent sans qu'on ne s’y attendent à l'avance. <br>
@@ -412,9 +391,9 @@ En fin de compte, la spontanéité peut être une qualité très positive, mais 
 important de trouver un équilibre et de savoir à quel moment <br>
 Il est approprié de la mettre en pratique. <br> </p> <br>
 
+</div>
 
-
-<div class="cont_not">
+<div class="cont01">
         <h3 class="text-3xl font-bold">Pas de notification pour plus de discrétion</h3>
                 <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
 
@@ -427,7 +406,8 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 
 
 
-<div class="cont_not">
+<div class="cont01"> 
+    
         <h3 class="text-3xl font-bold">Aucun profil fake</h3>
                 <img src="icones/fake.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
 
@@ -438,21 +418,7 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 </div> 
 
 
-</div> <!-- container -->
-<!-- cont_not 
-
-
-<div>
-    <h3>Si vous êtes different montrer le</h3>
-    <img src="icones/chat-gratuit-notificationsvg.svg" style="width: 50px;" alt="chat-en-ligne" class="w-8">
-
-    <p>Que recherche une femme ? vous devez vous demarquez, vous deevez montrer que vous avez une situation stable. </p>
-</div>
-
-
-    
-</div>
-
+</div> </div></div>
 
 
 
@@ -493,7 +459,6 @@ Il est approprié de la mettre en pratique. <br> </p> <br>
 </body>
 
 </html>
-
 
 <!-- animation letter-->
 <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>

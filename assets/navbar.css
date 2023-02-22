@@ -11,7 +11,8 @@
 
 }
 
-.navbar {
+.navbar
+{
     background-color: #e4e4e4 !important;
 }
 header {
@@ -21,6 +22,8 @@ header {
 
 .navbar .navbar-nav li{
     font-weight: bold;
+    color: black;
+    font-weight: bold !important;
 }
 
 
@@ -37,4 +40,11 @@ header {
 .nav-link-brand{
     padding-left: 2em;
     padding-right: 2em;
+}
+
+.nav-link
+{
+    color: rgb(2, 2, 2);
+    font-family: cursive;
+    font-weight: bold;
 }

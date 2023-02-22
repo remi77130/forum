@@ -69,6 +69,14 @@ p,h3,h4
 
 
 
+.cont01 
+{
+  width: 400px;
+}
+
+
+
+
 a{
     text-decoration: none;
     color: aliceblue;
@@ -91,6 +99,17 @@ h3
     margin-bottom: 10px;
     color: #ff22b1;
 }
+
+
+.bcg_txt {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
 .btn_container
 {
   display: flex;
@@ -246,6 +265,45 @@ h3
 
 
 @media screen and (max-width: 700px) {
+
+
+  .bcg_txt
+  {
+    width: 230px;
+    margin: auto;
+  }
+
+
+
+  
+.popup {
+  display: block;
+  position: fixed;
+  top: 70%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  background-color: #f7f7f7;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+  z-index: 9999;
+  text-align: center;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.title_popup
+{
+  color: #000000;
+  padding-right: 50px;
+}
+
+.p_popup
+{
+  color: black;
+  padding-left: px;
+  padding-left: 40px;
+
+}
+
 
 
   h1

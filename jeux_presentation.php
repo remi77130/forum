@@ -1,6 +1,4 @@
-<?php
-include 'verif.php'; // BDD AND SESSION
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +14,39 @@ include 'verif.php'; // BDD AND SESSION
     <link rel="stylesheet" href="assets/modal.css">
     <link rel="stylesheet" href="assets/jeux.css">
 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
     
     <title>Presentation</title>
 </head>
 <body>
-    
-<?php include 'includes/header.php' ?>
-<h1>Presentation du jeux de la grille</h1>
+<header>
+	
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="jeux_presentation.php">Jeux de la grille</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="profil_membre.php">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profil.php">Mon profil</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
 
+</header>
 
-<div class="container_1">
+<div class="cont">
 <div class="container_2">
 Les jeux de la grille consistent simplement à tirer 6 numéros puis à lancer
 la partie. Si vos 6 numéros sortent, vous remportez 10 fois la somme
@@ -34,13 +55,15 @@ La somme gagnée est ensuite transférée sur votre compte
 <img style="width: 50px;" src="Icones/coins.svg" alt="" srcset="">
 </div>
 
-<div class="container_3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
- Tempore dolorum cupiditate in aut iusto, perferendis sequi veniam doloremque non, <br>
-  magnam, perspiciatis nobis adipisci voluptate repellat quibusdam corporis voluptatibus? <br>
-   Pariatur, quaerat. <br>
+<div class="container_3"> <p>Pourquoi vous ne gagnez jamais au jeux d'argent ? <br>
+ car les probabilité de gains sont infiniment maigre. 
+ PLus les gains sont important moins vous avez de chance de gagner quoi que se soit. 
+ Chez nous, on préfére offrir de plus petite sommme plus mais de plus grande chance de gagné. </p> 
+ 
    <img style="width:50px;" src="icones/card_bank_2.svg" alt="" srcset=""></div>
 
 </div>
+</div> <!-- cont --->
 
 
 <div class="container">
@@ -57,57 +80,21 @@ La somme gagnée est ensuite transférée sur votre compte
 
 
 
+<div id="popup1" class="popup">
+<div class="st"><h5 class="title_popup">
+	<img src="icones/position_popup.svg" class="svg_popup" > Jean de Sens</h5>
+</div>
+  <p class="p_popup">viens de gagné 100 €</p>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-</script>
-<script>
-    let button = document.querySelector(".button");
-let buttonText = document.querySelector(".button p");
-let thankText = document.querySelector(".button p:last-child");
 
-let timeLine = new TimelineMax({
-	paused: false
-});
+<div id="popup2" class="popup">
+<div class="st"><h5 class="title_popup">
+	<img src="icones/position_popup.svg"  class="svg_popup" > Rémi de Auxerre</h5>
+</div>
+  <p class="p_popup">viens de gagné 100 €</p>
+</div>
 
-button.addEventListener("click", () => {
-	timeLine
-		.to(buttonText, 0.6, {
-			opacity: 0
-		})
-		.to(button, 0.8, {
-			height: 0.2,
-			opacity: 0.5,
-			boxShadow: "0px 0px 35px 7px #cd28fa",
-			delay: 0.25
-		})
-		.to(button, 0.1, {
-			opacity: 0.5,
-			background: "#26ff92"
-		})
-		.to(button, 0, {
-			width: 1,
-			delay: 0.2
-		})
-		.to(button, 0.1, {
-			boxShadow: "0px 0px 100px 55px #fa2856",
-			y: 90,
-			height: 100,
-			delay: 0.23
-		})
-		.to(button, 0.3, {
-			height: 1000,
-			y: -1500,
-			boxShadow: "0px 0px 85px 17px #fa2856",
-			delay: 0.2
-		})
-		.to(".thank", 1, {
-			opacity: 1,
-			delay: 0.3
-		});
-});
-
-</script>
-
+<script src="js/jeux_presentation.js"></script>
 </body>
 </html>

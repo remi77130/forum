@@ -19,11 +19,35 @@ body {
     color: aliceblue;
     text-decoration: none;
     list-style: none;
+    border: 5px solid green;
+    height: 100vh;
 
 }
 
-h1{
+
+header
+{
+
+    margin-bottom: 50px;
+
+}
+
+h1
+{
   text-align: center;
+}
+
+.navbar
+{
+  background-color: #e4e4e4 !important;
+}
+.nav-link
+{
+  color: rgb(0 0 0);
+}
+.navbar-brand
+{
+  font-weight: bold;
 }
 @media screen and (max-width: 700px) {
   .container_1
@@ -32,9 +56,13 @@ h1{
 }
 }
 
-
-
-
+.cont
+{
+  border: 7px solid hotpink;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 
 .container{
@@ -48,23 +76,24 @@ h1{
 .container_1
 {
     display: flex;
+    flex-wrap: wrap;
     border: 5px solid red;
     justify-content: center;
+    margin-top: 100px;
 
 }
 
-.container_2
+.container_2, .container_3 p
 {
-  border: 5px solid floralwhite;
-  width: 50%;
+  font-size: 1.5em;
+  color: rgb(253, 253, 253);
 }
-.container_3
+
+.container_2, .container_3
 {
-  border: 5px solid green;
-  width: 50%;
+  width: 300px;
+  border: 5px solid red;
 }
-
-
 
 
 :root{
@@ -284,4 +313,46 @@ h1{
 @keyframes drow5{
   0%   { width : 0 ; }
   100% { width : 124px ; }
+}
+
+
+
+/*   Jeux popup */
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f7f7f7;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+  z-index: 9999;
+  text-align: center;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.title_popup
+{
+  color: #000000;
+  padding-right: 50px;
+}
+
+.p_popup
+{
+  color: black;
+  padding-left: 20px !important;
+
+}
+
+.svg_popup
+{    
+  
+  width: 40px;
+  position: relative;
+  top: 20px;
+  right: 10px !important;
+
 }
