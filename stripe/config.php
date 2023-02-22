@@ -1,4 +1,4 @@
 <?php
-const PUBLIC_KEY = 'pk_test_51Mdf9FFRg5apxGoxxIqeAYyCmOwZrFYvOIVLR1uj9aiEZk0dCYzIzKCMi0ifGEtfdQKwrnvSZl4RH4KSkUoBIkRb00xkab4TfN';
-const SECRET_KEY = 'sk_test_51Mdf9FFRg5apxGoxzJO3pi0hyL2qxhzB4zkMsio7cuCGAON5y39nY5hzM4RdmywAbm1R1UZUGfVn2FHRscGyPkFj00XkaaFzcZ';
+const PUBLIC_KEY = 'pk_test_51MeS3hGmt7x4jOCUxzpVm8nLEq9Yb8aHvLv5PI8m29mtNa7YzQm8g8SmWs2VGmjXjNHBuuMiGAPzIrKRKK12t9Ys00f0rlVljV';
+const SECRET_KEY = 'sk_test_51MeS3hGmt7x4jOCUwOgspjvFH6UeIevdQsHr9pIjUmZDLP2yaXSRvKWyQE0WXF8Lz7fEwqguXNnW9rx4T0pu4P5000q2g1XxIL';
 ?>

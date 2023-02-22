@@ -28,20 +28,24 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     // On instancie la classe Stripe avec les clefs
     $Stripe = new Paiement(PUBLIC_KEY, SECRET_KEY);
 
-    $customer_id = $selectMembre['stripe_customer_id'];
+    if (!empty($selectMembre['stripe_customer_id'])) {
 
-    // On liste les moyens de paiement de l'utilisateur
-    $payments_methods = $Stripe->stripe_client->paymentMethods->all(
-        [
-            'customer' => $customer_id,
-            'type' => 'card'
-        ]
-    );
+        $customer_id = $selectMembre['stripe_customer_id'];
 
-    if (count($payments_methods->data) > 0) {
-        $ask_card = false;
-        $last_card = end($payments_methods->data);
-        $last_digit = $last_card->card->last4;
+
+        // On liste les moyens de paiement de l'utilisateur
+        $payments_methods = $Stripe->stripe_client->paymentMethods->all(
+            [
+                'customer' => $customer_id,
+                'type' => 'card'
+            ]
+        );
+
+        if (count($payments_methods->data) > 0) {
+            $ask_card = false;
+            $last_card = end($payments_methods->data);
+            $last_digit = $last_card->card->last4;
+        }
     }
 }
 ?>
