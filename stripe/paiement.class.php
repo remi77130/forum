@@ -2,10 +2,11 @@
 
 class Paiement
 {
+    public $stripe_client;
+
     private $product_amount = 100; // Montant du produit en centime, donc 1€
     private $public_key;
     private $secret_key;
-    private $stripe_client;
 
     // On instancie la classe avec les clefs de connexion
     public function __construct($public_key, $secret_key)
@@ -67,6 +68,25 @@ class Paiement
                 'automatic_payment_methods' => [
                     'enabled' => 'true',
                 ],
+            ]);
+
+            return $paymentIntent;
+        } catch (Exception $e) {
+            die("Une erreur s'est produite: " . $e->getMessage());
+        }
+    }
+
+    // Méthode permettant de créer un paiement avec un moyen de paiement
+    public function createPayementIntentWithCard($customer_id, $payement_method_id) {
+
+        try {
+            $paymentIntent = $this->stripe_client->paymentIntents->create([
+                'amount' => $this->product_amount,
+                'currency' => 'eur',
+                'customer' => $customer_id,
+                'payment_method' => $payement_method_id,
+                'off_session' => true,
+                'confirm' => true,
             ]);
 
             return $paymentIntent;

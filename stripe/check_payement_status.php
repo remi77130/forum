@@ -39,8 +39,8 @@ if (!empty($_GET['payment_intent']) && !empty($_GET['payment_intent_client_secre
             }
 
             // Le paiement a bien fonctionné
-            if($status == 'succeeded' && false) {
-
+            if($status == 'succeeded') {
+                header('location: /tirage.php?selection='.$_GET['selection']);
             }
 
             // Le paiement n'a pas fonctionné
