@@ -58,7 +58,6 @@ class Paiement
     // Méthode permettant d'instancier un système de paiement pour un client
     public function createPayementIntent($customer_id)
     {
-
         try {
             $paymentIntent = $this->stripe_client->paymentIntents->create([
                 'customer' => $customer_id,
@@ -76,10 +75,20 @@ class Paiement
         }
     }
 
+    // Méthode permettant de récupérer un PayementIntent avec son ID
+    public function getPayementIntent($payement_intent_id)
+    {
+        return $this->stripe_client->paymentIntents->retrieve(
+            $payement_intent_id,
+            []
+        );
+    }
+
     // Méthode permettant de récupérer la liste des paiements (aussi utilisée pour voir si on peut se connecter à l'API)
     public function getProductList()
     {
         return $this->stripe_client->products->all();
     }
 }
+
 ?>
