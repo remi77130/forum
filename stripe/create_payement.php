@@ -67,6 +67,15 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
             // On doit récupérer le `client_secret` du paiement pour pouvoir demander à l'utilisateur
             $payement_client_secret = $payementIntent->client_secret;
 
+            // On enregistre le client_secret sur le membre
+            $updatePayementIntent = $bdd->prepare('UPDATE membres SET last_stripe_payement_intent_id = :last_stripe_payement_intent_id WHERE id = :id');
+            $updatePayementIntent->execute(
+                [
+                    'last_stripe_payement_intent_id' => $payement_client_secret,
+                    'id' => $selectMembre['id']
+                ]
+            );
+
             die(json_encode(['client_secret' => $payement_client_secret]));
         }
     }
