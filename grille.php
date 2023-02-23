@@ -160,7 +160,7 @@ else { ?>
         $(document).ready(function () {
             $('#play').on('click', function () {
                 $.ajax({
-                    url: '/stripe/create_payement.php',
+                    url: './stripe/create_payement.php',
                     method: 'post',
                     dataType: 'json',
                     success: function (return_data) {
@@ -189,7 +189,7 @@ else { ?>
                                     //`Elements` instance that was used to create the Payment Element
                                     elements,
                                     confirmParams: {
-                                        return_url: 'http://remi.test/stripe/check_payement_status.php?selection=' + selection_nos.join(','),
+                                        return_url: '<?= BASE_URL; ?>stripe/check_payement_status.php?selection=' + selection_nos.join(','),
                                     },
                                 });
 

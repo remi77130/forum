@@ -2,8 +2,8 @@
 include "verif.php";
 require __DIR__ . '/vendor/autoload.php';
 
-$selection =trim($_POST["selection"]);
-$numeros=explode(" ",$selection);
+$selection =trim($_GET["selection"]);
+$numeros=explode(",",$selection);
 // Resultat du tirage dans tableau tirage
 $tirage=array();
 

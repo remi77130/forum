@@ -40,12 +40,12 @@ if (!empty($_GET['payment_intent']) && !empty($_GET['payment_intent_client_secre
 
             // Le paiement a bien fonctionné
             if($status == 'succeeded') {
-                header('location: /tirage.php?selection='.$_GET['selection']);
+                header('location: ./tirage.php?selection='.$_GET['selection']);
             }
 
             // Le paiement n'a pas fonctionné
             else {
-                header('location: /grille.php?payement_status=error');
+                header('location: ./grille.php?payement_status=error');
             }
         }
     }
