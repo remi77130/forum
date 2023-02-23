@@ -61,34 +61,34 @@ for($i=0;$i<6;$i++){
 
 
 <script>
-    document.body.onload = function () {
-        num = "<?php echo $selection?>".split(" ");
-        res = "<?php echo implode(" ", $tirage)?>".split(" ");
-        i = 0;
-        j = 0;
-        tirer();
-    }
-
-    function tirer() {
-        t = setTimeout("tirer()", 0);
-        if (j < res[i]) {
-            j++;
-            document.getElementById(i).innerHTML = j;
-        } else {
-            if (num.indexOf(res[i]) != -1) {
-                document.getElementById(i).style.borderColor = "#EA2";
-                document.getElementById(i).style.backgroundColor = "#EA2";
-                document.getElementById(i).style.color = "#000";
+            document.body.onload=function(){
+                num="<?php echo $selection?>".split(" ");
+                res="<?php echo implode(" ",$tirage)?>".split(" ");
+                i=0;
+                j=0;
+                tirer();
             }
-            j = 0;
-            if (i < 5)
-                i++;
-            else {
-                clearTimeout(t);
-                document.getElementById("resultat").style.visibility = "visible";
+            function tirer(){
+                t=setTimeout("tirer()",0);
+                if(j<res[i]){
+                    j++;
+                    document.getElementById(i).innerHTML=j;
+                }
+                else{
+                    if(num.indexOf(res[i])!=-1){
+                        document.getElementById(i).style.borderColor="#EA2";
+                        document.getElementById(i).style.backgroundColor="#EA2";
+                        document.getElementById(i).style.color="#000";
+                    }
+                    j=0;
+                    if(i<5)
+                        i++;
+                    else{
+                        clearTimeout(t);
+                        document.getElementById("resultat").style.visibility="visible";
+                    }
+                }
             }
-        }
-    }
-</script>
+        </script>
 </body>
 </html>
