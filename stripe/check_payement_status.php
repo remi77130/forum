@@ -2,7 +2,6 @@
 session_start();
 
 require __DIR__ . '/../require/database.php';
-require __DIR__ . '/config.php';
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/paiement.class.php';
 
@@ -10,7 +9,7 @@ require __DIR__ . '/paiement.class.php';
 if (!empty($_GET['payment_intent']) && !empty($_GET['payment_intent_client_secret'])) {
 
     // On instancie la classe Stripe avec les clefs
-    $Stripe = new Paiement(PUBLIC_KEY, SECRET_KEY);
+    $Stripe = new Paiement(STRIPE_KEYS['public'], STRIPE_KEYS['secret']);
 
     // On regarde s'il y a bien un membre connecté
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
@@ -40,12 +39,12 @@ if (!empty($_GET['payment_intent']) && !empty($_GET['payment_intent_client_secre
 
             // Le paiement a bien fonctionné
             if($status == 'succeeded') {
-                header('location: ./tirage.php?selection='.$_GET['selection']);
+                header('location: '.URL_WEBSITE.'/tirage.php?selection='.$_GET['selection']);
             }
 
             // Le paiement n'a pas fonctionné
             else {
-                header('location: ./grille.php?payement_status=error');
+                header('location: '.URL_WEBSITE.'/grille.php?payement_status=error');
             }
         }
     }

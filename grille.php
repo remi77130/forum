@@ -3,7 +3,6 @@
 session_start();
 
 require __DIR__ . '/require/database.php';
-require __DIR__ . '/stripe/config.php';
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/stripe/paiement.class.php';
 
@@ -26,25 +25,32 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     }
 
     // On instancie la classe Stripe avec les clefs
-    $Stripe = new Paiement(PUBLIC_KEY, SECRET_KEY);
+    $Stripe = new Paiement(STRIPE_KEYS['public'], STRIPE_KEYS['secret']);
 
     if (!empty($selectMembre['stripe_customer_id'])) {
 
         $customer_id = $selectMembre['stripe_customer_id'];
 
+        try {
+            // On regarde si le customer existe
+            $customer = $Stripe->getClientById($customer_id);
 
-        // On liste les moyens de paiement de l'utilisateur
-        $payments_methods = $Stripe->stripe_client->paymentMethods->all(
-            [
-                'customer' => $customer_id,
-                'type' => 'card'
-            ]
-        );
 
-        if (count($payments_methods->data) > 0) {
-            $ask_card = false;
-            $last_card = end($payments_methods->data);
-            $last_digit = $last_card->card->last4;
+            // On liste les moyens de paiement de l'utilisateur
+            $payments_methods = $Stripe->stripe_client->paymentMethods->all(
+                [
+                    'customer' => $customer_id,
+                    'type' => 'card'
+                ]
+            );
+
+            if (count($payments_methods->data) > 0) {
+                $ask_card = false;
+                $last_card = end($payments_methods->data);
+                $last_digit = $last_card->card->last4;
+            }
+        } catch (Exception $e) {
+
         }
     }
 }
@@ -60,9 +66,8 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     <title>Jeux de lotterie</title>
 
     <style>
-        button#play {
-            width: 200px;
-            height: 40px;
+        button#play, #stripe_paiement button#submit {
+            padding: 10px 20px;
             font-size: 14pt;
             font-weight: bold;
             cursor: pointer;
@@ -71,12 +76,30 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
             color: #000;
             display: inline-block;
             margin: 4px 2px;
-            visibility: hidden;
+             visibility: hidden;
+            border-radius: 16px;
+        }
+
+        #stripe_paiement button#submit {
+            visibility: visible !important;
         }
 
         button#play:hover {
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
             color: #FFF;
+        }
+
+        #stripe_paiement {
+            padding: 0px 20px;
+            margin: 50px;
+            color: white;
+        }
+
+        #error-message {
+            margin: 20px;
+            color: red;
+            font-size: 18pt;
+            font-weight: bold;
         }
     </style>
 
@@ -86,37 +109,34 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h1>Veuillez séléctionnez 6 cases</h1>
 
 <div class="container_grille">
-<div id="grille" >
-
-<?php 
-for($i=1;$i<=49;$i++){
-    ?>
-    <input type="button" value="<?php echo $i?>" id="<?php echo $i?>" onclick="jouer(this.value)" />
-    <!-- si on clique sur un bouton, on appel une fonction sur laquelle on va passer un argument-->
-    <?php
-    if($i%7==0)
-    echo "<br />";
-    }
-    ?>
-
-
-</div>
+    <div id="grille">
+        <?php
+        for ($i = 1; $i <= 49; $i++) {
+            ?>
+            <input type="button" value="<?php echo $i ?>" id="<?php echo $i ?>" onclick="jouer(this.value)"/>
+            <!-- si on clique sur un bouton, on appel une fonction sur laquelle on va passer un argument-->
+            <?php
+            if ($i % 7 == 0)
+                echo "<br />";
+        }
+        ?>
+    </div>
 
 
-<div id="selection"></div>
+    <div id="selection"></div>
 
-<button id="play">Jouer pour 1,00€</button>
+    <button id="play">Jouer pour 1,00€</button>
 
-<div id="stripe_paiement" style="display: none; margin: 0 auto; width: 600px; background-color: white; padding: 20px;">
-    <form id="payment-form">
-        <div id="payment-element">
-            <!-- Elements will create form elements here -->
-        </div>
-        <button id="submit">Procéder au paiement et continuer sur la page des résultats...</button>
-        <div id="error-message">
-            <!-- Display error message to your customers here -->
-        </div>
-    </form>
+    <div id="stripe_paiement" style="display: none;">
+        <form id="payment-form">
+            <div id="error-message"></div>
+            <div id="payment-element">
+                <!-- Elements will create form elements here -->
+            </div>
+            <br>
+            <button id="submit">Procéder au paiement de 1,00€ puis afficher les résultats...</button>
+        </form>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
@@ -145,6 +165,9 @@ if (!$ask_card) { ?>
                         dataType: 'json',
                         data: 'selection=' + selection_nos.join(','),
                         success: function (return_data) {
+
+                            console.log(return_data);
+
                             window.location.href = return_data.url_redirect;
                         }
                     });
@@ -159,6 +182,7 @@ else { ?>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#play').on('click', function () {
+                $('#play').html('Chargement en cours...');
                 $.ajax({
                     url: './stripe/create_payement.php',
                     method: 'post',
@@ -166,7 +190,9 @@ else { ?>
                     success: function (return_data) {
 
                         $("#stripe_paiement").fadeIn().animate({}, 800, function () {
-                            const stripe = Stripe('<?= PUBLIC_KEY; ?>');
+                            $('#play').fadeOut();
+
+                            const stripe = Stripe('<?= STRIPE_KEYS['public']; ?>');
 
                             const options = {
                                 clientSecret: return_data.client_secret,
@@ -189,7 +215,7 @@ else { ?>
                                     //`Elements` instance that was used to create the Payment Element
                                     elements,
                                     confirmParams: {
-                                        return_url: '<?= BASE_URL; ?>stripe/check_payement_status.php?selection=' + selection_nos.join(','),
+                                        return_url: '<?= URL_WEBSITE; ?>/stripe/check_payement_status.php?selection=' + selection_nos.join(','),
                                     },
                                 });
 
@@ -228,7 +254,7 @@ else { ?>
                 $('button#play').css('visibility', 'visible');
             }
         }
-}
+    }
 
 </script>
 </body>
