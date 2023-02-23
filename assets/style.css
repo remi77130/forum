@@ -11,16 +11,18 @@ body{
 	text-align:center;
 	margin:0;
 	min-height:100vh;
-	background-image:url("../icones/background.png");
+	background-image:url("../icones/1.jpg");
 	background-position:center center;
 	background-size:cover;
 	animation-name:back;
-	animation-duration:20s;
+	background-color: #333333;
+
+	animation-duration:50s;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
 }
 @keyframes back{
-	0%{
+0%{
 		background-size:100% auto;
 	}
 	50%{
@@ -132,4 +134,16 @@ h2{
 	box-shadow: 10px 10px 20px black;
 	position: relative;
 	bottom: 250px;
+}
+
+
+.container_grille
+{
+		width: 40%;
+		margin: auto;
+		backdrop-filter: brightness(0.3);
+
+		border-radius: 50px;
+		padding: 20px;
+		margin-top: 20px;
 }

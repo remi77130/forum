@@ -1,4 +1,5 @@
 <!-- Formulaire de recherche (ne pas oublier htmlspecialchars pour secur sql) -->
+<link rel="stylesheet" href="assets/form_search.css">
 <div class="form_search">
 
     <form action="" method="POST">
@@ -13,7 +14,7 @@
 
                 <input type="checkbox" name="femme" value="1" id="checkWomen" <?php echo (!empty($femme) and $femme == 1) ? "checked" : ""; ?> /> <br>
             </label>
-        </div>
+        </div> <br>
 
         <!-- On vient récupérer le département ( meme id et name que sur index.php) -->
         <div>
@@ -129,7 +130,7 @@
             <option value="89">Yonne</option>
             <option value="78">Yvelines</option>
             </select>
-        </div>
+        </div> <br>
 
         <!-- 
 
@@ -139,7 +140,7 @@
 
         <!-- Recherche sur nationality -->
         <div>
-            <p>Qui à</p>
+           
             <label>Age minimum</label>
             <br />
             <input class="age_search" type="number" name="age_min" id="age_min" value="<?php echo !empty($ageMin) ? $ageMin : ""; ?>" /><br>
@@ -147,16 +148,17 @@
             <label>Age maximum</label>
             <br />
             <input class="age_search" type="number" name="age_max" id="age_max" value="<?php echo (!empty($ageMax) and $ageMax != 99) ? $ageMax : ""; ?>" />
-        </div>
+        </div> <br>
 
         <div>
             <p>Taille</p>
-            <label>Taille minimum</label>
+            <label>Taille minimum</label><br>
             <input type="number" name="taille_min" id="taille_min" value="<?php echo !empty($taille_min) ? $taille_min : ""; ?>" />
-
-            <label>Taille maximum</label>
+            <br> 
+            <label>Taille maximum</label><br>
             <input type="number" name="taille_max" id="taille_max" value="<?php echo (!empty($taille_max) and $taille_max != 150) ? $poids_max : ""; ?>" />
         </div>
+        <br>
 
         <div>
             <?php
@@ -164,7 +166,7 @@
             $poids_max = isset($_POST['poids_max']) ? $_POST['poids_max'] : "";
             ?>
             <p>Poids</p>
-            <br />
+           
             <select name="poids_min" id="poids_min">
                 <option value="">min</option>
                 <option value=""></option>
@@ -176,8 +178,9 @@
                 <?php
                 }
                 ?>
-            </select>
-            et
+            </select> 
+            <br>
+           
             <select name="poids_max" id="poids_max">
                 <option value="">max</option>
                 <option value=""></option>
@@ -191,13 +194,14 @@
                 ?>
             </select>
         </div>
+        <br>
 
         <div>
             <?php
             $cheveux_color = isset($cheveux_color) ? $cheveux_color : "";
             ?>
             <p>Cheveux</p>
-            <br />
+         
             <select name="cheveux_color" id="cheveux_color">
                 <option value=""></option>
                 <option value="blond" <?php echo ($cheveux_color == "blond") ? "selected" : "" ?>>Blond</option>
@@ -208,20 +212,22 @@
                 <option value="raser" <?php echo ($cheveux_color == "raser") ? "selected" : "" ?>>Raser</option>
             </select>
         </div>
+            <br>
 
         <div>
             <?php
             $situation = isset($situation) ? $situation : "";
             ?>
             <p>Situation</p>
-            <br />
+         
             <select name="situation" id="situation" value="<?php echo !empty($situation) ? $situation : "" ?>">
                 <option value=""></option>
                 <option value="En couple" <?php echo ($situation == "En couple") ? "selected" : "" ?>>En couple</option>
-                <option value="Celibataire" <?php echo ($situation == "Celibataire") ? "selected" : "" ?>>Celibataire</option>
+                <option value="Celibataire" <?php echo ($situation == "Celibataire") ? "selected" : "" ?>>Célibataire</option>
                 <option value="C'est compliqué" <?php echo ($situation == "C'est compliqué") ? "selected" : "" ?>>C'est compliqué</option>
             </select>
         </div>
+        <br>
 
 
         <div>
@@ -240,6 +246,7 @@
                 <option value="Extratereste" <?php echo ($sexualite == "Extratereste") ? "selected" : "" ?>>Extratereste</option>
             </select>
         </div>
+        <br>
 
 
 
@@ -248,7 +255,6 @@
             $nationality = isset($nationality) ? $nationality : "";
             ?>
             <p>Nationalité</p>
-            <br />
 
             <select name="nationality">
                 <option value=""></option>
@@ -308,48 +314,11 @@
                 <option value="Ukrainian">Ukrainian</option>
                 <option value="Venezuelan">Venezuelan</option>
                 <option value="Vietnamese">Vietnamese</option>
-            </select> <br> <br>
-
+            </select> <br>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <br>
+        
+        
         <div>
             <label>Pseudo</label>
             <br />

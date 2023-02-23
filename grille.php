@@ -84,21 +84,24 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <body>
 
 <h1>Veuillez séléctionnez 6 cases</h1>
-<div id="grille">
 
+<div class="container_grille">
+<div id="grille" >
+
+<?php 
+for($i=1;$i<=49;$i++){
+    ?>
+    <input type="button" value="<?php echo $i?>" id="<?php echo $i?>" onclick="jouer(this.value)" />
+    <!-- si on clique sur un bouton, on appel une fonction sur laquelle on va passer un argument-->
     <?php
-    for ($i = 1; $i <= 49; $i++) {
-        ?>
-        <input type="button" value="<?php echo $i ?>" id="<?php echo $i ?>" onclick="jouer(this.value)"/>
-        <!-- si on clique sur un bouton, on appel une fonction sur laquelle on va passer un argument-->
-        <?php
-        if ($i % 7 == 0)
-            echo "<br />";
+    if($i%7==0)
+    echo "<br />";
     }
     ?>
 
 
 </div>
+
 
 <div id="selection"></div>
 
@@ -225,7 +228,8 @@ else { ?>
                 $('button#play').css('visibility', 'visible');
             }
         }
-    }
+}
+
 </script>
 </body>
 </html>
