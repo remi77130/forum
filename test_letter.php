@@ -25,6 +25,31 @@
 
 
 
+<div class="hero-section wf-section">
+<div class="container w-container">
+<div class="split wf-grid">
+<div class="hero-content" >
+    <div class="content">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, officia minus? Assumenda quibusdam ipsam maiores consequuntur possimus necessitatibus numquam atque nisi reprehenderit, eaque deleniti corporis, laborum, porro nihil! Modi, sit.</p>
+<div class="hero-image-wrapper" >
+
+<img src="<img <img src="https://uploads-ssl.webflow.com/63bff1c2192df330137157e9/63c09b15a5cbec393c9824c6_alexander-hipp-iEEBWgY_6lA-unsplash.webp"  >
+
+</div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
 <!-- animation letter-->
 <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 <script src="app_letter.js"></script>

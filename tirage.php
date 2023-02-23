@@ -1,4 +1,5 @@
 <?php
+include "verif.php";
 
 $selection =trim($_POST["selection"]);
 $numeros=explode(" ",$selection);
@@ -88,5 +89,7 @@ for($i=0;$i<6;$i++){
                 }
             }
         </script>
+
+     
 </body>
 </html>

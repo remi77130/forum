@@ -58,7 +58,7 @@ $user = UserRepository::findById($_SESSION["id"]);
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="jeux_presentation.php">Jouer</a>
+            <a class="nav-link" aria-current="page" href="jeux_presentation.html">Jouer</a>
           </li>
 
 

@@ -10,6 +10,8 @@
 <body>
 
 <h1>Veuillez séléctionnez 6 cases</h1>
+
+<div class="container_grille">
 <div id="grille" >
 
 <?php 
@@ -26,12 +28,14 @@ for($i=1;$i<=49;$i++){
 
 </div>
 
+
 <div id="selection"></div>
 <form name="fo" method="post" action="tirage.php">
 <input type="hidden" name="selection">
 <input type="submit" value="jouer" name="jouer" />
 
 </form>
+</div>
 <script> 
 i=0;
     function jouer(val){
