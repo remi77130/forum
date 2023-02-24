@@ -76,8 +76,15 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
             color: #000;
             display: inline-block;
             margin: 4px 2px;
-             visibility: hidden;
+            visibility: hidden;
             border-radius: 16px;
+        }
+
+        button:disabled {
+            background: rgba(238, 170, 34, 0.5) !important;
+            cursor: default !important;
+            pointer-events: none;
+            color: white !important;
         }
 
         #stripe_paiement button#submit {
@@ -159,15 +166,15 @@ if (!$ask_card) { ?>
         $(document).ready(function () {
             $('#play').on('click', function () {
                 if (window.confirm("Vous allez être prelevé de 1€ sur votre carte bancaire terminant par <?= $last_digit ?>, voulez-vous continuer ?")) {
+
+                    $('#play').html('Chargement en cours...').prop('disabled', true);
+
                     $.ajax({
                         url: '/stripe/create_payement_with_card.php',
                         method: 'post',
                         dataType: 'json',
                         data: 'selection=' + selection_nos.join(','),
                         success: function (return_data) {
-
-                            console.log(return_data);
-
                             window.location.href = return_data.url_redirect;
                         }
                     });
@@ -182,7 +189,7 @@ else { ?>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#play').on('click', function () {
-                $('#play').html('Chargement en cours...');
+                $('#play').html('Chargement en cours...').prop('disabled', true);
                 $.ajax({
                     url: './stripe/create_payement.php',
                     method: 'post',
@@ -194,9 +201,17 @@ else { ?>
 
                             const stripe = Stripe('<?= STRIPE_KEYS['public']; ?>');
 
+                            const appearance = {
+                                theme: 'stripe',
+
+                                variables: {
+                                    colorText: 'white',
+                                }
+                            };
+
                             const options = {
                                 clientSecret: return_data.client_secret,
-                                appearance: {},
+                                appearance: appearance,
                             };
 
                             // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 3
@@ -209,6 +224,9 @@ else { ?>
                             const form = document.getElementById('payment-form');
 
                             form.addEventListener('submit', async (event) => {
+
+                                $('#stripe_paiement #submit').html('Chargement en cours...').prop('disabled', true);
+
                                 event.preventDefault();
 
                                 const {error} = await stripe.confirmPayment({
@@ -220,15 +238,15 @@ else { ?>
                                 });
 
                                 if (error) {
+                                    $('#stripe_paiement #submit').html('Procéder au paiement de 1,00€ puis afficher les résultats...').prop('disabled', false);
+
                                     // This point will only be reached if there is an immediate error when
                                     // confirming the payment. Show error to your customer (for example, payment
                                     // details incomplete)
                                     const messageContainer = document.querySelector('#error-message');
                                     messageContainer.textContent = error.message;
                                 } else {
-                                    // Your customer will be redirected to your `return_url`. For some payment
-                                    // methods like iDEAL, your customer will be redirected to an intermediate
-                                    // site first to authorize the payment, then redirected to the `return_url`.
+                                    $('#stripe_paiement #submit').html('Redirection en cours...')
                                 }
                             });
                         });
