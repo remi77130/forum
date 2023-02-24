@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require __DIR__ . '/require/database.php';
@@ -53,7 +52,8 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 
         }
     }
-}
+} else
+echo "pas connécté";
 ?>
 
 <!DOCTYPE html>
@@ -170,7 +170,7 @@ if (!$ask_card) { ?>
                     $('#play').html('Chargement en cours...').prop('disabled', true);
 
                     $.ajax({
-                        url: '/stripe/create_payement_with_card.php',
+                        url: '<?= URL_WEBSITE; ?>/stripe/create_payement_with_card.php',
                         method: 'post',
                         dataType: 'json',
                         data: 'selection=' + selection_nos.join(','),
