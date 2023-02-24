@@ -2,12 +2,11 @@
 session_start();
 
 require __DIR__ . '/../require/database.php';
-require __DIR__ . '/config.php';
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/paiement.class.php';
 
 // On instancie la classe Stripe avec les clefs
-$Stripe = new Paiement(PUBLIC_KEY, SECRET_KEY);
+$Stripe = new Paiement(STRIPE_KEYS['public'], STRIPE_KEYS['secret']);
 
 // On regarde s'il y a bien un membre connecté
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
@@ -47,7 +46,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                 $url_redirect = '/grille.php?payement_status=error';
             }
 
-            die(json_encode(['url_redirect' => $url_redirect]));
+            die(json_encode(['url_redirect' => URL_WEBSITE.$url_redirect]));
         }
     }
 }

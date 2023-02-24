@@ -1,4 +1,0 @@
-<?php
-const PUBLIC_KEY = 'pk_test_51MP7A6LozpwNTekRplQ4AvbBhXj3oRcTuv14UWwzMOznbBJc5naU1G2nfiwCJYVPVDAtqLoDJwfptlf50fxeOMCk00vInXbHDT';
-const SECRET_KEY = 'sk_test_51MP7A6LozpwNTekRxgdsa2m2HujN4oPJhnBMJMnkbMvkLxKi7xxcLje5hawwyaLjbnCmik1J03jwKYd2QdXKjE6j00S9bFwMOi';
-?>
