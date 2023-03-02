@@ -36,7 +36,7 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 </style>
 
 <body>
-<?php ?>
+    <?php ?>
 
 
 
@@ -240,8 +240,18 @@ $usersWithDesire = UserRepository::findUsersWithDesire();
 
 
 
-
     </section>
+        <div id="pagination">
+            <ul>
+                <?php
+                for ($i = 1; $i <= $page_counter; $i++) {
+                ?>
+                    <li><a href="?page=<?= $i; ?>" class="<?= ($current_page==$i)?"active":""?>"><?= $i; ?></a></li>
+                <?php
+                }
+                ?>
+            </ul>
+        </div>
 
     <!-- LOADER 
     <div class="loader-wrapper">

@@ -28,7 +28,25 @@ class UserRepository
         return !$user ? null : self::getDto($user, $joinDesire);
     }
 
-    public static function findUsers($conditions = null)
+    public static function countUsers($conditions = null)
+    {
+        global $bdd;
+        $sql = 'SELECT count(user.id) as user_counter
+                FROM membres as user
+                LEFT JOIN departement ON user.departement_nom = departement.departement_code
+                LEFT JOIN villes_france as ville ON user.ville_id = ville.ville_id
+                LEFT JOIN desire ON desire.id = user.desire_id';
+        if ($conditions) {
+            $sql .= " WHERE " . implode(" AND ", $conditions);
+        }
+        $sql .= ' ORDER BY user.last_connection DESC';
+        $req = $bdd->prepare($sql);
+        $req->execute();
+        $user = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $user[0]['user_counter'];
+    }
+
+    public static function findUsers($conditions = null, $page = null, $step = 50)
     {
         global $bdd;
         $sql = 'SELECT user.id, user.pseudo, user.mail, user.avatar, user.age, user.sexe, user.departement_nom, user.description_profil, user.last_connection, user.last_activity, user.confirme,
@@ -43,6 +61,10 @@ class UserRepository
             $sql .= " WHERE " . implode(" AND ", $conditions);
         }
         $sql .= ' ORDER BY user.last_connection DESC';
+        if ($page && $step) {
+            $offset = ($page-1) * $step;
+            $sql .= " LIMIT " . $offset . ", " . $step;
+        }
         $req = $bdd->prepare($sql);
         $req->execute();
         $user = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -117,7 +139,8 @@ class UserRepository
         return !$user ? null : self::getDtos($user, true);
     }
 
-    public static function add(UserDto $user, $password, $confirmkey){
+    public static function add(UserDto $user, $password, $confirmkey)
+    {
         global $bdd;
         $login = $user->getLogin();
         $mail = $user->getMail();
